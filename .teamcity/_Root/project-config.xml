@@ -20,6 +20,16 @@
         <param name="showChanges" value="true" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_4" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="Iv1.0fd762b602e5578c" />
+        <param name="defaultTokenScope" value="public_repo,repo,repo:status,write:repo_hook" />
+        <param name="displayName" value="GitHub.com" />
+        <param name="gitHubUrl" value="https://github.com/" />
+        <param name="providerType" value="GitHub" />
+        <param name="secure:clientSecret" value="credentialsJSON:67f79ddd-fb2e-4498-9f0e-4fd983724a86" />
+      </parameters>
+    </extension>
   </project-extensions>
   <cleanup>
     <options>
