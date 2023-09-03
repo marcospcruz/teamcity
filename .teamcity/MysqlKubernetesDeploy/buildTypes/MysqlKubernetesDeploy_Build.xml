@@ -16,9 +16,7 @@
     <vcs-settings>
       <vcs-entry-ref root-id="MysqlKubernetesDeploy_HttpsGithubComMarcospcruzMysqlKubernetesDeployRefsHeadsMaster" />
     </vcs-settings>
-    <requirements>
-      <exists id="RQ_1" name="docker.server.osType" />
-    </requirements>
+    <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_3" type="vcsTrigger">
         <parameters>
