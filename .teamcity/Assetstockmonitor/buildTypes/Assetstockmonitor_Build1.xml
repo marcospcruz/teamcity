@@ -5,7 +5,7 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_2" name="" type="Maven2">
+      <runner id="RUNNER_2" name="Test" type="Maven2">
         <parameters>
           <param name="goals" value="clean test" />
           <param name="localRepoScope" value="agent" />
