@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="81fad1bf-31d6-4414-b7b7-979b1b394695" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="a5007369-8986-43f1-80c8-c73c0210cac6" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>&lt;Root project&gt;</name>
   <description>Contains all other projects</description>
   <parameters />
@@ -19,8 +19,8 @@
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:42802441-23b8-4020-9339-53cfff04c045" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:e8af1e53-c630-4d6a-ad39-0ade3f1163e9" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:3dcc6b00-7822-4462-ada6-4e24142cbda1" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:4e9d3ecf-e653-40e3-aa27-e1c903c60480" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_3" type="versionedSettings">
