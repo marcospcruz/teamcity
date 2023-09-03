@@ -11,7 +11,7 @@
           <param name="isIncremental" value="true" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="plugin.docker.imageId" value="teamcity-build-agent" />
+          <param name="plugin.docker.imageId" value="jetbrains/teamcity-agent:2023.05.2" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
           <param name="pomLocation" value="pom.xml" />
