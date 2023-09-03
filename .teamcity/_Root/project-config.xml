@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="a5007369-8986-43f1-80c8-c73c0210cac6" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b6790480-f5b8-4c85-a063-c09c05c25051" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>&lt;Root project&gt;</name>
   <description>Contains all other projects</description>
   <parameters />
@@ -11,7 +11,7 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_2" type="OAuthProvider">
+    <extension id="PROJECT_EXT_3" type="OAuthProvider">
       <parameters>
         <param name="connectionSubtype" value="gitHubApp" />
         <param name="displayName" value="GitHub App" />
@@ -19,11 +19,11 @@
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:3dcc6b00-7822-4462-ada6-4e24142cbda1" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:4e9d3ecf-e653-40e3-aa27-e1c903c60480" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:463019c8-5e25-4a83-9b41-c5fbafae2350" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:0eae92b5-c695-42ca-889b-1bd5923bfe20" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_3" type="versionedSettings">
+    <extension id="PROJECT_EXT_4" type="versionedSettings">
       <parameters>
         <param name="buildSettings" value="ALWAYS_USE_CURRENT" />
         <param name="credentialsStorageType" value="credentialsJSON" />
