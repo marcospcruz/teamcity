@@ -110,6 +110,8 @@ object Apuracao2022_Compile : BuildType({
             jdkHome = "%env.JDK_17_0_ARM64%"
         }
         nodeJS {
+            name = "npm"
+            workingDir = "apuracao-pleito-angular"
             shellScript = """
                 npm ci
                 npm run test
