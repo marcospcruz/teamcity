@@ -1,4 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.kubernetesCloudImage
+import jetbrains.buildServer.configs.kotlin.kubernetesCloudProfile
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubAppConnection
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
@@ -63,6 +65,29 @@ object Apuracao2022 : Project({
     vcsRoot(Apuracao2022_Apuracaopleito)
 
     buildType(Apuracao2022_Compile)
+
+    features {
+        kubernetesCloudImage {
+            id = "PROJECT_EXT_4"
+            profileId = "kube-1"
+            agentPoolId = "-2"
+            podSpecification = runContainer {
+                dockerImage = "jetbrains/teamcity-agent:2023.05.2"
+            }
+        }
+        kubernetesCloudProfile {
+            id = "kube-1"
+            name = "kubernetes"
+            terminateIdleMinutes = 30
+            apiServerURL = "https://192.168.65.20:6443"
+            caCertData = "credentialsJSON:e9731c72-6b5c-428d-bc8e-09ba38295a90"
+            namespace = "ci-cd"
+            authStrategy = clientCertificate {
+                certificate = "credentialsJSON:7529b092-e4bf-4faf-aa28-8bf0d004f9cc"
+                key = "credentialsJSON:e647a170-1e00-40e7-a099-17f6d2217b86"
+            }
+        }
+    }
 })
 
 object Apuracao2022_Compile : BuildType({
