@@ -114,7 +114,7 @@ object Apuracao2022_Compile : BuildType({
                 npm ci
                 npm run test
             """.trimIndent()
-            dockerImage = "arm64v8/node"
+            dockerImage = "node"
         }
     }
 })
