@@ -93,7 +93,7 @@ object Apuracao2022_Compile : BuildType({
 
     requirements {
         equals("teamcity.agent.name", "ip_192.168.65.17-1")
-        equals("system.agent.name", "ip_192.168.65.17-1")
+        equals("system.agent.name", "ip_192.168.65.17")
     }
 })
 
