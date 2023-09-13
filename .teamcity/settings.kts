@@ -61,6 +61,12 @@ object Apuracao2022 : Project({
     name = "Apuracao2022"
 
     vcsRoot(Apuracao2022_Apuracaopleito)
+
+    buildType(Apuracao2022_Compile)
+})
+
+object Apuracao2022_Compile : BuildType({
+    name = "compile"
 })
 
 object Apuracao2022_Apuracaopleito : GitVcsRoot({
