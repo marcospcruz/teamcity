@@ -1,6 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
-import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubAppConnection
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
@@ -78,11 +77,6 @@ object Apuracao2022_Compile : BuildType({
         maven {
             goals = "clean install"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
-        }
-        nodeJS {
-            name = "npm ci"
-            workingDir = "apuracao-pleito-angular"
-            shellScript = "npm ci"
         }
     }
 
