@@ -70,10 +70,10 @@ object Apuracao2022 : Project({
 
     features {
         kubernetesCloudImage {
-            id = "PROJECT_EXT_5"
+            id = "PROJECT_EXT_6"
             profileId = "kube-1"
             agentPoolId = "-2"
-            agentNamePrefix = "node_js"
+            agentNamePrefix = "nodejs"
             podSpecification = runContainer {
                 dockerImage = "arm64v8/node"
             }
