@@ -91,6 +91,10 @@ object Apuracao2022_Compile : BuildType({
             shellScript = "npm run test"
         }
     }
+
+    requirements {
+        equals("teamcity.agent.name", "ip_192.168.65.17-1")
+    }
 })
 
 object Apuracao2022_Apuracaopleito : GitVcsRoot({
