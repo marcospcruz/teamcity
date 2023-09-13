@@ -81,6 +81,7 @@ object Apuracao2022_Compile : BuildType({
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
         nodeJS {
+            name = "npm ci"
             workingDir = "apuracao-pleito-angular"
             shellScript = "npm ci"
         }
