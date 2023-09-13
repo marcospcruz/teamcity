@@ -2,6 +2,7 @@ import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.buildSteps.MavenBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
+import jetbrains.buildServer.configs.kotlin.buildSteps.script
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudImage
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudProfile
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
@@ -117,6 +118,11 @@ object Apuracao2022_Compile : BuildType({
                 npm run test
             """.trimIndent()
             dockerImage = "node"
+        }
+        script {
+            name = "npm (1)"
+            scriptContent = "npm install"
+            dockerImage = "arm64v8/node"
         }
     }
 })
