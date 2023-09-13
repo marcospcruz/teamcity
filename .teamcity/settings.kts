@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.NodeJSBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubAppConnection
@@ -83,6 +84,14 @@ object Apuracao2022_Compile : BuildType({
             name = "npm run test"
             workingDir = "apuracao-pleito-angular"
             shellScript = "npm run test"
+        }
+        nodeJS {
+            shellScript = """
+                npm ci
+                npm run test
+            """.trimIndent()
+            dockerImagePlatform = NodeJSBuildStep.ImagePlatform.Any
+            dockerPull = true
         }
     }
 
