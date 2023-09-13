@@ -1,6 +1,7 @@
 import jetbrains.buildServer.configs.kotlin.*
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubAppConnection
+import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
 
 /*
 The settings script is an entry point for defining a TeamCity
@@ -58,4 +59,15 @@ project {
 
 object Apuracao2022 : Project({
     name = "Apuracao2022"
+
+    vcsRoot(Apuracao2022_Apuracaopleito)
+})
+
+object Apuracao2022_Apuracaopleito : GitVcsRoot({
+    name = "apuracaopleito"
+    url = "git@github.com:marcospcruz/apuracao-pleito-stack.git"
+    branch = "master"
+    authMethod = uploadedKey {
+        uploadedKey = "id_rsa"
+    }
 })
