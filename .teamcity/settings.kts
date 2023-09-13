@@ -70,11 +70,12 @@ object Apuracao2022 : Project({
 
     features {
         kubernetesCloudImage {
-            id = "PROJECT_EXT_4"
+            id = "PROJECT_EXT_5"
             profileId = "kube-1"
             agentPoolId = "-2"
+            agentNamePrefix = "node_js"
             podSpecification = runContainer {
-                dockerImage = "jetbrains/teamcity-agent:2023.05.2"
+                dockerImage = "arm64v8/node"
             }
         }
         kubernetesCloudProfile {
