@@ -76,6 +76,7 @@ object Apuracao2022_Compile : BuildType({
 
     steps {
         maven {
+            enabled = false
             goals = "clean install"
             runnerArgs = "-Dmaven.test.failure.ignore=true"
         }
