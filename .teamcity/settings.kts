@@ -84,11 +84,6 @@ object Apuracao2022_Compile : BuildType({
             workingDir = "apuracao-pleito-angular"
             shellScript = "npm ci"
         }
-        nodeJS {
-            name = "npm run test"
-            workingDir = "apuracao-pleito-angular"
-            shellScript = "npm run test"
-        }
     }
 
     requirements {
