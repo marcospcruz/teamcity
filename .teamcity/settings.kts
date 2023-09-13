@@ -96,10 +96,6 @@ object Apuracao2022_Compile : BuildType({
     vcs {
         root(Apuracao2022_Apuracaopleito)
     }
-
-    requirements {
-        equals("teamcity.agent.name", "ip_192.168.65.17")
-    }
 })
 
 object Apuracao2022_Apuracaopleito : GitVcsRoot({
