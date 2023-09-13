@@ -84,6 +84,7 @@ object Apuracao2022_Compile : BuildType({
             name = "npm run test"
             workingDir = "apuracao-pleito-angular"
             shellScript = "npm run test"
+            dockerImagePlatform = NodeJSBuildStep.ImagePlatform.Any
         }
         nodeJS {
             shellScript = """
