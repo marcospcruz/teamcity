@@ -122,7 +122,6 @@ object Apuracao2022_Compile : BuildType({
         script {
             name = "npm (1)"
             scriptContent = "npm install"
-            dockerImage = "arm64v8/node"
         }
     }
 })
