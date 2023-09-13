@@ -75,6 +75,7 @@ object Apuracao2022_Compile : BuildType({
 
     steps {
         nodeJS {
+            name = "npm ci"
             workingDir = "apuracao-pleito-angular"
             shellScript = "npm ci"
         }
