@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
 import jetbrains.buildServer.configs.kotlin.projectFeatures.githubAppConnection
 import jetbrains.buildServer.configs.kotlin.vcs.GitVcsRoot
@@ -70,6 +71,13 @@ object Apuracao2022_Compile : BuildType({
 
     vcs {
         root(Apuracao2022_Apuracaopleito)
+    }
+
+    steps {
+        maven {
+            goals = "clean test"
+            runnerArgs = "-Dmaven.test.failure.ignore=true"
+        }
     }
 })
 
