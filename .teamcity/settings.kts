@@ -1,4 +1,6 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.MavenBuildStep
+import jetbrains.buildServer.configs.kotlin.buildSteps.maven
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudImage
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudProfile
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
@@ -95,6 +97,16 @@ object Apuracao2022_Compile : BuildType({
 
     vcs {
         root(Apuracao2022_Apuracaopleito)
+    }
+
+    steps {
+        maven {
+            name = "xx"
+            goals = "package"
+            localRepoScope = MavenBuildStep.RepositoryScope.MAVEN_DEFAULT
+            isIncremental = true
+            jdkHome = "%env.JDK_17_0_ARM64%"
+        }
     }
 })
 
