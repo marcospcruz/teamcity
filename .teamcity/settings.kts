@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.buildSteps.NodeJSBuildStep
 import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudImage
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudProfile
@@ -104,7 +105,7 @@ object Apuracao2022_Compile : BuildType({
                 npm ci
                 npm run test
             """.trimIndent()
-            dockerPull = true
+            dockerImagePlatform = NodeJSBuildStep.ImagePlatform.Any
         }
     }
 })
