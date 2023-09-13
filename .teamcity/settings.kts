@@ -1,6 +1,4 @@
 import jetbrains.buildServer.configs.kotlin.*
-import jetbrains.buildServer.configs.kotlin.buildSteps.NodeJSBuildStep
-import jetbrains.buildServer.configs.kotlin.buildSteps.nodeJS
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudImage
 import jetbrains.buildServer.configs.kotlin.kubernetesCloudProfile
 import jetbrains.buildServer.configs.kotlin.projectFeatures.buildReportTab
@@ -97,16 +95,6 @@ object Apuracao2022_Compile : BuildType({
 
     vcs {
         root(Apuracao2022_Apuracaopleito)
-    }
-
-    steps {
-        nodeJS {
-            shellScript = """
-                npm ci
-                npm run test
-            """.trimIndent()
-            dockerImagePlatform = NodeJSBuildStep.ImagePlatform.Any
-        }
     }
 })
 
