@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e0a3fc92-d673-494d-9c69-2e5b428a5fa2" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Apuracao Pleito Stack</name>
+  <parameters />
+  <cleanup />
+</project>
+
