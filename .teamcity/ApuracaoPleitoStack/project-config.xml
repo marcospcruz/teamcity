@@ -2,6 +2,33 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e0a3fc92-d673-494d-9c69-2e5b428a5fa2" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>Apuracao Pleito Stack</name>
   <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_3" type="CloudImage">
+      <parameters>
+        <param name="agent_pool_id" value="-2" />
+        <param name="imageDescription" value="Use deployment: jetbrains/teamcity-agent:2023.05.2" />
+        <param name="podTemplateMode" value="deployment-base" />
+        <param name="profileId" value="kube-1" />
+        <param name="source-id" value="jetbrains/teamcity-agent:2023.05.2" />
+        <param name="sourceDeployment" value="jetbrains/teamcity-agent:2023.05.2" />
+      </parameters>
+    </extension>
+    <extension id="kube-1" type="CloudProfile">
+      <parameters>
+        <param name="apiServerUrl" value="https://raspberry-4-2.local:6443" />
+        <param name="authStrategy" value="client-cert" />
+        <param name="cloud-code" value="kube" />
+        <param name="description" value="" />
+        <param name="enabled" value="true" />
+        <param name="name" value="kubernetes" />
+        <param name="profileId" value="kube-1" />
+        <param name="profileInstanceLimit" value="4" />
+        <param name="secure:clientCertData" value="credentialsJSON:9b13c757-e368-4fca-95f6-013611dc4b2b" />
+        <param name="secure:clientKeyData" value="credentialsJSON:a74e0389-c14e-452a-bc05-e6c0f4ad7b03" />
+        <param name="terminate-idle-time" value="30" />
+      </parameters>
+    </extension>
+  </project-extensions>
   <cleanup />
 </project>
 
