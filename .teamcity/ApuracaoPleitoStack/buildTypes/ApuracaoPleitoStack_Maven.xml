@@ -5,16 +5,6 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_7" name="test" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:lts" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="plugin.docker.pull.enabled" value="true" />
-          <param name="shellScript"><![CDATA[npm ci
-npm run test]]></param>
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_5" name="" type="Maven2">
         <parameters>
           <param name="goals" value="clean test" />
