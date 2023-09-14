@@ -19,7 +19,9 @@ npm run test]]></param>
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoStack_GitGithubComMarcospcruzApuracaoPleitoStackGitRefsHeadsMaster" />
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <exists id="RQ_1" name="teamcity.agent.name" />
+    </requirements>
     <build-triggers>
       <build-trigger id="TRIGGER_2" type="vcsTrigger">
         <parameters>
