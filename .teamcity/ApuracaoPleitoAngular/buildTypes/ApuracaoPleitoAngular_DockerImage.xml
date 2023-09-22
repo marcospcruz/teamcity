@@ -22,7 +22,7 @@
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements>
-      <exists id="RQ_4" name="teamcity.agent.name" />
+      <exists id="RQ_4" name="docker.version" />
     </requirements>
     <build-triggers />
     <artifact-dependencies>
