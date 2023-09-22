@@ -43,7 +43,9 @@
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <exists id="RQ_1" name="agent.name" />
+    </requirements>
     <build-triggers />
     <cleanup />
   </settings>
