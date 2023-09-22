@@ -5,6 +5,12 @@
   <settings>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_4" name="Install Node js" type="jonnyzzz.nvm">
+        <parameters>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="version" value="%NODE_VERSION%" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_1" name="" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="node:12.22.9" />
@@ -30,12 +36,6 @@
           <param name="dockerfile.path" value="Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_4" name="Install Node js" type="jonnyzzz.nvm">
-        <parameters>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="version" value="%NODE_VERSION%" />
         </parameters>
       </runner>
     </build-runners>
