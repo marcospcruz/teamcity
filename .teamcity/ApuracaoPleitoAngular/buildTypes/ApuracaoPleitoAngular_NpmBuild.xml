@@ -5,16 +5,16 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_7" name="npm build" type="jonnyzzz.npm">
-        <parameters>
-          <param name="npm_commands" value="run build --configuration=production" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_10" name="Install Node js" type="jonnyzzz.nvm">
         <parameters>
           <param name="teamcity.step.mode" value="default" />
           <param name="version" value="%NODE_VERSION%" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_7" name="npm build" type="jonnyzzz.npm">
+        <parameters>
+          <param name="npm_commands" value="run build --configuration=production" />
+          <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
     </build-runners>
