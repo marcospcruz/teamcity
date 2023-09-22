@@ -5,10 +5,13 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_13" name="" type="DockerCommand">
+      <runner id="RUNNER_13" name="Build the Image" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="apuracao-pleito:latest" />
           <param name="docker.push.remove.image" value="true" />
+          <param name="dockerImage.platform" value="linux" />
+          <param name="dockerfile.contextDir" value="." />
           <param name="dockerfile.path" value="Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
