@@ -3,20 +3,6 @@
   <name>Apuracao Pleito Angular</name>
   <parameters />
   <project-extensions>
-    <extension id="PROJECT_EXT_6" type="CloudImage">
-      <parameters>
-        <param name="agentNamePrefix" value="docker" />
-        <param name="agent_pool_id" value="-2" />
-        <param name="dockerCmd" value="dockerd-entrypoint.sh" />
-        <param name="dockerImage" value="nicosingh/rpi-dind" />
-        <param name="imageDescription" value="Run container: nicosingh/rpi-dind" />
-        <param name="imageInstanceLimit" value="3" />
-        <param name="podTemplateMode" value="simple" />
-        <param name="profileId" value="kube-1" />
-        <param name="source-id" value="docker" />
-        <param name="sourceDeployment" value="" />
-      </parameters>
-    </extension>
     <extension id="kube-1" type="CloudProfile">
       <parameters>
         <param name="apiServerUrl" value="https://192.168.65.20:6443" />
