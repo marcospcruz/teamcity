@@ -4,6 +4,7 @@
   <description>Generates Angular Bundles</description>
   <settings>
     <options>
+      <option name="allowExternalStatus" value="true" />
       <option name="artifactRules" value="dist/apuracao-pleito =&gt; dist/apuracao-pleito" />
     </options>
     <parameters />
