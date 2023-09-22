@@ -11,6 +11,12 @@
           <param name="version" value="%NODE_VERSION%" />
         </parameters>
       </runner>
+      <runner id="RUNNER_6" name="npm install packages" type="jonnyzzz.npm">
+        <parameters>
+          <param name="npm_commands" value="install" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
