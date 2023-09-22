@@ -9,7 +9,7 @@
         <param name="agent_pool_id" value="-2" />
         <param name="dockerImage" value="nicosingh/rpi-dind" />
         <param name="imageDescription" value="Run container: nicosingh/rpi-dind" />
-        <param name="imageInstanceLimit" value="1" />
+        <param name="imageInstanceLimit" value="3" />
         <param name="podTemplateMode" value="simple" />
         <param name="profileId" value="kube-1" />
         <param name="source-id" value="docker" />
