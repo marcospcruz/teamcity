@@ -12,15 +12,6 @@
           <param name="version" value="%NODE_VERSION%" />
         </parameters>
       </runner>
-      <runner id="RUNNER_1" name="" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:12.22.9" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="plugin.docker.pull.enabled" value="true" />
-          <param name="shellScript" value="npm ci" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_2" name="test" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="node:12.22.9" />
