@@ -4,7 +4,7 @@
   <description>Generates Angular Bundles</description>
   <settings>
     <options>
-      <option name="artifactRules" value="dist/* =&gt; target_directory" />
+      <option name="artifactRules" value="dist/apuracao-pleito =&gt; dist/apuracao-pleito" />
     </options>
     <parameters />
     <build-runners>
