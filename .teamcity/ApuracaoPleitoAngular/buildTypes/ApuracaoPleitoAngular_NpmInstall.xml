@@ -7,6 +7,7 @@
     <build-runners>
       <runner id="RUNNER_4" name="Install Node js" type="jonnyzzz.nvm">
         <parameters>
+          <param name="fromSource" value="true" />
           <param name="teamcity.step.mode" value="default" />
           <param name="version" value="%NODE_VERSION%" />
         </parameters>
