@@ -4,6 +4,7 @@
   <description>Contains all other projects</description>
   <parameters>
     <param name="NODE_VERSION" value="12.22.9" />
+    <param name="env.NPM_AUTH_TOKEN" value="credentialsJSON:cf7a685a-2a86-4c57-a6a4-26277f9fc46a" spec="password display='hidden' readOnly='true' label='TOKEN'" />
   </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_1" type="ReportTab">
