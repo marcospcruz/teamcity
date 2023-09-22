@@ -25,6 +25,12 @@
       <exists id="RQ_4" name="teamcity.agent.name" />
     </requirements>
     <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="dist =&gt; ." />
+      </dependency>
+    </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall">
         <options>
