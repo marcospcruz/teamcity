@@ -4,7 +4,14 @@
   <description>Generates Angular Bundles</description>
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_7" name="npm build" type="jonnyzzz.npm">
+        <parameters>
+          <param name="npm_commands" value="run build --configuration=production" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
     </vcs-settings>
