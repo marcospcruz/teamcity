@@ -7,6 +7,7 @@
       <parameters>
         <param name="agentNamePrefix" value="docker" />
         <param name="agent_pool_id" value="-2" />
+        <param name="dockerCmd" value="dockerd-entrypoint.sh" />
         <param name="dockerImage" value="nicosingh/rpi-dind" />
         <param name="imageDescription" value="Run container: nicosingh/rpi-dind" />
         <param name="imageInstanceLimit" value="3" />
