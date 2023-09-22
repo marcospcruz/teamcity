@@ -3,6 +3,9 @@
   <name>npm build</name>
   <description>Generates Angular Bundles</description>
   <settings>
+    <options>
+      <option name="artifactRules" value="dist/* =&gt; target_directory" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_10" name="Install Node js" type="jonnyzzz.nvm">
