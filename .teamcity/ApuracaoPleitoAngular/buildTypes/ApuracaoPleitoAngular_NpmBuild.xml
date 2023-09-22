@@ -36,7 +36,7 @@
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements>
-      <exists id="RQ_3" name="teamcity.agent.name" />
+      <exists id="RQ_3" name="agent.name" />
     </requirements>
     <build-triggers />
     <dependencies>
