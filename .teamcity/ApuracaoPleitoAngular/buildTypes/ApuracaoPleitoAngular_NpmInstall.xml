@@ -17,7 +17,6 @@
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements>
-      <exists id="RQ_1" name="agent.name" />
       <exists id="RQ_2" name="docker.version" />
     </requirements>
     <build-triggers />
