@@ -38,7 +38,7 @@
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="true">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+: dist =&gt; ." />
+        <artifact sourcePath=".teamcity/target_archive =&gt; ." />
       </dependency>
     </artifact-dependencies>
     <dependencies>
