@@ -3,6 +3,9 @@
   <name>Step.2 - NPM Build</name>
   <description />
   <settings>
+    <options>
+      <option name="artifactRules" value="+: **/dist/** =&gt; target_directory" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_15" name="Install Node js" type="jonnyzzz.nvm">
