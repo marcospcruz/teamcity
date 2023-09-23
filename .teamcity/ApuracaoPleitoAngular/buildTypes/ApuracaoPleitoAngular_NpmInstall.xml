@@ -3,6 +3,9 @@
   <name>npm install</name>
   <description />
   <settings>
+    <options>
+      <option name="allowExternalStatus" value="true" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_4" name="Install Node js" type="jonnyzzz.nvm">
