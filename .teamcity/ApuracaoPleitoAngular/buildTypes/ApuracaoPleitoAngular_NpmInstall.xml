@@ -38,6 +38,7 @@ $TAR_GZ]]></param>
     </vcs-settings>
     <requirements>
       <exists id="RQ_2" name="docker.version" />
+      <equals id="RQ_6" name="teamcity.agent.jvm.os.name" value="Linux" />
     </requirements>
     <build-triggers />
     <cleanup />
