@@ -34,6 +34,15 @@ $TAR_GZ]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_2" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ls -la
+pwd
+exit 1]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
