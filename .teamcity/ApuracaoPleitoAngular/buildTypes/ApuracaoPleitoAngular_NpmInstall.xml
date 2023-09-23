@@ -29,7 +29,7 @@ cd %teamcity.build.workingDir%
 echo Current directory id $(pwd)
 ls -la
 echo
-tar -czfv node_modules.tar.gz node_modules
+tar -cvzf node_modules.tar.gz node_modules
 rm node_modules -rf]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
