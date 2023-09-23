@@ -22,6 +22,14 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_1" name="compact node modules" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[tar -czfv node_modules.tar.gz node_modules
+rm node_modules -rf]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
