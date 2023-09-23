@@ -23,7 +23,7 @@
     </vcs-settings>
     <requirements>
       <exists id="RQ_4" name="docker.version" />
-      <equals id="RQ_5" name="teamcity.agent.hostname" value="teamcity-build-agent-2" />
+      <exists id="RQ_5" name="teamcity.agent.hostname" />
     </requirements>
     <build-triggers />
     <artifact-dependencies>
