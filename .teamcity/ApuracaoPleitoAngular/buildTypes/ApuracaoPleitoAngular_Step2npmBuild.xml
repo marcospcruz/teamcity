@@ -20,8 +20,7 @@
       <runner id="RUNNER_2" name="" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[set -e
-tar -xzvf node_modules.tar.gz
-ls -l]]></param>
+tar -xzf node_modules.tar.gz]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
