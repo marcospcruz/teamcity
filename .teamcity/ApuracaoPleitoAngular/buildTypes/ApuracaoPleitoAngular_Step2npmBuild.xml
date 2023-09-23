@@ -6,6 +6,9 @@
     <options>
       <option name="artifactRules" value="+:**/dist/** =&gt; target_archive" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_17" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_15" name="Install Node js" type="jonnyzzz.nvm">
