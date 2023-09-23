@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="artifactRules" value="+: **/dist/** =&gt; target_directory" />
+      <option name="artifactRules" value="+:**/dist/** =&gt; target_archive" />
     </options>
     <parameters />
     <build-runners>
