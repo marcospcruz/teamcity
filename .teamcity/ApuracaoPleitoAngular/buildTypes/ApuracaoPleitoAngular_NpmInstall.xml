@@ -8,9 +8,6 @@
       <option name="artifactRules" value="node_modules.tar.gz =&gt; target_directory" />
       <option name="publishArtifactCondition" value="SUCCESSFUL" />
     </options>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_6" />
-    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_4" name="Install Node js" type="jonnyzzz.nvm">
