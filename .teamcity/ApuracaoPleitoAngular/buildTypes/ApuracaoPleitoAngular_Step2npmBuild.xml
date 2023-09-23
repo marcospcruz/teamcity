@@ -7,7 +7,8 @@
     <build-runners>
       <runner id="RUNNER_14" name="run build" type="jonnyzzz.npm">
         <parameters>
-          <param name="npm_commands" value="build" />
+          <param name="npm_commands" value="run build" />
+          <param name="npm_execution_args" value="--configuration=production" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
