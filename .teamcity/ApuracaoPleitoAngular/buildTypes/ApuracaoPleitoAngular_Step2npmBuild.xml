@@ -38,9 +38,9 @@ $TAR_GZ]]></param>
     <requirements />
     <build-triggers />
     <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="false">
+      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="true">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:target_archive =&gt; ." />
+        <artifact sourcePath=".teamcity&#xD;&#xA;.teamcity/target_archive =&gt; ." />
       </dependency>
     </artifact-dependencies>
     <dependencies>
