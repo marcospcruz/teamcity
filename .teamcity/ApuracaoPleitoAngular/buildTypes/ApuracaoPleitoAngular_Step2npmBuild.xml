@@ -40,7 +40,7 @@ $TAR_GZ]]></param>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:node_modules.tar.gz =&gt; ." />
+        <artifact sourcePath="+:target_archive =&gt; ." />
       </dependency>
     </artifact-dependencies>
     <dependencies>
