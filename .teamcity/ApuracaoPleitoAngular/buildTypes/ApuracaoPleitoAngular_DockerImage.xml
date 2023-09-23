@@ -36,9 +36,9 @@
       </build-trigger>
     </build-triggers>
     <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="true">
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoAngular_Step2npmBuild" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath=".teamcity/target_archive =&gt; ." />
+        <artifact sourcePath="+:*.tar.gz =&gt; ." />
       </dependency>
     </artifact-dependencies>
     <dependencies>
