@@ -6,6 +6,7 @@
     <options>
       <option name="allowExternalStatus" value="true" />
       <option name="artifactRules" value="node_modules =&gt; node_modules" />
+      <option name="publishArtifactCondition" value="SUCCESSFUL" />
     </options>
     <parameters />
     <build-runners>
