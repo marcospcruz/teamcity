@@ -3,6 +3,15 @@
   <name>Apuracao Pleito Angular</name>
   <parameters />
   <project-extensions>
+    <extension id="PROJECT_EXT_5" type="versionedSettings">
+      <parameters>
+        <param name="buildSettings" value="PREFER_VCS" />
+        <param name="credentialsStorageType" value="credentialsJSON" />
+        <param name="enabled" value="true" />
+        <param name="rootId" value="GitGithubComMarcospcruzTeamcityGit" />
+        <param name="showChanges" value="true" />
+      </parameters>
+    </extension>
     <extension id="kube-1" type="CloudProfile">
       <parameters>
         <param name="apiServerUrl" value="https://192.168.65.20:6443" />
