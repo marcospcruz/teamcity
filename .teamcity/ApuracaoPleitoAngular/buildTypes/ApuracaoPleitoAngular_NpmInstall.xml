@@ -5,7 +5,7 @@
   <settings>
     <options>
       <option name="allowExternalStatus" value="true" />
-      <option name="artifactRules" value="node_modules.tar.g =&gt; target_archive" />
+      <option name="artifactRules" value="node_modules.tar.gz =&gt; target_directory" />
       <option name="publishArtifactCondition" value="SUCCESSFUL" />
     </options>
     <disabled-settings>
