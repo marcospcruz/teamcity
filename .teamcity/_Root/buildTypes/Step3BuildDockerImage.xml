@@ -22,16 +22,7 @@
       <exists id="RQ_4" name="docker.version" />
       <exists id="RQ_5" name="teamcity.agent.hostname" />
     </requirements>
-    <build-triggers>
-      <build-trigger id="TRIGGER_1" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="+:*" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules" value="+:root=Root_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster2:**" />
-        </parameters>
-      </build-trigger>
-    </build-triggers>
+    <build-triggers />
     <cleanup />
   </settings>
 </template>
