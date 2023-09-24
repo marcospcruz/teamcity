@@ -18,7 +18,8 @@
         <parameters>
           <param name="script.content"><![CDATA[set -e
 tar -xzf node_modules.tar.gz
-npm install -g @angular/cli@%ANGULAR_VERSION%]]></param>
+npm install -g @angular/cli@%ANGULAR_VERSION%
+rm -rfv node_modules.tar.gz]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
