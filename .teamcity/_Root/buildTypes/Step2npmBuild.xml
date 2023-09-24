@@ -42,12 +42,6 @@ tar -czf dist.tar.gz]]></param>
     <vcs-settings />
     <requirements />
     <build-triggers />
-    <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="false">
-        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:target_directory/node_modules.tar.gz =&gt;  %teamcity.build.workingDir%" />
-      </dependency>
-    </artifact-dependencies>
     <cleanup />
   </settings>
 </template>
