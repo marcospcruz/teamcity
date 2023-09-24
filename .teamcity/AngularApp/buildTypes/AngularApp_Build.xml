@@ -19,15 +19,6 @@ test]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_9" name="" type="DockerCommand">
-        <parameters>
-          <param name="docker.command.type" value="build" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerfile.path" value="Dockerfile" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_10" name="Install Nodejs" type="jonnyzzz.nvm">
         <parameters>
           <param name="teamcity.step.mode" value="default" />
