@@ -12,11 +12,10 @@ test]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_8" name="" type="nodejs-runner">
+      <runner id="RUNNER_8" name="npm install test" type="jonnyzzz.npm">
         <parameters>
-          <param name="plugin.docker.imageId" value="node:lts" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm run test" />
+          <param name="npm_commands"><![CDATA[install
+test]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
