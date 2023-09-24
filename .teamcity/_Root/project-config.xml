@@ -47,7 +47,7 @@ metadata:
     app: teamcity-agent
 spec:
   nodeSelector:
-    host: worker-1
+    host: master
   restartPolicy: Never
   containers:
     - name: teamcity-agent
