@@ -13,7 +13,7 @@
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_3" sourceBuildTypeId="AngularApp_Step1npmInstall1" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="-:node_modules.tar.gz =&gt; ." />
+        <artifact sourcePath="-:./teamcity/node_modules.tar.gz =&gt; .&#xD;&#xA;" />
       </dependency>
     </artifact-dependencies>
     <dependencies>
