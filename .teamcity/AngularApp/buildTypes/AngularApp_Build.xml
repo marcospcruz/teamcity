@@ -34,7 +34,9 @@
     <vcs-settings>
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <exists id="RQ_1" name="docker.version" />
+    </requirements>
     <build-triggers>
       <build-trigger id="TRIGGER_6" type="vcsTrigger">
         <parameters>
