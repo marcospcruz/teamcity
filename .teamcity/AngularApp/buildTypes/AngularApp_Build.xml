@@ -30,6 +30,12 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_10" name="Install Nodejs" type="jonnyzzz.nvm">
+        <parameters>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="version" value="%NODE_VERSION%" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
