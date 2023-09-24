@@ -15,16 +15,6 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_2" type="OAuthProvider">
-      <parameters>
-        <param name="clientId" value="Iv1.0fd762b602e5578c" />
-        <param name="defaultTokenScope" value="public_repo,repo,repo:status,write:repo_hook" />
-        <param name="displayName" value="GitHub.com" />
-        <param name="gitHubUrl" value="https://github.com/" />
-        <param name="providerType" value="GitHub" />
-        <param name="secure:clientSecret" value="credentialsJSON:05ad8575-ac34-48f5-a71a-05b29fbb5356" />
-      </parameters>
-    </extension>
     <extension id="PROJECT_EXT_3" type="versionedSettings">
       <parameters>
         <param name="buildSettings" value="PREFER_CURRENT" />
