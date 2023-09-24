@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7bf165e3-0aed-443b-8c75-36114c7910fd" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Step.1 - npm install</name>
+  <settings>
+    <options>
+      <option name="allowExternalStatus" value="true" />
+      <option name="artifactRules" value="+:%teamcity.build.workingDir%/*.tar.gz =&gt; target_directory" />
+      <option name="publishArtifactCondition" value="SUCCESSFUL" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_4" name="Install Node js" type="jonnyzzz.nvm">
+        <parameters>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="version" value="%NODE_VERSION%" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_6" name="npm install packages" type="jonnyzzz.npm">
+        <parameters>
+          <param name="npm_commands" value="install" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_1" name="compact node modules" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[set -e
+cd %teamcity.build.workingDir%
+echo Current directory id $(pwd)
+ls -la
+echo
+tar -cvzf node_modules.tar.gz node_modules
+rm node_modules -rf]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="ApuracaoPleitoAngular_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster" />
+    </vcs-settings>
+    <requirements>
+      <exists id="RQ_2" name="docker.version" />
+      <equals id="RQ_6" name="teamcity.agent.jvm.os.name" value="Linux" />
+    </requirements>
+    <build-triggers />
+    <cleanup />
+  </settings>
+</template>
+
