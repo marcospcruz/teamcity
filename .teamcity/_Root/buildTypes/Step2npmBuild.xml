@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="b0380c95-3790-42d9-97ec-d8558a780d05" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Step.2 - NPM Build</name>
+  <settings>
+    <options>
+      <option name="artifactRules" value="+:*.tar.gz =&gt; target_directory" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_15" name="Install Node js" type="jonnyzzz.nvm">
+        <parameters>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="version" value="%NODE_VERSION%" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_2" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[set -e
+tar -xzf node_modules.tar.gz
+npm install -g @angular/cli@%ANGULAR_VERSION%
+rm -rfv node_modules.tar.gz]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_14" name="run build" type="jonnyzzz.npm">
+        <parameters>
+          <param name="npm_commands" value="run build" />
+          <param name="npm_execution_args" value="--configuration=production" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_17" name="Compact node_modules directory" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[cd %teamcity.build.workingDir%
+tar -czf dist.tar.gz]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Root_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster1" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="+:target_directory/node_modules.tar.gz =&gt;  %teamcity.build.workingDir%" />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</template>
+
