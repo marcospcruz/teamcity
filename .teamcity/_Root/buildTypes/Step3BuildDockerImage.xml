@@ -17,9 +17,7 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="Root_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster2" />
-    </vcs-settings>
+    <vcs-settings />
     <requirements>
       <exists id="RQ_4" name="docker.version" />
       <exists id="RQ_5" name="teamcity.agent.hostname" />
