@@ -36,15 +36,31 @@
         <param name="secure:gitHubApp.privateKey" value="credentialsJSON:0cbc4cc9-be9f-49b9-9e87-593ddf43551d" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_7" type="CloudImage">
+    <extension id="PROJECT_EXT_8" type="CloudImage">
       <parameters>
+        <param name="agentNamePrefix" value="node-master" />
         <param name="agent_pool_id" value="0" />
+        <param name="customPodTemplate"><![CDATA[apiVersion: v1
+kind: Pod
+metadata:
+  labels:
+    app: teamcity-agent
+spec:
+  nodeSelector:
+    host: worker-1
+  restartPolicy: Never
+  containers:
+    - name: teamcity-agent
+      image: jetbrains/teamcity-agent
+      resources:
+        limits:
+          memory: "500M"]]></param>
         <param name="dockerImage" value="jetbrains/teamcity-agent" />
-        <param name="imageDescription" value="Run container: jetbrains/teamcity-agent" />
+        <param name="imageDescription" value="Custom pod template: node-master" />
         <param name="imageInstanceLimit" value="5" />
-        <param name="podTemplateMode" value="simple" />
+        <param name="podTemplateMode" value="custom-pod-template" />
         <param name="profileId" value="kube-1" />
-        <param name="source-id" value="jetbrains/teamcity-agent" />
+        <param name="source-id" value="node-master" />
         <param name="sourceDeployment" value="" />
       </parameters>
     </extension>
