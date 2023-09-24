@@ -48,14 +48,6 @@ tar -czf dist.tar.gz]]></param>
         <artifact sourcePath="+:target_directory/node_modules.tar.gz =&gt;  %teamcity.build.workingDir%" />
       </dependency>
     </artifact-dependencies>
-    <dependencies>
-      <depend-on sourceBuildTypeId="ApuracaoPleitoAngular_NpmInstall">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
     <cleanup />
   </settings>
 </template>
