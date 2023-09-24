@@ -56,7 +56,7 @@ spec:
         limits:
           memory: "500M"
     - name: teamcity-agent-nodejs
-      image: node:%NODE_VERSION%]]></param>
+      image: node:13.3.0]]></param>
         <param name="dockerImage" value="jetbrains/teamcity-agent" />
         <param name="imageDescription" value="Custom pod template: teamcity-build-agent-on-master" />
         <param name="imageInstanceLimit" value="5" />
