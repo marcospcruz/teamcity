@@ -5,7 +5,9 @@
   <settings ref="Step3BuildDockerImage">
     <parameters />
     <build-runners />
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <cleanup />
