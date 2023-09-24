@@ -21,19 +21,6 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_1" name="compact node modules" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[set -e
-cd %teamcity.build.workingDir%
-echo Current directory id $(pwd)
-ls -la
-echo
-tar -cvzf node_modules.tar.gz node_modules
-rm node_modules -rf]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
     </build-runners>
     <vcs-settings />
     <requirements>
