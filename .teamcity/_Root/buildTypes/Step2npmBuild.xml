@@ -39,9 +39,7 @@ tar -czf dist.tar.gz]]></param>
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="Root_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster1" />
-    </vcs-settings>
+    <vcs-settings />
     <requirements />
     <build-triggers />
     <artifact-dependencies>
