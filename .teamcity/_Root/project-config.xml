@@ -41,9 +41,11 @@
         <param name="agent_pool_id" value="0" />
         <param name="dockerImage" value="jetbrains/teamcity-agent" />
         <param name="imageDescription" value="Run container: jetbrains/teamcity-agent" />
+        <param name="imageInstanceLimit" value="5" />
         <param name="podTemplateMode" value="simple" />
         <param name="profileId" value="kube-1" />
         <param name="source-id" value="jetbrains/teamcity-agent" />
+        <param name="sourceDeployment" value="" />
       </parameters>
     </extension>
     <extension id="kube-1" type="CloudProfile">
@@ -62,6 +64,7 @@
         <param name="secure:caCertData" value="credentialsJSON:5d13720d-5339-4d82-87c0-4fd0d9a5b132" />
         <param name="secure:clientCertData" value="credentialsJSON:182b50bd-4832-4a4d-802c-5a3dc5026ace" />
         <param name="secure:clientKeyData" value="credentialsJSON:a6806b48-fa4f-4d4b-83f7-fc78b6bc4219" />
+        <param name="system.cloud.profile_id" value="kube-1" />
         <param name="terminate-idle-time" value="30" />
       </parameters>
     </extension>
