@@ -3,6 +3,9 @@
   <name>Build</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_11" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_10" name="Install Nodejs" type="jonnyzzz.nvm">
