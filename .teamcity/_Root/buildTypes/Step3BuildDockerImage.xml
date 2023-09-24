@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="0ed6d874-4c89-4eed-b332-f107ddc36bb1" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Step.3 - Build Docker Image</name>
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_13" name="Build the Image" type="DockerCommand">
+        <parameters>
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="apuracao-pleito:latest" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerImage.platform" value="linux" />
+          <param name="dockerfile.contextDir" value="." />
+          <param name="dockerfile.path" value="Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Root_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster2" />
+    </vcs-settings>
+    <requirements>
+      <exists id="RQ_4" name="docker.version" />
+      <exists id="RQ_5" name="teamcity.agent.hostname" />
+    </requirements>
+    <build-triggers>
+      <build-trigger id="TRIGGER_1" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="triggerRules" value="+:root=Root_GitGithubComMarcospcruzApuracaoPleitoAngularGitRefsHeadsMaster2:**" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoAngular_Step2npmBuild" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="+:*.tar.gz =&gt; ." />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="ApuracaoPleitoAngular_Step2npmBuild">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</template>
+
