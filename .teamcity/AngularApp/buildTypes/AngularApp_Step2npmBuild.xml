@@ -10,6 +10,12 @@
     </vcs-settings>
     <requirements />
     <build-triggers />
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_3" sourceBuildTypeId="AngularApp_Step1npmInstall1" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="-:node_modules.tar.gz =&gt; ." />
+      </dependency>
+    </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="AngularApp_Step1npmInstall1">
         <options>
