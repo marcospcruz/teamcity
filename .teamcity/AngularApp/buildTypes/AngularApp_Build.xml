@@ -3,7 +3,9 @@
   <name>Build</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="NODE_VERSION" value="14.20.1" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_10" name="Install Nodejs" type="jonnyzzz.nvm">
         <parameters>
