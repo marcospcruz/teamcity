@@ -3,6 +3,9 @@
   <name>Build</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_10" />
+    </disabled-settings>
     <parameters>
       <param name="NODE_VERSION" value="14.20.1" />
     </parameters>
