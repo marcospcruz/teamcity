@@ -3,19 +3,10 @@
   <name>Build</name>
   <description />
   <settings>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_10" />
-    </disabled-settings>
     <parameters>
       <param name="NODE_VERSION" value="14.20.1" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_10" name="Install Nodejs" type="jonnyzzz.nvm">
-        <parameters>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="version" value="%NODE_VERSION%" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_7" name="npm install" type="jonnyzzz.npm">
         <parameters>
           <param name="npm_commands"><![CDATA[install
