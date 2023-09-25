@@ -25,6 +25,15 @@ test]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_1" name="" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript"><![CDATA[npm ci
+npm run build --configuration=production]]></param>
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_11" name="" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="build" />
@@ -33,15 +42,6 @@ test]]></param>
           <param name="dockerImage.platform" value="linux" />
           <param name="dockerfile.path" value="Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_1" name="" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:lts" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript"><![CDATA[npm ci
-npm run build --configuration=production]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
