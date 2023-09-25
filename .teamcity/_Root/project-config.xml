@@ -60,7 +60,7 @@ spec:
           memory: "500M"]]></param>
         <param name="dockerImage" value="jetbrains/teamcity-agent" />
         <param name="imageDescription" value="Custom pod template: teamcity-build-agent-on-master" />
-        <param name="imageInstanceLimit" value="5" />
+        <param name="imageInstanceLimit" value="1" />
         <param name="podTemplateMode" value="custom-pod-template" />
         <param name="profileId" value="kube-1" />
         <param name="source-id" value="teamcity-build-agent-on-master" />
