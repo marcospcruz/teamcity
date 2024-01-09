@@ -17,9 +17,10 @@
           <param name="plugin.docker.pull.enabled" value="true" />
           <param name="shellScript"><![CDATA[ls -l
 [ -f "package-lock.json" ] && echo removing package-lock.json: $(rm -fv package-lock.json)
+find ./ -name 'package.json'
 npm install -g npm
 # npm install
-find ./ -name 'package.json'
+
 exit 1
 npm run build --configuration=production]]></param>
           <param name="teamcity.build.workingDir" value="." />
