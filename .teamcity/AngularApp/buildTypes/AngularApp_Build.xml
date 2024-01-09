@@ -16,7 +16,7 @@
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
           <param name="shellScript"><![CDATA[ls -l
-pwd
+echo removing package-lock.json: $(rm -fv package-lock.json)
 npm install
 npm run build --configuration=production]]></param>
           <param name="teamcity.build.workingDir" value="." />
