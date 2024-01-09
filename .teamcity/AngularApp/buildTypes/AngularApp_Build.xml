@@ -14,7 +14,10 @@
         <parameters>
           <param name="script.content"><![CDATA[ls -l
 [ -f "package-lock.json" ] && echo removing package-lock.json: $(rm -fv package-lock.json)
-find ./ -name 'package.json']]></param>
+YES=$(find ./ -name 'package.json')
+[ -z $YES ] echo failing...not finding package.json
+
+npm install -g npm]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
