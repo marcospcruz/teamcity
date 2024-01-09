@@ -7,11 +7,12 @@
       <param name="NODE_VERSION" value="14.20.1" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_1" name="" type="nodejs-runner">
+      <runner id="RUNNER_1" name="npm install" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="node:lts" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript"><![CDATA[npm ci
+          <param name="plugin.docker.pull.enabled" value="true" />
+          <param name="shellScript"><![CDATA[npm install
 npm run build --configuration=production]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
