@@ -19,7 +19,8 @@
 [ -f "package-lock.json" ] && echo removing package-lock.json: $(rm -fv package-lock.json)
 npm install -g npm
 # npm install
-find 
+find ./ -name 'package.json'
+exit 1
 npm run build --configuration=production]]></param>
           <param name="teamcity.build.workingDir" value="." />
           <param name="teamcity.step.mode" value="default" />
