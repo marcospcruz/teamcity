@@ -10,6 +10,16 @@
       <param name="NODE_VERSION" value="14.20.1" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_2" name="test" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[ls -l
+[ -f "package-lock.json" ] && echo removing package-lock.json: $(rm -fv package-lock.json)
+find ./ -name 'package.json'
+exit 1]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_1" name="npm install" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="node:lts" />
@@ -34,16 +44,6 @@ npm run build --configuration=production]]></param>
           <param name="dockerfile.path" value="Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_2" name="test" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[ls -l
-[ -f "package-lock.json" ] && echo removing package-lock.json: $(rm -fv package-lock.json)
-find ./ -name 'package.json'
-exit 1]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
