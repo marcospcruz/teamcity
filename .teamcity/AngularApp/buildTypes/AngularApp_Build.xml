@@ -15,10 +15,7 @@
           <param name="plugin.docker.imageId" value="node:lts" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
-          <param name="shellScript"><![CDATA[ls -l
-[ -f "package-lock.json" ] && echo removing package-lock.json: $(rm -fv package-lock.json)
-find ./ -name 'package.json'
-npm install -g npm
+          <param name="shellScript"><![CDATA[npm install -g npm
 # npm install
 
 exit 1
