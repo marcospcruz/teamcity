@@ -3,6 +3,9 @@
   <name>Build</name>
   <description />
   <settings>
+    <options>
+      <option name="allowExternalStatus" value="true" />
+    </options>
     <parameters>
       <param name="NODE_VERSION" value="14.20.1" />
     </parameters>
