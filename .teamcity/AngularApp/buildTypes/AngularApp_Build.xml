@@ -15,7 +15,9 @@
           <param name="plugin.docker.imageId" value="node:lts" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
-          <param name="shellScript"><![CDATA[npm install
+          <param name="shellScript"><![CDATA[ls -l
+pwd
+npm install
 npm run build --configuration=production]]></param>
           <param name="teamcity.build.workingDir" value="." />
           <param name="teamcity.step.mode" value="default" />
