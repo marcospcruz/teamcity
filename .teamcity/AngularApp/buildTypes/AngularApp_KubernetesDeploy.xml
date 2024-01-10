@@ -73,7 +73,9 @@ kubectl config view
       </runner>
       <runner id="RUNNER_12" name="deploy" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[kubectl apply -f <<EOF -
+          <param name="script.content"><![CDATA[# cluster-info
+kubectl cluster-info
+kubectl apply -f <<EOF -
 apiVersion: v1
 kind: Deployment
 metadata:
