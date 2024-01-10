@@ -92,7 +92,8 @@ spec:
     spec:
       containers:
       - name: web-pod
-        image: angular:latest]]></param>
+        image: angular:latest
+EOF]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
