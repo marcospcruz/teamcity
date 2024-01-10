@@ -34,15 +34,6 @@ kubectl cluster-info]]></param>
         </parameters>
       </build-trigger>
     </build-triggers>
-    <dependencies>
-      <depend-on sourceBuildTypeId="AngularApp_DockerBuild">
-        <options>
-          <option name="run-build-on-the-same-agent" value="true" />
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
     <cleanup />
   </settings>
 </build-type>
