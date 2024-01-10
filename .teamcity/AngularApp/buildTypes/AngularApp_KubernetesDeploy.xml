@@ -42,10 +42,11 @@ cat $CACERT
 # Explore the API with TOKEN
 #curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET ${AP
 kubectl config set-cluster kubernetes \
---embed-certs --certificate-authority=$CACERT \
---namespace default \
---user kubernetes-admin@kubernetes \
---tls-server-name=cluster.local
+--embec-certs=true \
+--certificate-authority=$CACERT \
+--namespace=default \
+--user=kubernetes-admin@kubernetes \
+--tls-server-name=https://192.168.65.23:6443
 # cluster-info
 kubectl cluster-info
 #kubectl \
