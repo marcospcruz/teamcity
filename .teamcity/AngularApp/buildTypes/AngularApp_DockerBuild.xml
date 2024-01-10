@@ -15,6 +15,16 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_14" name="push image" type="DockerCommand">
+        <parameters>
+          <param name="command.args" value="frontend:latest registry:30500/frontend:latest" />
+          <param name="docker.command.type" value="other" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="docker.sub.command" value="tag" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
