@@ -38,7 +38,7 @@ TOKEN=$(cat ${SERVICEACCOUNT}/token)
 
 # Reference the internal certificate authority (CA)
 CACERT=${SERVICEACCOUNT}/ca.crt
-
+cat $CACERT
 # Explore the API with TOKEN
 #curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET ${AP
 kubectl config set-cluster e2e --embed-certs --certificate-authority=$CACERT \
