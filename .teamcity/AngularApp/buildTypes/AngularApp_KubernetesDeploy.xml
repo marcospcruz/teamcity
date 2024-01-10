@@ -12,8 +12,10 @@
 	echo downloading kubectl from $URL
 	curl -LO $URL
     ls -la
-    echo creating simlink 
-    mv kubectl /usr/bin/ -fv
+    echo moving kubectl to $HOME
+    mv kubectl $HOME/kubectl -fv
+    echo -n adding to PATH:
+    PATH=$PATH:$HOME
     echo checking version: $(kubectl version --client)
 fi
 kubectl cluster-info]]></param>
