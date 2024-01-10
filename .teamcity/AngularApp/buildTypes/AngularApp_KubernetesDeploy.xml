@@ -48,8 +48,11 @@ kubectl config set-cluster kubernetes \
 --server=https://192.168.65.23:6443
 # set-context
 kubectl config set-context kubernetes \
+--current \
 --namespace=default \
 --user=kubernetes-admin \
+# config view
+kubectl config view
 # cluster-info
 kubectl cluster-info
 #kubectl \
