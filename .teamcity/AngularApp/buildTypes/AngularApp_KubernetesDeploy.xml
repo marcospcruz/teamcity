@@ -72,6 +72,31 @@ kubectl cluster-info
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_12" name="deploy" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[kubectl apply -f <<EOF -
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: web-pod
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-pod
+  template:
+    metadata:
+      name: web-pod
+      labels:
+        app: web-pod
+    spec:
+      containers:
+      - name: web-pod
+        image: angular:latest]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
