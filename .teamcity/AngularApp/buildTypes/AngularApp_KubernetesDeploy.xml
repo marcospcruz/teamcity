@@ -43,7 +43,8 @@ CACERT=${SERVICEACCOUNT}/ca.crt
 #curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET ${AP
 kubectl config set-cluster e2e --embed-certs --certificate-authority=$CACERT \
 --namespace default \
---user kubernetes-admin@kubernetes
+--user kubernetes-admin@kubernetes \
+--tls-server-name=cluster.local
 # cluster-info
 kubectl cluster-info
 #kubectl \
