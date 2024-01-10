@@ -51,7 +51,7 @@ kubectl config set-context kubernetes-admin@kubernetes \
 --cluster=kubernetes \
 --namespace=default \
 --user=kubernetes-admin 
-kubectl config current-context kubernetes-admin@kubernetes
+kubectl config use-context kubernetes-admin@kubernetes
 # config view
 kubectl config get-contexts
 kubectl config view
