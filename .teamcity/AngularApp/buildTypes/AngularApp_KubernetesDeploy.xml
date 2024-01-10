@@ -76,7 +76,7 @@ kubectl config view
           <param name="script.content"><![CDATA[# cluster-info
 kubectl cluster-info
 kubectl apply -f <<EOF -
-apiVersion: v1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: web-pod
