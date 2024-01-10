@@ -75,7 +75,7 @@ kubectl cluster-info
       <runner id="RUNNER_12" name="deploy" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[kubectl apply -f <<EOF -
-apiVersion: apps/v1beta1
+apiVersion: v1
 kind: Deployment
 metadata:
   name: web-pod
