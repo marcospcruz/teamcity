@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c55956e8-619c-4c82-b380-56864067ea38" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>Angular App</name>
-  <parameters />
+  <parameters>
+    <param name="env.docker_user" value="marcospcruz" />
+  </parameters>
   <cleanup />
 </project>
 
