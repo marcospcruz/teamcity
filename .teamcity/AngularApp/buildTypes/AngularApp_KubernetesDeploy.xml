@@ -47,11 +47,12 @@ kubectl config set-cluster kubernetes \
 --tls-server-name=cluster.local \
 --server=https://192.168.65.23:6443
 # set-context
-kubectl config set-context kubernetes \
+kubectl config set-context --current \
 --current \
 --namespace=default \
 --user=kubernetes-admin \
 # config view
+kubectl config get-contexts
 kubectl config view
 # cluster-info
 kubectl cluster-info
