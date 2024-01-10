@@ -24,7 +24,7 @@ echo checking version: $(kubectl version)
       </runner>
       <runner id="RUNNER_10" name="set cluster" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[rm ~/.kube -rfv
+          <param name="script.content"><![CDATA[rm ~/.kube -rf
 # Point to the internal API server hostname https://192.168.65.23:6443
 APISERVER=https://kubernetes.default.svc
 
@@ -49,7 +49,6 @@ kubectl config set-cluster kubernetes \
 # set-context
 kubectl config set-context kubernetes-admin@kubernetes \
 --cluster=kubernetes \
---current \
 --namespace=default \
 --user=kubernetes-admin \
 # config view
