@@ -24,7 +24,8 @@ echo checking version: $(kubectl version)
       </runner>
       <runner id="RUNNER_10" name="set cluster" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[# Point to the internal API server hostname https://192.168.65.23:6443
+          <param name="script.content"><![CDATA[rm ~/.kube -rfv
+# Point to the internal API server hostname https://192.168.65.23:6443
 APISERVER=https://kubernetes.default.svc
 
 # Path to ServiceAccount token
