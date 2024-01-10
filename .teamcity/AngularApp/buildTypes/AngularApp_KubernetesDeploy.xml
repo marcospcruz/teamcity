@@ -20,35 +20,27 @@ kubectl cluster-info]]></param>
       </runner>
       <runner id="RUNNER_10" name="set cluster" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[apiVersion: v1
-kind: Pod
-spec:
-  containers:
-  - image: debian:latest
-    imagePullPolicy: IfNotPresent
-    name: deploy-pod
-    command: |
-    # Point to the internal API server hostname
-    APISERVER=https://kubernetes.default.svc
+          <param name="script.content"><![CDATA[# Point to the internal API server hostname
+APISERVER=https://kubernetes.default.svc
 
-	# Path to ServiceAccount token
-	SERVICEACCOUNT=/var/run/secrets/kubernetes.io/serviceaccount
+# Path to ServiceAccount token
+SERVICEACCOUNT=/var/run/secrets/kubernetes.io/serviceaccount
 
-	# Read this Pod's namespace
-	NAMESPACE=$(cat ${SERVICEACCOUNT}/namespace)
+# Read this Pod's namespace
+NAMESPACE=$(cat ${SERVICEACCOUNT}/namespace)
 
-	# Read the ServiceAccount bearer token
-	TOKEN=$(cat ${SERVICEACCOUNT}/token)
+# Read the ServiceAccount bearer token
+TOKEN=$(cat ${SERVICEACCOUNT}/token)
 
-	# Reference the internal certificate authority (CA)
-	CACERT=${SERVICEACCOUNT}/ca.crt
+# Reference the internal certificate authority (CA)
+CACERT=${SERVICEACCOUNT}/ca.crt
 
-	# Explore the API with TOKEN
-	curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET ${AP
-    kubectl config set-cluster e2e --embed-certs --certificate-authority=$CACERT \
-    kubectl cluster-info
-    #kubectl \
-    #--token "Authorization: Bearer ${TOKEN}" \]]></param>
+# Explore the API with TOKEN
+curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET ${AP
+kubectl config set-cluster e2e --embed-certs --certificate-authority=$CACERT \
+kubectl cluster-info
+#kubectl \
+#--token "Authorization: Bearer ${TOKEN}" \]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
