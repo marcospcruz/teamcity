@@ -4,7 +4,20 @@
   <description />
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_9" name="download kubectl" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[if [ ! -f "/usr/bin/kubectl" ];then
+	URL="https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm64/kubectl"
+	echo downloading kubectl from $URL
+	curl -LO $URL
+    echo checking version: $(kubectl version --client)
+fi]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
     </vcs-settings>
