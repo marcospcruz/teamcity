@@ -57,7 +57,10 @@ kubectl config set-context kubernetes-admin@kubernetes \
 --namespace=default \
 --user=kubernetes-admin 
 kubectl config use-context kubernetes-admin@kubernetes
-kubectl config set-credentials kubernetes-admin --client-certificate=$CLIENT_CERT --embed-certs=true
+kubectl config set-credentials kubernetes-admin \
+--client-certificate=$CLIENT_CERT \
+--client-key=$CLIENT_KEY \
+--embed-certs=true
 # config view
 kubectl config get-contexts
 kubectl config view
