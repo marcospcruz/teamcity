@@ -52,6 +52,7 @@ kubectl config set-context kubernetes-admin@kubernetes \
 --namespace=default \
 --user=kubernetes-admin 
 kubectl config use-context kubernetes-admin@kubernetes
+kubectl config set-credentials kubernetes-admin --token=$TOKEN
 # config view
 kubectl config get-contexts
 kubectl config view
