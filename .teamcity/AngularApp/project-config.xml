@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c55956e8-619c-4c82-b380-56864067ea38" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>Angular App</name>
-  <parameters>
-    <param name="env.docker_pwd" value="credentialsJSON:5ee96582-dcaf-466f-8f33-b9abef0cdf53" spec="password display='normal' readOnly='true' label='password'" />
-  </parameters>
+  <parameters />
   <cleanup />
 </project>
 
