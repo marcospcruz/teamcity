@@ -47,6 +47,8 @@ kubectl config set-cluster kubernetes \
 --server=$APISERVER
 # set-context
 kubectl config set-context kubernetes-admin@kubernetes \
+--cluster=kubernetes \
+--current \
 --namespace=default \
 --user=kubernetes-admin \
 # config view
