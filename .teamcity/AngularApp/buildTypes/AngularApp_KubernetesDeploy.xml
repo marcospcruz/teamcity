@@ -15,8 +15,7 @@
     echo moving kubectl to /usr/bin
     mv kubectl /usr/bin/kubectl -fv
 fi
-chomod 755 /usr/bin/kubectl
-ls -l $(which kubectl)
+chmod 755 /usr/bin/kubectl
 echo checking version: $(kubectl version --client)
 kubectl cluster-info]]></param>
           <param name="teamcity.step.mode" value="default" />
