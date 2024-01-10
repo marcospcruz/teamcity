@@ -2,6 +2,25 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c55956e8-619c-4c82-b380-56864067ea38" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>Angular App</name>
   <parameters />
+  <project-extensions>
+    <extension id="kube-3" type="CloudProfile">
+      <parameters>
+        <param name="apiServerUrl" value="https://192.168.65.23:6443" />
+        <param name="authStrategy" value="client-cert" />
+        <param name="cloud-code" value="kube" />
+        <param name="description" value="" />
+        <param name="enabled" value="true" />
+        <param name="name" value="kubernetes cluster" />
+        <param name="next-hour" value="5" />
+        <param name="profileId" value="kube-3" />
+        <param name="profileInstanceLimit" value="1" />
+        <param name="secure:clientCertData" value="credentialsJSON:814731c3-664c-4c77-a509-2619b67f49f1" />
+        <param name="secure:clientKeyData" value="credentialsJSON:c8096d62-1887-4150-bfe9-ca04e5af3ee6" />
+        <param name="terminate-after-build" value="true" />
+        <param name="terminate-idle-time" value="30" />
+      </parameters>
+    </extension>
+  </project-extensions>
   <cleanup />
 </project>
 
