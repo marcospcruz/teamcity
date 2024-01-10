@@ -46,7 +46,7 @@ kubectl config set-cluster kubernetes \
 --certificate-authority=$CACERT \
 --server=$APISERVER
 # set-context
-kubectl config set-context kubernetes \
+kubectl config set-context kubernetes-admin@kubernetes \
 --namespace=default \
 --user=kubernetes-admin \
 # config view
