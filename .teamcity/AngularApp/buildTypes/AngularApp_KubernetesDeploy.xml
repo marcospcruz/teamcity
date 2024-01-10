@@ -38,15 +38,16 @@ TOKEN=$(cat ${SERVICEACCOUNT}/token)
 
 # Reference the internal certificate authority (CA)
 CACERT=${SERVICEACCOUNT}/ca.crt
-cat $CACERT
+
 # Explore the API with TOKEN
 #curl --cacert ${CACERT} --header "Authorization: Bearer ${TOKEN}" -X GET ${AP
 kubectl config set-cluster kubernetes \
---embec-certs=true \
+--embed-certs=true \
 --certificate-authority=$CACERT \
 --namespace=default \
---user=kubernetes-admin@kubernetes \
---tls-server-name=https://192.168.65.23:6443
+--user=kubernetes-admin \
+--tls-server-name=cluster.local \
+--server=https://192.168.65.23:6443
 # cluster-info
 kubectl cluster-info
 #kubectl \
