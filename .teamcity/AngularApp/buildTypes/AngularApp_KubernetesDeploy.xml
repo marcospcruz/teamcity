@@ -64,8 +64,7 @@ kubectl config set-credentials kubernetes-admin \
 # config view
 kubectl config get-contexts
 kubectl config view
-# cluster-info
-kubectl cluster-info
+
 #kubectl \
 #--token "Authorization: Bearer ${TOKEN}" \]]></param>
           <param name="teamcity.step.mode" value="default" />
