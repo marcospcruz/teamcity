@@ -44,10 +44,12 @@ CACERT=${SERVICEACCOUNT}/ca.crt
 kubectl config set-cluster kubernetes \
 --embed-certs=true \
 --certificate-authority=$CACERT \
---namespace=default \
---user=kubernetes-admin \
 --tls-server-name=cluster.local \
 --server=https://192.168.65.23:6443
+# set-context
+kubectl config set-context kubernetes \
+--namespace=default \
+--user=kubernetes-admin \
 # cluster-info
 kubectl cluster-info
 #kubectl \
