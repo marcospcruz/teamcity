@@ -11,8 +11,9 @@
 	URL="https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/arm64/kubectl"
 	echo downloading kubectl from $URL
 	curl -LO $URL
+    ls -la
     echo creating simlink 
-    ln -s kubectl /usr/bin/
+    mv kubectl /usr/bin/ -fv
     echo checking version: $(kubectl version --client)
 fi
 kubectl cluster-info]]></param>
