@@ -20,18 +20,7 @@
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements />
-    <build-triggers>
-      <build-trigger id="TRIGGER_1" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="+:*" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-        </parameters>
-        <build-customization enforceCleanCheckout="true" enforceCleanCheckoutForDependencies="true">
-          <parameters />
-        </build-customization>
-      </build-trigger>
-    </build-triggers>
+    <build-triggers />
     <cleanup />
   </settings>
 </build-type>
