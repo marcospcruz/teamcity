@@ -28,7 +28,7 @@
       <runner id="RUNNER_15" name="" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="push" />
-          <param name="docker.image.namesAndTags" value="registry:30500/frontend:latest" />
+          <param name="docker.image.namesAndTags" value="docker-registry:30500/frontend:latest" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
