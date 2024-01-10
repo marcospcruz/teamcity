@@ -24,7 +24,7 @@ echo checking version: $(kubectl version)
       </runner>
       <runner id="RUNNER_10" name="set cluster" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[# Point to the internal API server hostname
+          <param name="script.content"><![CDATA[# Point to the internal API server hostname https://192.168.65.23:6443
 APISERVER=https://kubernetes.default.svc
 
 # Path to ServiceAccount token
@@ -44,11 +44,9 @@ CACERT=${SERVICEACCOUNT}/ca.crt
 kubectl config set-cluster kubernetes \
 --embed-certs=true \
 --certificate-authority=$CACERT \
---tls-server-name=cluster.local \
---server=https://192.168.65.23:6443
+--server=$APISERVER
 # set-context
-kubectl config set-context --current \
---current \
+kubectl config set-context kubernetes \
 --namespace=default \
 --user=kubernetes-admin \
 # config view
