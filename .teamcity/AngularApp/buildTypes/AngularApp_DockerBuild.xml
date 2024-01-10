@@ -27,6 +27,9 @@
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
+        <build-customization enforceCleanCheckout="true" enforceCleanCheckoutForDependencies="true">
+          <parameters />
+        </build-customization>
       </build-trigger>
     </build-triggers>
     <cleanup />
