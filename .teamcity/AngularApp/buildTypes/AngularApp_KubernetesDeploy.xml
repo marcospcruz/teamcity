@@ -12,12 +12,12 @@
 	echo downloading kubectl from $URL
 	curl -LO $URL
     ls -la
-    echo moving kubectl to $HOME
+    echo moving kubectl to /usr/bin
     mv kubectl /usr/bin/kubectl -fv
-    chomod 755 /usr/bin/kubectl
-    ls -l $(which kubectl)
-    echo checking version: $(kubectl version --client)
 fi
+chomod 755 /usr/bin/kubectl
+ls -l $(which kubectl)
+echo checking version: $(kubectl version --client)
 kubectl cluster-info]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
