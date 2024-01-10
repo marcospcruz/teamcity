@@ -17,7 +17,7 @@
 fi
 chmod 755 /usr/bin/kubectl
 echo checking version: $(kubectl version)
-kubectl cluster-info]]></param>
+#kubectl cluster-info]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
