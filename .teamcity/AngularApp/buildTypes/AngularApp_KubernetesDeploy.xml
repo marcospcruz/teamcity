@@ -12,7 +12,8 @@
 	echo downloading kubectl from $URL
 	curl -LO $URL
     echo checking version: $(kubectl version --client)
-fi]]></param>
+fi
+kubectl cluster-info]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
