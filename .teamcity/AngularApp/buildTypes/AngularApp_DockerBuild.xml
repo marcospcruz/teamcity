@@ -15,7 +15,7 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_14" name="push image" type="DockerCommand">
+      <runner id="RUNNER_14" name="tag image" type="DockerCommand">
         <parameters>
           <param name="command.args" value="frontend:latest registry:30500/frontend:latest" />
           <param name="docker.command.type" value="other" />
