@@ -3,7 +3,6 @@
   <name>Angular App</name>
   <parameters>
     <param name="env.docker_pwd" value="credentialsJSON:5ee96582-dcaf-466f-8f33-b9abef0cdf53" spec="password display='normal' readOnly='true' label='password'" />
-    <param name="env.docker_user" value="marcospcruz" />
   </parameters>
   <cleanup />
 </project>
