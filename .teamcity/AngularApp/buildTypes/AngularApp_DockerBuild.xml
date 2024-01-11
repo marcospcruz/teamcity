@@ -17,7 +17,7 @@
       </runner>
       <runner id="RUNNER_14" name="tag image" type="DockerCommand">
         <parameters>
-          <param name="command.args" value="frontend:latest registry.docker-registry:30500/frontend:latest" />
+          <param name="command.args" value="frontend:latest registry.docker-registry:5000/frontend:latest" />
           <param name="docker.command.type" value="other" />
           <param name="docker.push.remove.image" value="true" />
           <param name="docker.sub.command" value="tag" />
