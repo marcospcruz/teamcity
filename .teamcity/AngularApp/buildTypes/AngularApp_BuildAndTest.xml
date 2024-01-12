@@ -9,7 +9,8 @@
         <parameters>
           <param name="plugin.docker.imageId" value="node:12.22.9" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install" />
+          <param name="shellScript"><![CDATA[npm install -g @angular/cli
+npm install]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
