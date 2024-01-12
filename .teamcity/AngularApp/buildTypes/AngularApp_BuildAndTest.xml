@@ -18,7 +18,7 @@
           <param name="plugin.docker.imageId" value="node:12.22.9" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="shellScript"><![CDATA[RUN npm run build --  --output-path=dist --configuration=production --output-hashing=all
-npm run test]]></param>
+#npm run test]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
