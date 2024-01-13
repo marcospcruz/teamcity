@@ -19,7 +19,7 @@
       </runner>
       <runner id="RUNNER_7" name="" type="nodejs-runner">
         <parameters>
-          <param name="plugin.docker.imageId" value="node:12.22.9" />
+          <param name="plugin.docker.imageId" value="node:latest" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="shellScript" value="npm install" />
           <param name="teamcity.step.mode" value="default" />
