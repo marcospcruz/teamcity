@@ -40,6 +40,13 @@
     </vcs-settings>
     <requirements />
     <build-triggers />
+    <build-extensions>
+      <extension id="DockerSupport" type="DockerSupport">
+        <parameters>
+          <param name="cleanupPushed" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <cleanup />
   </settings>
 </build-type>
