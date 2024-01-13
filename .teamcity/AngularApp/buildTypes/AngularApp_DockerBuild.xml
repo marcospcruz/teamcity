@@ -9,7 +9,9 @@
         <parameters>
           <param name="plugin.docker.imageId" value="node:12.22.9" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="plugin.docker.run.parameters" value="%env.NPM_AUTH_TOKEN%" />
+          <param name="plugin.docker.run.parameters"><![CDATA[%env.NPM_AUTH_TOKEN%
+%NODE_VERSION%
+%ANGULAR_VERSION%]]></param>
           <param name="shellScript" value="npm install" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
