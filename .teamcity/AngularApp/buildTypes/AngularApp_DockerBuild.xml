@@ -5,6 +5,14 @@
   <settings>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_8" name="" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:12.22.9" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript" value="npm install" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_5" name="" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="build" />
@@ -31,14 +39,6 @@
           <param name="docker.image.namesAndTags" value="registry.docker-registry.svc.cluster.local:5000/frontend:latest" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_8" name="" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:12.22.9" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
