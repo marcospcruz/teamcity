@@ -14,5 +14,6 @@
     </extension>
   </project-extensions>
   <cleanup />
+  <buildTypesOrder order="AngularApp_Nodejs,AngularApp_DockerBuild,AngularApp_KubernetesDeploy" />
 </project>
 
