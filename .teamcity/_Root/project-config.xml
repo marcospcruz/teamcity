@@ -15,6 +15,15 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_2" type="OAuthProvider">
+      <parameters>
+        <param name="displayName" value="Docker Registry" />
+        <param name="providerType" value="Docker" />
+        <param name="repositoryUrl" value="https://docker.io" />
+        <param name="secure:userPass" value="credentialsJSON:5ee96582-dcaf-466f-8f33-b9abef0cdf53" />
+        <param name="userName" value="marcospcruz" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_3" type="versionedSettings">
       <parameters>
         <param name="buildSettings" value="PREFER_CURRENT" />
