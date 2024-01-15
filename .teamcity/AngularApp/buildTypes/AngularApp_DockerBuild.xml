@@ -9,7 +9,7 @@
     <build-runners>
       <runner id="RUNNER_5" name="" type="DockerCommand">
         <parameters>
-          <param name="command.args" value="TOKEN=%env.NPM_AUTH_TOKEN%" />
+          <param name="command.args" value="--build-arg TOKEN=%env.NPM_AUTH_TOKEN%" />
           <param name="docker.command.type" value="build" />
           <param name="docker.image.namesAndTags" value="frontend:latest" />
           <param name="docker.push.remove.image" value="true" />
