@@ -104,7 +104,14 @@ EOF]]></param>
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_4" type="buildDependencyTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="dependsOn" value="AngularApp_DockerBuild" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <dependencies>
       <depend-on sourceBuildTypeId="AngularApp_DockerBuild">
         <options>
