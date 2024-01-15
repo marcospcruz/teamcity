@@ -3,7 +3,9 @@
   <name>Nodejs</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="NPM_AUTH_TOKEN" value="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" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_11" name="New build step" type="nodejs-runner">
         <parameters>
