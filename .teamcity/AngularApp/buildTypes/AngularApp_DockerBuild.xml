@@ -39,7 +39,15 @@
       <vcs-entry-ref root-id="AngularApp_GitGithubComMarcospcruzAngularAppGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_3" type="buildDependencyTrigger">
+        <parameters>
+          <param name="afterSuccessfulBuildOnly" value="true" />
+          <param name="branchFilter" value="+:*" />
+          <param name="dependsOn" value="AngularApp_Nodejs" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <build-extensions>
       <extension id="DockerSupport" type="DockerSupport">
         <parameters>
