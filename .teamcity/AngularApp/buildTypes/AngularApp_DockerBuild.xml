@@ -3,7 +3,9 @@
   <name>docker build</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="env.NPM_AUTH_TOKEN" value="%system.NPM_AUTH_TOKEN%" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_5" name="" type="DockerCommand">
         <parameters>
