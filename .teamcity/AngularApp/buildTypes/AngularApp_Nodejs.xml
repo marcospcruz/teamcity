@@ -7,7 +7,7 @@
     <build-runners>
       <runner id="RUNNER_11" name="New build step" type="nodejs-runner">
         <parameters>
-          <param name="plugin.docker.imageId" value="node:14" />
+          <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
           <param name="plugin.docker.run.parameters"><![CDATA[%env.NPM_AUTH_TOKEN%
