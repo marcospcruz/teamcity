@@ -5,11 +5,11 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_1" name="" type="nodejs-runner">
+      <runner id="RUNNER_1" name="npm install angular" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="node:12.22.9" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install" />
+          <param name="shellScript" value="npm install @angular/cli" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
