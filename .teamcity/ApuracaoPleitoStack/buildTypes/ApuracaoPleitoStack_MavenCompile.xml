@@ -25,7 +25,20 @@
       <vcs-entry-ref root-id="ApuracaoPleitoStack_ApuracaoPleitoStack" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_1" type="vcsTrigger">
+        <parameters>
+          <param name="groupCheckinsByCommitter" value="true" />
+          <param name="perCheckinTriggering" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+        <build-customization>
+          <parameters>
+            <param name="ANGULAR_VERSION" value="13.3.0" />
+          </parameters>
+        </build-customization>
+      </build-trigger>
+    </build-triggers>
     <cleanup />
   </settings>
 </build-type>
