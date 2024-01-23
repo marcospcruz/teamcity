@@ -3,6 +3,9 @@
   <name>maven-compile</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="+:*frontend" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_8" name="maven package" type="Maven2">
