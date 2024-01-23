@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="branchFilter" value="+:*frontend" />
+      <option name="branchFilter" value="+:*frontend&#xD;&#xA;-:&lt;default&gt;" />
     </options>
     <parameters />
     <build-runners>
