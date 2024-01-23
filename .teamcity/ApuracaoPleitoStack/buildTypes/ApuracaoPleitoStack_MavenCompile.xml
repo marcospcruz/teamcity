@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="branchFilter" value="+:*frontend&#xD;&#xA;-:&lt;default&gt;" />
+      <option name="branchFilter" value="+:*frontend" />
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
     </options>
