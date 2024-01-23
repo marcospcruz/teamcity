@@ -10,7 +10,9 @@
           <param name="plugin.docker.imageId" value="node:lts" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
-          <param name="shellScript"><![CDATA[npm ci
+          <param name="shellScript"><![CDATA[npm install --global @angular/cli
+npm install
+npm run build
 npm run test]]></param>
           <param name="teamcity.build.workingDir" value="apuracao-pleito-angular" />
           <param name="teamcity.step.mode" value="default" />
