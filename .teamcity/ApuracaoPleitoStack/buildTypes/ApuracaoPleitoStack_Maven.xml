@@ -3,6 +3,9 @@
   <name>maven</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="+:refs/heads/frontend" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_11" name="package" type="Maven2">
