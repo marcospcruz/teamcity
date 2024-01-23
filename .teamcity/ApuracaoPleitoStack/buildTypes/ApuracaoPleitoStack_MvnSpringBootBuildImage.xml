@@ -25,7 +25,16 @@
       <vcs-entry-ref root-id="ApuracaoPleitoStack_ApuracaoPleitoStack" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_7" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="watchChangesInDependencies" value="true" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <dependencies>
       <depend-on sourceBuildTypeId="ApuracaoPleitoStack_Maven">
         <options>
