@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="branchFilter" value="+:refs/heads/frontend" />
+      <option name="branchFilter" value="+:refs/heads/*" />
     </options>
     <parameters />
     <build-runners>
