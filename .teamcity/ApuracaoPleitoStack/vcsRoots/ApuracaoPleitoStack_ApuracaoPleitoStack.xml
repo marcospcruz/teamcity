@@ -8,6 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="push_url" value="git@github.com:marcospcruz/apuracao-pleito-stack.git" />
   <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="teamcity:branchSpec" value="+:*frontend" />
   <param name="teamcitySshKey" value="id_rsa" />
   <param name="url" value="git@github.com:marcospcruz/apuracao-pleito-stack.git" />
   <param name="useAlternates" value="AUTO" />
