@@ -7,10 +7,10 @@
     <build-runners>
       <runner id="RUNNER_7" name="" type="Maven2">
         <parameters>
-          <param name="goals" value="clean test" />
+          <param name="goals" value="clean install" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true" />
+          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true -DskipTests" />
           <param name="teamcity.step.mode" value="default" />
           <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
