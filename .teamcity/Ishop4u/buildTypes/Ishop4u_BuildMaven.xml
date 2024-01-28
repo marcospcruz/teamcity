@@ -5,7 +5,7 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_7" name="" type="Maven2">
+      <runner id="RUNNER_7" name="mvn install" type="Maven2">
         <parameters>
           <param name="goals" value="clean install" />
           <param name="localRepoScope" value="agent" />
