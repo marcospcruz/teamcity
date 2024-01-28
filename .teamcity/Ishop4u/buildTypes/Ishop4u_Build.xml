@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7e5fee14-b140-4631-9438-02e96acf339e" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
-  <name>Build</name>
+  <name>Build maven</name>
   <description />
   <settings>
     <parameters />
