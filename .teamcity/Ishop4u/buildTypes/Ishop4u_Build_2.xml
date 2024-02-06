@@ -5,7 +5,7 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_22" name="" type="simpleRunner">
+      <runner id="RUNNER_22" name="docker setup" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[if [ -f "docker_setup.sh" ];then
 	chmod 755 docker_setup.sh
