@@ -12,7 +12,7 @@
 	./docker_setup.sh
 fi
 ls -la
-curl -L \
+curl -X -L \
   -X POST \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer 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" \
