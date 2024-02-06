@@ -20,7 +20,7 @@
         <param name="displayName" value="Docker Registry" />
         <param name="providerType" value="Docker" />
         <param name="repositoryUrl" value="https://docker.io" />
-        <param name="secure:userPass" value="credentialsJSON:5ee96582-dcaf-466f-8f33-b9abef0cdf53" />
+        <param name="secure:userPass" value="credentialsJSON:5cb32254-6695-4cd1-9b04-e927db3942e5" />
         <param name="userName" value="marcospcruz" />
       </parameters>
     </extension>
@@ -41,8 +41,8 @@
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:f287f13e-b112-43b9-86bd-1b79043c68e0" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:5cb32254-6695-4cd1-9b04-e927db3942e5" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:5cb32254-6695-4cd1-9b04-e927db3942e5" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:a2a13bdf-9579-4536-9a36-dc83374a9cd6" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_9" type="CloudImage">
