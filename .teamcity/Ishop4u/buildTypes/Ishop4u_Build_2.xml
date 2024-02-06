@@ -24,7 +24,8 @@
       <runner id="RUNNER_8" name="docker" type="DockerCommand">
         <parameters>
           <param name="command.args" value="--pull" />
-          <param name="docker.command.type" value="build" />
+          <param name="docker.command.type" value="push" />
+          <param name="docker.image.namesAndTags" value="ishop4u" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerfile.path" value="Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
