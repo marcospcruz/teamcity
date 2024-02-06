@@ -5,20 +5,13 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_22" name="docker setup" type="Maven2">
+      <runner id="RUNNER_22" name="docker setup" type="DockerCommand">
         <parameters>
-          <param name="goals" value="spring-boot:build-image" />
-          <param name="localRepoScope" value="agent" />
-          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs" value="-pl ishop4u-microservice" />
-          <param name="teamcity.coverage.emma.include.source" value="true" />
-          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
-          <param name="teamcity.coverage.idea.includePatterns" value="*" />
-          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="docker.command.type" value="build" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
-          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
-          <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
       </runner>
       <runner id="RUNNER_8" name="docker" type="DockerCommand">
