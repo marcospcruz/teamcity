@@ -41,7 +41,7 @@
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:5cb32254-6695-4cd1-9b04-e927db3942e5" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:342c1333-c491-4b81-888b-27efa75c480e" />
         <param name="secure:gitHubApp.privateKey" value="credentialsJSON:a2a13bdf-9579-4536-9a36-dc83374a9cd6" />
       </parameters>
     </extension>
