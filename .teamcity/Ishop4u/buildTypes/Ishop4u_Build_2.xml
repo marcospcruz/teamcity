@@ -7,9 +7,10 @@
     <build-runners>
       <runner id="RUNNER_22" name="docker setup" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[if [ -f "docker_setup.sh" ];then
-	chmod 755 docker_setup.sh
-	./docker_setup.sh
+          <param name="script.content"><![CDATA[SH=$(pwd)/docker_setup.sh
+if [ -f "${SH}" ];then
+	chmod 755 ${SH}
+	${SH}
 fi
 ls -la
 curl -X -L \
