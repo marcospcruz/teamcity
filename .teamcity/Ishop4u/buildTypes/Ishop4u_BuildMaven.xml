@@ -53,9 +53,7 @@
       <extension id="BUILD_EXT_2" type="pullRequests">
         <parameters>
           <param name="authenticationType" value="vcsRoot" />
-          <param name="filterAuthorRole" value="MEMBER" />
-          <param name="filterSourceBranch" value="+:refs/heads/*" />
-          <param name="filterTargetBranch" value="+:refs/heads/master" />
+          <param name="filterAuthorRole" value="EVERYBODY" />
           <param name="providerType" value="github" />
           <param name="vcsRootId" value="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsMaster" />
         </parameters>
