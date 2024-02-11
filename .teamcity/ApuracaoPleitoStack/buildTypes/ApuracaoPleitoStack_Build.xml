@@ -10,10 +10,11 @@
     <build-runners>
       <runner id="RUNNER_1" name="build image" type="simpleRunner">
         <parameters>
+          <param name="log.stderr.as.errors" value="true" />
           <param name="script.content"><![CDATA[#!/bin/bash
 function checkVar() {
-	echo "checking $2"
-	[ -z "$1" ] && echo empty var && exit 1
+	echo "checking $2 => $1"
+	[ -z $1 ] && echo empty var && exit 1
 }
 
 export WEB_IMAGE=apuracao-pleito/${WEB_DOCKERFILE}
