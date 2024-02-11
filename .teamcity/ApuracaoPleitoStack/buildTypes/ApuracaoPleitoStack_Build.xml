@@ -5,7 +5,7 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_1" name="" type="simpleRunner">
+      <runner id="RUNNER_1" name="build image" type="simpleRunner">
         <parameters>
           <param name="script.content" value="./docker_build_image.sh" />
           <param name="teamcity.step.mode" value="default" />
