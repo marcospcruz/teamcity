@@ -5,6 +5,7 @@
   <settings>
     <parameters>
       <param name="env.ELEICOES_DATABASE" value="eleicoes2022" />
+      <param name="system.WEB_DOCKERFILE" value="apuracao-pleito-web" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_1" name="build image" type="simpleRunner">
