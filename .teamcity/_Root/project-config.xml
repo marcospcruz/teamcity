@@ -20,7 +20,7 @@
         <param name="displayName" value="Docker Registry" />
         <param name="providerType" value="Docker" />
         <param name="repositoryUrl" value="https://docker.io" />
-        <param name="secure:userPass" value="credentialsJSON:5cb32254-6695-4cd1-9b04-e927db3942e5" />
+        <param name="secure:userPass" value="credentialsJSON:4248760e-ed2a-4c2c-a80c-8d90eb644154" />
         <param name="userName" value="marcospcruz" />
       </parameters>
     </extension>
