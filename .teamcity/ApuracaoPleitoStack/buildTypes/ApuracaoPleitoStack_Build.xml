@@ -11,7 +11,7 @@
       <runner id="RUNNER_1" name="build image" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[export WEB_IMAGE=apuracao-pleito/${WEB_DOCKERFILE}
-export WEB_JAR="target/${WEB_DOCKERFILE}-0.0.2-SNAPSHOT.jar"
+export WEB_JAR="${WEB_DOCKERFILE}/target/*.jar"
 
 chmod 755 docker_build_image.sh
 ./docker_build_image.sh]]></param>
