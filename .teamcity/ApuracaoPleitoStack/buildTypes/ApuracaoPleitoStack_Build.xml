@@ -11,6 +11,17 @@
       <param name="env.WEB_DOCKERFILE" value="apuracao-pleito-web" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_19" name="x" type="DockerCommand">
+        <parameters>
+          <param name="command.args" value="--build-arg ELEICOES_DATABASE=eleicoes2022 -t" />
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="apuracao-pleito/apuracao-pleito-web" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="Dockerfile.web" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_1" name="build image" type="simpleRunner">
         <parameters>
           <param name="log.stderr.as.errors" value="true" />
@@ -31,17 +42,6 @@ chmod 755 docker_build_image.sh
 ./docker_build_image.sh Dockerfile.web]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_19" name="x" type="DockerCommand">
-        <parameters>
-          <param name="command.args" value="--build-arg ELEICOES_DATABASE=eleicoes2022 -t" />
-          <param name="docker.command.type" value="build" />
-          <param name="docker.image.namesAndTags" value="apuracao-pleito/apuracao-pleito-web" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerfile.path" value="Dockerfile.web" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
     </build-runners>
