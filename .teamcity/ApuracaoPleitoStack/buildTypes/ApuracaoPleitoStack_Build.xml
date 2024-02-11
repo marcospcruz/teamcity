@@ -3,6 +3,9 @@
   <name>docker build</name>
   <description />
   <settings>
+    <options>
+      <option name="publishArtifactCondition" value="SUCCESSFUL" />
+    </options>
     <parameters>
       <param name="env.ELEICOES_DATABASE" value="eleicoes2022" />
       <param name="env.WEB_DOCKERFILE" value="apuracao-pleito-web" />
