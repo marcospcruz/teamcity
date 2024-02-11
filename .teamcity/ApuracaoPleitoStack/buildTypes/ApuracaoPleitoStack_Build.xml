@@ -7,7 +7,8 @@
     <build-runners>
       <runner id="RUNNER_1" name="build image" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="./docker_build_image.sh" />
+          <param name="script.content"><![CDATA[chmod 755 docker_build_image.sh
+./docker_build_image.sh]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
