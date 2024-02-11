@@ -31,7 +31,7 @@ function checkVar() {
 	[ -z $1 ] && echo empty var && exit 1
 }
 
-export WEB_IMAGE=apuracao-pleito/${WEB_DOCKERFILE}
+export WEB_IMAGE=registry.docker-registry.svc.cluster.local:30500/${WEB_DOCKERFILE}
 export WEB_JAR="${WEB_DOCKERFILE}/target/*.jar"
 
 checkVar $WEB_DOCKERFILE WEB_DOCKERFILE
