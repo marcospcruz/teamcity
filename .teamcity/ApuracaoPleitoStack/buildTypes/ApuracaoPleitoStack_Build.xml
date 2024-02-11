@@ -12,7 +12,7 @@
         <parameters>
           <param name="script.content"><![CDATA[export WEB_IMAGE=apuracao-pleito/${WEB_DOCKERFILE}
 export WEB_JAR="${WEB_DOCKERFILE}/target/*.jar"
-
+echo $WEB_IMAGE and $WEB_JAR and $WEB_DOCKERFILE
 chmod 755 docker_build_image.sh
 ./docker_build_image.sh]]></param>
           <param name="teamcity.step.mode" value="default" />
