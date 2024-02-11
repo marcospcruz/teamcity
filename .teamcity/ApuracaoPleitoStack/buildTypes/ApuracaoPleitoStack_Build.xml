@@ -25,7 +25,7 @@ checkVar $WEB_DOCKERFILE WEB_DOCKERFILE
 echo $WEB_IMAGE and $WEB_JAR and $WEB_DOCKERFILE
 
 chmod 755 docker_build_image.sh
-./docker_build_image.sh]]></param>
+./docker_build_image.sh Dockerfile.web]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
