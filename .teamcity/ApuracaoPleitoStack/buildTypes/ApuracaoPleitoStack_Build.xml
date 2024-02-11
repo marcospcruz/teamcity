@@ -12,14 +12,16 @@
         <parameters>
           <param name="script.content"><![CDATA[#!/bin/bash
 function checkVar() {
+	echo "checking $2"
 	[ -z "$1" ] && echo empty var && exit 1
 }
 
 export WEB_IMAGE=apuracao-pleito/${WEB_DOCKERFILE}
 export WEB_JAR="${WEB_DOCKERFILE}/target/*.jar"
-checkVar $WEB_DOCKERFILE
-checkVar $WEB_IMAGE
-checkVar $WEB_JAR
+
+checkVar $WEB_DOCKERFILE WEB_DOCKERFILE
+checkVar $WEB_IMAGE WEB_IMAGE
+checkVar $WEB_JAR WEB_JAR
 echo $WEB_IMAGE and $WEB_JAR and $WEB_DOCKERFILE
 
 chmod 755 docker_build_image.sh
