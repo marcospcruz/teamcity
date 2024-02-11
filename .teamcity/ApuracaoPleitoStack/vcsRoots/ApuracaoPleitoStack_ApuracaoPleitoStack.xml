@@ -9,7 +9,7 @@
   <param name="push_url" value="git@github.com:marcospcruz/apuracao-pleito-stack.git" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/heads/frontend" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:e891b3d0-56da-4ecf-beae-13907e3b3789" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:bcf343bd-f031-4f4d-8dd2-2377d1d3557a" />
   <param name="url" value="https://github.com/marcospcruz/apuracao-pleito-stack" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
