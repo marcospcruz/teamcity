@@ -3,7 +3,9 @@
   <name>Build</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="env.ELEICOES_DATABASE" value="eleicoes2022" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_1" name="build image" type="simpleRunner">
         <parameters>
