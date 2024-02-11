@@ -3,6 +3,9 @@
   <name>mvn package Build</name>
   <description />
   <settings>
+    <options>
+      <option name="artifactRules" value="** =&gt; **" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_2" name="packge" type="Maven2">
