@@ -10,7 +10,8 @@
     <build-runners>
       <runner id="RUNNER_1" name="build image" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[function checkVar() {
+          <param name="script.content"><![CDATA[#!/bin/bash
+function checkVar() {
 	[ -z "$1" ] && echo empty var && exit 1
 }
 
