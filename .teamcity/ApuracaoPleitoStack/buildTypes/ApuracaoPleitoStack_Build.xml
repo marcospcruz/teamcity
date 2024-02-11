@@ -15,7 +15,7 @@
         <parameters>
           <param name="command.args" value="--build-arg ELEICOES_DATABASE=eleicoes2022" />
           <param name="docker.command.type" value="build" />
-          <param name="docker.image.namesAndTags" value="apuracao-pleito/apuracao-pleito-web:latest" />
+          <param name="docker.image.namesAndTags" value="registry.docker-registry.svc.cluster.local:30500/apuracao-pleito-web:latest" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerfile.path" value="Dockerfile.web" />
           <param name="dockerfile.source" value="PATH" />
