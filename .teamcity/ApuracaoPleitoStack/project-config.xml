@@ -3,5 +3,6 @@
   <name>Apuracao Pleito Stack</name>
   <parameters />
   <cleanup />
+  <buildTypesOrder order="ApuracaoPleitoStack_MvnPackageBuild,ApuracaoPleitoStack_Build" />
 </project>
 
