@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="artifactRules" value="** =&gt; **" />
+      <option name="artifactRules" value="** =&gt; ." />
     </options>
     <parameters />
     <build-runners>
