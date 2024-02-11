@@ -66,12 +66,6 @@ chmod 755 docker_build_image.sh
           <param name="teamcity.perfmon.feature.enabled" value="true" />
         </parameters>
       </extension>
-      <extension id="DockerSupport" type="DockerSupport">
-        <parameters>
-          <param name="login2registry" value="PROJECT_EXT_2" />
-          <param name="loginCheckbox" value="on" />
-        </parameters>
-      </extension>
     </build-extensions>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoStack_MvnPackageBuild" cleanDestination="false">
