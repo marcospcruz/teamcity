@@ -11,7 +11,7 @@
       <param name="env.WEB_DOCKERFILE" value="apuracao-pleito-web" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_19" name="x" type="DockerCommand">
+      <runner id="RUNNER_19" name="build" type="DockerCommand">
         <parameters>
           <param name="command.args" value="--build-arg ELEICOES_DATABASE=eleicoes2022" />
           <param name="docker.command.type" value="build" />
