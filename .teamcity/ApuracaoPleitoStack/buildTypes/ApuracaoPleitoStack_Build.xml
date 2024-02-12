@@ -70,7 +70,7 @@ chmod 755 docker_build_image.sh
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoStack_MvnPackageBuild" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:code=&gt;." />
+        <artifact sourcePath="+:.teamcity=&gt;.teamcity" />
       </dependency>
     </artifact-dependencies>
     <dependencies>
