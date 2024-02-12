@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="artifactRules" value="** =&gt; .teamcity" />
+      <option name="artifactRules" value="** =&gt; %teamcity.agent.work.dir%" />
     </options>
     <parameters />
     <build-runners>
