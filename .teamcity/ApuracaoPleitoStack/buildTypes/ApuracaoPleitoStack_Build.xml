@@ -22,28 +22,6 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_1" name="build image" type="simpleRunner">
-        <parameters>
-          <param name="log.stderr.as.errors" value="true" />
-          <param name="script.content"><![CDATA[#!/bin/bash
-function checkVar() {
-	echo "checking $2 => $1"
-	[ -z $1 ] && echo empty var && exit 1
-}
-
-export WEB_IMAGE=registry.docker-registry.svc.cluster.local:30500/${WEB_DOCKERFILE}
-export WEB_JAR="${WEB_DOCKERFILE}/target/*.jar"
-
-checkVar $WEB_DOCKERFILE WEB_DOCKERFILE
-
-echo $WEB_IMAGE and $WEB_JAR and $WEB_DOCKERFILE
-
-chmod 755 docker_build_image.sh
-./docker_build_image.sh Dockerfile.web]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoStack_HttpsGithubComMarcospcruzApuracaoPleitoStackRefsHeadsMaster" />
