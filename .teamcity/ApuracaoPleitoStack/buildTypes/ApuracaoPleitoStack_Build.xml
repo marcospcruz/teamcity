@@ -22,6 +22,15 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_20" name="push" type="DockerCommand">
+        <parameters>
+          <param name="docker.command.type" value="push" />
+          <param name="docker.image.namesAndTags" value="registry.docker-registry.svc.cluster.local:30500/apuracao-pleito-web:latest" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="ApuracaoPleitoStack_HttpsGithubComMarcospcruzApuracaoPleitoStackRefsHeadsMaster" />
