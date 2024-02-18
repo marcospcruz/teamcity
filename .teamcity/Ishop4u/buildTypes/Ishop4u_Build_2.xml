@@ -56,6 +56,12 @@
         </parameters>
       </extension>
     </build-extensions>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="Ishop4u_BuildMaven" cleanDestination="true">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="+:artifact.tar.gz =&gt; ." />
+      </dependency>
+    </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="Ishop4u_BuildMaven">
         <options>
