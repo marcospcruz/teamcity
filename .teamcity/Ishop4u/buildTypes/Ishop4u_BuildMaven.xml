@@ -54,14 +54,6 @@
           <param name="teamcity.perfmon.feature.enabled" value="true" />
         </parameters>
       </extension>
-      <extension id="BUILD_EXT_2" type="pullRequests">
-        <parameters>
-          <param name="authenticationType" value="vcsRoot" />
-          <param name="filterAuthorRole" value="EVERYBODY" />
-          <param name="providerType" value="github" />
-          <param name="vcsRootId" value="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsMaster" />
-        </parameters>
-      </extension>
     </build-extensions>
     <cleanup />
   </settings>
