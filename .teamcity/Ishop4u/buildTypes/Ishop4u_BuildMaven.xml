@@ -5,6 +5,7 @@
   <settings>
     <options>
       <option name="artifactRules" value="+:**/* =&gt; ." />
+      <option name="publishArtifactCondition" value="SUCCESSFUL" />
     </options>
     <parameters />
     <build-runners>
