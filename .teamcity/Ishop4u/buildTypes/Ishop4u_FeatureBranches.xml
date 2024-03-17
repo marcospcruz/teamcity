@@ -42,6 +42,7 @@ git flow feature finish]]></param>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Ishop4u_FeatureAndBugfixBranches" />
+      <vcs-entry-ref root-id="GitGithubComMarcospcruzTeamcityGit" />
     </vcs-settings>
     <requirements />
     <build-triggers>
