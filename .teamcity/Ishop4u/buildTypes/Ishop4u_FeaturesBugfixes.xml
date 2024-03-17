@@ -7,7 +7,7 @@
     <build-runners>
       <runner id="RUNNER_15" name="Mvn Test" type="Maven2">
         <parameters>
-          <param name="goals" value="-T5C test" />
+          <param name="goals" value="test" />
           <param name="isIncremental" value="true" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
@@ -17,7 +17,6 @@
           <param name="teamcity.coverage.idea.includePatterns" value="*" />
           <param name="teamcity.coverage.jacoco.classpath" value="*business*" />
           <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
-          <param name="teamcity.coverage.runner" value="JACOCO" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
           <param name="userSettingsSelection" value="userSettingsSelection:default" />
