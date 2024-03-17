@@ -7,7 +7,10 @@
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec" value="+:refs/heads/master" />
+  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/master
++:refs/heads/develop
++:refs/heads/feature/*
++:refs/heads/hotfix/*]]></param>
   <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:b76afdb1-26d3-42a8-b823-01ed34db7995" />
   <param name="url" value="https://github.com/marcospcruz/ishop4u" />
   <param name="useAlternates" value="AUTO" />
