@@ -6,7 +6,7 @@
     <parameters />
     <build-runners />
     <vcs-settings>
-      <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsMaster1" />
+      <vcs-entry-ref root-id="Ishop4u_MasterBranch" />
     </vcs-settings>
     <requirements />
     <build-triggers />
