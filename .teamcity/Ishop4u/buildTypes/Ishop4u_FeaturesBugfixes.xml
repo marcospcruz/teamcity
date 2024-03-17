@@ -41,7 +41,8 @@
     <build-triggers>
       <build-trigger id="TRIGGER_9" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:refs/heads/feature/*" />
+          <param name="branchFilter"><![CDATA[+:refs/heads/feature/*
++:refs/heads/master]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
