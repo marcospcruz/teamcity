@@ -38,9 +38,11 @@
     <build-triggers>
       <build-trigger id="TRIGGER_9" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter"><![CDATA[+:refs/heads/feature/*
-+:refs/heads/bugfix/*
-+:<default>]]></param>
+          <param name="branchFilter"><![CDATA[+:feature/*
++:bugfix/*
++:refs/heads/feature/*
++:refs/heads/bugfix/*]]></param>
+          <param name="groupCheckinsByCommitter" value="true" />
           <param name="perCheckinTriggering" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
