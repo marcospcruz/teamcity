@@ -13,6 +13,13 @@
     </vcs-settings>
     <requirements />
     <build-triggers />
+    <build-extensions>
+      <extension id="parallelTests" type="parallelTests">
+        <parameters>
+          <param name="numberOfBatches" value="5" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <cleanup />
   </settings>
 </build-type>
