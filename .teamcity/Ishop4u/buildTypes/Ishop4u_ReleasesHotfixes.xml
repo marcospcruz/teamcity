@@ -3,6 +3,9 @@
   <name>Releases-Hotfixes</name>
   <description />
   <settings>
+    <options>
+      <option name="excludeDefaultBranchChanges" value="true" />
+    </options>
     <parameters />
     <build-runners />
     <vcs-settings>
