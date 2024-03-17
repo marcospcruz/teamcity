@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8be770df-8c1a-47d9-9a23-ae44f856a243" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
-  <name>feature and bugfix branches</name>
+  <name>https://github.com/marcospcruz/ishop4u#refs/heads/features-bugfixes</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
   <param name="authMethod" value="ACCESS_TOKEN" />
