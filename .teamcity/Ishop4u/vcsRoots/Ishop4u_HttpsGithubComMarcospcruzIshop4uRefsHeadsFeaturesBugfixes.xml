@@ -15,6 +15,7 @@
   <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:e30fcb9e-eb7a-44c5-b106-b8fd816fccbf" />
   <param name="url" value="https://github.com/marcospcruz/ishop4u" />
   <param name="useAlternates" value="AUTO" />
+  <param name="username" value="oauth2" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 
