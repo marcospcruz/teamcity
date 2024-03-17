@@ -4,15 +4,7 @@
   <description />
   <settings>
     <parameters />
-    <build-runners>
-      <runner id="RUNNER_9" name="docker setup sh" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="./docker_setup.sh" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-    </build-runners>
+    <build-runners />
     <vcs-settings>
       <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsMaster1" />
     </vcs-settings>
