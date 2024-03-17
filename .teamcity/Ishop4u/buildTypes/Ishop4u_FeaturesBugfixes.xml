@@ -38,7 +38,14 @@
       <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsFeaturesBugfixes" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="remoteRunOnBranch" type="remoteRunOnBranch">
+        <parameters>
+          <param name="branchy:jetbrains.git" value="pattern:jetbrains.git" />
+          <param name="pattern:jetbrains.git" value="refs/heads/feature/*" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <build-extensions>
       <extension id="parallelTests" type="parallelTests">
         <parameters>
