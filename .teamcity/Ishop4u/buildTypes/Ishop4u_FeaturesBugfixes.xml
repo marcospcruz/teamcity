@@ -44,6 +44,9 @@
           <param name="branchy:jetbrains.git" value="pattern:jetbrains.git" />
           <param name="pattern:jetbrains.git" value="refs/heads/feature/*" />
         </parameters>
+        <build-customization enforceCleanCheckout="true">
+          <parameters />
+        </build-customization>
       </build-trigger>
     </build-triggers>
     <build-extensions>
