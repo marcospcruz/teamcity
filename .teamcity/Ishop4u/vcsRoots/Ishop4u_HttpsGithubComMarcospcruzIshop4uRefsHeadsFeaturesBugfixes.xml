@@ -12,7 +12,7 @@
 +:refs/heads/bugfix/*
 +:refs/remotes/origin/feature/*
 +:refs/remotes/origin/bugfix/*]]></param>
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:03af265e-9f13-4109-b2a6-ef1a5d784172" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:8deaffaa-61c1-466e-ab21-af6470d8f669" />
   <param name="url" value="https://github.com/marcospcruz/ishop4u" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
