@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="dd5270ca-2532-440d-a497-682b31ad0aa0" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
-  <name>https://github.com/marcospcruz/ishop4u/#refs/heads/master</name>
+  <name>Master</name>
   <description />
   <settings>
     <parameters />
