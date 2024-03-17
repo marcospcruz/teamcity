@@ -42,7 +42,7 @@ git branch -d ${CURRENT_BRANCH}]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsReleasesHotfixes" />
+      <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsBugfixesFeatures" />
     </vcs-settings>
     <requirements />
     <build-triggers>
