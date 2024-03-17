@@ -6,7 +6,6 @@
   <param name="authMethod" value="PASSWORD" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
-  <param name="push_url" value="git@github.com:marcospcruz/ishop4u.git" />
   <param name="reportTagRevisions" value="true" />
   <param name="secure:password" value="credentialsJSON:cc896d5a-e696-4a34-b9e8-0567d538fce7" />
   <param name="submoduleCheckout" value="CHECKOUT" />
