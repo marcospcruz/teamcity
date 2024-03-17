@@ -16,7 +16,7 @@
           <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_11" name="docker b" type="DockerCommand">
+      <runner id="RUNNER_11" name="docker build" type="DockerCommand">
         <parameters>
           <param name="command.args" value="--pull" />
           <param name="docker.command.type" value="build" />
