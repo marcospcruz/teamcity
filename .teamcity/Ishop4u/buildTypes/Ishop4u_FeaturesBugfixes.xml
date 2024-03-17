@@ -26,6 +26,13 @@
           <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_16" name="merge to dev" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="git flow feature finish $(git branch|grep '*'|cut -d'*' -f2|cut -d/ -f2)" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsFeaturesBugfixes" />
