@@ -3,5 +3,6 @@
   <name>Ishop4u</name>
   <parameters />
   <cleanup />
+  <buildTypesOrder order="Ishop4u_FeatureBranches,Ishop4u_DevelopBranch" />
 </project>
 
