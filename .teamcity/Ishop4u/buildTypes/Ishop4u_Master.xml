@@ -3,6 +3,9 @@
   <name>Master</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="+:" />
+    </options>
     <parameters />
     <build-runners />
     <vcs-settings>
