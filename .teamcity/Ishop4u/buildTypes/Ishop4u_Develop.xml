@@ -3,6 +3,9 @@
   <name>Develop</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="-:*&#xD;&#xA;+:refs/heads/develop" />
+    </options>
     <parameters />
     <build-runners />
     <vcs-settings>
