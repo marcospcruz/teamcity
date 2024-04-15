@@ -3,9 +3,6 @@
   <name>Features-Bugfixes</name>
   <description />
   <settings>
-    <options>
-      <option name="branchFilter" value="+:refs/heads/feature/*&#xD;&#xA;+:refs/heads/bugfix/*&#xD;&#xA;+:refs/remotes/origin/feature/*&#xD;&#xA;+:refs/remotes/origin/bugfix/*" />
-    </options>
     <disabled-settings>
       <setting-ref ref="RUNNER_15" />
     </disabled-settings>
