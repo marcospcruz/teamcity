@@ -44,7 +44,15 @@ git branch -d ${CURRENT_BRANCH}]]></param>
       <vcs-entry-ref root-id="GitGithubComMarcospcruzTeamcityGit" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_1" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <build-extensions>
       <extension id="parallelTests" type="parallelTests">
         <parameters>
