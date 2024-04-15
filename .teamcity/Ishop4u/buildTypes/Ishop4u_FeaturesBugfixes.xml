@@ -3,9 +3,6 @@
   <name>Features-Bugfixes</name>
   <description />
   <settings>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_15" />
-    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_15" name="Mvn Test" type="Maven2">
