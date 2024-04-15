@@ -46,8 +46,7 @@ git branch -d ${CURRENT_BRANCH}]]></param>
     <build-triggers>
       <build-trigger id="TRIGGER_9" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter"><![CDATA[+:refs/heads/feature/*
-+:refs/heads/bugfix/*]]></param>
+          <param name="branchFilter" value="+:*" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
       </build-trigger>
