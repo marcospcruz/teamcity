@@ -28,7 +28,9 @@
     <vcs-settings>
       <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsReleasesHotfixes" />
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <exists id="RQ_1" name="docker.server.version" />
+    </requirements>
     <build-triggers />
     <cleanup />
   </settings>
