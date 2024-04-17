@@ -7,7 +7,8 @@
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/feature/*
+  <param name="teamcity:branchSpec"><![CDATA[+:feature/*
++:refs/heads/feature/*
 +:refs/heads/bugfix/*
 +:refs/remotes/origin/feature/*
 +:refs/remotes/origin/bugfix/*]]></param>
