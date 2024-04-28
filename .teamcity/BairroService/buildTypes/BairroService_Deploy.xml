@@ -10,6 +10,20 @@
     </vcs-settings>
     <requirements />
     <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="BairroService_Develop">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="BairroService_FeaturesBugfixes">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
     <cleanup />
   </settings>
 </build-type>
