@@ -2,67 +2,12 @@
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="23eb53cc-1bc2-48f7-a861-96d85d193b95" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>Deploy</name>
   <description />
-  <settings>
+  <settings ref="Ishop4u_Deploy">
     <parameters />
-    <build-runners>
-      <runner id="RUNNER_8" name="run deploy" type="Maven2">
-        <parameters>
-          <param name="goals" value="deploy" />
-          <param name="localRepoScope" value="agent" />
-          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs" value="%repo-param%" />
-          <param name="target.jdk.home" value="%env.JDK_17_0_ARM64%" />
-          <param name="teamcity.coverage.emma.include.source" value="true" />
-          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
-          <param name="teamcity.coverage.idea.includePatterns" value="*" />
-          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
-          <param name="userSettingsSelection" value="userSettingsSelection:default" />
-        </parameters>
-      </runner>
-    </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsMaster1" />
-    </vcs-settings>
+    <build-runners />
+    <vcs-settings />
     <requirements />
-    <build-triggers>
-      <build-trigger id="TRIGGER_6" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="+:*" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-        </parameters>
-      </build-trigger>
-    </build-triggers>
-    <build-extensions>
-      <extension id="perfmon" type="perfmon">
-        <parameters>
-          <param name="teamcity.perfmon.feature.enabled" value="true" />
-        </parameters>
-      </extension>
-    </build-extensions>
-    <dependencies>
-      <depend-on sourceBuildTypeId="Ishop4u_Develop">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-      <depend-on sourceBuildTypeId="Ishop4u_FeaturesBugfixes">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-      <depend-on sourceBuildTypeId="Ishop4u_ReleasesHotfixes">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
+    <build-triggers />
     <cleanup />
   </settings>
 </build-type>
