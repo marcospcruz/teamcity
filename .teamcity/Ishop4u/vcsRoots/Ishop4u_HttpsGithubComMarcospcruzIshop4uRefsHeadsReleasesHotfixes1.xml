@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="f84897a9-bed4-4bcf-81f4-283da42ab58e" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>https://github.com/marcospcruz/ishop4u#refs/heads/releases-hotfixes (1)</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="ACCESS_TOKEN" />
+  <param name="branch" value="refs/heads/develop" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="submoduleCheckout" value="IGNORE" />
+  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/*
++:refs/heads/hotfix/*]]></param>
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:1e2f61aa-4b34-4b35-849d-e8f3f67047e9" />
+  <param name="url" value="https://github.com/marcospcruz/ishop4u" />
+  <param name="useAlternates" value="AUTO" />
+  <param name="username" value="oauth2" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+
