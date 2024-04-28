@@ -8,7 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/heads/master" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:03434d7e-dd98-459c-a132-053f351d8bb1" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:cead6d0c-3a53-42d1-b122-3719e157b214" />
   <param name="url" value="https://github.com/marcospcruz/ishop4u" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
