@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="BairroService" uuid="3e4e5490-5b65-4af2-ad41-5e67ce0dd44b" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Endereco Service</name>
+  <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_8" type="OAuthProvider">
+      <parameters>
+        <param name="connectionSubtype" value="gitHubApp" />
+        <param name="displayName" value="GitHub App (1)" />
+        <param name="gitHubApp.appId" value="384599" />
+        <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
+        <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
+        <param name="providerType" value="GitHubApp" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:b76c32d4-7b17-467a-a967-632c1a56af67" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:583dc350-ea16-45a7-8290-0afed2474694" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+
