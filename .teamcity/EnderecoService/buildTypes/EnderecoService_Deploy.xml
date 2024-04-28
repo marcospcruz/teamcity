@@ -10,6 +10,20 @@
     </vcs-settings>
     <requirements />
     <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="EnderecoService_Develop">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="endereco_fb">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
     <cleanup />
   </settings>
 </build-type>
