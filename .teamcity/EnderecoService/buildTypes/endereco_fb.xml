@@ -3,7 +3,9 @@
   <name>Features-Bugfixes</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="env.JDK_17_0_ARM64" value="17.0.10" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_15" name="Mvn Test" type="Maven2">
         <parameters>
