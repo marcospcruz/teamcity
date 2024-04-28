@@ -5,6 +5,9 @@
   <parameters>
     <param name="ANGULAR_VERSION" value="13.3.0" />
     <param name="NODE_VERSION" value="14.20" />
+    <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
+%add-release-hotfix%
+%add-develop%]]></param>
     <param name="add-feature-and-bugfix"><![CDATA[+:refs/heads/feature/*
 +:refs/heads/bugfix/*]]></param>
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
