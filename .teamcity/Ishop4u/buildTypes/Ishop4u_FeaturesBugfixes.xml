@@ -46,7 +46,16 @@
       <vcs-entry-ref root-id="Ishop4u_FeatureAndHotfix" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_3" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter"><![CDATA[+:refs/heads/feature/*
++:refs/heads/bugfix/*]]></param>
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <build-extensions>
       <extension id="parallelTests" type="parallelTests">
         <parameters>
