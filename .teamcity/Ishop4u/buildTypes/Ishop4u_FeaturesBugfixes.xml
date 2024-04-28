@@ -42,7 +42,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="Ishop4u_FeatureAndHotfix" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <build-extensions>
