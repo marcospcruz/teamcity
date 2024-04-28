@@ -8,8 +8,8 @@
     <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
 %add-release-hotfix%
 %add-develop%]]></param>
-    <param name="add-develop"><![CDATA[+:refs/heads/develop
-%exclude-master%]]></param>
+    <param name="add-develop"><![CDATA[%exclude-master%
++:refs/heads/develop]]></param>
     <param name="add-feature-and-bugfix"><![CDATA[+:refs/heads/feature/*
 +:refs/heads/bugfix/*
 %exclude-master%]]></param>
