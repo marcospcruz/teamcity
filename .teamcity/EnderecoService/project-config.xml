@@ -17,6 +17,6 @@
     </extension>
   </project-extensions>
   <cleanup />
-  <buildTypesOrder order="endereco_fb,EnderecoService_Deploy,EnderecoService_Develop" />
+  <buildTypesOrder order="endereco_fb,EnderecoService_Develop,EnderecoService_Deploy" />
 </project>
 
