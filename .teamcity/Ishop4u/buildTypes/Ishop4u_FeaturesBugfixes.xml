@@ -44,9 +44,6 @@
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsReleasesHotfixes" />
-      <vcs-entry-ref root-id="HttpsGithubComMarcospcruzBairroServiceFeatureAndBugfix">
-        <checkout-rule rule="+:. =&gt; .bairro-service" />
-      </vcs-entry-ref>
       <vcs-entry-ref root-id="HttpsGithubComMarcospcruzEnderecoServiceFeatureAndBugfix" />
     </vcs-settings>
     <requirements />
