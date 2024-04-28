@@ -11,7 +11,8 @@
     <param name="add-develop"><![CDATA[+:refs/heads/develop
 %exclude-master%]]></param>
     <param name="add-feature-and-bugfix"><![CDATA[+:refs/heads/feature/*
-+:refs/heads/bugfix/*]]></param>
++:refs/heads/bugfix/*
+%exclude-master%]]></param>
     <param name="add-release-hotfix"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
