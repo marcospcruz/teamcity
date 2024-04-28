@@ -10,9 +10,9 @@
 %add-develop%]]></param>
     <param name="add-develop"><![CDATA[%exclude-master%
 +:refs/heads/develop]]></param>
-    <param name="add-feature-and-bugfix"><![CDATA[+:refs/heads/feature/*
-+:refs/heads/bugfix/*
-%exclude-master%]]></param>
+    <param name="add-feature-and-bugfix"><![CDATA[%exclude-master%
++:refs/heads/feature/*
++:refs/heads/bugfix/*]]></param>
     <param name="add-release-hotfix"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*
 %exclude-master%]]></param>
