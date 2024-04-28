@@ -40,7 +40,6 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="GitGithubComMarcospcruzTeamcityGit" />
       <vcs-entry-ref root-id="EnderecoService_HttpsGithubComMarcospcruzEnderecoServiceRefsHeadsMaster" />
     </vcs-settings>
     <requirements />
