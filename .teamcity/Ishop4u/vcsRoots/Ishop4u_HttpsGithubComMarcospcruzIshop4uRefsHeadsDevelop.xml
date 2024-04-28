@@ -6,7 +6,7 @@
   <param name="authMethod" value="ACCESS_TOKEN" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
-  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="submoduleCheckout" value="IGNORE" />
   <param name="teamcity:branchSpec" value="+:refs/heads/develop" />
   <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:09a12766-da85-4bd0-95bd-2014107cb434" />
   <param name="url" value="https://github.com/marcospcruz/ishop4u" />
