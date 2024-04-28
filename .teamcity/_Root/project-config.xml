@@ -8,6 +8,7 @@
     <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
 %add-release-hotfix%
 %add-develop%]]></param>
+    <param name="add-develop-branch" value="+:refs/heads/develop" />
     <param name="add-feature-and-bugfix"><![CDATA[+:refs/heads/feature/*
 +:refs/heads/bugfix/*]]></param>
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
