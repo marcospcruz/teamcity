@@ -5,7 +5,9 @@
   <settings ref="Ishop4u_Deploy">
     <parameters />
     <build-runners />
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="EnderecoService_HttpsGithubComMarcospcruzEnderecoServiceFeatureAndBugfix1" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <cleanup />
