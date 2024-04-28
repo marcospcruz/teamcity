@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="8c8c0fe5-489d-40ba-84ab-b9ff860b2cd2" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Endereco Service</name>
+  <parameters />
+  <cleanup />
+</project>
+
