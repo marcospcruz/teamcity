@@ -6,7 +6,7 @@
     <parameters />
     <build-runners />
     <vcs-settings>
-      <vcs-entry-ref root-id="EnderecoService_HttpsGithubComMarcospcruzEnderecoServiceFeatureAndBugfix1" />
+      <vcs-entry-ref root-id="EnderecoService_HttpsGithubComMarcospcruzEnderecoServiceDevelop1" />
     </vcs-settings>
     <requirements />
     <build-triggers />
