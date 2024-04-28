@@ -24,7 +24,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="BairroService_HttpsGithubComMarcospcruzBairroServiceRefsHeadsMaster_2" />
+      <vcs-entry-ref root-id="BairroService_HttpsGithubComMarcospcruzBairroServiceDevelop1" />
     </vcs-settings>
     <requirements />
     <build-triggers>
