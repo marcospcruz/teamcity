@@ -41,7 +41,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="HttpsGithubComMarcospcruzBairroServiceFeatureAndBugfix" />
+    </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_1" type="vcsTrigger">
