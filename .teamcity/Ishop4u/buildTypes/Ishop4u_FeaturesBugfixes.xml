@@ -41,7 +41,6 @@
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsBugfixesFeatures" />
-      <vcs-entry-ref root-id="GitGithubComMarcospcruzTeamcityGit" />
     </vcs-settings>
     <requirements />
     <build-triggers>
