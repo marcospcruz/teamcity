@@ -22,7 +22,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="HttpsGithubComMarcospcruzEnderecoServiceFeatureAndBugfix" />
+      <vcs-entry-ref root-id="EnderecoService_HttpsGithubComMarcospcruzEnderecoServiceFeatureAndBugfix1" />
     </vcs-settings>
     <requirements />
     <build-triggers>
