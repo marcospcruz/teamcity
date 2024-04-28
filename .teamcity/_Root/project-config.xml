@@ -15,6 +15,7 @@
     <param name="add-release-hotfix"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
+    <param name="exclude-master" value="-:refs/heads/master" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
     <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:41771b75-9069-4399-a12c-5ce9abb7dd65" spec="password display='hidden' readOnly='true' label='SPI'" />
   </parameters>
