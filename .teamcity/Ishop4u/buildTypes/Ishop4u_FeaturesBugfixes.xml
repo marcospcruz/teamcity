@@ -45,7 +45,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsReleasesHotfixes1" />
+    </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_3" type="vcsTrigger">
