@@ -7,7 +7,7 @@
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec" value="refs/heads/*" />
+  <param name="teamcity:branchSpec" value="+:refs/heads/master" />
   <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:b7b20a14-83a0-412f-b194-0b961d4abc2e" />
   <param name="url" value="https://github.com/marcospcruz/endereco-service" />
   <param name="useAlternates" value="AUTO" />
