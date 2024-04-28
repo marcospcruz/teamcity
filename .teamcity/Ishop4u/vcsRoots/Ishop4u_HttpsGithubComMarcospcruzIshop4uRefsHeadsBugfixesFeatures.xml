@@ -9,7 +9,7 @@
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/feature/*
 +:refs/heads/bugfix/*]]></param>
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:6b4a09f4-63f1-4382-a992-7c28471c82fa" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:b93b7853-3b9a-4cb7-aa61-77174e6baf23" />
   <param name="url" value="https://github.com/marcospcruz/ishop4u" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
