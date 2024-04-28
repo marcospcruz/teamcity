@@ -3,9 +3,6 @@
   <name>Features-Bugfixes</name>
   <description />
   <settings>
-    <options>
-      <option name="branchFilter" value="+:refs/heads/feature/*" />
-    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_15" name="Mvn Test" type="Maven2">
