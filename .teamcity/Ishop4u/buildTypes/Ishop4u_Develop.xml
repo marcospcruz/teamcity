@@ -10,7 +10,8 @@
           <param name="goals" value="package" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="runnerArgs" value="-DskipTests" />
+          <param name="runnerArgs" value="-DskipTests %repo-param%" />
+          <param name="target.jdk.home" value="%env.JDK_17_0_ARM64%" />
           <param name="teamcity.step.mode" value="default" />
           <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
