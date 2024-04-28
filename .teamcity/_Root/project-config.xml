@@ -7,8 +7,7 @@
     <param name="NODE_VERSION" value="14.20" />
     <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
 %add-release-hotfix%
-%add-develop%
-%exclude-master%]]></param>
+%add-develop%]]></param>
     <param name="add-develop" value="+:refs/heads/develop" />
     <param name="add-feature-and-bugfix"><![CDATA[+:refs/heads/feature/*
 +:refs/heads/bugfix/*]]></param>
