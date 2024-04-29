@@ -40,7 +40,7 @@
           <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
-          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+          <param name="userSettingsSelection" value="settings.xml" />
         </parameters>
       </runner>
     </build-runners>
