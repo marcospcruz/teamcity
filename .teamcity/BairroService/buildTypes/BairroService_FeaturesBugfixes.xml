@@ -47,7 +47,9 @@
     <vcs-settings>
       <vcs-entry-ref root-id="BairroService_HttpsGithubComMarcospcruzBairroServiceRefsHeadsMaster" />
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <exists id="RQ_3" name="env.JAVA_HOME" />
+    </requirements>
     <build-triggers>
       <build-trigger id="TRIGGER_1" type="vcsTrigger">
         <parameters>
