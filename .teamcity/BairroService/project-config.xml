@@ -3,6 +3,6 @@
   <name>Bairro Service</name>
   <parameters />
   <cleanup />
-  <buildTypesOrder order="BairroService_Develop,BairroService_FeaturesBugfixes,BairroService_Deploy" />
+  <buildTypesOrder order="BairroService_Develop,BairroService_FeaturesBugfixes,BairroService_ReleasesHotfixes" />
 </project>
 
