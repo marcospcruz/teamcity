@@ -25,9 +25,7 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="EnderecoService_HttpsGithubComMarcospcruzBairroServiceReleaseHotfix" />
-    </vcs-settings>
+    <vcs-settings />
     <requirements>
       <exists id="RQ_1" name="docker.server.version" />
     </requirements>
