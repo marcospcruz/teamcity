@@ -26,7 +26,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="BairroService_HttpsGithubComMarcospcruzBairroServiceRefsHeadsMaster" />
+      <vcs-entry-ref root-id="BairroService_HttpsGithubComMarcospcruzBairroServiceReleaseHotfix" />
     </vcs-settings>
     <requirements>
       <exists id="RQ_1" name="docker.server.version" />
