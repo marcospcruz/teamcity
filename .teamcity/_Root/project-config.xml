@@ -47,7 +47,7 @@
         <param name="showChanges" value="true" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_7" type="OAuthProvider">
+    <extension id="PROJECT_EXT_8" type="OAuthProvider">
       <parameters>
         <param name="connectionSubtype" value="gitHubApp" />
         <param name="displayName" value="GitHub App" />
@@ -55,8 +55,8 @@
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:efe97fff-7beb-428f-ab75-083c40008311" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:d8f4fa41-63e5-4539-b5de-d3f21a10de38" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:658f01a5-77b8-42d9-a668-24ebb4918f9c" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:d19bbaf4-e5bb-4795-bdd7-9805868934c3" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_9" type="CloudImage">
