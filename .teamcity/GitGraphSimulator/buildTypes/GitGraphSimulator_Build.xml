@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="branchFilter" value="-:refs/heads/master" />
+      <option name="branchFilter" value="-:master" />
     </options>
     <parameters />
     <build-runners>
