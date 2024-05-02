@@ -4,6 +4,7 @@
   <description />
   <settings>
     <options>
+      <option name="artifactRules" value="+:* =&gt; ." />
       <option name="branchFilter" value="" />
     </options>
     <parameters />
