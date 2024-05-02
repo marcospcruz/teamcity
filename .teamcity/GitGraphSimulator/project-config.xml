@@ -3,5 +3,6 @@
   <name>Git Graph Simulator</name>
   <parameters />
   <cleanup />
+  <buildTypesOrder order="GitGraphSimulator_Build,GitGraphSimulator_Build_2" />
 </project>
 
