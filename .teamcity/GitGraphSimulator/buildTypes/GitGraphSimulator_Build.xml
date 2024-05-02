@@ -21,7 +21,7 @@
         <parameters>
           <param name="plugin.docker.imageId" value="node:current-bullseye-slim" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm run build" />
+          <param name="shellScript" value="npm install" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
