@@ -3,6 +3,9 @@
   <name>Features-Bugfixes</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="-:refs/heads/master" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_14" name="npm install" type="nodejs-runner">
