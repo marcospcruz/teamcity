@@ -7,9 +7,6 @@
       <option name="artifactRules" value="+:* =&gt; ." />
       <option name="branchFilter" value="" />
     </options>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_14" />
-    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_14" name="npm install" type="nodejs-runner">
