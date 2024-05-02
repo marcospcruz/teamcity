@@ -3,6 +3,9 @@
   <name>Develop</name>
   <description />
   <settings>
+    <options>
+      <option name="artifactRules" value="+:* =&gt; ." />
+    </options>
     <parameters />
     <build-runners />
     <vcs-settings>
