@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="79b04fbc-615f-40e4-a2b8-03595be1dd04" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
-  <name>https://github.com/marcospcruz/demo-app#refs/heads/master</name>
+  <name>https://github.com/marcospcruz/demo-app#refs/heads/uat</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
   <param name="authMethod" value="ACCESS_TOKEN" />
@@ -8,7 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/heads/uat" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:890bd2f2-f553-4a88-8216-361e1b0e4566" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:6d32f411-50ec-4eeb-a3bb-b91d4ce3000d" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
