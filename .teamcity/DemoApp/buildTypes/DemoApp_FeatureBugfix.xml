@@ -40,15 +40,7 @@
       <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster" />
     </vcs-settings>
     <requirements />
-    <build-triggers>
-      <build-trigger id="TRIGGER_9" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="+:*" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-        </parameters>
-      </build-trigger>
-    </build-triggers>
+    <build-triggers />
     <build-extensions>
       <extension id="perfmon" type="perfmon">
         <parameters>
