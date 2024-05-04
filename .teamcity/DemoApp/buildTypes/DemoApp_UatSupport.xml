@@ -3,7 +3,9 @@
   <name>UAT Support</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="env.git.username" value="marcospcruz" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_23" name="Maven Release Prepare - Release Perform" type="Maven2">
         <parameters>
