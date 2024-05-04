@@ -5,7 +5,7 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_20" name="Sonar code quality" type="simpleRunner">
+      <runner id="RUNNER_20" name="Code Quality" type="simpleRunner">
         <parameters>
           <param name="script.content" value="echo code quality ok!" />
           <param name="teamcity.step.mode" value="default" />
