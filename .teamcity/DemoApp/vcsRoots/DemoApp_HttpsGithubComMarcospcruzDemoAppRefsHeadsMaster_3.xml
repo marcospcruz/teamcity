@@ -6,12 +6,12 @@
   <param name="authMethod" value="PASSWORD" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="credentialsJSON:6ff758c3-d6d3-42c5-9232-d0fe754578f2" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/heads/uat" />
   <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:6d32f411-50ec-4eeb-a3bb-b91d4ce3000d" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
-  <param name="username" value="%env.git.usertoken%" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 
