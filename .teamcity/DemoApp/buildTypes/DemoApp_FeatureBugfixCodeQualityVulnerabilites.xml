@@ -24,7 +24,11 @@
       <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_11" type="vcsTrigger">
+        <parameters />
+      </build-trigger>
+    </build-triggers>
     <dependencies>
       <depend-on sourceBuildTypeId="DemoApp_FeatureBugfix">
         <options>
