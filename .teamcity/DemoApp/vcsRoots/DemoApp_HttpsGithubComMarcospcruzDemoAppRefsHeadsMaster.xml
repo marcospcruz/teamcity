@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="dc4c4719-bc2d-4f9d-8a2b-bb9528040cdd" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
-  <name>https://github.com/marcospcruz/demo-app#refs/heads/master</name>
+  <name>https://github.com/marcospcruz/demo-app#refs/heads/feature-bugfix</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
   <param name="authMethod" value="ACCESS_TOKEN" />
