@@ -19,7 +19,7 @@
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
     <param name="exclude-master" value="-:refs/heads/master" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
-    <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:41771b75-9069-4399-a12c-5ce9abb7dd65" spec="password display='hidden' readOnly='true' label='SPI'" />
+    <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:d19bbaf4-e5bb-4795-bdd7-9805868934c3" spec="password display='hidden' readOnly='true' label='SPI'" />
   </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_1" type="ReportTab">
@@ -55,8 +55,8 @@
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:658f01a5-77b8-42d9-a668-24ebb4918f9c" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:d19bbaf4-e5bb-4795-bdd7-9805868934c3" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:ea252ac2-10ba-44c7-ab26-5cabee75adcd" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:a9e99809-308e-4f4a-bd70-853926678bd3" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_9" type="CloudImage">
