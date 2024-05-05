@@ -9,7 +9,7 @@
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/feature/*
 +:refs/heads/bugfix/*]]></param>
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:d52a87c1-36f6-407c-8f9f-87a66ad45692" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:3141ca79-0151-482e-bce4-3ba10e568cc1" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
