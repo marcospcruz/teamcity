@@ -37,7 +37,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster" />
+      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsFeatureBugfix1" />
     </vcs-settings>
     <requirements />
     <build-triggers />
