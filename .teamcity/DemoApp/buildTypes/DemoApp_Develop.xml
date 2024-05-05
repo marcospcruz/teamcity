@@ -3,6 +3,9 @@
   <name>Develop</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="+:refs/heads/develop" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_22" name="Maven Deploy" type="Maven2">
