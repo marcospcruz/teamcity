@@ -9,6 +9,13 @@
       <param name="env.git.usertoken" value="credentialsJSON:6ff03214-c6b3-444c-9564-9edd859951e9" spec="password display='normal'" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_24" name="Get commit message" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo &quot;##teamcity [setParameter name='COMMIT.message' value='$(git log -1 --pretty=%B)']&quot;" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_23" name="Maven Release Prepare - Release Perform" type="Maven2">
         <parameters>
           <param name="goals" value="release:prepare release:perform" />
@@ -23,13 +30,6 @@
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
           <param name="userSettingsSelection" value="userSettingsSelection:default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_24" name="Get commit message" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="echo &quot;##teamcity [setParameter name='COMMIT.message' value='$(git log -1 --pretty=%B)']&quot;" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
