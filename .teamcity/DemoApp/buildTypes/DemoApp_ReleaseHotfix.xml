@@ -4,7 +4,15 @@
   <description />
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_25" name="dummy" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo $(git branch|grep '*'|cut -d* -f2) ok" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster_4" />
     </vcs-settings>
