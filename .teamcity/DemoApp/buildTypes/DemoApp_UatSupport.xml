@@ -20,10 +20,6 @@
         </parameters>
       </runner>
       <runner id="RUNNER_23" name="Maven Release Prepare Perform" type="Maven2">
-        <conditions>
-          <does-not-contain name="COMMIT.message" value="prepare for next development iteration" />
-          <does-not-contain name="COMMIT.message" value="prepare release" />
-        </conditions>
         <parameters>
           <param name="goals" value="clean -DskipTests release:prepare release:perform" />
           <param name="localRepoScope" value="agent" />
