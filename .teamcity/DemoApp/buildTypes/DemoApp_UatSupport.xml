@@ -3,6 +3,9 @@
   <name>UAT Support</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="+:refs/heads/uat" />
+    </options>
     <parameters>
       <param name="env.git.password" value="credentialsJSON:e40d74e9-69ec-4909-8dd9-fa4b3cd4ef04" spec="password display='hidden' label='password'" />
       <param name="env.git.username" value="marcospcruz" />
