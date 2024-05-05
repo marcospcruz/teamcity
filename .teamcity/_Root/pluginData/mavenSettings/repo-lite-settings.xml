@@ -134,14 +134,14 @@ under the License.
 	<server>
 	  <!-- Id has to match the id provided in pom.xml -->
 	  <id>reposilite-releases</id>
-	  <username>{alias}</username>
-	  <password>{token}</password>
+	  <username>admin</username>
+	  <password>secret</password>
 	</server>
 	<server>
 	  <!-- Id has to match the id provided in pom.xml -->
 	  <id>reposilite-snapshots</id>
-	  <username>{alias}</username>
-	  <password>{token}</password>
+	  <username>admin</username>
+	  <password>secret</password>
 	</server>
   </servers>
 
