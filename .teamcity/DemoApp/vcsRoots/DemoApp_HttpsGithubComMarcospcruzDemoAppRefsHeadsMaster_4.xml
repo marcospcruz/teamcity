@@ -6,6 +6,7 @@
   <param name="authMethod" value="ACCESS_TOKEN" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
+  <param name="reportTagRevisions" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*
