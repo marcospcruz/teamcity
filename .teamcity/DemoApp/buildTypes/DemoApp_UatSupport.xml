@@ -19,13 +19,13 @@
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
-      <runner id="RUNNER_23" name="Maven Release Prepare" type="Maven2">
+      <runner id="RUNNER_23" name="Maven Release Prepare Perform" type="Maven2">
         <conditions>
           <does-not-contain name="COMMIT.message" value="prepare for next development iteration" />
           <does-not-contain name="COMMIT.message" value="prepare release" />
         </conditions>
         <parameters>
-          <param name="goals" value="clean %repo-param% -DskipTests release:prepare" />
+          <param name="goals" value="clean %repo-param% -DskipTests release:prepare release:perform" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
