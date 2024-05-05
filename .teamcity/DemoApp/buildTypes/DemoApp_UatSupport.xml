@@ -7,9 +7,9 @@
       <option name="branchFilter" value="+:refs/heads/uat" />
     </options>
     <parameters>
-      <param name="env.git.password" value="credentialsJSON:e40d74e9-69ec-4909-8dd9-fa4b3cd4ef04" spec="password display='hidden' label='password'" />
+      <param name="env.git.password" value="credentialsJSON:6ff03214-c6b3-444c-9564-9edd859951e9" spec="password display='hidden' label='password'" />
       <param name="env.git.username" value="marcospcruz" />
-      <param name="env.git.usertoken" value="credentialsJSON:6ff03214-c6b3-444c-9564-9edd859951e9" spec="password display='normal'" />
+      <param name="env.git.usertoken" value="credentialsJSON:e68b7db8-f591-4e7e-8672-cd7218b4e590" spec="password display='normal'" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_24" name="Get commit message" type="simpleRunner">
