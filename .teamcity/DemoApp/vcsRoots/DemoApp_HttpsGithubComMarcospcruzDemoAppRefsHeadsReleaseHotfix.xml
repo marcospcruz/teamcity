@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="24a29a8e-b8b6-4399-bb5c-25164e73b5d5" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
-  <name>https://github.com/marcospcruz/demo-app#refs/heads/master</name>
+  <name>https://github.com/marcospcruz/demo-app#refs/heads/release_hotfix</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
   <param name="authMethod" value="ACCESS_TOKEN" />
@@ -11,7 +11,7 @@
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*
 +:refs/tags/demo-app-*]]></param>
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:92d2c0ba-e47a-4cfe-97cf-33bd3365a290" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:9e05a12f-38d6-490c-a1f2-1c20d8cd198d" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
