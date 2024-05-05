@@ -8,7 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/heads/develop" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:890bd2f2-f553-4a88-8216-361e1b0e4566" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:b2fbeb66-343c-46f6-b21e-57dca9cfe226" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
