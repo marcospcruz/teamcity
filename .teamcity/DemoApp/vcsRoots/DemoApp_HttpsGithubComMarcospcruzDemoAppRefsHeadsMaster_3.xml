@@ -9,10 +9,9 @@
   <param name="push_url" value="https://github.com/marcospcruz/demo-app" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/heads/uat" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:066853ce-810d-4d63-86a4-7a78d685ec84" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:f1065883-f5e8-4d7e-ae51-2094b53b0afc" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
-  <param name="username" value="oauth2" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 
