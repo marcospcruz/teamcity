@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="branchFilter" value="%exclude-master%" />
+      <option name="branchFilter" value="%add-all-branches%" />
     </options>
     <parameters>
       <param name="add-all-branches"><![CDATA[%exclude-master%%
