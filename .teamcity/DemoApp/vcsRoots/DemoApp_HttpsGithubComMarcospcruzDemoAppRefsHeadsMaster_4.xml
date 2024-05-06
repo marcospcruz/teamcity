@@ -7,7 +7,7 @@
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec" value="refs/heads/*" />
+  <param name="teamcity:branchSpec" value="%add-all-branches%%" />
   <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:b2fbeb66-343c-46f6-b21e-57dca9cfe226" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
