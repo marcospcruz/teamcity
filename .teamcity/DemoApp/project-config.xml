@@ -3,6 +3,7 @@
   <name>Demo App</name>
   <parameters>
     <param name="COMMIT.message" value="" />
+    <param name="artifactory.url" value="http://reposilite.default:8080" />
   </parameters>
   <cleanup />
 </project>
