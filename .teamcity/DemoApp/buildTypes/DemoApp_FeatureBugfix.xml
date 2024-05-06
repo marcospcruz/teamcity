@@ -3,6 +3,9 @@
   <name>Test and Validation</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="%exclude-master%" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_17" name="Test" type="Maven2">
