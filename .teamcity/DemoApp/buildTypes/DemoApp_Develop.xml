@@ -16,7 +16,8 @@
           <param name="pomLocation" value="pom.xml" />
           <param name="runnerArgs"><![CDATA[-DskipTests
 -Dusername=admin
--Dusername=secret]]></param>
+-Dusername=secret
+-Dartifactory.url=%artifactory.url%]]></param>
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
           <param name="teamcity.coverage.idea.includePatterns" value="*" />
