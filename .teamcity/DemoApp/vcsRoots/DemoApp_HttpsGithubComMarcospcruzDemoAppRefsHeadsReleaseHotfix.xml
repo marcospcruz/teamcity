@@ -11,7 +11,7 @@
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*
 +:refs/tags/demo-app-*]]></param>
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:1e017667-cd63-46f2-8dcd-92c354a52578" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:03321f20-f20d-47d3-90f6-918c134a92be" />
   <param name="url" value="https://github.com/marcospcruz/demo-app" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
