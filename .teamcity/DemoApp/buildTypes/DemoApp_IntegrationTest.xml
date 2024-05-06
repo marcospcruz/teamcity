@@ -3,7 +3,12 @@
   <name>Integration Test</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="add-all-branches"><![CDATA[%exclude-master%%
+%add-feature-and-bugfix%
+%add-release-hotfix%
+%add-develop%]]></param>
+    </parameters>
     <build-runners>
       <runner id="RUNNER_27" name="Verify" type="Maven2">
         <parameters>
