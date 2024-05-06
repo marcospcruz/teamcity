@@ -3,9 +3,6 @@
   <name>Code Quality Vulnerabilites</name>
   <description />
   <settings>
-    <options>
-      <option name="branchFilter" value="%exclude-master%" />
-    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_20" name="Code Quality" type="simpleRunner">
