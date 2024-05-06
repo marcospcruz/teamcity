@@ -3,9 +3,6 @@
   <name>Integration Test</name>
   <description />
   <settings>
-    <options>
-      <option name="branchFilter" value="%exclude-master%" />
-    </options>
     <parameters>
       <param name="add-all-branches"><![CDATA[%exclude-master%%
 %add-feature-and-bugfix%
