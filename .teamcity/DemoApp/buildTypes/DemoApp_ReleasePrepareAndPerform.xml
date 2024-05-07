@@ -13,7 +13,8 @@
       <runner id="RUNNER_24" name="Get commit message" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[export COMMIT_USER=$(git log -n 1 --format="%an")
-echo ##teamcity [setParameter name='env.COMMIT.user' value='$COMMIT_USER']]]></param>
+echo $COMMIT_USER
+echo "##teamcity [setParameter name='env.COMMIT.user' value='${COMMIT_USER}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
