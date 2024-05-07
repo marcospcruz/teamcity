@@ -38,17 +38,7 @@
       <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster_3" />
     </vcs-settings>
     <requirements />
-    <build-triggers>
-      <build-trigger id="TRIGGER_12" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="-:refs/heads/master" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules"><![CDATA[-:user=-:root:**
--:user=root@*;root=DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster_3:**]]></param>
-        </parameters>
-      </build-trigger>
-    </build-triggers>
+    <build-triggers />
     <build-extensions>
       <extension id="perfmon" type="perfmon">
         <parameters>
