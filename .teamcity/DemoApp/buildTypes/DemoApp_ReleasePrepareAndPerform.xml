@@ -20,7 +20,7 @@ echo "##teamcity[setParameter name='COMMIT_USER' value='${COMMIT_USER}']"]]></pa
       </runner>
       <runner id="RUNNER_23" name="Maven Release Prepare Perform" type="Maven2">
         <conditions>
-          <contains name="COMMIT_USER" value="root" />
+          <does-not-contain name="COMMIT_USER" value="root" />
         </conditions>
         <parameters>
           <param name="goals" value="clean -DskipTests release:prepare release:perform" />
