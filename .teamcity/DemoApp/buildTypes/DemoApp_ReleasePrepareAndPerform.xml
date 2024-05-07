@@ -19,7 +19,7 @@ echo ##teamcity [setParameter name='env.COMMIT.user' value='$COMMIT_USER']]]></p
       </runner>
       <runner id="RUNNER_28" name="teste" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo ---- ${COMMIT_USER}
+          <param name="script.content"><![CDATA[echo ---- %COMMIT_USER%
 exit 1]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
