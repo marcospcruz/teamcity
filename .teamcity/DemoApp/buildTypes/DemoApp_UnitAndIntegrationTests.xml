@@ -15,7 +15,7 @@
     <requirements />
     <build-triggers />
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_FeatureBugfix">
+      <depend-on sourceBuildTypeId="DemoApp_UnitTest">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
