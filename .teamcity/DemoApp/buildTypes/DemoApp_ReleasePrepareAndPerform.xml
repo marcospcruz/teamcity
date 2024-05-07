@@ -17,6 +17,9 @@
         </parameters>
       </runner>
       <runner id="RUNNER_23" name="Maven Release Prepare Perform" type="Maven2">
+        <conditions>
+          <equals name="env.COMMIT.message" value="root" />
+        </conditions>
         <parameters>
           <param name="goals" value="clean -DskipTests release:prepare release:perform" />
           <param name="localRepoScope" value="agent" />
