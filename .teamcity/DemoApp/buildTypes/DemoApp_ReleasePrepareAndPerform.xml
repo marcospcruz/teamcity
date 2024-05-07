@@ -27,7 +27,7 @@ exit 1]]></param>
       </runner>
       <runner id="RUNNER_23" name="Maven Release Prepare Perform" type="Maven2">
         <conditions>
-          <equals name="env.COMMIT.user" value="root" />
+          <contains name="COMMIT_USER" value="root" />
         </conditions>
         <parameters>
           <param name="goals" value="clean -DskipTests release:prepare release:perform" />
