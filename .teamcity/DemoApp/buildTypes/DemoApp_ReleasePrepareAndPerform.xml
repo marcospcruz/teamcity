@@ -47,7 +47,8 @@
           <param name="branchFilter" value="-:refs/heads/master" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules" value="-:user=-:root:**" />
+          <param name="triggerRules"><![CDATA[-:user=-:root:**
+-:user=root@*;root=DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster_3:**]]></param>
         </parameters>
       </build-trigger>
     </build-triggers>
