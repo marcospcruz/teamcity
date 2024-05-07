@@ -18,7 +18,7 @@
       </runner>
       <runner id="RUNNER_28" name="teste" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo ---- %env.COMMIT.user%
+          <param name="script.content"><![CDATA[echo ---- $COMMIT.user
 
 exit 1]]></param>
           <param name="teamcity.step.mode" value="default" />
