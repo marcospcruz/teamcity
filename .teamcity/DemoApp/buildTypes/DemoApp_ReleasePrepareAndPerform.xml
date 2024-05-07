@@ -4,7 +4,6 @@
   <description />
   <settings>
     <parameters>
-      <param name="COMMIT_USER" value="-" />
       <param name="env.git.password" value="credentialsJSON:6ff03214-c6b3-444c-9564-9edd859951e9" spec="password display='hidden' label='password'" />
       <param name="env.git.username" value="marcospcruz" />
       <param name="env.git.usertoken" value="credentialsJSON:6613af55-9b8c-4f87-bd57-0a904dfe6ee8" spec="password display='normal'" />
