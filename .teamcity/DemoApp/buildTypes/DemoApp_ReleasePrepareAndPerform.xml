@@ -16,6 +16,13 @@
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_28" name="teste" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %env.COMMIT.user%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_23" name="Maven Release Prepare Perform" type="Maven2">
         <conditions>
           <equals name="env.COMMIT.user" value="root" />
@@ -34,13 +41,6 @@
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
           <param name="userSettingsSelection" value="repo-lite-settings.xml" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_28" name="teste" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="echo %env.COMMIT.user%" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
