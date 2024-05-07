@@ -28,7 +28,7 @@ echo "##teamcity[setParameter name='COMMIT_USER' value='${COMMIT_USER}']"]]></pa
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
           <param name="runnerArgs"><![CDATA[-Dusername=%env.git.usertoken%
--D-Dartifactory.url=%artifactory.url%]]></param>
+-Dartifactory.url=%artifactory.url%]]></param>
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
           <param name="teamcity.coverage.idea.includePatterns" value="*" />
