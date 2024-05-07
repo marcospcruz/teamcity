@@ -4,7 +4,6 @@
   <description>Contains all other projects</description>
   <parameters>
     <param name="ANGULAR_VERSION" value="13.3.0" />
-    <param name="COMMIT_USER" value="-script-generated-" />
     <param name="NODE_VERSION" value="14.20" />
     <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
 %add-release-hotfix%
@@ -18,6 +17,7 @@
 +:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
+    <param name="env.COMMIT_USER" value="-script-generated-" />
     <param name="exclude-master" value="-:refs/heads/master" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
     <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:d19bbaf4-e5bb-4795-bdd7-9805868934c3" spec="password display='hidden' readOnly='true' label='SPI'" />
