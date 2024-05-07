@@ -11,7 +11,7 @@
     <build-runners>
       <runner id="RUNNER_24" name="Get commit message" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="echo &quot;##teamcity [setParameter name='env.COMMIT.user' value='$(git log -n 1 --format=&quot;%an&quot;)']&quot;" />
+          <param name="script.content" value="echo ##teamcity [setParameter name='env.COMMIT.user' value='$(git log -n 1 --format=&quot;%an&quot;)']" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
