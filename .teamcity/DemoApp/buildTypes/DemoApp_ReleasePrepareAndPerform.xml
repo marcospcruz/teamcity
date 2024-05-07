@@ -23,11 +23,12 @@ echo "##teamcity[setParameter name='COMMIT_USER' value='${COMMIT_USER}']"]]></pa
           <does-not-contain name="COMMIT_USER" value="root" />
         </conditions>
         <parameters>
-          <param name="goals" value="clean -DskipTests -Dartifactory.url=%artifactory.url% release:prepare release:perform" />
+          <param name="goals" value="clean  release:prepare release:perform" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs"><![CDATA[-Dusername=%env.git.usertoken%
+          <param name="runnerArgs"><![CDATA[-Dusername=%env.git.usertoken% 
+-DskipTests 
 -Dartifactory.url=%artifactory.url%]]></param>
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
