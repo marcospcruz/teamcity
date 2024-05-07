@@ -13,7 +13,7 @@
         <parameters>
           <param name="script.content"><![CDATA[export COMMIT_USER=$(git log -n 1 --format="%an")
 echo $COMMIT_USER
-echo "##teamcity [setParameter name='env.COMMIT_USER' value='${COMMIT_USER}']"]]></param>
+echo "##teamcity[setParameter name='env.COMMIT_USER' value='${COMMIT_USER}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
