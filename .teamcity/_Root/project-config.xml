@@ -4,6 +4,7 @@
   <description>Contains all other projects</description>
   <parameters>
     <param name="ANGULAR_VERSION" value="13.3.0" />
+    <param name="COMMIT_USER" value="-script-generated-" />
     <param name="NODE_VERSION" value="14.20" />
     <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
 %add-release-hotfix%
