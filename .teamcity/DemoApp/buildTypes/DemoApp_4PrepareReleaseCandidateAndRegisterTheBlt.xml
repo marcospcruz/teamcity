@@ -10,7 +10,7 @@
     <parameters />
     <build-runners />
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster_3" />
+      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsReleaseHotfix2" />
     </vcs-settings>
     <requirements />
     <build-triggers>
