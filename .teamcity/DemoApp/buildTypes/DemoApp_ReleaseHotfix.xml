@@ -20,10 +20,8 @@
     <build-triggers>
       <build-trigger id="TRIGGER_13" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="-:refs/heads/master" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules" value="-:user=root@*:**" />
         </parameters>
       </build-trigger>
     </build-triggers>
