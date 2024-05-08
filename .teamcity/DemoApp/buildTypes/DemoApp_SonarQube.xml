@@ -13,7 +13,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsFeatureBugfix" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <cleanup />
