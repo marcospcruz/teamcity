@@ -5,13 +5,6 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_20" name="Code Quality" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="echo code quality ok!" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_21" name="Vulnerability Scan" type="simpleRunner">
         <parameters>
           <param name="script.content" value="echo Vulnerability Scan ok!" />
