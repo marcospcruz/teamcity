@@ -35,12 +35,6 @@
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_ReleasePrepareAndPerform">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
       <depend-on sourceBuildTypeId="DemoApp_FeatureBugfixCodeQualityVulnerabilites">
         <options>
           <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
