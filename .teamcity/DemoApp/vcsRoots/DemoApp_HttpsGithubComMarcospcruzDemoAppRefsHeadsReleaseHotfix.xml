@@ -9,10 +9,10 @@
   <param name="reportTagRevisions" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/tags/demo-app-*" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:03321f20-f20d-47d3-90f6-918c134a92be" />
-  <param name="url" value="https://github.com/marcospcruz/demo-app" />
+  <param name="tokenId" value="tc_token_id:CID_a2eabc2a2af7b114882ca18ed1ec2ef4:1:9f5fb96f-8984-43a1-8648-c6c85abe0a16" />
+  <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
   <param name="useAlternates" value="AUTO" />
-  <param name="username" value="oauth2" />
+  <param name="username" value="marcospcruz" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 
