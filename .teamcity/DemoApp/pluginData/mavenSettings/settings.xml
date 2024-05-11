@@ -143,11 +143,16 @@ under the License.
 	  <username>admin</username>
 	  <password>secret</password>
 	</server>
-	<!-- --><!-- api key: ATATT3xFfGF0LQ3cCDywg2PHK0oNGn3Lo_jtd5y4oKnZsEgov5GrHYxjN8BtnbNS3H0MQjz4sMwLipMA2Qw0pumKoJh_A3d5nPrRhoykPjE9DjzZw9jkri2D15pki61kbU4IIE3GONSd6XdK8YMZVMb-q9Aqvb0jn3azT7d2Gp9ZIxGeaOlGPlo=20E2BDF7 -->
+	<!-- --><!-- api key: ATATT3xFfGF0LQ3cCDywg2PHK0oNGn3Lo_jtd5y4oKnZsEgov5GrHYxjN8BtnbNS3H0MQjz4sMwLipMA2Qw0pumKoJh_A3d5nPrRhoykPjE9DjzZw9jkri2D15pki61kbU4IIE3GONSd6XdK8YMZVMb-q9Aqvb0jn3azT7d2Gp9ZIxGeaOlGPlo=20E2BDF7 
 	<server>
 	 <id>bitbucket</id>  
 	 <username>marcospcruz</username>  
 	 <password>${bitbucket-token}</password>  
+	</server>   -->
+<server>
+	 <id>bitbucket</id>  
+	 <username>marcospcruz</username>  
+	 <password>ATATT3xFfGF0LQ3cCDywg2PHK0oNGn3Lo_jtd5y4oKnZsEgov5GrHYxjN8BtnbNS3H0MQjz4sMwLipMA2Qw0pumKoJh_A3d5nPrRhoykPjE9DjzZw9jkri2D15pki61kbU4IIE3GONSd6XdK8YMZVMb-q9Aqvb0jn3azT7d2Gp9ZIxGeaOlGPlo=20E2BDF7</password>  
 	</server>   
 
   </servers>
