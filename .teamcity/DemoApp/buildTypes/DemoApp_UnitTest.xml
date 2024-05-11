@@ -21,9 +21,7 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_ReleaseHotfix2" />
-    </vcs-settings>
+    <vcs-settings />
     <requirements />
     <build-triggers />
     <build-extensions>
