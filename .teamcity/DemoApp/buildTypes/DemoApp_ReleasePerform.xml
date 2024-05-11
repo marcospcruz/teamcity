@@ -18,8 +18,8 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
       </runner>
       <runner id="RUNNER_38" name="test" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo %COMMIT.author%
-exit 1]]></param>
+          <param name="script.content"><![CDATA[echo last commit author: %COMMIT.author%
+exit 0]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
