@@ -7,11 +7,10 @@
     <build-runners>
       <runner id="RUNNER_31" name="release prepare and perform" type="Maven2">
         <parameters>
-          <param name="goals" value="clean -B release:prepare release:perform" />
+          <param name="goals" value="clean -B release:prepare release:perform -Dargumets=&quot;-Dmaven.test.skip=true -DskipTests -Dbitbucket-token=%bitbucket-token%&quot;" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs" value="-Dargumets=&quot;-Dmaven.test.skip=true -DskipTests -Dbitbucket-token=%bitbucket-token%&quot;" />
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
           <param name="teamcity.coverage.idea.includePatterns" value="*" />
