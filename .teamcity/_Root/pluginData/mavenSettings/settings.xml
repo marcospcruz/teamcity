@@ -147,8 +147,8 @@ under the License.
 	<server>
 	 <id>bitbucket</id>  
 	 <username>marcospcruz</username>  
-	 <!--<password>${bitbucket-token}</password> --> 
-	 <password>ATBB5AJytsQEtRuP72QU6FDxrwjE3FDF5BB7</password>
+	 <password>${bitbucket-token}</password>
+	 <!--<password>ATBB5AJytsQEtRuP72QU6FDxrwjE3FDF5BB7</password> --> 
 	</server>   
 
 
