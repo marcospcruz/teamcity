@@ -38,7 +38,7 @@ echo "##teamcity[setParameter name='COMMIT_USER' value='${COMMIT_USER}']"]]></pa
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_ReleaseHotfix2" />
+      <vcs-entry-ref root-id="DemoApp_Uat1" />
     </vcs-settings>
     <requirements />
     <build-triggers>
