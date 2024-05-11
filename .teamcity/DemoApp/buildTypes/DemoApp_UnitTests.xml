@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c8b14701-15e8-40b1-8bf4-3acf6845c888" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
-  <name>release perform</name>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="edf5fa0d-8e92-405d-be4e-e40683f4688d" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Unit Tests</name>
   <description />
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_33" name="get user" type="simpleRunner">
+      <runner id="RUNNER_35" name="test" type="Maven2">
         <parameters>
-          <param name="script.content"><![CDATA[AUTHOR="$(git log -1 --pretty=format:'%ae')"
-echo $AUTHOR
-echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_34" name="release;repare release::perform" type="Maven2">
-        <parameters>
-          <param name="goals" value="-B clean release:prepare release:perform" />
+          <param name="goals" value="clean test" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs" value="-Darguments=&quot;-DskipTests -Dbitbucket-token=ATBBJrMHAavQY9gzT6JKX9vgGFSkDAD79AF1&quot;" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="demo_app2-settings.xml" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_36" name="validate" type="Maven2">
+        <parameters>
+          <param name="goals" value="clean validate" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
           <param name="teamcity.coverage.idea.includePatterns" value="*" />
@@ -32,11 +37,11 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_Uat" />
+      <vcs-entry-ref root-id="DemoApp_AllBranches" />
     </vcs-settings>
     <requirements />
     <build-triggers>
-      <build-trigger id="TRIGGER_19" type="vcsTrigger">
+      <build-trigger id="TRIGGER_20" type="vcsTrigger">
         <parameters>
           <param name="branchFilter" value="+:*" />
           <param name="enableQueueOptimization" value="true" />
@@ -44,14 +49,6 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
         </parameters>
       </build-trigger>
     </build-triggers>
-    <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_UnitTests">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
     <cleanup />
   </settings>
 </build-type>
