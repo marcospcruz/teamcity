@@ -17,6 +17,7 @@
     <param name="add-release-hotfix"><![CDATA[%exclude-master%
 +:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
+    <param name="bitbucket-token" value="ATBB5AJytsQEtRuP72QU6FDxrwjE3FDF5BB7" />
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
     <param name="exclude-master" value="-:refs/heads/master" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
