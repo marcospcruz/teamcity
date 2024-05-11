@@ -14,7 +14,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsReleaseHotfix" />
+      <vcs-entry-ref root-id="DemoApp_ReleaseHotfix_2" />
     </vcs-settings>
     <requirements />
     <build-triggers>
