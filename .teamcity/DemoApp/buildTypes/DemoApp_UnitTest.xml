@@ -21,7 +21,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoApp_AllBranches" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <build-extensions>
