@@ -4,6 +4,7 @@
   <parameters>
     <param name="COMMIT.message" value="" />
     <param name="artifactory.url" value="http://reposilite.default.svc:8080" />
+    <param name="bitbucket-token" value="ATBBJT8EdJnAXJV5ZzynthtPRxat9974604D" />
   </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_10" type="OAuthProvider">
