@@ -10,7 +10,7 @@
     <parameters />
     <build-runners />
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_Master1" />
+      <vcs-entry-ref root-id="DemoApp_AllBranches_2" />
     </vcs-settings>
     <requirements />
     <build-triggers />
