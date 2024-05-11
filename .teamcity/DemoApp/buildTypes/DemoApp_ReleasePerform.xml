@@ -11,7 +11,7 @@
         <parameters>
           <param name="script.content"><![CDATA[AUTHOR="$(git log -1 --pretty=format:'%ae')"
 echo $AUTHOR
-echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
+echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
