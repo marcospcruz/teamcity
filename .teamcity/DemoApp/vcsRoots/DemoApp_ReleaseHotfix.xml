@@ -3,18 +3,16 @@
   <name>release-hotfix</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
-  <param name="authMethod" value="PASSWORD" />
+  <param name="authMethod" value="ACCESS_TOKEN" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="push_url" value="https://bitbucket.org/marcospcruz/demo-app.git" />
-  <param name="secure:password" value="credentialsJSON:0347dcfd-e718-4957-8970-e208a4194512" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
   <param name="tokenId" value="tc_token_id:CID_a2eabc2a2af7b114882ca18ed1ec2ef4:1:9f5fb96f-8984-43a1-8648-c6c85abe0a16" />
   <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
   <param name="useAlternates" value="AUTO" />
-  <param name="username" value="marcpcruz@gmail.com" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 
