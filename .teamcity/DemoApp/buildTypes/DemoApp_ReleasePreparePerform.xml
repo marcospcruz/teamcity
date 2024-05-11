@@ -14,6 +14,9 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
         </parameters>
       </runner>
       <runner id="RUNNER_31" name="release prepare and perform" type="Maven2">
+        <conditions>
+          <does-not-contain name="COMMIT.author" value="root" />
+        </conditions>
         <parameters>
           <param name="goals" value="clean -B release:prepare release:perform -Dargumets=&quot;-Dmaven.test.skip=true -DskipTests -Dbitbucket-token=%bitbucket-token%&quot;" />
           <param name="localRepoScope" value="agent" />
