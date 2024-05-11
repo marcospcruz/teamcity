@@ -31,6 +31,14 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_13" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="qF6LF3y9xzskpxvq86" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:6eaa78b2-24ed-4992-b160-c4dc1edc2cf4" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_2" type="OAuthProvider">
       <parameters>
         <param name="displayName" value="Docker Registry" />
