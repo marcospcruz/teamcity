@@ -29,7 +29,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsMaster_2" />
+      <vcs-entry-ref root-id="DemoApp_Develop" />
     </vcs-settings>
     <requirements />
     <build-triggers>
