@@ -3,7 +3,9 @@
   <name>release perform</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="COMMIT.author" value="from script" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_33" name="get user" type="simpleRunner">
         <parameters>
