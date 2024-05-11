@@ -18,7 +18,7 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
           <does-not-contain name="COMMIT.author" value="root" />
         </conditions>
         <parameters>
-          <param name="goals" value="clean -B release:prepare release:perform -Dargumets=&quot;-Dmaven.test.skip=true -DskipTests -Dbitbucket-token=%bitbucket-token%&quot;" />
+          <param name="goals" value="clean -B release:prepare release:perform" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
