@@ -15,6 +15,9 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
         </parameters>
       </runner>
       <runner id="RUNNER_34" name="release;repare release::perform" type="Maven2">
+        <conditions>
+          <does-not-contain name="COMMIT.author" value="root" />
+        </conditions>
         <parameters>
           <param name="goals" value="-B clean release:prepare release:perform" />
           <param name="localRepoScope" value="agent" />
