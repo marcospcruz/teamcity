@@ -27,8 +27,7 @@ echo "##teamcity[setParameter name='COMMIT_USER' value='${COMMIT_USER}']"]]></pa
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs"><![CDATA[-Dusername=%env.git.usertoken% 
--DskipTests 
+          <param name="runnerArgs"><![CDATA[-DskipTests 
 -Dartifactory.url=%artifactory.url%]]></param>
           <param name="teamcity.coverage.emma.include.source" value="true" />
           <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
