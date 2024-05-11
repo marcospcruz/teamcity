@@ -63,7 +63,6 @@ echo "##teamcity[setParameter name='COMMIT_USER' value='${COMMIT_USER}']"]]></pa
     <dependencies>
       <depend-on sourceBuildTypeId="DemoApp_1CodeQualityAndVulnerabilityScan">
         <options>
-          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
         </options>
