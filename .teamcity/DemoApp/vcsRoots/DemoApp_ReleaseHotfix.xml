@@ -6,7 +6,7 @@
   <param name="authMethod" value="ACCESS_TOKEN" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
-  <param name="push_url" value="https://github.com/marcospcruz/demo-app" />
+  <param name="push_url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
