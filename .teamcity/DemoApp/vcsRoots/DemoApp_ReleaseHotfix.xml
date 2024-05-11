@@ -13,7 +13,6 @@
   <param name="tokenId" value="tc_token_id:CID_a2eabc2a2af7b114882ca18ed1ec2ef4:1:9f5fb96f-8984-43a1-8648-c6c85abe0a16" />
   <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
   <param name="useAlternates" value="AUTO" />
-  <param name="username" value="marcospcruz" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 
