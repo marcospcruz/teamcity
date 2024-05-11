@@ -22,7 +22,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsGithubComMarcospcruzDemoAppRefsHeadsFeatureBugfix1" />
+      <vcs-entry-ref root-id="DemoApp_FeatureBugfix1" />
     </vcs-settings>
     <requirements />
     <build-triggers />
