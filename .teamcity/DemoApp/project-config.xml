@@ -5,6 +5,16 @@
     <param name="COMMIT.message" value="" />
     <param name="artifactory.url" value="http://reposilite.default.svc:8080" />
   </parameters>
+  <project-extensions>
+    <extension id="PROJECT_EXT_10" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="qF6LF3y9xzskpxvq86" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:01ba8635-c9d6-4682-95b2-cb5f6bace56c" />
+      </parameters>
+    </extension>
+  </project-extensions>
   <cleanup />
 </project>
 
