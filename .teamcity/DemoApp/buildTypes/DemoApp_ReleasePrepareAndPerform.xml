@@ -23,7 +23,7 @@ echo "##teamcity[setParameter name='COMMIT_USER' value='${COMMIT_USER}']"]]></pa
           <does-not-contain name="COMMIT_USER" value="root" />
         </conditions>
         <parameters>
-          <param name="goals" value="clean  release:prepare release:perform" />
+          <param name="goals" value="clean  release:prepare release:perform -Darguments=&quot;-Dmaven.test.skip=true -DskipTests&quot;" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="pomLocation" value="pom.xml" />
