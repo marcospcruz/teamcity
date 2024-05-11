@@ -3,11 +3,10 @@
   <name>releases-hotfix</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
-  <param name="authMethod" value="PASSWORD" />
+  <param name="authMethod" value="ACCESS_TOKEN" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="push_url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
-  <param name="secure:password" value="credentialsJSON:c944c759-672f-4f75-9f50-f616a6b122a5" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
