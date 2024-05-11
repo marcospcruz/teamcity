@@ -32,7 +32,7 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_Uat" />
+      <vcs-entry-ref root-id="DemoApp_ReleasesHotfix" />
     </vcs-settings>
     <requirements />
     <build-triggers>
