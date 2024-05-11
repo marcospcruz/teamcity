@@ -14,6 +14,13 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_38" name="test" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo %COMMIT.author%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_34" name="release;repare release::perform" type="Maven2">
         <conditions>
           <does-not-contain name="COMMIT.author" value="root" />
@@ -31,13 +38,6 @@ echo "##teamcity[setParameter='COMMIT.author' value='${AUTHOR}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
           <param name="userSettingsSelection" value="demo_app2-settings.xml" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_38" name="test" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="echo %COMMIT.author%" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
