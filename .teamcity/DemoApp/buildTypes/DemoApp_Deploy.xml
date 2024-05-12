@@ -41,6 +41,12 @@
           <option name="take-successful-builds-only" value="true" />
         </options>
       </depend-on>
+      <depend-on sourceBuildTypeId="DemoApp_IntegrationTests">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
     </dependencies>
     <cleanup />
   </settings>
