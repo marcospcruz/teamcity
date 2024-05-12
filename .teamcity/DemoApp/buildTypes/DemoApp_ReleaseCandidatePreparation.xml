@@ -4,7 +4,7 @@
   <description />
   <settings>
     <parameters>
-      <param name="origin" value="https://marcospcruz:%vcsroot.token%@bitbucket.org/marcospcruz/demo-app.git" />
+      <param name="origin" value="https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_40" name="create release branch" type="simpleRunner">
