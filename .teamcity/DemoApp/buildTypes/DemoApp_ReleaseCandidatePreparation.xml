@@ -6,9 +6,6 @@
     <parameters />
     <build-runners>
       <runner id="RUNNER_40" name="create release branch" type="simpleRunner">
-        <conditions>
-          <does-not-contain name="COMMIT.author" value="root" />
-        </conditions>
         <parameters>
           <param name="script.content"><![CDATA[LATEST_TAG=$(git tag|head -1)
 git checkout $LATEST_TAG
