@@ -9,7 +9,8 @@
     <build-runners>
       <runner id="RUNNER_40" name="create release branch" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[LATEST_TAG=$(git tag|tail -1)
+          <param name="script.content"><![CDATA[LATEST_TAG=$(git tag|grep %env.TEAMCITY_PROJECT_NAME%|tail -1)
+[ -z ${LATEST_TAG} ] && echo error! && exit 1
 echo "${LATEST_TAG}"
 #git checkout $LATEST_TAG
 #CURRENT_BRANCH="release/$( git branch|grep '*'|sed -E "s/(.+\-)([0-9\.]+)/\2/g")"
