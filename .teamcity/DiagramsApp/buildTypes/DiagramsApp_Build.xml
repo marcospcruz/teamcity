@@ -7,7 +7,7 @@
     <build-runners>
       <runner id="RUNNER_17" name="Test" type="nodejs-runner">
         <parameters>
-          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="shellScript"><![CDATA[npm install 
 npm ci
