@@ -3,7 +3,9 @@
   <name>Release Candidate Preparation</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="origin" value="https://marcospcruz:%vcsroot.token%@bitbucket.org/marcospcruz/demo-app.git" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_40" name="create release branch" type="simpleRunner">
         <parameters>
