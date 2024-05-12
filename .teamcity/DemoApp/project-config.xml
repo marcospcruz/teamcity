@@ -3,6 +3,19 @@
   <name>demo-app</name>
   <parameters />
   <project-extensions>
+    <extension id="PROJECT_EXT_15" type="CloudImage">
+      <parameters>
+        <param name="agentNamePrefix" value="kubernetes" />
+        <param name="agent_pool_id" value="-2" />
+        <param name="dockerImage" value="debian" />
+        <param name="imageDescription" value="Run container: debian" />
+        <param name="imageInstanceLimit" value="1" />
+        <param name="podTemplateMode" value="simple" />
+        <param name="profileId" value="kube-4" />
+        <param name="source-id" value="kubernetes" />
+        <param name="sourceDeployment" value="" />
+      </parameters>
+    </extension>
     <extension id="kube-4" type="CloudProfile">
       <parameters>
         <param name="apiServerUrl" value="https://192.168.15.7:6443" />
@@ -12,11 +25,11 @@
         <param name="enabled" value="true" />
         <param name="name" value="cluster.local" />
         <param name="namespace" value="ci-cd" />
-        <param name="podTemplateMode" value="notSelected" />
         <param name="profileId" value="kube-4" />
         <param name="secure:caCertData" value="credentialsJSON:d1242140-b2d2-482f-834f-492e63217e1e" />
         <param name="secure:clientCertData" value="credentialsJSON:c2d781b7-4035-46c4-a316-67b063c173c0" />
         <param name="secure:clientKeyData" value="credentialsJSON:1b5f771e-ece6-4889-9daf-4c404c4b858b" />
+        <param name="system.cloud.profile_id" value="kube-4" />
         <param name="terminate-idle-time" value="30" />
       </parameters>
     </extension>
