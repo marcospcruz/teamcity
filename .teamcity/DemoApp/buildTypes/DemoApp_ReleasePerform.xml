@@ -43,6 +43,21 @@ exit 0]]></param>
           <param name="userSettingsSelection" value="demo_app2-settings.xml" />
         </parameters>
       </runner>
+      <runner id="RUNNER_39" name="create release branch" type="simpleRunner">
+        <conditions>
+          <does-not-contain name="COMMIT.author" value="root" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[LATEST_TAG=$(git tag|head -1)
+git checkout $LATEST_TAG
+git checkout -b release/$(echo $LATEST_TAG|sed -r "s/\-[0-9\.]+//g")
+CURRENT_BRANCH= $(git branch|grep '*'|cut -d* -f2)
+echo current branch: $CURRENT_BRANCH
+git push origin $CURRENT_BRANCH]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_ReleaseHotfix" />
