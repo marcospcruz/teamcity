@@ -72,6 +72,15 @@ git push origin $CURRENT_BRANCH]]></param>
         </parameters>
       </build-trigger>
     </build-triggers>
+    <dependencies>
+      <depend-on sourceBuildTypeId="DemoApp_Deploy">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
     <cleanup />
   </settings>
 </build-type>
