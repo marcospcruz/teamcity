@@ -10,7 +10,9 @@
     </options>
     <parameters />
     <build-runners />
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoApp_Develop" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <cleanup />
