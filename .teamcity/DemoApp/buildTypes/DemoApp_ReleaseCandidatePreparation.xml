@@ -6,7 +6,7 @@
     <parameters />
     <build-runners />
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster_2" />
+      <vcs-entry-ref root-id="DemoApp_DemoAppTags" />
     </vcs-settings>
     <requirements />
     <build-triggers>
