@@ -45,7 +45,7 @@ exit 0]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_Develop" />
+      <vcs-entry-ref root-id="DemoApp_ReleaseHotfix" />
     </vcs-settings>
     <requirements />
     <build-triggers>
