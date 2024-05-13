@@ -12,6 +12,7 @@
     <build-runners />
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_Develop" />
+      <vcs-entry-ref root-id="DemoApp_Tags" />
     </vcs-settings>
     <requirements />
     <build-triggers>
