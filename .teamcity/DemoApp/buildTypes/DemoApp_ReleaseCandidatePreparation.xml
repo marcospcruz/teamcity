@@ -28,7 +28,8 @@
       </runner>
       <runner id="RUNNER_40" name="create release branch" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[POM_VERSION=$(echo $POM_INFO|cut -d: -f3)
+          <param name="script.content"><![CDATA[POM_INFO=$(cat pom-info.log|grep -v '\[')
+POM_VERSION=$(echo $POM_INFO|cut -d: -f3)
 [ -z ${POM_VERSION} ] && echo error! && exit 1
 echo "Tagged version: ${POM_VERSION}"
 RELEASE_BRANCH="release/release-${POM_VERSION}"
