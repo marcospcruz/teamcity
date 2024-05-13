@@ -30,11 +30,12 @@
       </runner>
       <runner id="RUNNER_19" name="Reading pom info from log" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[function get_pom_info(){
+          <param name="script.content"><![CDATA[function get_pom_info{
 	cat pom-info.log|grep -v '\['|cut -d: -f$1
 }
+echo
 cat pom-info.log
-
+echo
 GROUP_ID=$(get_pom_info 1)
 ARTIFACT_ID=$(get_pom_info 2)
 VERSION=$(get_pom_info 3)
