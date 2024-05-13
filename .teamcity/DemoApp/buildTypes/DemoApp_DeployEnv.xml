@@ -62,7 +62,7 @@ cat ${CHART_TEMPLATE_VALUES}]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_Tags" />
+      <vcs-entry-ref root-id="DemoApp_ReleaseCandidateBranch" />
     </vcs-settings>
     <requirements />
     <build-triggers>
