@@ -9,7 +9,7 @@
   <param name="push_url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
   <param name="secure:password" value="credentialsJSON:c944c759-672f-4f75-9f50-f616a6b122a5" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/support
+  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/release/support-rc
 +:refs/heads/hotfix/*
 -:refs/heads/release/release-*]]></param>
   <param name="tokenId" value="tc_token_id:CID_a2eabc2a2af7b114882ca18ed1ec2ef4:1:9f5fb96f-8984-43a1-8648-c6c85abe0a16" />
