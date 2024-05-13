@@ -3,6 +3,9 @@
   <name>Release Candidate Preparation</name>
   <description />
   <settings>
+    <options>
+      <option name="artifactRules" value="+:*.log =&gt; ." />
+    </options>
     <parameters>
       <param name="origin" value="https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git" />
     </parameters>
