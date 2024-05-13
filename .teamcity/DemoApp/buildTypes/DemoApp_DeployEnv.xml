@@ -30,15 +30,13 @@
       </runner>
       <runner id="RUNNER_19" name="Reading pom info from log" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[function get_pom_info(){
-	cat pom-info.log|grep -v '\['|cut -d: -f$1
-}
+          <param name="script.content"><![CDATA[POM_INFO=$(cat pom-info.log|grep -v '\[')
 echo
 cat pom-info.log
 echo
-GROUP_ID=$(get_pom_info 1)
-ARTIFACT_ID=$(get_pom_info 2)
-VERSION=$(get_pom_info 3)
+GROUP_ID=$(echo $POM_INFO|cut -d: -f1)
+ARTIFACT_ID=$(echo $POM_INFO|cut -d: -f2)
+VERSION=$(echo $POM_INFO|cut -d: -f3)
 
 echo "project release pom.xml info: group_id: $GROUP_ID artifact_id: $ARTIFACT_ID version: $VERSION"
 
