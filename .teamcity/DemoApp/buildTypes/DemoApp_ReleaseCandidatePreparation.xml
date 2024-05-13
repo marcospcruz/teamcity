@@ -7,6 +7,22 @@
       <param name="origin" value="https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_20" name="Get Release Information" type="Maven2">
+        <parameters>
+          <param name="goals" value="-q -Dexec.executable=echo -Dexec.args='${project.groupId}:${project.artifactId}:${project.version}' --non-recursive exec:exec" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="runnerArgs" value="--log-file pom-info.log" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_40" name="create release branch" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[LATEST_TAG=$(git tag|grep %env.TEAMCITY_PROJECT_NAME%|tail -1)
@@ -24,22 +40,6 @@ git remote -v
 git push --set-upstream origin $CURRENT_BRANCH]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_20" name="Get Release Information" type="Maven2">
-        <parameters>
-          <param name="goals" value="-q -Dexec.executable=echo -Dexec.args='${project.groupId}:${project.artifactId}:${project.version}' --non-recursive exec:exec" />
-          <param name="localRepoScope" value="agent" />
-          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="pomLocation" value="pom.xml" />
-          <param name="runnerArgs" value="--log-file pom-info.log" />
-          <param name="teamcity.coverage.emma.include.source" value="true" />
-          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
-          <param name="teamcity.coverage.idea.includePatterns" value="*" />
-          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
-          <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
       </runner>
     </build-runners>
