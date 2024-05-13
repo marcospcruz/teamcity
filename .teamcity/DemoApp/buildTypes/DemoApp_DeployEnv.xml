@@ -38,9 +38,13 @@ GROUP_ID=$(echo $POM_INFO|cut -d: -f1)
 ARTIFACT_ID=$(echo $POM_INFO|cut -d: -f2)
 VERSION=$(echo $POM_INFO|cut -d: -f3)
 
-echo "project release pom.xml info: group_id: $GROUP_ID artifact_id: $ARTIFACT_ID version: $VERSION"
-
-
+echo "project release pom.xml info"
+echo group_id: $GROUP_ID 
+echo artifact_id: $ARTIFACT_ID
+echo version: $VERSION
+echo
+ls -l
+echo
 
 CHART_TEMPLATE_VALUES=charts/${ARTIFACT_ID}/values.yaml
 
