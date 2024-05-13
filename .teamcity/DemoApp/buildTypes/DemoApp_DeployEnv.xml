@@ -31,7 +31,10 @@
       <runner id="RUNNER_19" name="Reading pom info from log" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[cat pom-info.log
-exit 1]]></param>
+
+POM_INFO=$(cat pom-info.log |head -1|sed -E 's/(^\[.+\]\s\w+\s\w+\:\s)(.+$)/\2/g')
+
+GROUP_ID=$(echo $POM_INFO|cut -d: -f1)]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
