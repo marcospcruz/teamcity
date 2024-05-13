@@ -33,7 +33,7 @@
           <param name="script.content"><![CDATA[function get_pom_info(){
 	cat pom-info.log|grep -v '\['|cut -d: -f$1
 }
-
+set -ex
 
 GROUP_ID=$(get_pom_info 1)
 ARTIFACT_ID=$(get_pom_info 2)
