@@ -37,19 +37,17 @@ cat pom-info.log
 
 GROUP_ID=$(get_pom_info 1)
 ARTIFACT_ID=$(get_pom_info 2)
-VERSOPM=$(get_pom_info 3)
+VERSION=$(get_pom_info 3)
 
 echo "project release pom.xml info: group_id: $GROUP_ID artifact_id: $ARTIFACT_ID version: $VERSION"
 
-#echo "##teamcity[setParameter name='POM.group_id' value='${GROUP_ID}']"
-#echo "##teamcity[setParameter name='POM.artifact_id' value='${ARTIFACT_ID}']"
-#echo "##teamcity[setParameter name='POM.version' value='${VERSION}']"
+
 
 CHART_TEMPLATE_VALUES=charts/${ARTIFACT_ID}/values.yaml
 
 echo "repository: \"release\"" >${CHART_TEMPLATE_VALUES}
-echo "group_id: \"${ARTIFACT_ID}\"" >>${CHART_TEMPLATE_VALUES}
-echo "version: \"${ARTIFACT_ID}\"" >>${CHART_TEMPLATE_VALUES}
+echo "group_id: \"${GROUP_ID}\"" >>${CHART_TEMPLATE_VALUES}
+echo "version: \"${VERSION}\"" >>${CHART_TEMPLATE_VALUES}
 echo "artifact_id: \"${ARTIFACT_ID}\"" >>${CHART_TEMPLATE_VALUES}
 
 
