@@ -6,9 +6,7 @@
     <options>
       <option name="artifactRules" value="+:*.log =&gt; ." />
     </options>
-    <parameters>
-      <param name="origin" value="https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git" />
-    </parameters>
+    <parameters />
     <build-runners>
       <runner id="RUNNER_20" name="Get Release Information" type="Maven2">
         <parameters>
