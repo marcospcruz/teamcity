@@ -36,7 +36,7 @@ exit 1]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_Develop" />
+      <vcs-entry-ref root-id="DemoApp_Develop1" />
     </vcs-settings>
     <requirements />
     <build-triggers>
