@@ -30,7 +30,7 @@
       </runner>
       <runner id="RUNNER_19" name="Reading pom info from log" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[function get_pom_info{
+          <param name="script.content"><![CDATA[function get_pom_info(){
 	cat pom-info.log|grep -v '\['|cut -d: -f$1
 }
 echo
