@@ -26,6 +26,14 @@
           <param name="userSettingsSelection" value="userSettingsSelection:default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_19" name="Reading pom info from log" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[cat pom-info.log
+exit 1]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_Tags" />
