@@ -10,9 +10,7 @@
     </options>
     <parameters />
     <build-runners />
-    <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_Tags" />
-    </vcs-settings>
+    <vcs-settings />
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_22" type="vcsTrigger">
