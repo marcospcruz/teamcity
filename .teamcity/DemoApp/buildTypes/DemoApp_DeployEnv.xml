@@ -40,7 +40,7 @@ VERSION=$(echo $POM_INFO|cut -d: -f3)
 
 echo "project release pom.xml info"
 echo group_id: $GROUP_ID 
-echo artifact_id: $ARTIFACT_ID
+echo artifact_id: demo-app-application
 echo version: $VERSION
 echo
 ls -l
