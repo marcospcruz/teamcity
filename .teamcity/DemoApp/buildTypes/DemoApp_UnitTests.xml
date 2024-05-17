@@ -3,9 +3,6 @@
   <name>Unit Tests</name>
   <description />
   <settings>
-    <options>
-      <option name="excludeDefaultBranchChanges" value="true" />
-    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_35" name="test" type="Maven2">
