@@ -4,7 +4,6 @@
   <description />
   <settings>
     <options>
-      <option name="branchFilter" value="+:*&#xD;&#xA;-:&lt;default&gt;&#xD;&#xA;-:pull-requests/*" />
       <option name="excludeDefaultBranchChanges" value="true" />
     </options>
     <parameters />
