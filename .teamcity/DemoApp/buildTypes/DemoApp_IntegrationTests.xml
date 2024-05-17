@@ -3,6 +3,9 @@
   <name>Integration Tests</name>
   <description />
   <settings>
+    <options>
+      <option name="branchFilter" value="+:*&#xD;&#xA;-:&lt;default&gt;&#xD;&#xA;-:pull-requests/*" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_36" name="validate" type="Maven2">
