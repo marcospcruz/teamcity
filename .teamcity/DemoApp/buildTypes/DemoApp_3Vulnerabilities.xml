@@ -33,6 +33,20 @@
         </parameters>
       </extension>
     </build-extensions>
+    <dependencies>
+      <depend-on sourceBuildTypeId="DemoApp_1UnitTest">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="DemoApp_2IntegrationTests">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
     <cleanup />
   </settings>
 </build-type>
