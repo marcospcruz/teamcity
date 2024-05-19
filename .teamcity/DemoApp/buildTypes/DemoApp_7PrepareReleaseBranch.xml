@@ -6,6 +6,9 @@
     <parameters />
     <build-runners>
       <runner id="RUNNER_29" name="get latest release candidate tag" type="simpleRunner">
+        <conditions>
+          <contains name="COMMIT.author" value="root" />
+        </conditions>
         <parameters>
           <param name="script.content"><![CDATA[#LATEST_RC_TAG=$(git tag|grep demo-app | tail -1|sed -r 's/(\w+\-)//g')
 LATEST_RC_TAG=$(git tag|grep demo-app | tail -1)
