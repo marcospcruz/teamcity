@@ -27,7 +27,7 @@ LATEST_RC_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
 git fetch --verbose
 git checkout golden-source
 [ -f $(pwd)/release.branch ] \
-	&& echo WARNING: $(pwd)/release.branch not found
+	&& echo WARNING: $(pwd)/release.branch not found \
     && exit 0
 RELEASE_BRANCH=$(cat release.branch)
 git ls-remote --exit-code --heads origin $RELEASE_BRANCH
