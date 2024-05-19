@@ -19,8 +19,9 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
           <contains name="COMMIT.author" value="root" />
         </conditions>
         <parameters>
-          <param name="script.content"><![CDATA[git remote add origin https://%vcsroot.username%:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+          <param name="script.content"><![CDATA[git remote set-url origin https://%vcsroot.username%:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
 git remote -v
+git fetch --verbose
 #LATEST_RC_TAG=$(git tag|grep demo-app | tail -1|sed -r 's/(\w+\-)//g')
 LATEST_RC_TAG=$(git tag|grep demo-app | tail -1)
 git fetch --verbose
