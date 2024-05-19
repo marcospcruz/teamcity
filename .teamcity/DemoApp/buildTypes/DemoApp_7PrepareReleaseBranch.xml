@@ -33,7 +33,7 @@ RELEASE_BRANCH=$(cat $RELEASE_FILE)
 BRANCH_TYPE=$(git rev-parse --abbrev-ref HEAD|cut -d/ -f1)
 RELEASE_TAG=$BRANCH_TYPE-$(cat $RELEASE_FILE|cut -d/ -f2)
 [ "release" != $BRANCH_TYPE ] \
-	&& RELEASE_BRANCH=$(git branch --remote|grep hotfix|tail -1|sed -r 's/(\w+\/)(\w+\/)/\2/g') && RELEASE_TAG=hotfix-$(cat $RELEASE_FILE|cut -d/ -f2)
+	&& BRANCH_TYPE=hotfix && RELEASE_BRANCH=$(git branch --remote|grep hotfix|tail -1|sed -r 's/(\w+\/)(\w+\/)/\2/g') && RELEASE_TAG=hotfix-$(cat $RELEASE_FILE|cut -d/ -f2)
 echo branch type: $BRANCH_TYPE
 echo release branch: $RELEASE_BRANCH
 echo release tag: $RELEASE_TAG
