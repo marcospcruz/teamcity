@@ -26,10 +26,10 @@ git fetch --verbose
 LATEST_RC_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
 git fetch --verbose
 
-[ -f $(pwd)/release.branch ] \
-	&& echo ERROR: $(pwd)/release.branch not found \
+[ -f release.branch ] \
+	&& echo ERROR: release.branch not found \
     && exit 1
-RELEASE_BRANCH=$(cat $(pwd)/release.branch)
+RELEASE_BRANCH=$(cat release.branch)
 git checkout golden-source
 git ls-remote --exit-code --heads origin $RELEASE_BRANCH
 if [ 2 -eq $? ];then
