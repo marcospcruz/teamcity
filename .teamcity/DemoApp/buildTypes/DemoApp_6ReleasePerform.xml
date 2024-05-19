@@ -33,6 +33,15 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
           <param name="userSettingsSelection" value="settings.xml" />
         </parameters>
       </runner>
+      <runner id="RUNNER_30" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+git checkout master
+git push origin -d $BRANCH_NAME]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc" />
