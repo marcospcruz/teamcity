@@ -31,6 +31,15 @@ git push origin $RELEASE_BRANCH]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_32" name="check user" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
+echo commit author is $AUTHOR
+echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_TagsDemoApp" />
