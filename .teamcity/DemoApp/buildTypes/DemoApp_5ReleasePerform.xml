@@ -30,7 +30,7 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}'"]]></param>
           <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
           <param name="teamcity.step.mode" value="default" />
           <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
-          <param name="userSettingsSelection" value="settings.xml" />
+          <param name="userSettingsSelection" value="repo-lite-settings.xml" />
         </parameters>
       </runner>
     </build-runners>
