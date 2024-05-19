@@ -3,6 +3,10 @@
   <name>6.Release perform</name>
   <description />
   <settings>
+    <options>
+      <option name="cleanBuild" value="true" />
+      <option name="excludeDefaultBranchChanges" value="true" />
+    </options>
     <disabled-settings>
       <setting-ref ref="RUNNER_30" />
     </disabled-settings>
