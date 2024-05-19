@@ -5,6 +5,15 @@
   <settings>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_32" name="check user" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
+echo commit author is $AUTHOR
+echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_29" name="get latest release candidate tag" type="simpleRunner">
         <conditions>
           <contains name="COMMIT.author" value="root" />
@@ -27,15 +36,6 @@ else
 fi
 git rebase $LATEST_RC_TAG
 git push origin $RELEASE_BRANCH]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_32" name="check user" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
-echo commit author is $AUTHOR
-echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
