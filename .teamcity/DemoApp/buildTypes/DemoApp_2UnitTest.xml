@@ -47,7 +47,7 @@
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_CheckCommitSAuthorBuild">
+      <depend-on sourceBuildTypeId="DemoApp_1CheckCommitSAuthorBuild">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
