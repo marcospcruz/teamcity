@@ -33,7 +33,7 @@ git push origin $RELEASE_BRANCH]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster6" />
+      <vcs-entry-ref root-id="DemoApp_TagsDemoApp" />
     </vcs-settings>
     <requirements />
     <build-triggers>
