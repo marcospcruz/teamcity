@@ -3,6 +3,9 @@
   <name>4.Vulnerabilities</name>
   <description />
   <settings>
+    <options>
+      <option name="excludeDefaultBranchChanges" value="true" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_24" name="" type="simpleRunner">
