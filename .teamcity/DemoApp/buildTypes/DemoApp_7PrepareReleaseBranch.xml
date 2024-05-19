@@ -29,7 +29,7 @@ ls -la
 [ -f $(pwd)/release.branch ] \
 	&& echo WARNING: $(pwd)/release.branch not found \
     && exit 0
-RELEASE_BRANCH=$(cat release.branch)
+RELEASE_BRANCH=$(cat $(pwd)/release.branch)
 git checkout golden-source
 git ls-remote --exit-code --heads origin $RELEASE_BRANCH
 if [ 2 -eq $? ];then
