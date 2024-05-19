@@ -29,7 +29,7 @@ ls -l
 ls $(pwd)
 whoami
 RELEASE_FILE="release.branch"
-[ -f $RELEASE_FILE ] \
+[ ! -f $RELEASE_FILE ] \
 	&& echo ERROR: $RELEASE_FILE not found \
     && exit 1
 RELEASE_BRANCH=$(cat $RELEASE_FILE)
