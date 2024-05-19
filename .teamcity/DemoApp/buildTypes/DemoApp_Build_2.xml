@@ -4,7 +4,28 @@
   <description />
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_29" name="get latest release candidate tag" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[#LATEST_RC_TAG=$(git tag|grep demo-app | tail -1|sed -r 's/(\w+\-)//g')
+LATEST_RC_TAG=$(git tag|grep demo-app | tail -1)
+git fetch --verbose
+git checkout golden-source
+RELEASE_BRANCH=$(cat release.branch)
+git ls-remote --exit-code --heads origin $RELEASE_BRANCH
+if [ 2 -eq $? ];then
+	git checkout -b $RELEASE_BRANCH
+else
+	git checkout $RELEASE_BRANCH
+    git pull origin $RELEASE_BRANCH --verbose
+fi
+git rebase $LATEST_RC_TAG
+git push origin $RELEASE_BRANCH]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster6" />
     </vcs-settings>
