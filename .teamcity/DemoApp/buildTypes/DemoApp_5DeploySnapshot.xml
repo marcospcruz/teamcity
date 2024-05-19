@@ -3,6 +3,9 @@
   <name>5.Deploy Snapshot</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_31" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_25" name="mvn deploy" type="Maven2">
