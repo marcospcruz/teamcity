@@ -16,7 +16,7 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
       </runner>
       <runner id="RUNNER_27" name="release perform" type="Maven2">
         <conditions>
-          <does-not-contain name="COMMIT.author" value="root" />
+          <contains name="COMMIT.author" value="root" />
         </conditions>
         <parameters>
           <param name="goals" value="release:prepare release:perform -Darguments=&quot;-DskipTests&quot;" />
