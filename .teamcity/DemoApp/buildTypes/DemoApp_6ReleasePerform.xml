@@ -3,6 +3,9 @@
   <name>6.Release perform</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_30" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_26" name="check user" type="simpleRunner">
