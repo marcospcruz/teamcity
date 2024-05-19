@@ -25,10 +25,10 @@ git fetch --verbose
 #LATEST_RC_TAG=$(git tag|grep demo-app | tail -1|sed -r 's/(\w+\-)//g')
 LATEST_RC_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
 git fetch --verbose
-ls -la
+
 [ -f $(pwd)/release.branch ] \
-	&& echo WARNING: $(pwd)/release.branch not found \
-    && exit 0
+	&& echo ERROR: $(pwd)/release.branch not found \
+    && exit 1
 RELEASE_BRANCH=$(cat $(pwd)/release.branch)
 git checkout golden-source
 git ls-remote --exit-code --heads origin $RELEASE_BRANCH
