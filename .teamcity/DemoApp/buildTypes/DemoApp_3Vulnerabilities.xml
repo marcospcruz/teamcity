@@ -34,7 +34,7 @@
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_1UnitTest">
+      <depend-on sourceBuildTypeId="DemoApp_2UnitTest">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
