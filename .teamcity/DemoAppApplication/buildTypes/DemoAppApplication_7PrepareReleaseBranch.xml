@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d5eebad4-cd37-48b3-9bfd-4c07da99304d" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>7.Prepare Release Branch</name>
+  <description />
+  <settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_32" name="check user" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
+echo commit author is $AUTHOR
+echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_29" name="get latest release candidate tag" type="simpleRunner">
+        <conditions>
+          <contains name="COMMIT.author" value="root" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[git remote set-url origin https://%vcsroot.username%:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+#LATEST_RC_TAG=$(git tag|grep demo-app | tail -1|sed -r 's/(\w+\-)//g')
+LATEST_RC_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
+
+RELEASE_FILE="release.branch"
+[ ! -f $RELEASE_FILE ] \
+	&& echo ERROR: $RELEASE_FILE not found \
+    && exit 1
+RELEASE_BRANCH=$(cat $RELEASE_FILE)
+BRANCH_TYPE=$(git rev-parse --abbrev-ref HEAD|cut -d/ -f1)
+RELEASE_TAG=$BRANCH_TYPE-$(cat $RELEASE_FILE|cut -d/ -f2)
+[ "release" != $BRANCH_TYPE ] \
+	&& BRANCH_TYPE=hotfix && RELEASE_BRANCH=$(git branch --remote|grep hotfix|tail -1|sed -r 's/(\w+\/)(\w+\/)/\2/g') && RELEASE_TAG=hotfix-$(cat $RELEASE_FILE|cut -d/ -f2)
+echo branch type: $BRANCH_TYPE
+echo release branch: $RELEASE_BRANCH
+echo release tag: $RELEASE_TAG
+echo branch type: $BRANCH_TYPE 
+#RELEASE_BRANCH=$(cat release.branch|sed -r "s/(.+)(\/)/${BRANCH_TYPE}\2/g")
+[ -z $RELEASE_BRANCH ] && echo ERROR invalid value for release branch: $RELEASE_BRANCH && exit 1
+[ -z $RELEASE_TAG ] && echo ERROR invalid value for release tag: $RELEASE_TAG && exit 1
+echo release branch: $RELEASE_BRANCH
+#git checkout golden-source
+git ls-remote --exit-code --heads origin $RELEASE_BRANCH
+if [ "release" == "$BRANCH_TYPE" ];then
+  if [ 2 -eq $? ];then
+      git checkout -b $RELEASE_BRANCH
+  else
+      git checkout $RELEASE_BRANCH
+      git pull origin $RELEASE_BRANCH --verbose
+  fi
+  git rebase $LATEST_RC_TAG
+fi
+git tag $RELEASE_TAG
+git push origin $RELEASE_TAG
+git push origin $RELEASE_BRANCH]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoAppApplication_TagsDemoApp" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_16" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="perfmon" type="perfmon">
+        <parameters>
+          <param name="teamcity.perfmon.feature.enabled" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <dependencies>
+      <depend-on sourceBuildTypeId="DemoAppApplication_4Vulnerabilities">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
