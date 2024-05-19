@@ -24,7 +24,8 @@ git remote -v
 git fetch --verbose
 #LATEST_RC_TAG=$(git tag|grep demo-app | tail -1|sed -r 's/(\w+\-)//g')
 LATEST_RC_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
-git fetch --verbose
+git fetch
+ls -l
 RELEASE_FILE="release.branch"
 [ -f $RELEASE_FILE ] \
 	&& echo ERROR: $RELEASE_FILE not found \
