@@ -7,7 +7,7 @@
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="reportTagRevisions" value="true" />
-  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="submoduleCheckout" value="IGNORE" />
   <param name="teamcity:branchSpec" value="+:refs/tags/demo-app-*" />
   <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:8c96d212-09a3-4b47-a1b7-02f1611aaa16" />
   <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
