@@ -7,7 +7,7 @@
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="reportTagRevisions" value="true" />
-  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="submoduleCheckout" value="IGNORE" />
   <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/feature/*
 +:refs/tags/demo-app-*
 +:refs/heads/release/*
