@@ -31,9 +31,9 @@ RELEASE_FILE="release.branch"
     && exit 1
 RELEASE_BRANCH=$(cat $RELEASE_FILE)
 BRANCH_TYPE=$(git rev-parse --abbrev-ref HEAD|cut -d/ -f1)
-echo branch type: $BRANCH_TYPE
 RELEASE_TAG=$BRANCH_TYPE-$(cat $RELEASE_FILE|cut -d/ -f2)
 [ "release" != $BRANCH_TYPE ] && RELEASE_BRANCH=hotfix/$(git rev-parse --abbrev-ref HEAD) && RELEASE_TAG=hotfix-$(cat $RELEASE_FILE|cut -d/ -f2)
+echo branch type: $BRANCH_TYPE
 echo release branch: $RELEASE_BRANCH
 echo release tag: $RELEASE_TAG
 echo branch type: $BRANCH_TYPE 
