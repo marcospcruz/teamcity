@@ -4,6 +4,7 @@
   <description />
   <settings>
     <options>
+      <option name="excludeDefaultBranchChanges" value="true" />
       <option name="executionTimeoutMin" value="10" />
       <option name="shouldFailBuildOnAnyErrorMessage" value="true" />
       <option name="supportTestRetry" value="true" />
