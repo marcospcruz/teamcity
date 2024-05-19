@@ -30,7 +30,9 @@ RELEASE_FILE="%system.agent.work.dir%/release.branch"
 	&& echo ERROR: $RELEASE_FILE not found \
     && exit 1
 RELEASE_BRANCH=$(cat $RELEASE_FILE)
-git checkout golden-source
+[ -z $RELEASE_BRANCH ] && echo ERROR invalid value for release branch: $RELEASE_BRANCH && exit 1
+echo release branch: $RELEASE_BRANCH
+#git checkout golden-source
 git ls-remote --exit-code --heads origin $RELEASE_BRANCH
 if [ 2 -eq $? ];then
 	git checkout -b $RELEASE_BRANCH
