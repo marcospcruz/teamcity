@@ -26,6 +26,7 @@ git fetch --verbose
 LATEST_RC_TAG=$(git describe --tags $(git rev-list --tags --max-count=1))
 git fetch
 ls -l
+ls $(pwd)
 RELEASE_FILE="release.branch"
 [ -f $RELEASE_FILE ] \
 	&& echo ERROR: $RELEASE_FILE not found \
