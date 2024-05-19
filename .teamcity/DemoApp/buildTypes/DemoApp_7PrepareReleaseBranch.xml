@@ -33,17 +33,28 @@ RELEASE_FILE="release.branch"
 	&& echo ERROR: $RELEASE_FILE not found \
     && exit 1
 RELEASE_BRANCH=$(cat $RELEASE_FILE)
+BRANCH_TYPE=$(git rev-parse --abbrev-ref HEAD|cut -d/ -f1)
+[ "release" != $BRANCH_TYPE ] && RELEASE_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+RELEASE_TAG=$BRANCH_TYPE-$(cat $RELEASE_FILE|cut -d/ -f2)
+echo release branch: $RELEASE_BRANCH
+echo release tag: $RELEASE_TAG
+echo branch type: $BRANCH_TYPE 
+#RELEASE_BRANCH=$(cat release.branch|sed -r "s/(.+)(\/)/${BRANCH_TYPE}\2/g")
 [ -z $RELEASE_BRANCH ] && echo ERROR invalid value for release branch: $RELEASE_BRANCH && exit 1
+[ -z $RELEASE_TAG ] && echo ERROR invalid value for release tag: $RELEASE_TAG && exit 1
 echo release branch: $RELEASE_BRANCH
 #git checkout golden-source
 git ls-remote --exit-code --heads origin $RELEASE_BRANCH
-if [ 2 -eq $? ];then
-	git checkout -b $RELEASE_BRANCH
-else
-	git checkout $RELEASE_BRANCH
-    git pull origin $RELEASE_BRANCH --verbose
+if [ "release" == $BRANCH_TYPE ];then
+  if [ 2 -eq $? ];then
+      git checkout -b $RELEASE_BRANCH
+  else
+      git checkout $RELEASE_BRANCH
+      git pull origin $RELEASE_BRANCH --verbose
+  fi
+  git rebase $LATEST_RC_TAG
 fi
-git rebase $LATEST_RC_TAG
+git tag $RELEASE_TAG
 git push origin $RELEASE_BRANCH]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
