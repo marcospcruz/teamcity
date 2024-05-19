@@ -54,6 +54,7 @@ if [ "release" == "$BRANCH_TYPE" ];then
   git rebase $LATEST_RC_TAG
 fi
 git tag $RELEASE_TAG
+git push origin $RELEASE_TAG
 git push origin $RELEASE_BRANCH]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
