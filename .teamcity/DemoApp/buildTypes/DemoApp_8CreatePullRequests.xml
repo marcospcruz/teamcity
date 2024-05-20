@@ -25,7 +25,8 @@ case "%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
         exit 1
         ;;
 esac
-echo "target branch: ${TARGET_BRANCH}"]]></param>
+echo "target branch: ${TARGET_BRANCH}"
+echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
