@@ -30,7 +30,7 @@ echo commit author: $AUTHOR
 echo commit hash: $COMMIT_HASH
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 CURRENT_BRANCH_TYPE=$(echo $CURRENT_BRANCH|cut -d/ -f1)
-
+[ -z $AUTHOR ] && exit 1
 echo "source branch type: $CURRENT_BRANCH_TYPE"
 echo "source branch: $CURRENT_BRANCH"
 echo "target branch: $TARGET_BRANCH"
