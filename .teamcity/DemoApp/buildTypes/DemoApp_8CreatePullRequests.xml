@@ -92,12 +92,6 @@ print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators
     <requirements />
     <build-triggers />
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_4Vulnerabilities">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
       <depend-on sourceBuildTypeId="DemoApp_5DeploySnapshot">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
