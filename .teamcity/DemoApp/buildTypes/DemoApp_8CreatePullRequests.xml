@@ -15,7 +15,153 @@
           <param name="isTestReportingEnabled" value="true" />
           <param name="poetryExecutable" value="poetry" />
           <param name="pythonVersion" value="python3" />
-          <param name="scriptContent" value="echo" />
+          <param name="scriptContent"><![CDATA[# This code sample uses the 'requests' library:
+# http://docs.python-requests.org
+import requests
+import json
+
+url = %bitbucket.pull-request.restapi.url%
+
+headers = {
+  "Accept": "application/json",
+  "Content-Type": "application/json",
+  "Authorization": "Bearer <access_token>"
+}
+
+payload = json.dumps( {
+  "type": "<string>",
+  "links": {
+    "self": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "html": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "commits": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "approve": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "diff": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "diffstat": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "comments": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "activity": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "merge": {
+      "href": "<string>",
+      "name": "<string>"
+    },
+    "decline": {
+      "href": "<string>",
+      "name": "<string>"
+    }
+  },
+  "id": 108,
+  "title": "<string>",
+  "rendered": {
+    "title": {
+      "raw": "<string>",
+      "markup": "markdown",
+      "html": "<string>"
+    },
+    "description": {
+      "raw": "<string>",
+      "markup": "markdown",
+      "html": "<string>"
+    },
+    "reason": {
+      "raw": "<string>",
+      "markup": "markdown",
+      "html": "<string>"
+    }
+  },
+  "summary": {
+    "raw": "<string>",
+    "markup": "markdown",
+    "html": "<string>"
+  },
+  "state": "OPEN",
+  "author": {
+    "type": "<string>"
+  },
+  "source": {
+    "repository": {
+      "type": "<string>"
+    },
+    "branch": {
+      "name": "<string>",
+      "merge_strategies": [
+        "merge_commit"
+      ],
+      "default_merge_strategy": "<string>"
+    },
+    "commit": {
+      "hash": "<string>"
+    }
+  },
+  "destination": {
+    "repository": {
+      "type": "<string>"
+    },
+    "branch": {
+      "name": "<string>",
+      "merge_strategies": [
+        "merge_commit"
+      ],
+      "default_merge_strategy": "<string>"
+    },
+    "commit": {
+      "hash": "<string>"
+    }
+  },
+  "merge_commit": {
+    "hash": "<string>"
+  },
+  "comment_count": 51,
+  "task_count": 53,
+  "close_source_branch": true,
+  "closed_by": {
+    "type": "<string>"
+  },
+  "reason": "<string>",
+  "created_on": "<string>",
+  "updated_on": "<string>",
+  "reviewers": [
+    {
+      "type": "<string>"
+    }
+  ],
+  "participants": [
+    {
+      "type": "<string>"
+    }
+  ]
+} )
+
+response = requests.request(
+   "POST",
+   url,
+   data=payload,
+   headers=headers
+)
+
+print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="virtualenvEnvName" value=".venv" />
           <param name="virtualenvFile" value="requirements.txt" />
