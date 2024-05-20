@@ -70,10 +70,7 @@ payload = json.dumps( {
         "merge_commit"
       ],
       
-    },
-    "commit": {
-      "hash": "%env.COMMIT.hash%"
-    }
+  
   },
     "fromRef": {
         "id": "%env.git.branch.source%",
