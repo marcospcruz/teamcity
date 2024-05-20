@@ -15,18 +15,21 @@ echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 echo "source branch type: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
 
-
+COMMIT_USER="%dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 case "%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
-    "feature" ) 
-    	TARGET_BRANCH="develop" 
+    	"feature" ) 
+    		TARGET_BRANCH="refs/heads/develop" 
+            CURRENT_BRANCH="refs/heads/%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
         ;;
-			*)	
-        echo "ERROR: Invalid branch type"
-        exit 1
+        *)	
+        	echo "ERROR: Invalid branch type"
+        	exit 1
         ;;
 esac
 echo "target branch: ${TARGET_BRANCH}"
-echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"]]></param>
+echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
+echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"
+echo "##teamcity[setParameter name='env.COMMIT.author' value='${COMMIT_USER}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
