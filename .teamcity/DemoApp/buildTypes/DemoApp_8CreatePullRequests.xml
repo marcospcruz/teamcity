@@ -41,6 +41,81 @@ echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${C
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_42" name="create pull request" type="python-runner">
+        <parameters>
+          <param name="command" value="script" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="installToolPackage" value="true" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="poetryExecutable" value="poetry" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptContent"><![CDATA[# This code sample uses the 'requests' library:
+# http://docs.python-requests.org
+import requests
+import json
+
+url = %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%
+
+headers = {
+  "Accept": "application/json",
+  "Content-Type": "application/json",
+  "Authorization": "Bearer %bitbucket.restapi.url.access-token%"
+}
+
+payload = json.dumps({
+  "title": "merge pull request",
+  "description": "",
+  "state": "OPEN",
+  "close_source_branch": %env.git.pullrequest.close_source%,
+  "author": {
+    "display_name": "%env.COMMIT.author%",
+    "type": "user",
+    "nickname": "%env.COMMIT.author%",
+    "account_id": ""
+  },
+  "source": {
+    "repository": {
+      "type": "repository"
+    },
+    "branch": {
+      "name": "%env.git.branch.source%",
+      "merge_strategies": [
+        "merge_commit"
+      ]
+    }
+  },
+  "destination": {
+    "repository": {
+      "type": "repository"
+    },
+    "branch": {
+      "name": "%env.git.branch.target%",
+      "merge_strategies": [
+        "merge_commit"
+      ]
+    }
+  }
+})
+
+response = requests.request(
+   "POST",
+   url,
+   data=payload,
+   headers=headers
+)
+json_response=json.loads(response.text)
+#print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
+print(response.status_code)
+print(201 != response.status_code)
+#if 201 != response.status_code:
+#  exit(1)]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value=".venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
