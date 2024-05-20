@@ -6,7 +6,42 @@
     <parameters>
       <param name="env.COMMIT.author" value="" />
     </parameters>
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
+echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+echo "source branch type: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
+echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+CLOSE_SOURCE=false
+CURRENT_BRANCH="%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+COMMIT_USER="%dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+case "%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
+    	"feature" ) 
+    		TARGET_BRANCH="develop" 
+            CLOSE_SOURCE=true
+        ;;
+    	"feature" ) 
+    		TARGET_BRANCH="release/support-rc" 
+            CLOSE_SOURCE=false
+        ;;        
+        *)	
+        	echo "ERROR: Invalid branch type"
+        	#exit 1
+            echo skipping creating PR
+            TARGET_BRANCH=""
+        ;;
+esac
+echo "target branch: ${TARGET_BRANCH}"
+echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
+echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"
+echo "##teamcity[setParameter name='env.COMMIT.author' value='${COMMIT_USER}']"
+echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${CLOSE_SOURCE}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings />
     <requirements />
     <build-triggers />
