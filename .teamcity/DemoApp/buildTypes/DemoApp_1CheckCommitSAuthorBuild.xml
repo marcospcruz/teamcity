@@ -38,7 +38,6 @@ echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRAN
 echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"
 echo "##teamcity[setParameter name='env.COMMIT.hash' value='${COMMIT_HASH}']"
 echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT_BRANCH_TYPE}']"]]></param>
-          <param name="teamcity.build.workingDir" value="/tmp/work" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
