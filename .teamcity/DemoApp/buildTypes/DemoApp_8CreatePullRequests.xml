@@ -10,9 +10,9 @@
     <build-runners>
       <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo "commit author: %env.COMMIT.author%"
-echo "source branch: %env.git.branch.source%"
-echo "target branch: %env.git.branch.target%"
+          <param name="script.content"><![CDATA[echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+echo "target branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.target%"
 echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
