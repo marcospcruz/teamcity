@@ -24,9 +24,7 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
       </runner>
       <runner id="RUNNER_44" name="get commit details" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo %system.teamcity.projectName%
-exit 1
-AUTHOR=$(git log --oneline --pretty="%ae"|head -1)
+          <param name="script.content"><![CDATA[AUTHOR=$(git log --oneline --pretty="%ae"|head -1)
 COMMIT_HASH=$(git rev-parse HEAD)
 echo commit author: $AUTHOR
 echo commit hash: $COMMIT_HASH
