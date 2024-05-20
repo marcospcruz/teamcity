@@ -60,6 +60,21 @@ payload = json.dumps( {
     "title": "merge pull request",
     "description": "",
     "state": "OPEN",
+    "source": {
+    "repository": {
+      "type": "%bitbucket.restapi.url.repositories.workspace.slug%"
+    },
+    "branch": {
+      "name": "%env.git.branch.source%",
+      "merge_strategies": [
+        "merge_commit"
+      ],
+      
+    },
+    "commit": {
+      "hash": "%dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.hash%"
+    }
+  },
     "fromRef": {
         "id": "%env.git.branch.source%",
         "repository": {
