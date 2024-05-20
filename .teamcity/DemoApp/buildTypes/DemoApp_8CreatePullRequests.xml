@@ -17,8 +17,8 @@ echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source
 COMMIT_USER="%dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 case "%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
     	"feature" ) 
-    		TARGET_BRANCH="refs/heads/develop" 
-            CURRENT_BRANCH="refs/heads/%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+    		TARGET_BRANCH="develop" 
+            CURRENT_BRANCH="%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
         ;;
         *)	
         	echo "ERROR: Invalid branch type"
