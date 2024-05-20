@@ -3,6 +3,9 @@
   <name>8.Create Pull Requests</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_42" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_42" name="create pull request" type="python-runner">
