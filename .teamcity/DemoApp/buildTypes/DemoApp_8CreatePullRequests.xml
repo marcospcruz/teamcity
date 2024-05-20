@@ -99,7 +99,7 @@ response = requests.request(
 json_response=json.loads(response.text)
 print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
 print(response.status_code)
-if 200 != response.status_code:
+if 201 != response.status_code:
   exit(1)]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="virtualenvEnvName" value=".venv" />
