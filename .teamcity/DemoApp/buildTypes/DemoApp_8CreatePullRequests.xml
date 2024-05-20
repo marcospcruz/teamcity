@@ -10,10 +10,21 @@
     <build-runners>
       <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+          <param name="script.content"><![CDATA[echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
+echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+echo "source branch type: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
 echo "target branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.target%"
-echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"]]></param>
+
+case "${CURRENT_BRANCH_TYPE}" in
+    "feature" ) 
+    	TARGET_BRANCH="develop" 
+        ;;
+	*)	
+        echo "ERROR: Invalid branch type"
+        exit 1
+        ;;
+esac]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
