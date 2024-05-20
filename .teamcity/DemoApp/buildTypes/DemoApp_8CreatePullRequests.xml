@@ -3,7 +3,9 @@
   <name>8.Create Pull Requests</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="env.COMMIT.author" value="" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
         <parameters>
