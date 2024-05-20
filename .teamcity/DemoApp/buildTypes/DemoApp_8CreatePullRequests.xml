@@ -13,13 +13,18 @@
 echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 echo "source branch type: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
-
+CLOSE_SOURCE=false
+CURRENT_BRANCH="%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
 COMMIT_USER="%dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 case "%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
     	"feature" ) 
     		TARGET_BRANCH="develop" 
-            CURRENT_BRANCH="%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+            CLOSE_SOURCE=true
         ;;
+    	"feature" ) 
+    		TARGET_BRANCH="release/support-rc" 
+            CLOSE_SOURCE=false
+        ;;        
         *)	
         	echo "ERROR: Invalid branch type"
         	exit 1
@@ -28,7 +33,8 @@ esac
 echo "target branch: ${TARGET_BRANCH}"
 echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
 echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"
-echo "##teamcity[setParameter name='env.COMMIT.author' value='${COMMIT_USER}']"]]></param>
+echo "##teamcity[setParameter name='env.COMMIT.author' value='${COMMIT_USER}']"
+echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${CLOSE_SOURCE}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
