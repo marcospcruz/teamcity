@@ -42,6 +42,9 @@ echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${C
         </parameters>
       </runner>
       <runner id="RUNNER_42" name="create pull request" type="python-runner">
+        <conditions>
+          <does-not-contain name="env.COMMIT.author" value="@bots.bitbucket.org" />
+        </conditions>
         <parameters>
           <param name="command" value="script" />
           <param name="coverageArgs" value="--omit=*lib*" />
@@ -105,11 +108,10 @@ response = requests.request(
    headers=headers
 )
 json_response=json.loads(response.text)
-#print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
 print(response.status_code)
-print(201 != response.status_code)
-#if 201 != response.status_code:
-#  exit(1)]]></param>
+if 201 != response.status_code:
+  print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
+  exit(1)]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="virtualenvEnvName" value=".venv" />
           <param name="virtualenvFile" value="requirements.txt" />
