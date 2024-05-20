@@ -8,6 +8,15 @@
     </disabled-settings>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_43" name="check user" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
+echo commit author is $AUTHOR
+echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_42" name="create pull request" type="python-runner">
         <parameters>
           <param name="command" value="script" />
@@ -72,15 +81,6 @@ print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators
           <param name="teamcity.step.mode" value="default" />
           <param name="virtualenvEnvName" value=".venv" />
           <param name="virtualenvFile" value="requirements.txt" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_43" name="check user" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
-echo commit author is $AUTHOR
-echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
