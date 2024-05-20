@@ -51,7 +51,10 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT
     <build-triggers>
       <build-trigger id="TRIGGER_15" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:*" />
+          <param name="branchFilter"><![CDATA[+:refs/*
+-:pull-requests/*
+-:refs/pull-requests/*
+-:<default>]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
