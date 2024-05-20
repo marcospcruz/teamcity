@@ -44,6 +44,7 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_FeatureBugfix" />
       <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
+      <vcs-entry-ref root-id="DemoApp_TagsDemoApp" />
     </vcs-settings>
     <requirements />
     <build-triggers>
