@@ -13,7 +13,7 @@
           <param name="script.content"><![CDATA[echo "commit author: %COMMIT.author%"
 echo "source branch: %git.branch.source%"
 echo "target branch: %git.branch.target%"
-echo "repository rest api url: %bitbucket.restapi.respositories.slug%"]]></param>
+echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
