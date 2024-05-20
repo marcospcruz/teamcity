@@ -9,6 +9,9 @@
     <parameters />
     <build-runners>
       <runner id="RUNNER_25" name="mvn deploy" type="Maven2">
+        <conditions>
+          <equals name="git.branch.source" value="develop" />
+        </conditions>
         <parameters>
           <param name="goals" value="deploy" />
           <param name="localRepoScope" value="agent" />
