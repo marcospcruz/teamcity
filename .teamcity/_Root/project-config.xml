@@ -21,6 +21,7 @@
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
     <param name="env.COMMIT.author" value="-script-generated-" />
     <param name="env.git.branch.source" value="script-generated" />
+    <param name="env.git.branch.source.type" value="-script-generated-" />
     <param name="env.git.branch.target" value="script-generated" />
     <param name="exclude-master" value="-:refs/heads/master" />
     <param name="git.branch.source.type" value="-script-generated-" />
