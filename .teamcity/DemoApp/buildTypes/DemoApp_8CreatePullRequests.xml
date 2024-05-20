@@ -68,9 +68,7 @@ payload = json.dumps( {
       "name": "%env.git.branch.source%",
       "merge_strategies": [
         "merge_commit"
-      ],
-      
-  
+      ]  
   },
     "fromRef": {
         "id": "%env.git.branch.source%",
