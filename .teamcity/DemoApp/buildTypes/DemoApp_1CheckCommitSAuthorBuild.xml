@@ -26,19 +26,12 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
 echo commit author is $AUTHOR
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 CURRENT_BRANCH_TYPE=$(echo $CURRENT_BRANCH|cut -d/ -f1)
-case "${CURRENT_BRANCH_TYPE}" in
-    "feature" ) 
-    	TARGET_BRANCH="develop" 
-        ;;
-	*)	
-        echo "ERROR: Invalid branch type"
-        exit 1
-        ;;
-esac
 
+echo "source branch type: $CURRENT_BRANCH_TYPE"
 echo "source branch: $CURRENT_BRANCH"
 echo "target branch: $TARGET_BRANCH"
-
+echo "##teamcity[setParameter name='env.git.branch.source.type' value='refs/heads/${CURRENT_BRANCH_TYPE}']"
+echo "##teamcity[setParameter name='env.git.branch.source' value='refs/heads/${CURRENT_BRANCH}']"
 echo "##teamcity[setParameter name='env.git.branch.source' value='refs/heads/${CURRENT_BRANCH}']"
 echo "##teamcity[setParameter name='env.git.branch.target' value='refs/heads/${TARGET_BRANCH}']"
 echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"]]></param>
