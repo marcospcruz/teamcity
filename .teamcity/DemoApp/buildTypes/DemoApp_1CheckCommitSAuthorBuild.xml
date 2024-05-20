@@ -23,7 +23,9 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
       <runner id="RUNNER_44" name="get commit details" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[AUTHOR=$(git log --oneline --pretty="%ae"|head -1)
-echo commit author is $AUTHOR
+COMMIT_HASH=$(git rev-parse HEAD)
+echo commit author: $AUTHOR
+echo commit hash: $COMMIT_HASH
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 CURRENT_BRANCH_TYPE=$(echo $CURRENT_BRANCH|cut -d/ -f1)
 
@@ -32,6 +34,7 @@ echo "source branch: $CURRENT_BRANCH"
 echo "target branch: $TARGET_BRANCH"
 echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
 echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"
+echo "##teamcity[setParameter name='env.COMMIT.hash' value='${COMMIT_HASH}']"
 echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT_BRANCH_TYPE}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
