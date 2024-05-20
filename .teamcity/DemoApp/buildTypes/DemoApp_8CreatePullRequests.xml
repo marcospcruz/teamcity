@@ -60,8 +60,6 @@ payload = json.dumps( {
     "title": "merge pull request",
     "description": "",
     "state": "OPEN",
-    "open": true,
-    "closed": false,
     "fromRef": {
         "id": "%env.git.branch.source%",
         "repository": {
