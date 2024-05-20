@@ -21,7 +21,7 @@ case "%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
     		TARGET_BRANCH="develop" 
             CLOSE_SOURCE=true
         ;;
-    	"feature" ) 
+    	"develop" ) 
     		TARGET_BRANCH="release/support-rc" 
             CLOSE_SOURCE=false
         ;;        
