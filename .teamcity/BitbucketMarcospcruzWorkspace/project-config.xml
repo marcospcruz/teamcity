@@ -2,7 +2,9 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="63ec54b3-3fdb-4f83-b55c-c55b3c4918a4" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>bitbucket marcospcruz workspace</name>
   <description>work</description>
-  <parameters />
+  <parameters>
+    <param name="bitbucket.restapi.url.repositories.workspace" value="%bitbucket.restapi.url%/repositories/marcospcruz" />
+  </parameters>
   <cleanup />
 </project>
 
