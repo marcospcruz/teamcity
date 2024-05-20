@@ -30,6 +30,7 @@
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_FeatureBugfix" />
+      <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
     </vcs-settings>
     <requirements />
     <build-triggers>
