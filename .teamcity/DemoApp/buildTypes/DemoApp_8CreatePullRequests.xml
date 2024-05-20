@@ -20,12 +20,12 @@
 import requests
 import json
 
-url = %bitbucket.pull-request.restapi.url%
+url = %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%
 
 headers = {
   "Accept": "application/json",
   "Content-Type": "application/json",
-  "Authorization": "Bearer <access_token>"
+  "Authorization": "Bearer %bitbucket.restapi.url.access-token%"
 }
 
 payload = json.dumps( {
