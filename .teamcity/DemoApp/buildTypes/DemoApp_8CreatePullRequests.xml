@@ -85,7 +85,7 @@ payload = json.dumps({
       ]
     }
   },
-  "close_source_branch": %env.git.pullrequest.close_source%,
+  "close_source_branch": "%env.git.pullrequest.close_source%",
   "destination": {
     "repository": {
       "type": "repository"
