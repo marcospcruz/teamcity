@@ -14,17 +14,18 @@
 echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 echo "source branch type: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
-echo "target branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.target%"
 
-case "${CURRENT_BRANCH_TYPE}" in
+
+case "%dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
     "feature" ) 
     	TARGET_BRANCH="develop" 
         ;;
-	*)	
+			*)	
         echo "ERROR: Invalid branch type"
         exit 1
         ;;
-esac]]></param>
+esac
+echo "target branch: ${TARGET_BRANCH}"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
