@@ -103,8 +103,10 @@ response = requests.request(
    data=payload,
    headers=headers
 )
-
-print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators=(",", ": ")))]]></param>
+json_response=json.loads(response.text)
+print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
+if 'error' == json.type:
+  exit 1]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="virtualenvEnvName" value=".venv" />
           <param name="virtualenvFile" value="requirements.txt" />
