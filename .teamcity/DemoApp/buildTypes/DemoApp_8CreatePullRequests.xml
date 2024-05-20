@@ -72,7 +72,7 @@ payload = json.dumps( {
       
     },
     "commit": {
-      "hash": "%dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.hash%"
+      "hash": "%env.COMMIT.hash%"
     }
   },
     "fromRef": {
