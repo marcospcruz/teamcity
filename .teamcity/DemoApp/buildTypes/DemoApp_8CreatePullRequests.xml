@@ -64,7 +64,7 @@ payload = json.dumps( {
         "id": "%env.git.branch.source%",
         "repository": {
             "slug": "%bitbucket.restapi.respositories.slug%",
-            "name": null,
+            "name": "%bitbucket.restapi.respositories.slug%",
             "project": {
                 "key": "%env.COMMIT.author%"
             }
@@ -74,7 +74,7 @@ payload = json.dumps( {
         "id": "%env.git.branch.target%",
         "repository": {
             "slug": "%bitbucket.restapi.respositories.slug%",
-            "name": null,
+            "name": "%bitbucket.restapi.respositories.slug%",
             "project": {
                 "key": "%env.COMMIT.author%"
             }
