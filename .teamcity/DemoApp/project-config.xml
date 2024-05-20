@@ -4,7 +4,7 @@
   <parameters>
     <param name="bitbucket.restapi.respositories.slug" value="demo-app" />
     <param name="bitbucket.restapi.url.repositories.workspace.slug" value="%bitbucket.restapi.url.repositories.workspace%/demo-app" />
-    <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="%bitbucket.restapi.url.repositories.workspace.slug%/pullrequests" />
+    <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="&quot;%bitbucket.restapi.url.repositories.workspace.slug%/pullrequests&quot;" />
   </parameters>
   <cleanup />
 </project>
