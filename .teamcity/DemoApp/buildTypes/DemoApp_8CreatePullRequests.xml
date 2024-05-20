@@ -70,7 +70,18 @@ payload = json.dumps({
 				"merge_commit"
 			] 		
 		}
-	}
+	},
+    "destination": {
+    "repository": {
+      "type": "<string>"
+    },
+    "branch": {
+      "name": "%env.git.branch.target%",
+      "merge_strategies": [
+        "merge_commit"
+      ]      
+    }
+   }
 })
 
 response = requests.request(
