@@ -79,9 +79,7 @@ payload = json.dumps( {
                 "key": "%env.COMMIT.author%"
             }
         }
-    },
-    "locked": false
-    
+    }    
 })
 
 response = requests.request(
