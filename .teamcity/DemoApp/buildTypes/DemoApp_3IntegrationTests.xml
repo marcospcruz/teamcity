@@ -31,7 +31,6 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc" />
       <vcs-entry-ref root-id="DemoApp_TagsDemoApp" />
     </vcs-settings>
     <requirements />
