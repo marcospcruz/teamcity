@@ -17,7 +17,7 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_AllBranches" />
+      <vcs-entry-ref root-id="DemoApp_FeatureBugfix" />
     </vcs-settings>
     <requirements />
     <build-triggers>
