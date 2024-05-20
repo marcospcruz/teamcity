@@ -60,6 +60,7 @@ payload = json.dumps({
   "title": "merge pull request",
   "description": "",
   "state": "OPEN",
+  "close_source_branch": %env.git.pullrequest.close_source%,
   "author": {
     "display_name": "%env.COMMIT.author%",
     "type": "user",
