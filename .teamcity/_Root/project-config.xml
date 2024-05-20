@@ -20,6 +20,7 @@
     <param name="bitbucket.restapi.url" value="https://api.bitbucket.org/2.0" />
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
     <param name="env.COMMIT.author" value="-script-generated-" />
+    <param name="env.COMMIT.hash" value="" />
     <param name="env.git.branch.source" value="script-generated" />
     <param name="env.git.branch.source.type" value="-script-generated-" />
     <param name="env.git.branch.target" value="script-generated" />
