@@ -2,7 +2,7 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="BitbucketMarcospcruzWorkspace" uuid="dc84ccb7-da46-40f6-9b5d-95363326ca92" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>Demo App</name>
   <parameters>
-    <param name="bitbucket.restapi.respositories.slug" value="" />
+    <param name="bitbucket.restapi.respositories.slug" value="demo-app" />
     <param name="bitbucket.restapi.url.repositories.workspace.slug" value="%bitbucket.restapi.url.repositories.workspace%/demo-app" />
     <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="%bitbucket.restapi.url.repositories.workspace.slug%/pullrequests" />
   </parameters>
