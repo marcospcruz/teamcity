@@ -97,7 +97,7 @@ payload = json.dumps({
     }
   }
 })
-
+print(str(payload))
 response = requests.request(
    "POST",
    url,
