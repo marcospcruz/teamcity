@@ -31,8 +31,8 @@ echo "source branch type: $CURRENT_BRANCH_TYPE"
 echo "source branch: $CURRENT_BRANCH"
 echo "target branch: $TARGET_BRANCH"
 echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
-echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"
-echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"]]></param>
+echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"
+echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT_BRANCH_TYPE}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
