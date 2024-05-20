@@ -6,6 +6,9 @@
     <options>
       <option name="excludeDefaultBranchChanges" value="true" />
     </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_28" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_28" name="check user" type="simpleRunner">
