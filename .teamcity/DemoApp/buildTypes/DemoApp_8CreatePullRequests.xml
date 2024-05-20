@@ -56,40 +56,21 @@ headers = {
   "Authorization": "Bearer %bitbucket.restapi.url.access-token%"
 }
 
-payload = json.dumps( {
+payload = json.dumps({
     "title": "merge pull request",
     "description": "",
     "state": "OPEN",
     "source": {
-    "repository": {
-      "type": "%bitbucket.restapi.url.repositories.workspace.slug%"
-    },
-    "branch": {
-      "name": "%env.git.branch.source%",
-      "merge_strategies": [
-        "merge_commit"
-      ]  
-  },
-    "fromRef": {
-        "id": "%env.git.branch.source%",
-        "repository": {
-            "slug": "%bitbucket.restapi.respositories.slug%",
-            "name": "%bitbucket.restapi.respositories.slug%",
-            "project": {
-                "key": "%env.COMMIT.author%"
-            }
-        }
-    },
-    "toRef": {
-        "id": "%env.git.branch.target%",
-        "repository": {
-            "slug": "%bitbucket.restapi.respositories.slug%",
-            "name": "%bitbucket.restapi.respositories.slug%",
-            "project": {
-                "key": "%env.COMMIT.author%"
-            }
-        }
-    }    
+		"repository": {
+		  "type": "%bitbucket.restapi.url.repositories.workspace.slug%"
+		},
+		"branch": {
+			"name": "%env.git.branch.source%", 
+			"merge_strategies": [
+				"merge_commit"
+			] 		
+		}
+	}
 })
 
 response = requests.request(
