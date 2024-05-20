@@ -91,14 +91,6 @@ print(json.dumps(json.loads(response.text), sort_keys=True, indent=4, separators
     </vcs-settings>
     <requirements />
     <build-triggers />
-    <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_5DeploySnapshot">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
     <cleanup />
   </settings>
 </build-type>
