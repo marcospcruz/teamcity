@@ -53,8 +53,7 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT
         <parameters>
           <param name="branchFilter"><![CDATA[+:refs/*
 -:pull-requests/*
--:refs/pull-requests/*
--:<default>]]></param>
+-:refs/pull-requests/*]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
