@@ -39,9 +39,9 @@ esac
 echo "source branch: $CURRENT_BRANCH"
 echo "target branch: $TARGET_BRANCH"
 
-echo "##teamcity[setParameter name='git.branch.source' value='refs/heads/${CURRENT_BRANCH}']"
-echo "##teamcity[setParameter name='git.branch.target' value='refs/heads/${TARGET_BRANCH}']"
-echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
+echo "##teamcity[setParameter name='env.git.branch.source' value='refs/heads/${CURRENT_BRANCH}']"
+echo "##teamcity[setParameter name='env.git.branch.target' value='refs/heads/${TARGET_BRANCH}']"
+echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
