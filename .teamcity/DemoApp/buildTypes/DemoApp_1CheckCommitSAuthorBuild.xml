@@ -17,6 +17,32 @@ echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_44" name="get commit details" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[AUTHOR=$(git log --oneline --pretty="%ae"|head -1)
+echo commit author is $AUTHOR
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+CURRENT_BRANCH_TYPE=$(echo $CURRENT_BRANCH|cut -d/ -f1)
+case "${CURRENT_BRANCH_TYPE}" in
+    "feature" ) 
+    	TARGET_BRANCH="develop" 
+        ;;
+	*)	
+        echo "ERROR: Invalid branch type"
+        exit 1
+        ;;
+esac
+
+echo "source branch: $CURRENT_BRANCH"
+echo "target branch: $TARGET_BRANCH"
+
+echo "##teamcity[setParameter name='git.branch.source' value='refs/heads/${CURRENT_BRANCH}']"
+echo "##teamcity[setParameter name='git.branch.target' value='refs/heads/${TARGET_BRANCH}']"
+echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_FeatureBugfix" />
