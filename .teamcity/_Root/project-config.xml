@@ -4,7 +4,6 @@
   <description>Contains all other projects</description>
   <parameters>
     <param name="ANGULAR_VERSION" value="13.3.0" />
-    <param name="COMMIT.author" value="-script-generated-" />
     <param name="NODE_VERSION" value="14.20" />
     <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
 %add-release-hotfix%
@@ -19,6 +18,7 @@
 +:refs/heads/hotfix/*]]></param>
     <param name="bitbucket-token" value="ATBBzjFvtwthjfCajsLh78gu5xmTDB13ADC9" />
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
+    <param name="env.COMMIT.author" value="-script-generated-" />
     <param name="env.bitbucket.restapi.url" value="https://api.bitbucket.org/2.0" />
     <param name="exclude-master" value="-:refs/heads/master" />
     <param name="git.branch.source" value="script-generated" />
