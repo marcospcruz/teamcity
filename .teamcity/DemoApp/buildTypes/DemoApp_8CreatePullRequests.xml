@@ -63,22 +63,22 @@ payload = json.dumps( {
     "open": true,
     "closed": false,
     "fromRef": {
-        "id": "%git.branch.source%",
+        "id": "%env.git.branch.source%",
         "repository": {
             "slug": "%bitbucket.restapi.respositories.slug%",
             "name": null,
             "project": {
-                "key": "%COMMIT.author%"
+                "key": "%env.COMMIT.author%"
             }
         }
     },
     "toRef": {
-        "id": "%git.branch.target%",
+        "id": "%env.git.branch.target%",
         "repository": {
             "slug": "%bitbucket.restapi.respositories.slug%",
             "name": null,
             "project": {
-                "key": "%COMMIT.author%"
+                "key": "%env.COMMIT.author%"
             }
         }
     },
