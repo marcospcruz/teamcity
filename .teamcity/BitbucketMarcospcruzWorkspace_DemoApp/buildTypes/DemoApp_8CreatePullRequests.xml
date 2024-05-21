@@ -109,7 +109,7 @@ response = requests.request(
    headers=headers
 )
 json_response=json.loads(response)
-print(json_response)
+print(str(json_response))
 print(response.status_code)
 if 201 != response.status_code:
   print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
