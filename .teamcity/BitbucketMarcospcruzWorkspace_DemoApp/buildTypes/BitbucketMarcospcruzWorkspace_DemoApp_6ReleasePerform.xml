@@ -12,15 +12,6 @@
     </disabled-settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_26" name="check user" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
-echo commit author is $AUTHOR
-echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_27" name="release perform" type="Maven2">
         <conditions>
           <does-not-contain name="COMMIT.author" value="root" />
