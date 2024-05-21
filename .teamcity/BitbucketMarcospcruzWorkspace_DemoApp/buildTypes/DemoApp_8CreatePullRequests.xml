@@ -108,7 +108,7 @@ response = requests.request(
    data=payload,
    headers=headers
 )
-print(str(response.text))
+print(response.text.type)
 print(response.status_code)
 if 201 != response.status_code:
   print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
