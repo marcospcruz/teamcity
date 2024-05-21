@@ -117,7 +117,7 @@ response_text=json.loads(response.text)
 if 201 != response.status_code:
   error_message=response_text['error']['message']
   print("Http status code: ",response.status_code," - message: ",error_message)
-  if 400 == response.status_code && error_message == %bitbucket.restapi.url.repositories.workspace.slug.pullrequests.error.accepted_message%:
+  if 400 == response.status_code AND error_message == %bitbucket.restapi.url.repositories.workspace.slug.pullrequests.error.accepted_message%:
     exit(0)
   exit(1)]]></param>
           <param name="teamcity.step.mode" value="default" />
