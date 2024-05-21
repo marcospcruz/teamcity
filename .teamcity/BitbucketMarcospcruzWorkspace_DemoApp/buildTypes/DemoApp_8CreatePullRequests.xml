@@ -111,7 +111,7 @@ response = requests.request(
 #'There are no changes to be pulled'
 print(response.text)
 response_text=json.loads(response.text)
-print(type(response_text))
+print(response_text['error'])
 
 print(response.status_code)
 if 201 != response.status_code:
