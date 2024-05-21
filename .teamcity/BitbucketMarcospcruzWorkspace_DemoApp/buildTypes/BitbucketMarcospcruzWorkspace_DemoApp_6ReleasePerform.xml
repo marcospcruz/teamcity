@@ -41,7 +41,9 @@ git push origin -d $BRANCH_NAME]]></param>
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc" />
+    </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_14" type="vcsTrigger">
