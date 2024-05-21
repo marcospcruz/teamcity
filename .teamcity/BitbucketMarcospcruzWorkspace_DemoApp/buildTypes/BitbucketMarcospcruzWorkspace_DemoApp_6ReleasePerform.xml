@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="e2929b93-369e-4827-a4ff-77e509d9dddd" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>6.Release perform</name>
+  <description />
+  <settings>
+    <options>
+      <option name="cleanBuild" value="true" />
+      <option name="excludeDefaultBranchChanges" value="true" />
+    </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_30" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_26" name="check user" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[AUTHOR=$( git log --oneline --pretty="%ae"|head -1)
+echo commit author is $AUTHOR
+echo "##teamcity[setParameter name='COMMIT.author' value='${AUTHOR}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_27" name="release perform" type="Maven2">
+        <conditions>
+          <does-not-contain name="COMMIT.author" value="root" />
+        </conditions>
+        <parameters>
+          <param name="goals" value="release:prepare release:perform -Darguments=&quot;-DskipTests&quot;" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="target.jdk.home" value="%env.JDK_17_0_ARM64%" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="settings.xml" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_30" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[BRANCH_NAME=$(git rev-parse --abbrev-ref HEAD)
+git checkout master
+git push origin -d $BRANCH_NAME]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_ReleaseSupportRc1" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_14" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="perfmon" type="perfmon">
+        <parameters>
+          <param name="teamcity.perfmon.feature.enabled" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <dependencies>
+      <depend-on sourceBuildTypeId="DemoAppApplication_4Vulnerabilities">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
