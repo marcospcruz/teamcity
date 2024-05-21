@@ -57,7 +57,9 @@ git push origin -d $BRANCH_NAME]]></param>
     <build-triggers>
       <build-trigger id="TRIGGER_14" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:*" />
+          <param name="branchFilter"><![CDATA[-:<default>
+-:refs/heads/master
++:*]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
