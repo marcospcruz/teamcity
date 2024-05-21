@@ -115,7 +115,7 @@ response_text=json.loads(response.text)
 
 
 if 201 != response.status_code:
-  print('Http status code: %s',response.status_code)
+  print("Http status code: %s",response.status_code)
   error_message=response_text['error']['message']
   if error_message == %bitbucket.restapi.url.repositories.workspace.slug.pullrequests.error.accepted_message%:
     exit(0)
