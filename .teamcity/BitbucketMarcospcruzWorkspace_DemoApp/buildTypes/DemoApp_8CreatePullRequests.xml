@@ -9,7 +9,9 @@
     <build-runners>
       <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
+          <param name="script.content"><![CDATA[echo %teamcity.build.triggeredBy% - %teamcity.build.triggeredBy.username%
+exit 1
+echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
 echo "commit author: %dep.DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 echo "source branch type: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "source branch: %dep.DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
