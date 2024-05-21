@@ -62,14 +62,6 @@ git push origin -d $BRANCH_NAME]]></param>
         </parameters>
       </extension>
     </build-extensions>
-    <dependencies>
-      <depend-on sourceBuildTypeId="DemoAppApplication_4Vulnerabilities">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
     <cleanup />
   </settings>
 </build-type>
