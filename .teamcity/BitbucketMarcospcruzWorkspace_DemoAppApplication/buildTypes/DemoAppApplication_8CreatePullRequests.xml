@@ -34,7 +34,7 @@
       </runner>
       <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[git remote set-url origin https://%vcsroot.username%:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+          <param name="script.content"><![CDATA[git remote set-url origin https://%vcsroot.username%:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app-application.git
 git remote -v
 git fetch --verbose
 echo "triggered by %teamcity.build.triggeredBy%"
