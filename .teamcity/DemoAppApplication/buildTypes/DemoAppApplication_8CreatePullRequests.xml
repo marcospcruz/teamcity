@@ -21,6 +21,7 @@ echo %teamcity.agent.jvm.user.name%
 
 #CURRENT_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source%"
 COMMIT_USER="%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+[ -z $COMMIT_USER ] && exit 1
 case "%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
     	"feature" ) 
     		TARGET_BRANCH="develop" 
