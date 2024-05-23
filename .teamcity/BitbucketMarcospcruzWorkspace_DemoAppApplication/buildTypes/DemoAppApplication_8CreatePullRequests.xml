@@ -83,7 +83,7 @@ echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${C
         <conditions>
           <does-not-contain name="env.COMMIT.author" value="@bots.bitbucket.org" />
           <does-not-contain name="teamcity.build.triggeredBy.username" value="@bots.bitbucket.org" />
-          <not-exists name="skip.pull-request" />
+          <equals name="skip.pull-request" value="2" />
         </conditions>
         <parameters>
           <param name="command" value="script" />
