@@ -39,7 +39,7 @@ git push origin release/support-rc]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoAppApplication_AllBranches" />
+      <vcs-entry-ref root-id="DemoAppApplication_DemoAppApplicationDevelop" />
     </vcs-settings>
     <requirements />
     <build-triggers>
