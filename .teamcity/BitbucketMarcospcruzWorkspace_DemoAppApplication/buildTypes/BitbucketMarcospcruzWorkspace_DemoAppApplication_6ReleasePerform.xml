@@ -47,7 +47,7 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='%dep.Bitb
     <build-triggers>
       <build-trigger id="TRIGGER_14" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:refs/heads/uat" />
+          <param name="branchFilter" value="+:*" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
