@@ -21,8 +21,8 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='%dep.Bitb
       </runner>
       <runner id="RUNNER_27" name="release perform" type="Maven2">
         <conditions>
-          <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author" value="root" />
-          <equals name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source" value="uat" />
+          <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author" value="root" />
+          <equals name="teamcity.build.branch" value="uat" />
         </conditions>
         <parameters>
           <param name="goals" value="release:prepare release:perform -Darguments=&quot;-DskipTests&quot;" />
