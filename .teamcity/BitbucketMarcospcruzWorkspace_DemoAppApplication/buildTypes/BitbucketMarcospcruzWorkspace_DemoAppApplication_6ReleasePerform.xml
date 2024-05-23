@@ -41,7 +41,7 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='%dep.Bitb
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoAppApplication_DemoAppApplicationDevelop" />
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoAppApplication_DemoAppApplicationDevelop1" />
     </vcs-settings>
     <requirements />
     <build-triggers>
