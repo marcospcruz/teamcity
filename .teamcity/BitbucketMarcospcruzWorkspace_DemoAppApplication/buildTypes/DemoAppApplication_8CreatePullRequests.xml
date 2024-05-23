@@ -33,8 +33,8 @@
         <parameters>
           <param name="script.content"><![CDATA[echo "triggered by %teamcity.build.triggeredBy%"
 echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
-echo "commit author: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
-echo "source branch type: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
+echo "commit author: %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+echo "source branch type: %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "source branch: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
 CLOSE_SOURCE=false
 CURRENT_BRANCH="%teamcity.build.branch%"
