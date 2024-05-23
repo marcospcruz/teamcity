@@ -34,7 +34,10 @@
       </runner>
       <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo "triggered by %teamcity.build.triggeredBy%"
+          <param name="script.content"><![CDATA[git remote set-url origin https://%vcsroot.username%:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+echo "triggered by %teamcity.build.triggeredBy%"
 echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
 echo "commit author: %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 echo "source branch type: %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
