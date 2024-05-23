@@ -4,6 +4,7 @@
   <description />
   <settings>
     <parameters>
+      <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="%system.teamcity.projectName%" />
       <param name="env.COMMIT.author" value="" />
     </parameters>
     <build-runners>
