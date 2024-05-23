@@ -50,7 +50,13 @@ case "%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.gi
             CLOSE_SOURCE=true
         ;;
     	"develop" ) 
-    		TARGET_BRANCH="%gitflow.support.support%"
+    		TARGET_BRANCH="support/$(cat project-version.log)"
+            git ls-remote --exit-code --heads origin ${TARGET_BRANCH}
+            if [ 0 -ne $? ]; then
+            	git checkout -b $TARGET_BRANCH
+                git push origin
+                echo "##teamcity[setParameter name='skip.pull-request' value='$?']"
+            fi
             CLOSE_SOURCE=false
         ;;        
     	"uat" ) 
