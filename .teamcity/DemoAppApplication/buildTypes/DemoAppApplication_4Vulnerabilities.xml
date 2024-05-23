@@ -40,13 +40,13 @@
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_3IntegrationTests">
+      <depend-on sourceBuildTypeId="DemoAppApplication_2UnitTest">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
         </options>
       </depend-on>
-      <depend-on sourceBuildTypeId="DemoAppApplication_2UnitTest">
+      <depend-on sourceBuildTypeId="DemoAppApplication_3IntegrationTests">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
