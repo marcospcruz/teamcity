@@ -273,6 +273,36 @@ under the License.
       </properties>
     </profile>
     -->
+	   <profile>
+      <id>standard-extra-repos</id>
+      <activation>
+        <activeByDefault>true</activeByDefault>
+      </activation>
+      ...
+      <repositories>
+      <repository>
+          <id>reposilite-snapshots</id>
+          <name>Xuggler Repository</name>
+          <url>http://reposilite.default.svc:8080/snapshots</url>
+          <layout>default</layout>
+          <releases><enabled>true</enabled><updatePolicy>never</updatePolicy></releases>
+          <snapshots><enabled>true</enabled><updatePolicy>never</updatePolicy></snapshots>
+        </repository>
+      </repositories>
+      <repository>
+          <id>reposilite-releases</id>
+          <name>Xuggler Repository</name>
+          <url>http://reposilite.default.svc:8080/releases</url>
+          <layout>default</layout>
+          <releases><enabled>true</enabled><updatePolicy>never</updatePolicy></releases>
+          <snapshots><enabled>true</enabled><updatePolicy>never</updatePolicy></snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+      ...
+      </pluginRepositories>
+
+    </profile>
   </profiles>
 
   <!-- activeProfiles
