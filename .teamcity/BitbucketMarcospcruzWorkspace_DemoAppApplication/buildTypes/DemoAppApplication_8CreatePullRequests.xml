@@ -62,7 +62,7 @@ case "%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorB
             if [ 0 -ne $? ]; then
             	git checkout -b $TARGET_BRANCH
                 git push origin $TARGET_BRANCH
-                echo "##teamcity[setParameter name='skip.pull-request' value='$?']"
+                echo "##teamcity[setParameter name='skip.pull-request' value='0']"
             fi
             CLOSE_SOURCE=false
         ;;        
