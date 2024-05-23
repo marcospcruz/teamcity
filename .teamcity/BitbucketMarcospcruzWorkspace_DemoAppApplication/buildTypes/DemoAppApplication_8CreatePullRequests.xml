@@ -10,7 +10,7 @@
       <setting-ref ref="RUNNER_46" />
     </disabled-settings>
     <parameters>
-      <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="%system.teamcity.projectName%" />
+      <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="demo-app-application" />
       <param name="env.COMMIT.author" value="" />
       <param name="gitflow.support.support" value="&lt;empty&gt;" />
       <param name="skip.pull-request" value="0" />
