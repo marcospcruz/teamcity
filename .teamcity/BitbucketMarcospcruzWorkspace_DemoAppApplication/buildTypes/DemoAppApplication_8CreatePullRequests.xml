@@ -28,7 +28,7 @@ case "%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.gi
             CLOSE_SOURCE=true
         ;;
     	"develop" ) 
-    		TARGET_BRANCH="uat" 
+    		TARGET_BRANCH="%gitflow.branch.support%" 
             CLOSE_SOURCE=false
         ;;        
     	"uat" ) 
