@@ -53,7 +53,8 @@ case "%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorB
             CLOSE_SOURCE=true
         ;;
     	"develop" ) 
-    		TARGET_BRANCH="support/$(cat project-version.log)"
+    		#TARGET_BRANCH="support/$(cat project-version.log)"
+            TARGET_BRANCH="support/24.2.0"
             git ls-remote --exit-code --heads origin ${TARGET_BRANCH}
             if [ 0 -ne $? ]; then
             	git checkout -b $TARGET_BRANCH
