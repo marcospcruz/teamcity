@@ -293,6 +293,13 @@ under the License.
 						<updatePolicy>never</updatePolicy>
 					</snapshots>
 				</repository>
+			<repository>
+                <id>maven.apache.org</id>
+                <releases>  <enabled>true</enabled>  </releases>
+                <snapshots> <enabled>true</enabled> </snapshots>
+                <url>https://repo.maven.apache.org/maven2</url>
+                <layout>default</layout>
+            </repository>
 
 				<repository>
 					<id>reposilite-releases</id>
