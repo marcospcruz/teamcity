@@ -54,7 +54,7 @@
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoAppApplication_1CheckCommitSAuthorBuild">
+      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
