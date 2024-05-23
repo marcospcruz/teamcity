@@ -12,17 +12,17 @@
         <parameters>
           <param name="script.content"><![CDATA[echo "triggered by %teamcity.build.triggeredBy%"
 echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
-echo "commit author: %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
-echo "source branch type: %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
-echo "source branch: %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source%"
+echo "commit author: %DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+echo "source branch type: %DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
+echo "source branch: %DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source%"
 CLOSE_SOURCE=false
 CURRENT_BRANCH="%teamcity.build.branch%"
 echo %teamcity.agent.jvm.user.name%
 
-#CURRENT_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source%"
-COMMIT_USER="%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+#CURRENT_BRANCH="%DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source%"
+COMMIT_USER="%DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 [ -z $COMMIT_USER ] && exit 1
-case "%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
+case "%DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
     	"feature" ) 
     		TARGET_BRANCH="develop" 
             CLOSE_SOURCE=true
