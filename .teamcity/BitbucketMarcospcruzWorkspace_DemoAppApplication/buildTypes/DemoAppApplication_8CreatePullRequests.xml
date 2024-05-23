@@ -61,7 +61,7 @@ case "%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorB
             git ls-remote --exit-code --heads origin ${TARGET_BRANCH}
             if [ 0 -ne $? ]; then
             	git checkout -b $TARGET_BRANCH
-                git push origin
+                git push origin $TARGET_BRANCH
                 echo "##teamcity[setParameter name='skip.pull-request' value='$?']"
             fi
             CLOSE_SOURCE=false
