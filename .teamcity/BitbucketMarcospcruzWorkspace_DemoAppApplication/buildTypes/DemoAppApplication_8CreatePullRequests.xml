@@ -173,7 +173,7 @@ if 201 != response.status_code:
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoAppApplication_DemoAppApplicationDevelop" />
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoAppApplication_DemoAppApplicationSupport" />
     </vcs-settings>
     <requirements />
     <build-triggers>
