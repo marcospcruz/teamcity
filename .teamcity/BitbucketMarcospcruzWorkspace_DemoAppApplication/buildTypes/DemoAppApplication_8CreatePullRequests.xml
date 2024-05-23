@@ -137,6 +137,23 @@ if 201 != response.status_code:
           <param name="virtualenvFile" value="requirements.txt" />
         </parameters>
       </runner>
+      <runner id="RUNNER_46" name="check version" type="Maven2">
+        <parameters>
+          <param name="goals" value="mvn help:evaluate" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="runnerArgs" value="-Dexpression=project.version" />
+          <param name="target.jdk.home" value="%env.JDK_17_0_ARM64%" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="settings.xml" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoAppApplication_AllBranches" />
