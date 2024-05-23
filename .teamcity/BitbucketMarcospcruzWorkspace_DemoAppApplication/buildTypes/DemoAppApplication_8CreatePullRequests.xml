@@ -51,6 +51,10 @@ COMMIT_USER="%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitS
 [ -z $COMMIT_USER ] && exit 1
 SUPPORT_BRANCH="support/"
 case "%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
+    	"bugfix" ) 
+    		TARGET_BRANCH="develop" 
+            CLOSE_SOURCE=true
+        ;;
     	"feature" ) 
     		TARGET_BRANCH="develop" 
             CLOSE_SOURCE=true
