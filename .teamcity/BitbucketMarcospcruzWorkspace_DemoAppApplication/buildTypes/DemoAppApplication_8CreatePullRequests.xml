@@ -18,7 +18,7 @@ echo "source branch: %DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch
 CLOSE_SOURCE=false
 CURRENT_BRANCH="%teamcity.build.branch%"
 echo %teamcity.agent.jvm.user.name%
-
+%dep.DemoAppApplication_1
 #CURRENT_BRANCH="%DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source%"
 COMMIT_USER="%DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 [ -z $COMMIT_USER ] && exit 1
