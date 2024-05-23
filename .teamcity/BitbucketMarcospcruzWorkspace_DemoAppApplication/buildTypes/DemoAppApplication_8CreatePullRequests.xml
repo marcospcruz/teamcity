@@ -6,6 +6,9 @@
     <options>
       <option name="artifactRules" value="+:project-version.log =&gt; ." />
     </options>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_46" />
+    </disabled-settings>
     <parameters>
       <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="%system.teamcity.projectName%" />
       <param name="env.COMMIT.author" value="" />
