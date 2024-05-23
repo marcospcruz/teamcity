@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="a95cbb27-7ec2-4696-84dc-44cdacd5262e" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Create Pull Requests (1)</name>
+  <settings>
+    <parameters>
+      <param name="env.COMMIT.author" value="" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_43" name="get commit details" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "repository rest api url: %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%"
+echo "commit author: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+echo "source branch type: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
+echo "source branch: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+CLOSE_SOURCE=false
+CURRENT_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+COMMIT_USER="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+case "%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
+    	"feature" ) 
+    		TARGET_BRANCH="develop" 
+            CLOSE_SOURCE=true
+        ;;
+    	"feature" ) 
+    		TARGET_BRANCH="release/support-rc" 
+            CLOSE_SOURCE=false
+        ;;        
+        *)	
+        	echo "ERROR: Invalid branch type"
+        	exit 1
+        ;;
+esac
+echo "target branch: ${TARGET_BRANCH}"
+echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
+echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"
+echo "##teamcity[setParameter name='env.COMMIT.author' value='${COMMIT_USER}']"
+echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${CLOSE_SOURCE}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_42" name="create pull request" type="python-runner">
+        <parameters>
+          <param name="command" value="script" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="installToolPackage" value="true" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="poetryExecutable" value="poetry" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptContent"><![CDATA[# This code sample uses the 'requests' library:
+# http://docs.python-requests.org
+import requests
+import json
+
+url = %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%
+
+headers = {
+  "Accept": "application/json",
+  "Content-Type": "application/json",
+  "Authorization": "Bearer %bitbucket.restapi.url.access-token%"
+}
+
+payload = json.dumps({
+  "title": "merge pull request",
+  "description": "",
+  "state": "OPEN",
+  "close_source_branch": %env.git.pullrequest.close_source%,
+  "author": {
+    "display_name": "%env.COMMIT.author%",
+    "type": "user",
+    "nickname": "%env.COMMIT.author%",
+    "account_id": ""
+  },
+  "source": {
+    "repository": {
+      "type": "repository"
+    },
+    "branch": {
+      "name": "%env.git.branch.source%",
+      "merge_strategies": [
+        "merge_commit"
+      ]
+    }
+  },
+  "destination": {
+    "repository": {
+      "type": "repository"
+    },
+    "branch": {
+      "name": "%env.git.branch.target%",
+      "merge_strategies": [
+        "merge_commit"
+      ]
+    }
+  }
+})
+
+response = requests.request(
+   "POST",
+   url,
+   data=payload,
+   headers=headers
+)
+json_response=json.loads(response.text)
+#print(json.dumps(json_response, sort_keys=True, indent=4, separators=(",", ": ")))
+print(response.status_code)
+print(201 != response.status_code)
+#if 201 != response.status_code:
+  exit(1)]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value=".venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <dependencies>
+      <depend-on sourceBuildTypeId="DemoApp_5DeploySnapshot">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="DemoApp_4Vulnerabilities">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</template>
+
