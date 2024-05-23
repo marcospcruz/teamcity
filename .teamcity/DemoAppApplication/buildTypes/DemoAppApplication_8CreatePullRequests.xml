@@ -147,7 +147,7 @@ if 201 != response.status_code:
       </build-trigger>
     </build-triggers>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_5DeploySnapshot">
+      <depend-on sourceBuildTypeId="DemoAppApplication_5DeploySnapshot">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
