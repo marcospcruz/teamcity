@@ -11,14 +11,6 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_45" name="" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[echo commit author %dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author%
-echo "##teamcity[setParameter name='env.git.branch.source.type' value='%dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.git.branch.source.type%']"]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_27" name="release perform" type="Maven2">
         <conditions>
           <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoAppApplication_1CheckCommitSAuthorBuild.env.COMMIT.author" value="root" />
