@@ -288,7 +288,7 @@ under the License.
           <releases><enabled>true</enabled><updatePolicy>never</updatePolicy></releases>
           <snapshots><enabled>true</enabled><updatePolicy>never</updatePolicy></snapshots>
         </repository>
-      </repositories>
+
       <repository>
           <id>reposilite-releases</id>
           <name>Xuggler Repository</name>
@@ -299,7 +299,7 @@ under the License.
         </repository>
       </repositories>
       <pluginRepositories>
-      ...
+      
       </pluginRepositories>
 
     </profile>
