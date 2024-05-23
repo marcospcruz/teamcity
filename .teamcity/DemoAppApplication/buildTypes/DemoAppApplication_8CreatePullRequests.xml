@@ -15,7 +15,10 @@ echo "commit author: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAut
 echo "source branch type: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "source branch: %dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
 CLOSE_SOURCE=false
-CURRENT_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
+CURRENT_BRANCH="%teamcity.build.branch%"
+echo %teamcity.agent.jvm.user.name%
+exit 1
+#CURRENT_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
 COMMIT_USER="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 case "%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%" in
     	"feature" ) 
