@@ -5,7 +5,6 @@
   <parameters>
     <param name="bitbucket.restapi.url.access-token" value="ATCTT3xFfGN0tSStqgtj18WFCUtCQDTPP_coNdsLqh5MixaWLfSD6nqoNu_A3pKMFjvmNKyWquiMX3LweaAq1Slq-MMskWAKl5Sz1l0GECKDpnpqMMHz9Stlvx8QTHITCT3pdz7AfYAc0GeZQ_aKTk5MqOr26I9h2cG19RDzz6Uq4K32jlxual0=A76C3B12" />
     <param name="bitbucket.restapi.url.repositories.workspace" value="%bitbucket.restapi.url%/repositories/marcospcruz" />
-    <param name="git.branch.release.support" value="empty" />
   </parameters>
   <cleanup />
 </project>
