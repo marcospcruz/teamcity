@@ -17,6 +17,7 @@
 +:refs/heads/release/*
 +:refs/heads/hotfix/*]]></param>
     <param name="bitbucket-token" value="ATBBzjFvtwthjfCajsLh78gu5xmTDB13ADC9" />
+    <param name="bitbucket.branch.release.branch.support" value="-script-generated-" />
     <param name="bitbucket.restapi.url" value="https://api.bitbucket.org/2.0" />
     <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests.error.accepted_message" value="'There are no changes to be pulled'" />
     <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
@@ -31,7 +32,6 @@
     <param name="git.branch.feature" value="refs/heads/feature/*" />
     <param name="git.branch.golden-source" value="refs/heads/golden-source" />
     <param name="git.branch.release" value="refs/heads/release/*" />
-    <param name="git.branch.release.branch.support" value="-script-generated-" />
     <param name="git.branch.support" value="refs/heads/support/*" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
     <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:d19bbaf4-e5bb-4795-bdd7-9805868934c3" spec="password display='hidden' readOnly='true' label='SPI'" />
