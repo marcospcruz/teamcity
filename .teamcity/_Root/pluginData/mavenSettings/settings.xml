@@ -176,7 +176,7 @@ under the License.
       <name>Human Readable Name for this Mirror.</name>
       <url>http://my.repository.com/repo/path</url>
     </mirror>
-     -->
+   
 		<mirror>
 			<id>maven-default-http-blocker</id>
 			<mirrorOf>external:http:*</mirrorOf>
@@ -185,7 +185,7 @@ under the License.
 			<blocked>true</blocked>
 		</mirror>
 	</mirrors>
-
+  -->
 	<!-- profiles
    | This is a list of profiles which can be activated in a variety of ways, and which can modify
    | the build process. Profiles provided in the settings.xml are intended to provide local machine-
