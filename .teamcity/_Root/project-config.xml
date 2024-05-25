@@ -29,7 +29,7 @@
     <param name="env.git.branch.target" value="script-generated" />
     <param name="env.git.pullrequest.close_source" value="false" />
     <param name="exclude-master" value="-:refs/heads/master" />
-    <param name="git.branch.bugfix" value="refs/heads/bugfix" />
+    <param name="git.branch.bugfix" value="refs/heads/bugfix/(*)" />
     <param name="git.branch.develop" value="refs/heads/develop" />
     <param name="git.branch.feature" value="refs/heads/feature/(*)" />
     <param name="git.branch.golden-source" value="refs/heads/golden-source" />
