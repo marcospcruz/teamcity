@@ -33,7 +33,7 @@
     <param name="git.branch.develop" value="refs/heads/develop" />
     <param name="git.branch.feature" value="refs/heads/feature/(*)" />
     <param name="git.branch.golden-source" value="refs/heads/golden-source" />
-    <param name="git.branch.hotfix" value="refs/heads/hotfix/*" />
+    <param name="git.branch.hotfix" value="refs/heads/hotfix/(*)" />
     <param name="git.branch.release" value="refs/heads/release/*" />
     <param name="git.branch.support" value="refs/heads/support/(release-*)" />
     <param name="git.branch.support.release-candidate" value="refs/heads/support/(release-candidate-*)" />
