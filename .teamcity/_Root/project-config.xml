@@ -35,7 +35,7 @@
     <param name="git.branch.golden-source" value="refs/heads/golden-source" />
     <param name="git.branch.hotfix" value="refs/heads/hotfix/*" />
     <param name="git.branch.release" value="refs/heads/release/*" />
-    <param name="git.branch.support" value="refs/heads/support/release-*" />
+    <param name="git.branch.support" value="refs/heads/support/(release-*)" />
     <param name="git.branch.support.release-candidate" value="refs/heads/support/release-candidate-*" />
     <param name="maven.project.version" value="-script-generated-" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
