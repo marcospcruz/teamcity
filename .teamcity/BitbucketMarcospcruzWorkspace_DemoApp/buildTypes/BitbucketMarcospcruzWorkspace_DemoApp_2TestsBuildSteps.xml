@@ -20,6 +20,7 @@
           <param name="branchFilter" value="+:*" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="watchChangesInDependencies" value="true" />
         </parameters>
       </build-trigger>
     </build-triggers>
