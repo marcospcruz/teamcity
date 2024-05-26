@@ -16,7 +16,7 @@
           <param name="script.content"><![CDATA[AUTHOR="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
 echo commit author: ${AUTHOR}
 echo "##teamcity[setParameter name='env.git.branch.source.type' value='%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%']"
-echo %teamcity.build.branch]]></param>
+echo %teamcity.build.branch%]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
