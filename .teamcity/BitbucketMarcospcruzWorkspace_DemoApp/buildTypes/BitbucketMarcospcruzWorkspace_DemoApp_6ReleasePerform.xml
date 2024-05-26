@@ -19,6 +19,16 @@
         </parameters>
       </build-trigger>
     </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_10" type="pullRequests">
+        <parameters>
+          <param name="authenticationType" value="vcsRoot" />
+          <param name="filterTargetBranch" value="%git.branch.develop%" />
+          <param name="providerType" value="bitbucketCloud" />
+          <param name="vcsRootId" value="DemoApp_ReleaseSupportRc" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <dependencies>
       <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild">
         <options>
