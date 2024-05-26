@@ -5,7 +5,9 @@
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_2UnitTestTemplate">
     <parameters />
     <build-runners />
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_All1" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <cleanup />
