@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c731aa06-40be-4501-947a-6e21d16f5213" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>5.Deploy Snapshot</name>
+  <description />
+  <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_5DeploySnapshot">
+    <disabled-settings>
+      <setting-ref ref="RUNNER_31" />
+      <setting-ref ref="RUNNER_47" />
+    </disabled-settings>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_31" name="create release support" type="simpleRunner">
+        <conditions>
+          <contains name="teamcity.build.branch" value="develop" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+ls -la
+git checkout -b uat
+git push origin uat]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_47" name="delete temporary branches" type="simpleRunner">
+        <conditions>
+          <contains name="teamcity.build.branch" value="develop" />
+          <does-not-contain name="teamcity.build.branch" value="master" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+PREVIOUS_BRANCH="$(git log --oneline|grep Merged|head -1|sed -r 's/(.+)((feature|bugfix)\/\w+)(.+)/\2/g')"
+git checkout develop 
+git pull origin
+git rebase $PREVIOUS_BRANCH
+git push origin --delete $PREVIOUS_BRANCH]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings />
+    <requirements />
+    <build-triggers />
+    <cleanup />
+  </settings>
+</build-type>
+

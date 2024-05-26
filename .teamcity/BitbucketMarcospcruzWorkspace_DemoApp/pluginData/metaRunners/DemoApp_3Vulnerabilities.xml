@@ -1,0 +1,36 @@
+<meta-runner name="3 Vulnerabilities">
+  <description>scan of vulnerabilities</description>
+  <settings>
+    <parameters>
+      <param name="ANGULAR_VERSION" value="13.3.0" />
+      <param name="COMMIT_USER" value="-script-generated-" />
+      <param name="NODE_VERSION" value="14.20" />
+      <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
+%add-release-hotfix%
+%add-develop%]]></param>
+      <param name="add-develop"><![CDATA[%exclude-master%
++:refs/heads/develop]]></param>
+      <param name="add-feature-and-bugfix"><![CDATA[%exclude-master%
++:refs/heads/feature/*
++:refs/heads/bugfix/*]]></param>
+      <param name="add-release-hotfix"><![CDATA[%exclude-master%
++:refs/heads/release/*
++:refs/heads/hotfix/*]]></param>
+      <param name="bitbucket-token" value="ATBBzjFvtwthjfCajsLh78gu5xmTDB13ADC9" />
+      <param name="docker-registry" value="registry.docker-registry.svc.cluster.local:5000" />
+      <param name="exclude-master" value="-:refs/heads/master" />
+      <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
+      <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:d19bbaf4-e5bb-4795-bdd7-9805868934c3" spec="password display='hidden' readOnly='true' label='SPI'" />
+    </parameters>
+    <build-runners>
+      <runner name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo scanned" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <requirements />
+  </settings>
+</meta-runner>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="BitbucketMarcospcruzWorkspace" uuid="7b80c98a-5f1e-44b9-b54d-9bc3a1927eb0" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>demo-app-application</name>
+  <parameters />
+  <cleanup />
+</project>
+

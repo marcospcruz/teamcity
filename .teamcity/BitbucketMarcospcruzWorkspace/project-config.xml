@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="63ec54b3-3fdb-4f83-b55c-c55b3c4918a4" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>bitbucket marcospcruz workspace</name>
+  <description>work</description>
+  <parameters>
+    <param name="bitbucket.restapi.url.access-token" value="ATCTT3xFfGN0tSStqgtj18WFCUtCQDTPP_coNdsLqh5MixaWLfSD6nqoNu_A3pKMFjvmNKyWquiMX3LweaAq1Slq-MMskWAKl5Sz1l0GECKDpnpqMMHz9Stlvx8QTHITCT3pdz7AfYAc0GeZQ_aKTk5MqOr26I9h2cG19RDzz6Uq4K32jlxual0=A76C3B12" />
+    <param name="bitbucket.restapi.url.repositories.workspace" value="%bitbucket.restapi.url%/repositories/marcospcruz" />
+  </parameters>
+  <project-extensions>
+    <extension id="PROJECT_EXT_11" type="ReportTab">
+      <parameters>
+        <param name="startPage" value="index.html" />
+        <param name="title" value="test" />
+        <param name="type" value="BuildReportTab" />
+      </parameters>
+    </extension>
+  </project-extensions>
+  <cleanup />
+</project>
+
