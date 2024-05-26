@@ -26,7 +26,6 @@ echo %teamcity.build.branch]]></param>
           <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author" value="root" />
           <equals name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.teamcity.build.skip" value="false" />
           <does-not-contain name="teamcity.build.branch" value="develop" />
-          <contains name="teamcity.build.branch" value="support" />
         </conditions>
         <parameters>
           <param name="goals" value="release:prepare release:perform -Darguments=&quot;-DskipTests&quot;" />
