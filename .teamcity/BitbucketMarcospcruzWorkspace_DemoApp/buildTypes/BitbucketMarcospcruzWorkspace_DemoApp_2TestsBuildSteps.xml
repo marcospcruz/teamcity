@@ -2,42 +2,12 @@
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="80e196cd-fbaf-4c67-ba8a-9bf485fc0fab" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>2.Tests Build Steps</name>
   <description />
-  <settings>
-    <options>
-      <option name="buildConfigurationType" value="COMPOSITE" />
-      <option name="excludeDefaultBranchChanges" value="true" />
-      <option name="showDependenciesChanges" value="true" />
-    </options>
+  <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_2TestsBuildSteps_2">
     <parameters />
     <build-runners />
-    <vcs-settings>
-      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_All1" />
-    </vcs-settings>
+    <vcs-settings />
     <requirements />
-    <build-triggers>
-      <build-trigger id="TRIGGER_25" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="+:*" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="watchChangesInDependencies" value="true" />
-        </parameters>
-      </build-trigger>
-    </build-triggers>
-    <dependencies>
-      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_21UnitTest">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_22IntegrationTests">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
+    <build-triggers />
     <cleanup />
   </settings>
 </build-type>
