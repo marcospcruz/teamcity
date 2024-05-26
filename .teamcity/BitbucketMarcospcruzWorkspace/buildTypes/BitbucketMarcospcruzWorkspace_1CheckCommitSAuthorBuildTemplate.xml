@@ -102,7 +102,7 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_All1" />
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoAppAllBranches1" />
     </vcs-settings>
     <requirements />
     <build-triggers>
