@@ -33,7 +33,7 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT
         <checkout-rule rule="+:. =&gt; support" />
       </vcs-entry-ref>
       <vcs-entry-ref root-id="DemoApp_FeatureBugfix">
-        <checkout-rule rule="feature" />
+        <checkout-rule rule="+:. =&gt; feature" />
       </vcs-entry-ref>
     </vcs-settings>
     <requirements />
