@@ -20,26 +20,6 @@ echo %teamcity.build.branch%]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
-      <runner id="RUNNER_55" name="release prepare" type="Maven2">
-        <conditions>
-          <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author" value="root" />
-          <equals name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.teamcity.build.skip" value="false" />
-          <does-not-contain name="teamcity.build.branch" value="develop" />
-        </conditions>
-        <parameters>
-          <param name="goals" value="release:prepare -Darguments=&quot;-DskipTests&quot;" />
-          <param name="localRepoScope" value="agent" />
-          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
-          <param name="target.jdk.home" value="%env.JDK_17_0_ARM64%" />
-          <param name="teamcity.coverage.emma.include.source" value="true" />
-          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
-          <param name="teamcity.coverage.idea.includePatterns" value="*" />
-          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
-          <param name="userSettingsSelection" value="settings.xml" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_27" name="release perform" type="Maven2">
         <conditions>
           <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author" value="root" />
