@@ -27,7 +27,7 @@ echo %teamcity.build.branch%]]></param>
           <does-not-contain name="teamcity.build.branch" value="develop" />
         </conditions>
         <parameters>
-          <param name="goals" value="release:prepare release:perform -Darguments=&quot;-DskipTests&quot;" />
+          <param name="goals" value="clean -B release:prepare release:perform -Darguments=&quot;-DskipTests&quot;" />
           <param name="localRepoScope" value="agent" />
           <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
           <param name="target.jdk.home" value="%env.JDK_17_0_ARM64%" />
