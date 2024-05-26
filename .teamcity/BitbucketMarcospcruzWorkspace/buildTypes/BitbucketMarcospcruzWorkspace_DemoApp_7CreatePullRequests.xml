@@ -204,14 +204,6 @@ if 201 != response.status_code:
         </parameters>
       </extension>
     </build-extensions>
-    <dependencies>
-      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_9PrepareReleaseCandidate">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
     <cleanup />
   </settings>
 </template>
