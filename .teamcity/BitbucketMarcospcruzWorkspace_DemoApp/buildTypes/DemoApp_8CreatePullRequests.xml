@@ -74,11 +74,10 @@ echo "target branch: ${TARGET_BRANCH}"
 [ -z  ${TARGET_BRANCH} ] && echo Error: "No route from branch $SOURCE_BRANCH" && exit 0
 git ls-remote --exit-code --heads origin $TARGET_BRANCH 
 exit_code="$?"
-if [ "0" -eq "$exit_code" ]; then
+if [ "0" -neq "$exit_code" ]; then
 	echo "##teamcity[setParameter name='env.git.branch.target.skip' value='0']" 
-else
     echo "Target branch ${TARGET_BRANCH} not found. Skipping pull request" 
-    exit 1
+	exit 0    
 fi
 echo "##teamcity[setParameter name='env.git.branch.source' value='${SOURCE_BRANCH}']"
 echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"
