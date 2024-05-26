@@ -2,7 +2,15 @@
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="cdddf365-873c-4eb7-93f5-89c65d672bce" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>1.Check Commit's Author Build</name>
   <description />
-  <settings ref="BitbucketMarcospcruzWorkspace_1CheckCommitSAuthorBuildTemplate">
+  <settings>
+    <options>
+      <option name="artifactRules" value="+:*.* =&gt; ." />
+      <option name="checkoutDirectory" value="%teamcity.build.branch%" />
+      <option name="checkoutMode" value="ON_AGENT" />
+      <option name="cleanBuild" value="true" />
+      <option name="excludeDefaultBranchChanges" value="true" />
+      <option name="showDependenciesChanges" value="true" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_44" name="get commit details" type="simpleRunner">
@@ -32,17 +40,102 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_49" name="get pom.xml info" type="Maven2">
+        <conditions>
+          <equals name="teamcity.build.branch.is_default" value="false" />
+          <equals name="teamcity.build.skip" value="false" />
+        </conditions>
+        <parameters>
+          <param name="goals" value="-q -Dexec.executable=echo -Dexec.args='${project.groupId}:${project.artifactId}:${project.version}' --non-recursive exec:exec" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="runnerArgs" value="--log-file projectId.log" />
+          <param name="teamcity.build.workingDir" value="./%teamcity.build.branch%" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_48" name="create release branch if not exists" type="simpleRunner">
+        <conditions>
+          <does-not-contain name="teamcity.build.branch" value="master" />
+          <does-not-contain name="teamcity.build.branch" value="golden-source" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[#!/bin/bash
+
+function create_branch(){
+	echo "checking branch $1"
+	git ls-remote --exit-code --heads origin $1
+    EXIT_CODE="$?"
+    echo 'exit code:' $EXIT_CODE
+    if [ 0 -ne $EXIT_CODE ]; then
+    	[ "%env.git.branch.source.type%" != "feature" ] && echo "source branch is not a feature" && return
+		git branch $1 origin/golden-source
+    	git push origin $1
+    else
+        echo 'Release branch' $RELEASE_BRANCH 'already exists'
+    fi
+}
+git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+echo 
+PROJECT_INFO=$(cat projectId.log|grep -v "Maven Watcher")
+echo 'project details:' $PROJECT_INFO
+REGEX='s/(.*)\:(.*)\:(.*)/\3/g'
+VERSION=$(echo $PROJECT_INFO|sed -r $REGEX)
+echo 'pom.xml version:' $VERSION
+REGEX_='s/([0-9]+\.[0-9]+\.[0-9]+)(\.[a-zA-Z0-9\.\-]+)/\1/g'
+RELEASE_VERSION=$(echo $VERSION|sed -r $REGEX_)
+echo 'release version:' $RELEASE_VERSION
+
+
+SUPPORT_BRANCH="support/support-${RELEASE_VERSION}"
+RELEASE_BRANCH="release/release-${RELEASE_VERSION}"
+
+create_branch $SUPPORT_BRANCH
+create_branch $RELEASE_BRANCH
+echo 'release branch: '$RELEASE_BRANCH
+echo 'support branch: '$SUPPORT_BRANCH
+echo "##teamcity[setParameter name='bitbucket.branch.release' value='${RELEASE_BRANCH}']"
+echo "##teamcity[setParameter name='bitbucket.branch.release.support' value='${SUPPORT_BRANCH}']"
+echo "##teamcity[setParameter name='maven.project.info' value='${PROJECT_INFO}']"
+echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]]></param>
+          <param name="teamcity.build.workingDir" value="./%teamcity.build.branch%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc">
-        <checkout-rule rule="+:. =&gt; support" />
-      </vcs-entry-ref>
       <vcs-entry-ref root-id="DemoApp_FeatureBugfix">
-        <checkout-rule rule="+:. =&gt; feature" />
+        <checkout-rule rule="+:. =&gt; %teamcity.build.branch%" />
+      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc">
+        <checkout-rule rule="+:. =&gt; %teamcity.build.branch%" />
       </vcs-entry-ref>
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_15" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="perfmon" type="perfmon">
+        <parameters>
+          <param name="teamcity.perfmon.feature.enabled" value="true" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <cleanup />
   </settings>
 </build-type>
