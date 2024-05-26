@@ -125,7 +125,8 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
           <param name="perCheckinTriggering" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules"><![CDATA[-:user=tcuser:**
--:user=tcuser*:**]]></param>
+-:user=tcuser*:**
+-:comment='Auto\sMerge\sbranch*']]></param>
         </parameters>
       </build-trigger>
     </build-triggers>
