@@ -4,6 +4,7 @@
   <settings>
     <options>
       <option name="artifactRules" value="+:*.* =&gt; ." />
+      <option name="checkoutDirectory" value="%teamcity.build.branch%" />
       <option name="checkoutMode" value="ON_AGENT" />
       <option name="cleanBuild" value="true" />
       <option name="excludeDefaultBranchChanges" value="true" />
