@@ -49,13 +49,6 @@
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_2UnitTest">
-        <options>
-          <option name="run-build-if-dependency-failed" value="CANCEL" />
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
       <depend-on sourceBuildTypeId="DemoApp_3IntegrationTests">
         <options>
           <option name="run-build-if-dependency-failed" value="CANCEL" />
