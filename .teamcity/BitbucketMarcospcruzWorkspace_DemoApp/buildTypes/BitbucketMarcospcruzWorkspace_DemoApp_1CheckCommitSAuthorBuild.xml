@@ -26,7 +26,8 @@ echo "target branch: $TARGET_BRANCH"
 echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
 echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"
 echo "##teamcity[setParameter name='env.COMMIT.hash' value='${COMMIT_HASH}']"
-echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT_BRANCH_TYPE}']"]]></param>
+echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT_BRANCH_TYPE}']"
+[ ! -f "pom.xml" ] && echo "##teamcity[setParameter name='teamcity.build.skip' value='true']"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
