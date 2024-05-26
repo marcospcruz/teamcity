@@ -61,6 +61,16 @@ echo %teamcity.build.branch%]]></param>
           <param name="providerType" value="bitbucketCloud" />
         </parameters>
       </extension>
+      <extension id="BUILD_EXT_11" type="AutoMergeFeature">
+        <parameters>
+          <param name="teamcity.automerge.buildStatusCondition" value="successful" />
+          <param name="teamcity.automerge.dstBranch" value="%git.branch.develop%" />
+          <param name="teamcity.automerge.message" value="Auto Merge branch '%teamcity.build.branch%' in to %git.branch.develop%" />
+          <param name="teamcity.automerge.run.policy" value="runAfterBuildFinish" />
+          <param name="teamcity.automerge.srcBranchFilter" value="+:/refs/heads/support/support-*" />
+          <param name="teamcity.merge.policy" value="alwaysCreateMergeCommit" />
+        </parameters>
+      </extension>
     </build-extensions>
     <dependencies>
       <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild">
