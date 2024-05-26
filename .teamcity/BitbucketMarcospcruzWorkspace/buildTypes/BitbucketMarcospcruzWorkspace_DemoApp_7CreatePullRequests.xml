@@ -60,7 +60,9 @@ case $BRANCH_TYPE in
             exit 0
         	;;
 		"feature")
-        	TARGET_BRANCH="develop" 
+        	#TARGET_BRANCH="develop" 
+            echo "Skip creating pull-request"
+            exit 0
         	;;            
         *)	
         	echo "Branch type has no routes. Skipping pull request."
