@@ -62,7 +62,6 @@ case $BRANCH_TYPE in
         	;;
 		"feature")
         	TARGET_BRANCH="develop" 
-            
         	;;            
         *)	
         	echo "Branch type has no routes. Skipping pull request."
@@ -77,7 +76,7 @@ git ls-remote --exit-code --heads origin $TARGET_BRANCH
 exit_code="$?"
 [ "0" -eq "$exit_code" ] \
 	&& echo "##teamcity[setParameter name='env.git.branch.target.skip' value='0']" \
-    || echo "Target branch ${TARGET_BRANCH} not found. Skipping pull request"
+    || echo "Target branch ${TARGET_BRANCH} not found. Skipping pull request" && exit 1
 echo "##teamcity[setParameter name='env.git.branch.source' value='${SOURCE_BRANCH}']"
 echo "##teamcity[setParameter name='env.git.branch.target' value='${TARGET_BRANCH}']"
 echo "##teamcity[setParameter name='env.COMMIT.author' value='${COMMIT_USER}']"
