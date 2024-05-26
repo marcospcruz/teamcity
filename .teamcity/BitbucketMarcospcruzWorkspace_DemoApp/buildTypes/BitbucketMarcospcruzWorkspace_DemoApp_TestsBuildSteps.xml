@@ -13,7 +13,7 @@
     <requirements />
     <build-triggers />
     <dependencies>
-      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_2UnitTest_2">
+      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_11UnitTest">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
