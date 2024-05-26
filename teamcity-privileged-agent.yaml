@@ -1,0 +1,467 @@
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ca-cert-client-teamcity-agent-pvc-2
+  namespace: ci-cd
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-storage"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+---      
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: ca-cert-teamcity-agent-pvc-2
+  namespace: ci-cd
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-storage"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+---      
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: teamcity-agent-pvc-2
+  namespace: ci-cd
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-storage"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+---      
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: teamcity-agent-pvc
+  namespace: ci-cd
+  annotations:
+    volume.beta.kubernetes.io/storage-class: "nfs-storage"
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: 3Gi
+---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: teamcity-build-agent
+#   labels:
+#     app: teamcity-build-agent
+#   namespace: ci-cd  
+# spec:
+#   nodeSelector:
+#     kubernetes.io/hostname: raspberry-4-2.local  
+#     # host: worker-1
+#   # hostNetwork: true
+#   securityContext:
+#       runAsUser: 0
+#       runAsGroup: 0
+#       fsGroup: 0  
+#   volumes:
+#   - name: nfs-build-agent
+#     persistentVolumeClaim:
+#       claimName: teamcity-agent-pvc      
+#     # nfs:
+#     #   server: 192.168.15.13
+#     #   path: /mnt/HD/HD_a2/nas_storage/teamcity/buildAgent
+#     #   readOnly: no   
+#   containers:
+#   - name: teamcity-build-agent
+#     image: jetbrains/teamcity-agent:2023.05.2  # Change this version tag with your server.
+#     imagePullPolicy: IfNotPresent
+#     env:
+#     - name: DOCKER_IN_DOCKER
+#       value: start
+#     - name: SERVER_URL
+#       value: http://teamcity:8111    
+#     volumeMounts:
+#     - mountPath: /opt/buildagent/temp
+#       name: nfs-build-agent
+#     # securityContext:
+#     #   privileged: true
+#     #   runAsUser: 0
+# ---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: teamcity-build-agent
+  namespace: ci-cd  
+  labels: 
+    app: teamcity-build-agent
+spec:
+  selector:
+    matchLabels:
+      app: teamcity-build-agent
+  serviceName: teamcity-agent-lb
+  replicas: 3
+  template:
+    metadata:
+      labels:
+        app: teamcity-build-agent
+    spec:
+      volumes:
+      - name: agent-opt-temp
+        emptyDir: {}  
+      - name: dind-storage
+        emptyDir: {}    
+      # - name: docker-sock
+        # hostPath:
+          # path: "/var/run/docker.sock"
+          # type: File
+      - name: docker-directory
+        hostPath:
+          path: "/var/lib/docker"   
+      - name: ca-certs
+        secret:
+          secretName: registry-cert
+      - name: config-json
+        configMap:
+          name: config-json
+        # persistentVolumeClaim:
+          # claimName: teamcity-agent-pvc-2
+      # - name: docker-config-json
+      #   secret:
+      #     secretName: docker-secret
+      #     items:
+      #     - key: config.json
+      #       path: config.json      
+      - name: docker-config-json
+        configMap:
+          name: config-json
+          items:
+          - key: config.json
+            path: config.json
+      - name: ca-cert
+        persistentVolumeClaim:
+          claimName: ca-cert-teamcity-agent-pvc-2
+      - name: ca-cert-client
+        persistentVolumeClaim:
+          claimName: ca-cert-client-teamcity-agent-pvc-2            
+      - name: docker-agent-2-sock
+        emptyDir: {}    
+      hostNetwork: false            
+      # nodeSelector:
+        # kubernetes.io/hostname: raspberry-4-3.local
+        # kubernetes.io/hostname: raspberry-4-2.local
+        # kubernetes.io/hostname: rockpi-4b.local
+        # kubernetes.io/hostname: cluster.local
+        # host: master        
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000      
+      containers:
+      - name: teamcity-docker
+        # image: docker:24.0.0-rc.1-dind
+        image: docker:20.10.12-dind
+        # command: ["/bin/sh"]
+        # args: ["-c", "printenv; #OR WHATEVER COMMAND YOU WANT"]      
+        securityContext:
+          privileged: true
+          runAsUser: 0
+          #allowPrivilegeEscalation: true          
+        # ports:
+        #   - containerPort: 2376                        
+        volumeMounts:
+        - mountPath: /opt/buildagent/temp
+          name: agent-opt-temp #nfs-build-agent-2      
+        - mountPath: /certs/ca
+          name: ca-cert
+        - mountPath: /certs/client
+          name: ca-cert-client              
+        - name: dind-storage
+          mountPath: /var/lib/docker
+        - mountPath: /var/run        
+          name: docker-agent-2-sock
+        # - name: ca-certs
+        #   mountPath: "/etc/docker/certs.d/registry.docker-registry:5000"
+        #   readOnly: true          
+        # - mountPath: /var/run/docker.sock
+        #   name: docker-sock
+        #   readOnly: false
+        env:
+        - name: DOCKER_TLS_CERTDIR
+          value: '/certs'
+        - name: DOCKER_CERT_PATH
+          value: '/certs/client'
+        - name: DOCKER_TLS_VERIFY
+          value: "1"
+        - name: DOCKER_HOST
+          value: "tcp://localhost:2376"
+      - name: teamcity-build-agent
+        image: jetbrains/teamcity-agent:2023.05.2  # Change this version tag with your server.
+        imagePullPolicy: Always
+        securityContext:
+          privileged: true            
+          runAsUser: 0
+          #allowPrivilegeEscalation: true                  
+        # args: ["--storage-driver", "overlay2", "--mtu", "1460"]
+        ports:
+        - containerPort: 2376          
+        env:
+        - name: DOCKER_TLS_VERIFY
+          value: "1"
+        - name: DOCKER_IN_DOCKER
+          value: start
+        - name: DOCKER_TLS_CERTDIR
+          value: /certs
+        - name: DOCKER_CERT_PATH
+          value: '/certs/client'        
+        - name: DOCKER_VERSION
+          value: 20.10.12
+        - name: SERVER_URL
+          value: http://teamcity:8111    
+        - name: DOCKER_HOST
+          value: tcp://localhost:2376
+        volumeMounts:
+        # - mountPath: /root/.docker/config.json
+        #   subPath: config.json
+        #   name: docker-config-json #nfs-build-agent-2
+        - mountPath: /opt/buildagent/temp
+          name: agent-opt-temp #nfs-build-agent-2
+        - mountPath: /var/run        
+          name: docker-agent-2-sock
+        - mountPath: /certs/client
+          name: ca-cert-client     
+        - name: dind-storage
+          mountPath: /var/lib/docker
+        - name: config-json
+          mountPath: /etc/docker
+          readOnly: true
+        - name: ca-certs
+          # mountPath: /etc/docker/certs.d/registry.docker-registry.svc.cluster.local:5000
+          mountPath: /etc/docker/certs.d/registry.docker-registry:5000
+          readOnly: true              
+        # - name: ca-certs
+          # mountPath: /etc/ssl/certs
+          # readOnly: true                        
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: teamcity-build-agent-2
+#   labels:
+#     app: teamcity-build-agent-2
+#   namespace: ci-cd  
+# spec:
+#   nodeSelector:
+#     kubernetes.io/hostname: cluster.local
+#     # host: worker-1
+#     # host: master
+#   # hostNetwork: true
+#   securityContext:
+#     runAsUser: 0
+#     runAsGroup: 0
+#     fsGroup: 0  
+#   volumes:
+#   - name: agent-opt-temp
+#     emptyDir: {}  
+#   - name: dind-storage
+#     emptyDir: {}    
+#   # - name: docker-sock
+#     # hostPath:
+#       # path: "/var/run/docker.sock"
+#       # type: File
+#   - name: docker-directory
+#     hostPath:
+#       path: "/var/lib/docker"   
+#   - name: ca-certs
+#     secret:
+#       secretName: registry-cert
+#   - name: config-json
+#     secret:
+#       secretName: config-json
+#     # persistentVolumeClaim:
+#       # claimName: teamcity-agent-pvc-2
+#   - name: docker-config-json
+#     secret:
+#       secretName: docker-secret
+#       items:
+#       - key: config.json
+#         path: config.json      
+#   - name: ca-cert
+#     persistentVolumeClaim:
+#       claimName: ca-cert-teamcity-agent-pvc-2
+#   - name: ca-cert-client
+#     persistentVolumeClaim:
+#       claimName: ca-cert-client-teamcity-agent-pvc-2            
+#   - name: docker-agent-2-sock
+#     emptyDir: {}    
+#   containers:
+#     - name: teamcity-docker
+#       # image: docker:24.0.0-rc.1-dind
+#       image: docker:20.10.12-dind
+#       # command: ["/bin/sh"]
+#       # args: ["-c", "printenv; #OR WHATEVER COMMAND YOU WANT"]      
+#       securityContext:
+#         privileged: true
+#         runAsUser: 0
+#         #allowPrivilegeEscalation: true          
+#       # ports:
+#       #   - containerPort: 2376                        
+#       volumeMounts:
+#       - mountPath: /opt/buildagent/temp
+#         name: agent-opt-temp #nfs-build-agent-2      
+#       - mountPath: /certs/ca
+#         name: ca-cert
+#       - mountPath: /certs/client
+#         name: ca-cert-client              
+#       - name: dind-storage
+#         mountPath: /var/lib/docker
+#       - mountPath: /var/run        
+#         name: docker-agent-2-sock
+#       # - name: ca-certs
+#       #   mountPath: "/etc/docker/certs.d/registry.docker-registry:5000"
+#       #   readOnly: true          
+#       # - mountPath: /var/run/docker.sock
+#       #   name: docker-sock
+#       #   readOnly: false
+#       env:
+#       - name: DOCKER_TLS_CERTDIR
+#         value: '/certs'
+#       - name: DOCKER_CERT_PATH
+#         value: '/certs/client'
+#       - name: DOCKER_TLS_VERIFY
+#         value: "1"
+#       - name: DOCKER_HOST
+#         value: "tcp://localhost:2376"
+#         # #allowPrivilegeEscalation: true          
+#     # - name: teamcity-docker-client    
+#     #   image: docker:latest  # Change this version tag with your server.
+#     #   imagePullPolicy: Always
+#     #   securityContext:
+#     #     privileged: true            
+#     #     runAsUser: 0
+#     #     #allowPrivilegeEscalation: true                  
+#     #   env:
+#     #   - name: DOCKER_IN_DOCKER
+#     #     value: start
+#     #   - name: DOCKER_TLS_CERTDIR
+#     #     value: /certs
+#     #   - name: DOCKER_VERSION
+#     #     value: 20.10.12
+#     #   - name: DOCKER_HOST
+#     #     value: tcp://localhost:2376
+#     #   volumeMounts:
+#     #   - mountPath: /certs/client
+#     #     name: ca-cert-client        
+#     #   - mountPath: /certs/ca
+#     #     name: ca-cert        
+#     #   - name: dind-storage
+#     #     mountPath: /var/lib/docker
+#     #   # - mountPath: /var/run/docker.sock        
+#     #   #   name: docker-agent-2-sock                
+#     - name: teamcity-build-agent-2
+#       image: jetbrains/teamcity-agent:2023.05.2  # Change this version tag with your server.
+#       imagePullPolicy: Always
+#       securityContext:
+#         privileged: true            
+#         runAsUser: 0
+#         #allowPrivilegeEscalation: true                  
+#       # args: ["--storage-driver", "overlay2", "--mtu", "1460"]
+#       ports:
+#       - containerPort: 2376          
+#       env:
+#       - name: DOCKER_TLS_VERIFY
+#         value: "1"
+#       - name: DOCKER_IN_DOCKER
+#         value: start
+#       - name: DOCKER_TLS_CERTDIR
+#         value: /certs
+#       - name: DOCKER_CERT_PATH
+#         value: '/certs/client'        
+#       - name: DOCKER_VERSION
+#         value: 20.10.12
+#       - name: SERVER_URL
+#         value: http://teamcity:8111    
+#       - name: DOCKER_HOST
+#         value: tcp://localhost:2376
+#       volumeMounts:
+#       - mountPath: /root/.docker/config.json
+#         subPath: config.json
+#         name: docker-config-json #nfs-build-agent-2
+#       - mountPath: /opt/buildagent/temp
+#         name: agent-opt-temp #nfs-build-agent-2
+#       - mountPath: /var/run        
+#         name: docker-agent-2-sock
+#       - mountPath: /certs/client
+#         name: ca-cert-client     
+#       - name: dind-storage
+#         mountPath: /var/lib/docker
+#       - name: config-json
+#         mountPath: /etc/docker
+#         readOnly: true
+#       - name: ca-certs
+#         mountPath: /etc/docker/certs.d/registry.docker-registry.svc.cluster.local:5000
+#         readOnly: true              
+#       # - mountPath: /var/run/docker.sock  
+#       #   name: nfs-build-agent-2    
+#       # - mountPath: /opt/buildagent/work 
+#       #   name: nfs-build-agent-2    
+#       # - mountPath: /opt/buildagent/tools 
+#       #   name: nfs-build-agent-2    
+#       # - mountPath: /opt/buildagent/plugins 
+#       #   name: nfs-build-agent-2    
+#       # - mountPath: /opt/buildagent/system       
+#       #   name: nfs-build-agent-2        
+#       # image: nicosingh/rpi-dind
+#       # args: ["--storage-driver", "overlay2", "--mtu", "1460"]
+#       # command: 
+#       # - service
+#       # - docker
+#       # - start
+
+#     # persistentVolumeClaim:
+#     #   claimName: teamcity-agent-pvc    
+#   # - name: nfs-build-agent
+#   #   persistentVolumeClaim:
+#   #     claimName: teamcity-agent-pvc-2
+#     # nfs:
+#     #   server: 192.168.15.13
+#     #   path: /mnt/HD/HD_a2/nas_storage/teamcity/buildAgent-2
+#     #   readOnly: no   
+# ---
+# apiVersion: v1
+# kind: Pod
+# metadata:
+#   name: docker
+#   labels:
+#     name: docker
+# spec:
+#   containers:
+#   - name: docker
+#     image: docker:24.0.0-rc.1-dind
+#     securityContext:
+#       privileged: true    
+---
+
+# apiVersion: v1
+# data:
+#   ca.pem: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUdKakNDQkE2Z0F3SUJBZ0lVU3J3MmJPcTVId1FxQ1paTUdWaCt6TnI3NGZRd0RRWUpLb1pJaHZjTkFRRUwKQlFBd2ZURUxNQWtHQTFVRUJoTUNRbEl4RlRBVEJnTlZCQW9NREZKQlUxQWdRMHhWVTFSRlVqRXpNREVHQTFVRQpBd3dxY21WbmFYTjBjbmt1Wkc5amEyVnlMWEpsWjJsemRISjVMbk4yWXk1amJIVnpkR1Z5TG14dlkyRnNNU0l3CklBWUpLb1pJaHZjTkFRa0JGaE50WVhKamNHTnlkWHBBWjIxaGFXd3VZMjl0TUI0WERUSTBNREl3T0RBeU1UVXoKTVZvWERUTTBNREl3TlRBeU1UVXpNVm93ZlRFTE1Ba0dBMVVFQmhNQ1FsSXhGVEFUQmdOVkJBb01ERkpCVTFBZwpRMHhWVTFSRlVqRXpNREVHQTFVRUF3d3FjbVZuYVhOMGNua3VaRzlqYTJWeUxYSmxaMmx6ZEhKNUxuTjJZeTVqCmJIVnpkR1Z5TG14dlkyRnNNU0l3SUFZSktvWklodmNOQVFrQkZoTnRZWEpqY0dOeWRYcEFaMjFoYVd3dVkyOXQKTUlJQ0lqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FnOEFNSUlDQ2dLQ0FnRUFyMUtTQkl2TytEeTNoMnNHS2MwZgpjZEV2M0Nhb1pCOGFhRld2ai9zelAwSGNLUUxhMXZiSjdYZ3JkeDFWNmxpZEVwMmQxZitQMjJ0NnNkMTgvNUNLCkFpRVdqeGtnSkhDMmF1elVzblJMbHE0NkVwOHhLWEFGMHZyT1pFZGxHek9IK3pCaTJ3ZjlkU2VFbDN1Ukp1aC8KRHl5YndDQzJ0Y0szMGxNRTE0SmtTeFVySTZQRERjK3pkblI5Q2NXR2hRaXgzWUVaYjZvcXZpOGRiUDIzc3ZKagpjOWxVai9sZzh2bGltOXZVVC9KNWhsRC9YRkt2OFhLZVNkeFVvUlpsWFllTktnZy9XS21QbFZmUmorS0ZmazdECktoOEl3eWNnVjVQdzhSNGlzd0E2QmRSL0xpellhVTlMc2NCd3BZek5hVkE0Smw2Y0h0Qy85T1BtM3BGME1ERlcKVEZYb2lkRGRjTUQ5eTlNQWxGVE1nQ0JWaDdHOFVpSUJ3TnVET2VJd1J0a2ZYeERnYWc2SE9OWnlzTExiT0NIOQplVjRMdDZvUTdyd1RHZzFFeU5WMmRadzl2MmhGRUlVak5aRVpVRXNpc05ZY2kremZETHpkMFFtUDdhZndQRFlZCmJXb3VRZ3diZGQ3WWZETHpnbXlxZE5kcEVEbXpQeE4xMy9VZ2djbTd5VUg2UHJteVl3eHkxUWFTcm9FNlJEeDcKb1I3bTVlS2M5SHd6bkR0MzdUVlJOZDBnbThJakFhS0dUUy9ic2RVcFlrU2lZaU1oYjVoTFFCSlBWd080ZlJVNApjVE1ieEFEb0tkVkRiaDRKUXZRcVdQYVgrV05yRE42YlFZN0kvVmVTRVYvNWhNejJ6cEUzbm5pbFcyQzVzYkVpCmpHK3hZZ2Z2RFE4NFNOWFRpY0t3eW0wQ0F3RUFBYU9CblRDQm1qQjVCZ05WSFJFRWNqQndnaE55WVhOd1ltVnkKY25rdE5DMHhMbXh2WTJGc2dnMWpiSFZ6ZEdWeUxteHZZMkZzZ2lweVpXZHBjM1J5ZVM1a2IyTnJaWEl0Y21WbgphWE4wY25rdWMzWmpMbU5zZFhOMFpYSXViRzlqWVd5Q0dISmxaMmx6ZEhKNUxtUnZZMnRsY2kxeVpXZHBjM1J5CmVZY0V3S2hCRnpBZEJnTlZIUTRFRmdRVXg4VW0raDdueStXVnBTUFR3YXBER1ZhdlVna3dEUVlKS29aSWh2Y04KQVFFTEJRQURnZ0lCQUdsTGxXRi9rc0g5cDlNZW81R3N3NmZSa0RUb1RneG80K2VzUDAzTmJWaXRrMFZTRHdNUApWR3VuUlQ4WWVtZmo4TVNRNUdnWEZ1OFhKeG1sWmpZQW9aQ0UzbE4zeHF0QzR4WDdKdnVXNUJJZ0xISTArOC9kCktTK2ZPaHh0VWp3NkoyMnFuL2tnOWZCQkI2OU9YMHZPOStUcUczUmtVY1NPMXRrRERFQnlYZUVDM01QMlZBSXIKNmNpSTJ2bi9CQlZrc29DUkFoZFpzZ3FINTQ5Vi9DWHFNamw0cTkrTE93ZHl0aVFzQXI0aE9oRU9JTW1ld3FIRwp5U090OGV4Z3VOWUhxMmhnLzR5VjZOd094c2pTZWNsUnNhU1FMZTVyZzQrK0w0Q3QzZFBNUDBkR2w2N0ZrWmlYCi90eFpiYUdGQXdxSUc4bS9IRjQ2bkl5MTFpdkNwb0tuZExrUytGMzdaSkJBYUk2aTg0a1phbjZkaWFVbEw2bmcKM0prdVdLK0M4L2g5MXBXekVGWVZLb3U2SHJMZDdCNGxWeEZad3E1VnRPV0tVTHhRVmM5bzRRVkw0N1pHSTFnRgpMZTF2ODU5c253OHpMV1c2YzlZUmFIY1hEdzAzREVvUXZMNlVOcUJ6Z21KQ2xKMlo3dmNWTnpldEhoMFRNUnNBCmxRZHpLU0JQaGxGNUh4Nk1nUnk3OGVDejJ6ejVZVFBVd29KV0VYb1NHQXUwZVRMR0tGbGpibUxZQXJtdGtNaUoKNmhrdFM2TWpOWVBzNHppNjFoVURNdzJ1OVZvRFRNM0Y5SU9aQ2p1R3B2RThRYmZKWVpRL2hQSlZPdzloUjJ4QQpTamIrNGRJa0lndW9CUFRiN3VTZDRtZ0pJTlR3cy92ekhzMnpGNjBhSTVmREdOOGxmS0NQVHROcwotLS0tLUVORCBDRVJUSUZJQ0FURS0tLS0tCg==
+# kind: Secret
+# metadata:
+#   name: registry-cert
+#   namespace: ci-cd
+# type: Opaque
+---
+apiVersion: v1
+data:
+  config.json: "{}"
+kind: ConfigMap
+metadata:
+  name: config-json
+  namespace: ci-cd
+

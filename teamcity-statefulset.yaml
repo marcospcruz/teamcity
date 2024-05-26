@@ -1,0 +1,105 @@
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: internal-properties
+  namespace: ci-cd
+data:
+  internal.properties: teamcity.superUser.disable=false
+
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: teamcity
+  namespace: ci-cd  
+  labels: 
+    app: teamcity
+spec:
+  selector:
+    matchLabels:
+      app: teamcity
+  serviceName: teamcity    
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: teamcity
+    spec:
+      volumes:
+        - name: teamcity-backup
+          nfs:
+            # server: 192.168.15.13
+            # server: dlink-bc19e7.local
+            server: nfs-service.default.svc.cluster.local
+            path: /mnt/HD/HD_a2/nas_storage/teamcity/backup
+            readOnly: true            
+        - name: nfs-volume-data
+          persistentVolumeClaim:
+            claimName: teamcity-pvc
+        - name: internal-properties
+          configMap:
+            name: internal-properties
+            items:
+            - key: internal.properties
+              path: internal.properties                      
+        - name: database-properties
+          configMap:
+            name: database-properties
+            items:
+            - key: "database.properties"
+              path: "database.postgres.properties"                      
+        - name: nfs-volume-user-home
+          persistentVolumeClaim:
+            claimName: teamcity-user-home-pvc
+      hostNetwork: false            
+      nodeSelector:
+        kubernetes.io/hostname: raspberry-4-3.local
+        # kubernetes.io/hostname: raspberry-4-2.local
+        # kubernetes.io/hostname: rockpi-4b.local
+        # kubernetes.io/hostname: cluster.local
+        # host: master        
+      securityContext:
+        runAsUser: 1000
+        runAsGroup: 1000
+        fsGroup: 1000      
+      containers:
+        - name: teamcity
+          image: jetbrains/teamcity-server:2023.05.3-linux-arm64 #jetbrains/teamcity-server:latest
+          # resources:
+          #   requests:
+          #     memory: "500Mi"
+          #     cpu: "250m"
+          #   limits:
+          #     memory: "1Gi"
+          #     cpu: "500m"             
+          ports:
+          - containerPort: 8111          
+            name: http
+            protocol: TCP
+          volumeMounts:
+          - name: teamcity-backup
+            mountPath: /backups                        
+          - name: nfs-volume-data
+            mountPath: "/data/teamcity_server/datadir"
+          
+            # volumeMounts:
+          - name: nfs-volume-user-home
+            mountPath: /home/tcuser
+          # - name: database-properties
+          #   mountPath: /data/teamcity_server/datadir/config/database.postgres.properties
+          #   subPath: database.postgres.properties
+          - name: internal-properties
+            mountPath: /data/teamcity_server/datadir/config/internal.properties
+            subPath: internal.properties
+        # - name: nfs-volume-data
+        #   nfs:
+        #     server: 192.168.15.13
+        #     path: /mnt/HD/HD_a2/nas_storage/teamcity/data
+        #     readOnly: no            
+        # - name: nfs-volume-tcuser
+        #   nfs:
+        #     server: 192.168.15.13
+        #     path: /mnt/HD/HD_a2/nas_storage/teamcity/home/tcuser
+        #     readOnly: no                        
+---

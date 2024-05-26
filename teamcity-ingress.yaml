@@ -1,0 +1,26 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: teamcity
+  namespace: ci-cd
+  # annotations:
+  #     nginx.ingress.kubernetes.io/use-regex: "true"
+  #     nginx.org/proxy-connect-timeout: 3600s
+  #     nginx.org/proxy-read-timeout: 3600s
+  #     nginx.org/proxy-send-timeout: 3600s
+    #   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http: 
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: teamcity
+                port:
+                  number: 8111
+      host: teamcity.ci-cd.svc.cluster.local

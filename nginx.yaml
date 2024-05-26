@@ -1,0 +1,208 @@
+# apiVersion: networking.k8s.io/v1
+# kind: Ingress
+# metadata:
+#   name: mvn-ingress
+#   namespace: default
+#   annotations:
+#     nginx.ingress.kubernetes.io/proxy-body-size: "0"
+#     nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+#     nginx.ingress.kubernetes.io/proxy-send-timeout: "600"  
+#   #     nginx.ingress.kubernetes.io/use-regex: "true"
+#   #     nginx.org/proxy-connect-timeout: 3600s
+#   #     nginx.org/proxy-read-timeout: 3600s
+#   #     nginx.org/proxy-send-timeout: 3600s
+#     #   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+#     # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+#     # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+# spec:
+#   ingressClassName: nginx
+#   rules:
+#     - http: 
+#         paths:
+#           - path: /
+#             pathType: Prefix
+#             backend:
+#               service:
+#                 name: mvn-ingress
+#                 port:
+#                   number: 80
+#       host: mvn-ingress.default.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: mvn-ingress
+  labels:
+    app: mvn-ingress
+spec:
+  selector:
+    app: mvn-ingress
+  ports:
+  - port: 80
+    name: web
+    protocol: TCP
+  selector:
+    app: mvn-ingress
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: web
+  namespace: default  
+spec:
+  serviceName: mvn-ingress
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mvn-ingress
+  template:
+    metadata:
+      labels:
+        app: mvn-ingress
+    spec:
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: raspberry-4-2.local    
+        # kubernetes.io/hostname: cluster.local        
+      containers:
+      - name: mvn-ingress
+        image: nginx:otel
+        ports:
+        - containerPort: 80
+          name: web
+        volumeMounts:
+        - name: www
+          mountPath: /usr/share/nginx/html
+        - name: nginx-conf
+          mountPath: /etc/nginx/sites-available/default
+          subPath: nginx.conf
+           
+      volumes:
+        - name: www          
+          persistentVolumeClaim:
+            claimName: www-pv-claim
+        - name: nginx-conf
+          configMap:
+            name: nginx-config
+            items:
+            - key: nginx.conf
+              path: nginx.conf
+
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: www-pv-claim  # Sets name of PVC
+  namespace: default  
+  annotations:
+    storageClassName: "nfs-storage"  
+  labels:
+    app: mvn-ingress
+spec:
+  accessModes:
+    - ReadWriteMany  # Sets read and write access
+  resources:
+    requests:
+      storage: 5Gi  # Sets volume size
+
+---
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: nginx-config
+  namespace: default
+  labels:
+    app: mvn-ingress
+data:
+  nginx.conf: |-
+    location / {
+        # First attempt to serve request as file, then
+        # as directory, then fall back to displaying a 404.
+        # try_files $uri $uri/ =404;  # IMPORTANT comment this
+        dav_methods  PUT DELETE MKCOL COPY MOVE;
+        create_full_put_path  on;
+        dav_access  user:rw group:rw all:r;
+    }
+    http {
+      client_max_body_size 20M;         
+    }
+---
+############################################################################
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: reposilite
+  namespace: default
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-body-size: "0"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"  
+  #     nginx.ingress.kubernetes.io/use-regex: "true"
+  #     nginx.org/proxy-connect-timeout: 3600s
+  #     nginx.org/proxy-read-timeout: 3600s
+  #     nginx.org/proxy-send-timeout: 3600s
+    #   nginx.ingress.kubernetes.io/backend-protocol: "HTTPS"
+    # nginx.ingress.kubernetes.io/ssl-passthrough: "true"
+    # nginx.ingress.kubernetes.io/ssl-redirect: "true"
+spec:
+  ingressClassName: nginx
+  rules:
+    - http: 
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: reposilite
+                port:
+                  number: 8080
+      host: mvn-ingress.default.svc.cluster.local
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: default
+  name: reposilite
+  labels:
+    app: reposilite
+spec:
+  selector:
+    app: reposilite
+  ports:
+  - port: 8080
+    name: web
+    protocol: TCP
+  selector:
+    app: reposilite
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: reposilite
+  namespace: default  
+spec:
+  serviceName: reposilite
+  replicas: 1
+  selector:
+    matchLabels:
+      app: reposilite
+  template:
+    metadata:
+      labels:
+        app: reposilite
+    spec:
+    spec:
+      nodeSelector:
+        kubernetes.io/hostname: raspberry-4-2.local    
+        # kubernetes.io/hostname: cluster.local        
+      containers:
+      - name: reposilite
+        image: dzikoysk/reposilite:3.5.11
+        ports:
+        - containerPort: 8080
+          name: reposilite
+           
+
+

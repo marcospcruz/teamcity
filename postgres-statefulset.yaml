@@ -1,0 +1,79 @@
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: postgres-pv-claim  # Sets name of PVC
+  namespace: database
+  annotations:
+    storageClassName: "nfs-storage"  
+  labels:
+    app: postgres
+spec:
+  accessModes:
+    - ReadWriteMany  # Sets read and write access
+  resources:
+    requests:
+      storage: 5Gi  # Sets volume size
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: postgres  # Sets Deployment name
+  namespace: database
+spec:
+  serviceName: teamcity-db    
+  replicas: 1
+  selector:
+    matchLabels:
+      app: postgres
+  template:
+    metadata:
+      labels:
+        app: postgres
+    spec:
+      nodeSelector:
+        # kubernetes.io/hostname: raspberry-4-2.local    
+        kubernetes.io/hostname: cluster.local    
+      containers:
+        - name: postgres
+          image: postgres:10.1 # Sets Image
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 5432  # Exposes container port
+          envFrom:
+            - configMapRef:
+                name: postgres-config
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              name: postgredb
+      volumes:
+        - name: postgredb
+          persistentVolumeClaim:
+            claimName: postgres-pv-claim
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: teamcity-db # Sets service name
+  namespace: database
+  labels:
+    app: postgres # Labels and Selectors
+spec:
+  type: NodePort # Sets service type
+  ports:
+    - port: 5432 # Sets port to run the postgres application
+  selector:
+    app: postgres            
+---
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: postgres-config
+  namespace: database
+  labels:
+    app: postgres
+data:
+  POSTGRES_DB: teamcity
+  POSTGRES_USER: teamcity
+  POSTGRES_PASSWORD: password
+  
