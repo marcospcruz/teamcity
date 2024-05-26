@@ -35,7 +35,7 @@ echo current branch: $CURRENT_BRANCH
 echo current branch type: $CURRENT_BRANCH_TYPE
 
 case $CURRENT_BRANCH_TYPE in
-  "develop" ) 
+  "support" ) 
       TARGET_BRANCH_TYPE="feature" 
       CLOSE_SOURCE=false
         ;;        
