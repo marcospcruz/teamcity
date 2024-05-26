@@ -5,6 +5,7 @@
   <settings>
     <options>
       <option name="allowExternalStatus" value="true" />
+      <option name="branchFilter" value="+:*&#xD;&#xA;-:refs/pull-requests/*" />
       <option name="cleanBuild" value="true" />
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
@@ -29,14 +30,17 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_AllBranches_2" />
+      <vcs-entry-ref root-id="DemoApp_FeatureBugfix" />
     </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_10" type="vcsTrigger">
         <parameters>
           <param name="branchFilter"><![CDATA[-:<default>
-+:*]]></param>
+-:refs/heads/master
++:%git.branch.feature%
+-:refs/heads/develop
++:refs/heads/golden-source]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
@@ -50,7 +54,7 @@
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_1CheckCommitSAuthorBuild">
+      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />

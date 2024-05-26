@@ -5,12 +5,14 @@
   <settings>
     <disabled-settings>
       <setting-ref ref="RUNNER_31" />
+      <setting-ref ref="RUNNER_47" />
     </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_25" name="mvn deploy" type="Maven2">
         <conditions>
-          <equals name="git.branch.source" value="develop" />
+          <contains name="teamcity.build.branch" value="feature" />
+          <does-not-contain name="teamcity.build.branch" value="master" />
         </conditions>
         <parameters>
           <param name="goals" value="deploy" />
@@ -29,23 +31,49 @@
         </parameters>
       </runner>
       <runner id="RUNNER_31" name="create release support" type="simpleRunner">
+        <conditions>
+          <contains name="teamcity.build.branch" value="develop" />
+        </conditions>
         <parameters>
-          <param name="script.content"><![CDATA[git checkout golden-source
-git checkout -b release/support-rc
-git push origin release/support-rc]]></param>
+          <param name="script.content"><![CDATA[git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+ls -la
+git checkout -b uat
+git push origin uat]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_47" name="delete temporary branches" type="simpleRunner">
+        <conditions>
+          <contains name="teamcity.build.branch" value="develop" />
+          <does-not-contain name="teamcity.build.branch" value="master" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+PREVIOUS_BRANCH="$(git log --oneline|grep Merged|head -1|sed -r 's/(.+)((feature|bugfix)\/\w+)(.+)/\2/g')"
+git checkout develop 
+git pull origin
+git rebase $PREVIOUS_BRANCH
+git push origin --delete $PREVIOUS_BRANCH]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
+      <vcs-entry-ref root-id="DemoApp_FeatureBugfix" />
     </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_13" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:*" />
+          <param name="branchFilter"><![CDATA[-:<default>
+-:refs/heads/master
++:*]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
@@ -59,8 +87,16 @@ git push origin release/support-rc]]></param>
       </extension>
     </build-extensions>
     <dependencies>
-      <depend-on sourceBuildTypeId="DemoApp_4Vulnerabilities">
+      <depend-on sourceBuildTypeId="DemoApp_2UnitTest">
         <options>
+          <option name="run-build-if-dependency-failed" value="CANCEL" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+      <depend-on sourceBuildTypeId="DemoApp_3IntegrationTests">
+        <options>
+          <option name="run-build-if-dependency-failed" value="CANCEL" />
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
         </options>

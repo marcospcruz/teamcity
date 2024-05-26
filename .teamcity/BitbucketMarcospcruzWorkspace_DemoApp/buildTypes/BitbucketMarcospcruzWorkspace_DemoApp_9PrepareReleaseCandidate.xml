@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="94369578-d5f2-49be-8ba5-09252cd7c405" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>9.Prepare Release Candidate</name>
+  <description />
+  <settings>
+    <options>
+      <option name="branchFilter" value="+:*&#xD;&#xA;+:refs/tags/demo-app-*" />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_54" name="Prepare support branch for release-candidate" type="simpleRunner">
+        <conditions>
+          <does-not-contain name="teamcity.build.branch" value="golden-source" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+echo 
+
+PROJECT_VERSION="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.maven.project.version%"
+RELEASE_CANDIDATE_SUPPORT="support/release-candidate-${PROJECT_VERSION}"
+echo ${PROJECT_VERSION}
+echo ${RELEASE_CANDIDATE_SUPPORT}
+[ ! -z "$(echo ${PROJECT_VERSION}|grep -i 'snapshot')" ] && echo wrong version to a release candidate....skipping && exit 0
+git ls-remote --exit-code --heads origin ${RELEASE_CANDIDATE_SUPPORT}
+#|grep -vi 'snapshot'|sed -r 's/(\d*)\-([a-zA-Z]+)/\1/g'
+EXIT_CODE="$?"
+if [ 0 -ne $EXIT_CODE ]; then
+	git checkout -b ${RELEASE_CANDIDATE_SUPPORT}
+	git push origin $RELEASE_CANDIDATE_SUPPORT
+else
+	echo "${RELEASE_CANDIDATE_SUPPORT} already exists"
+fi]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_ReleaseCandidateTags" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_24" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:refs/tags/%system.teamcity.projectName%-*" />
+          <param name="groupCheckinsByCommitter" value="true" />
+          <param name="perCheckinTriggering" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="watchChangesInDependencies" value="true" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <dependencies>
+      <depend-on sourceBuildTypeId="DemoApp_4Vulnerabilities">
+        <options>
+          <option name="run-build-if-dependency-failed" value="RUN_ADD_PROBLEM" />
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
