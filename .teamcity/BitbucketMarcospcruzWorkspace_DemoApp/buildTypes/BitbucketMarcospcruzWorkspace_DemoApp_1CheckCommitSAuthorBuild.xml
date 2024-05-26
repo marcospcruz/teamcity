@@ -26,8 +26,6 @@ CURRENT_BRANCH_TYPE=$(echo $CURRENT_BRANCH|cut -d/ -f1)
 echo "source branch type: $CURRENT_BRANCH_TYPE"
 echo "source branch: $CURRENT_BRANCH"
 echo "target branch: $TARGET_BRANCH"
-cd $CURRENT_BRANCH_TYPE
-echo changing directory to $(pwd)
 
 echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
 echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"
