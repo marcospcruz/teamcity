@@ -28,7 +28,9 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <cleanup />
