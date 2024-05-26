@@ -19,7 +19,7 @@
           <option name="take-successful-builds-only" value="true" />
         </options>
       </depend-on>
-      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_3IntegrationTests_2">
+      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_12IntegrationTests">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
