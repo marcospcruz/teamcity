@@ -35,6 +35,7 @@
           <param name="branchFilter"><![CDATA[-:<default>
 -:refs/heads/master
 +:%git.branch.feature%
++:user=john
 -:refs/heads/develop
 +:refs/heads/golden-source]]></param>
           <param name="enableQueueOptimization" value="true" />
