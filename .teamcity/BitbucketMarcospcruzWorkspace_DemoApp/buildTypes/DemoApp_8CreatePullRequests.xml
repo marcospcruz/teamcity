@@ -88,8 +88,6 @@ echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${C
       </runner>
       <runner id="RUNNER_42" name="create pull request" type="python-runner">
         <conditions>
-          <does-not-contain name="env.COMMIT.author" value="@bots.bitbucket.org" />
-          <does-not-contain name="teamcity.build.triggeredBy.username" value="@bots.bitbucket.org" />
           <does-not-contain name="teamcity.build.branch" value="master" />
           <does-not-equal name="env.git.branch.target.skip" value="0" />
           <does-not-contain name="env.git.branch.source" value="script-generated" />
