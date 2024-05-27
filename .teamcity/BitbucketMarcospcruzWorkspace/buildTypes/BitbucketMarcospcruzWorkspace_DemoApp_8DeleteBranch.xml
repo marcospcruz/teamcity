@@ -77,7 +77,8 @@ fi]]></param>
     <build-triggers>
       <build-trigger id="TRIGGER_27" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:refs/heads/develop" />
+          <param name="branchFilter"><![CDATA[+:refs/heads/develop
++:refs/tags/%system.teamcity.projectName%*]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules" value="+:user=root*:**" />
