@@ -112,9 +112,7 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_FeatureBugfix">
-        <checkout-rule rule="+:. =&gt; %teamcity.build.branch%" />
-      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DemoApp_FeatureBugfix" />
     </vcs-settings>
     <requirements />
     <build-triggers>
