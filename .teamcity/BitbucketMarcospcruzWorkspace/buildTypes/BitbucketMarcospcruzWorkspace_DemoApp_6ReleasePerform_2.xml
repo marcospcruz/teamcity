@@ -48,7 +48,7 @@ echo %teamcity.build.branch%]]></param>
         <parameters>
           <param name="branchFilter"><![CDATA[+:refs/heads/support/support-*
 +:refs/heads/develop
-+:%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%]]></param>
++:refs/heads/uat]]></param>
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="watchChangesInDependencies" value="true" />
         </parameters>
