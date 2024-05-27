@@ -23,6 +23,16 @@
         </parameters>
       </build-trigger>
     </build-triggers>
+    <build-extensions>
+      <extension id="BUILD_EXT_10" type="pullRequests">
+        <parameters>
+          <param name="authenticationType" value="vcsRoot" />
+          <param name="filterTargetBranch"><![CDATA[+:refs/heads/support/support-*
++:+:%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%]]></param>
+          <param name="providerType" value="bitbucketCloud" />
+        </parameters>
+      </extension>
+    </build-extensions>
     <dependencies>
       <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild">
         <options>
