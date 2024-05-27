@@ -17,6 +17,9 @@
         <parameters>
           <param name="script.content"><![CDATA[ls -la
 echo
+cd %teamcity.build.branch%
+ls -la $(pwd)
+echo
 AUTHOR=$(git log --oneline --pretty="%ae"|head -1)
 COMMIT_HASH=$(git rev-parse HEAD)
 echo commit author: $AUTHOR
