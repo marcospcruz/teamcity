@@ -81,7 +81,8 @@ fi]]></param>
 +:refs/tags/%system.teamcity.projectName%*]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules" value="+:user=root*:**" />
+          <param name="triggerRules"><![CDATA[+:user=root*:**
++:user=tcuser*:**]]></param>
           <param name="watchChangesInDependencies" value="true" />
         </parameters>
       </build-trigger>
