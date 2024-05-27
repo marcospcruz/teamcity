@@ -56,7 +56,7 @@ echo %teamcity.build.branch%]]></param>
       <extension id="BUILD_EXT_10" type="pullRequests">
         <parameters>
           <param name="authenticationType" value="vcsRoot" />
-          <param name="filterTargetBranch" value="%git.branch.develop%" />
+          <param name="filterTargetBranch" value="refs/heads/support/support-*" />
           <param name="providerType" value="bitbucketCloud" />
         </parameters>
       </extension>
