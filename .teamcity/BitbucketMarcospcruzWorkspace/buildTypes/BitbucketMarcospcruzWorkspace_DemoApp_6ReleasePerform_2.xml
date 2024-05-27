@@ -40,6 +40,20 @@ echo %teamcity.build.branch%]]></param>
           <param name="userSettingsSelection" value="settings.xml" />
         </parameters>
       </runner>
+      <runner id="RUNNER_18" name="fork support release for automatic merge" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo "checking $(pwd):"
+ls -la
+git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+echo 
+git checkout -b support/uat
+git push origin support/uat]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings />
     <requirements />
