@@ -23,7 +23,17 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='$branch_t
           <does-not-equal name="teamcity.build.branch" value="master" />
         </conditions>
         <parameters>
-          <param name="script.content"><![CDATA[echo "checking $(pwd):"
+          <param name="script.content"><![CDATA[function delete_branch(){
+	TARGET_BRANCH=$(git ls-remote|grep ${1}|head -1|sed -r "s/(^.+\s+refs\/\w+\/)(${1}\/.+)/\2/g")
+    if [ -z "${TARGET_BRANCH}" ]; then
+        echo "Branch type $1 not found!" 
+        #exit 1
+    else
+        echo "Branch to be deleted ${TARGET_BRANCH}"
+        git push origin --delete $TARGET_BRANCH
+    fi
+}
+echo "checking $(pwd):"
 ls -la
 git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
 git remote -v
@@ -36,7 +46,7 @@ echo current branch type: $CURRENT_BRANCH_TYPE
 
 case $CURRENT_BRANCH_TYPE in
   "develop" ) 
-      TARGET_BRANCH_TYPE="feature" 
+      TARGET_BRANCH_TYPE=("feature" "support")
       CLOSE_SOURCE=false
         ;;        
   "release" ) 
@@ -58,14 +68,10 @@ case $CURRENT_BRANCH_TYPE in
       exit 0
       ;;
 esac
-TARGET_BRANCH=$(git ls-remote|grep ${TARGET_BRANCH_TYPE}|head -1|sed -r "s/(^.+\s+refs\/\w+\/)(${TARGET_BRANCH_TYPE}\/.+)/\2/g")
-if [ -z "${TARGET_BRANCH}" ]; then
- 	echo "Branch type $TARGET_BRANCH_TYPE not found!" 
-    #exit 1
-else
-	echo "Branch to be deleted ${TARGET_BRANCH}"
-	git push origin --delete $TARGET_BRANCH
-fi]]></param>
+for branch_type in ${TARGET_BRANCH_TYPE[@]}
+do
+	delete_branch $branch_type
+done]]></param>
           <param name="teamcity.build.workingDir" value="%teamcity.build.branch%" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
