@@ -13,7 +13,9 @@
     <build-runners>
       <runner id="RUNNER_44" name="get commit details" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[echo directory content:
+          <param name="script.content"><![CDATA[cd %teamcity.build.branch%
+git status
+echo directory content:
 ls -la
 AUTHOR=$(git log --oneline --pretty="%ae"|head -1)
 COMMIT_HASH=$(git rev-parse HEAD)
