@@ -4,7 +4,37 @@
   <description />
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_9PrepareReleaseCandidate_2">
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_54" name="Prepare support branch for release-candidate" type="simpleRunner">
+        <conditions>
+          <contains name="teamcity.build.branch" value="uat" />
+          <contains name="teamcity.build.branch" value="support-" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+echo 
+
+PROJECT_VERSION="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.maven.project.version%"
+RELEASE_CANDIDATE_SUPPORT="support/release-candidate-${PROJECT_VERSION}"
+echo ${PROJECT_VERSION}
+echo ${RELEASE_CANDIDATE_SUPPORT}
+[ ! -z "$(echo ${PROJECT_VERSION}|grep -i 'snapshot')" ] && echo wrong version to a release candidate....skipping && exit 0
+git ls-remote --exit-code --heads origin ${RELEASE_CANDIDATE_SUPPORT}
+#|grep -vi 'snapshot'|sed -r 's/(\d*)\-([a-zA-Z]+)/\1/g'
+EXIT_CODE="$?"
+if [ 0 -ne $EXIT_CODE ]; then
+	git checkout -b ${RELEASE_CANDIDATE_SUPPORT}
+	git push origin $RELEASE_CANDIDATE_SUPPORT
+else
+	echo "${RELEASE_CANDIDATE_SUPPORT} already exists"
+fi]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_ReleaseCandidateTags" />
     </vcs-settings>
