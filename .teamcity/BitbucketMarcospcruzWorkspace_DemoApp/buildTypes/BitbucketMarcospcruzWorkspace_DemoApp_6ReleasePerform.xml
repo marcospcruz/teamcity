@@ -12,15 +12,7 @@
       <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoAppReleaseSupportHotfix" />
     </vcs-settings>
     <requirements />
-    <build-triggers>
-      <build-trigger id="TRIGGER_14" type="vcsTrigger">
-        <parameters>
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules" value="-:user=root*:**" />
-          <param name="watchChangesInDependencies" value="true" />
-        </parameters>
-      </build-trigger>
-    </build-triggers>
+    <build-triggers />
     <build-extensions>
       <extension id="BUILD_EXT_10" type="pullRequests">
         <parameters>
