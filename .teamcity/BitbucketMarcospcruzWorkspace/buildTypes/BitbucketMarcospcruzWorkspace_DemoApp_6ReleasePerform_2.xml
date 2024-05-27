@@ -47,9 +47,8 @@ echo %teamcity.build.branch%]]></param>
       <build-trigger id="TRIGGER_14" type="vcsTrigger">
         <parameters>
           <param name="branchFilter"><![CDATA[+:refs/heads/support/support-*
-refs/heads/develop]]></param>
++:refs/heads/develop]]></param>
           <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules" value="-:user=root*:**" />
           <param name="watchChangesInDependencies" value="true" />
         </parameters>
       </build-trigger>
