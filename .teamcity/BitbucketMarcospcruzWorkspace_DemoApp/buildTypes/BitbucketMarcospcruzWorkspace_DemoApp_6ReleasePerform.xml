@@ -3,6 +3,9 @@
   <name>6.Release perform</name>
   <description />
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_6ReleasePerform_2">
+    <disabled-settings>
+      <setting-ref ref="TRIGGER_14" />
+    </disabled-settings>
     <parameters />
     <build-runners />
     <vcs-settings>
