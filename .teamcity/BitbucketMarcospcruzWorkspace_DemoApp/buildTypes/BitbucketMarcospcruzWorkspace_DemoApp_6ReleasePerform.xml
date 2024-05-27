@@ -9,7 +9,7 @@
     <parameters />
     <build-runners />
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc" />
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoAppReleaseSupportHotfix" />
     </vcs-settings>
     <requirements />
     <build-triggers>
