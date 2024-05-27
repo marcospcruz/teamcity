@@ -11,12 +11,6 @@
     <requirements />
     <build-triggers />
     <dependencies>
-      <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_6ReleasePerform">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
       <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_9PrepareReleaseCandidate">
         <options>
           <option name="take-started-build-with-same-revisions" value="true" />
