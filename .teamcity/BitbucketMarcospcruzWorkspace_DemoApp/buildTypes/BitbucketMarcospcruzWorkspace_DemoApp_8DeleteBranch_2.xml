@@ -9,7 +9,20 @@
       <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoAppFeatureBugfixReleaseSupport_2" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_27" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter"><![CDATA[+:refs/heads/develop
++:refs/heads/support/suport-*
++:refs/tags/%system.teamcity.projectName%-*]]></param>
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="triggerRules"><![CDATA[+:user=root*:**
++:user=tcuser*:**]]></param>
+          <param name="watchChangesInDependencies" value="true" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <dependencies>
       <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_7CreatePullRequests_2">
         <options>
