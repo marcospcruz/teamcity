@@ -41,6 +41,9 @@ echo %teamcity.build.branch%]]></param>
         </parameters>
       </runner>
       <runner id="RUNNER_18" name="fork support release for automatic merge" type="simpleRunner">
+        <conditions>
+          <contains name="teamcity.build.branch" value="uat" />
+        </conditions>
         <parameters>
           <param name="script.content"><![CDATA[echo "checking $(pwd):"
 ls -la
