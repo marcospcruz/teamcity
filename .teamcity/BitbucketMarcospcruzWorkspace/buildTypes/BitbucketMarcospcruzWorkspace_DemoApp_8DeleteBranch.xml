@@ -29,7 +29,7 @@ echo "##teamcity[setParameter name='env.git.branch.source.type' value='$branch_t
         echo "Branch type $1 not found!" 
         #exit 1
     else
-        echo "Branch to be deleted ${TARGET_BRANCH}"
+        echo "Deleting branch ${TARGET_BRANCH}"
         git push origin --delete $TARGET_BRANCH
     fi
 }
