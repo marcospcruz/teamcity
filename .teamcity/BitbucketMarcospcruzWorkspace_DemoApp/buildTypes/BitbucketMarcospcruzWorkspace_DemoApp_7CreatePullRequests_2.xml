@@ -4,7 +4,96 @@
   <description />
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_7CreatePullRequests">
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_42" name="create pull request" type="python-runner">
+        <conditions>
+          <does-not-contain name="teamcity.build.branch" value="master" />
+          <does-not-equal name="env.git.branch.target.skip" value="0" />
+          <does-not-contain name="env.git.branch.source" value="script-generated" />
+        </conditions>
+        <parameters>
+          <param name="command" value="script" />
+          <param name="coverageArgs" value="--omit=*lib*" />
+          <param name="envTool" value="none" />
+          <param name="installToolPackage" value="true" />
+          <param name="isCoverageEnabled" value="false" />
+          <param name="isTestReportingEnabled" value="true" />
+          <param name="poetryExecutable" value="poetry" />
+          <param name="pythonVersion" value="python3" />
+          <param name="scriptContent"><![CDATA[# This code sample uses the 'requests' library:
+# http://docs.python-requests.org
+import requests
+import json
+
+url = %bitbucket.restapi.url.repositories.workspace.slug.pullrequests%
+
+headers = {
+  "Accept": "application/json",
+  "Content-Type": "application/json",
+  "Authorization": "Bearer %bitbucket.restapi.url.access-token%"
+}
+
+payload = json.dumps({
+  "title": "merge pull request",
+  "description": "",
+  "state": "OPEN",
+    "author": {
+    "display_name": "%env.COMMIT.author%",
+    "type": "user",
+    "nickname": "%env.COMMIT.author%",
+    "account_id": ""
+  },
+  "source": {
+    "repository": {
+      "type": "repository"
+    },
+    "branch": {
+      "name": "%env.git.branch.source%",
+      "merge_strategies": [
+        "merge_commit"
+      ]
+    }
+  },
+  "destination": {
+    "repository": {
+      "type": "repository"
+    },
+    "branch": {
+      "name": "%env.git.branch.target%",
+      "merge_strategies": [
+        "merge_commit"
+      ]
+    }
+  }
+})
+print('Sending request:')
+print(json.dumps(payload,ident=2))
+
+response = requests.request(
+   "POST",
+   url,
+   data=payload,
+   headers=headers
+)
+
+print("response: "+json.loads(response.text,ident=2))
+response_text=json.loads(response.text)
+
+
+
+if 201 != response.status_code:
+  error_message=response_text['error']['message']
+  print("Http status code: ",response.status_code," - message: ",error_message)
+  if 400 == response.status_code and error_message == %bitbucket.restapi.url.repositories.workspace.slug.pullrequests.error.accepted_message%:
+    exit(0)
+  exit(1)]]></param>
+          <param name="teamcity.build.workingDir" value="%teamcity.build.branch%" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="virtualenvEnvName" value=".venv" />
+          <param name="virtualenvFile" value="requirements.txt" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_ReleaseSupportRc" />
     </vcs-settings>
