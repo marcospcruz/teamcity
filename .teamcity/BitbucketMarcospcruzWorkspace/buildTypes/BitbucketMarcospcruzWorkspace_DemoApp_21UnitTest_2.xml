@@ -11,6 +11,9 @@
     <parameters />
     <build-runners>
       <runner id="RUNNER_22" name="1.unit test" type="Maven2">
+        <conditions>
+          <contains name="teamcity.build.branch" value="feature" />
+        </conditions>
         <parameters>
           <param name="goals" value="test" />
           <param name="localRepoScope" value="agent" />
