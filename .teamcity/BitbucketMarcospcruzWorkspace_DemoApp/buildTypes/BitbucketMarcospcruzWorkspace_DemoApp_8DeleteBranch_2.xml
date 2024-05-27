@@ -5,7 +5,9 @@
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_8DeleteBranch">
     <parameters />
     <build-runners />
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoAppFeatureBugfixReleaseSupport" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <dependencies>
