@@ -25,7 +25,7 @@
       <extension id="BUILD_EXT_10" type="pullRequests">
         <parameters>
           <param name="authenticationType" value="vcsRoot" />
-          <param name="filterTargetBranch" value="refs/heads/support/*" />
+          <param name="filterTargetBranch" value="refs/heads/support/support-*" />
           <param name="providerType" value="bitbucketCloud" />
           <param name="vcsRootId" value="DemoApp_ReleaseSupportRc" />
         </parameters>
