@@ -8,7 +8,7 @@
       <runner id="RUNNER_54" name="Prepare support branch for release-candidate" type="simpleRunner">
         <conditions>
           <contains name="teamcity.build.branch" value="uat" />
-          <contains name="teamcity.build.branch" value="support-" />
+          <contains name="teamcity.build.branch" value="SNAPSHOT" />
         </conditions>
         <parameters>
           <param name="script.content"><![CDATA[git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
