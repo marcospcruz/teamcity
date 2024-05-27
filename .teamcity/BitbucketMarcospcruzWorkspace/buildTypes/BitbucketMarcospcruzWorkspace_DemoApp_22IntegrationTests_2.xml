@@ -14,6 +14,9 @@
     <parameters />
     <build-runners>
       <runner id="RUNNER_23" name="mvn verify" type="Maven2">
+        <conditions>
+          <contains name="teamcity.build.branch" value="feature" />
+        </conditions>
         <parameters>
           <param name="goals" value="verify" />
           <param name="localRepoScope" value="agent" />
