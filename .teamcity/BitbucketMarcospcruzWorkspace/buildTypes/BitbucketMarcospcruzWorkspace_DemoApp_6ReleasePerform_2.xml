@@ -47,7 +47,8 @@ echo %teamcity.build.branch%]]></param>
       <build-trigger id="TRIGGER_14" type="vcsTrigger">
         <parameters>
           <param name="branchFilter"><![CDATA[+:refs/heads/support/support-*
-+:refs/heads/develop]]></param>
++:refs/heads/develop
++:%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%]]></param>
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="watchChangesInDependencies" value="true" />
         </parameters>
