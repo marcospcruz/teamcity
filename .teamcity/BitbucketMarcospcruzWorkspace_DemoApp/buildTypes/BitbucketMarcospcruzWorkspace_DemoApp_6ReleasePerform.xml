@@ -12,7 +12,6 @@
     <build-triggers>
       <build-trigger id="TRIGGER_14" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:refs/heads/support/support-*" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules" value="-:user=root*:**" />
           <param name="watchChangesInDependencies" value="true" />
