@@ -96,8 +96,8 @@ echo 'release version:' $RELEASE_VERSION
 SUPPORT_BRANCH="support/support-${RELEASE_VERSION}"
 RELEASE_BRANCH="release/release-${RELEASE_VERSION}"
 
-#create_branch $SUPPORT_BRANCH
-#create_branch $RELEASE_BRANCH
+create_branch $SUPPORT_BRANCH
+create_branch $RELEASE_BRANCH
 echo 'release branch: '$RELEASE_BRANCH
 echo 'support branch: '$SUPPORT_BRANCH
 echo "##teamcity[setParameter name='bitbucket.branch.release' value='${RELEASE_BRANCH}']"
