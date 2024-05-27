@@ -114,7 +114,7 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
       <build-trigger id="TRIGGER_15" type="vcsTrigger">
         <parameters>
           <param name="branchFilter"><![CDATA[+:refs/heads/feature/*
-+:refs/heads/support/suport-*
++:refs/heads/support/support-*
 +:refs/tags/%system.teamcity.projectName%-*]]></param>
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
