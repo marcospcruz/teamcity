@@ -94,7 +94,7 @@ echo 'release version:' $RELEASE_VERSION
 [ -z $VERSION ] || [ -z $RELEASE_VERSION ] && echo project version not found && exit 1
 
 SUPPORT_BRANCH="support/support-${RELEASE_VERSION}"
-RELEASE_BRANCH="release/release-${RELEASE_VERSION}"
+RELEASE_BRANCH="release/release-${VERSION}"
 
 create_branch $SUPPORT_BRANCH
 create_branch $RELEASE_BRANCH
