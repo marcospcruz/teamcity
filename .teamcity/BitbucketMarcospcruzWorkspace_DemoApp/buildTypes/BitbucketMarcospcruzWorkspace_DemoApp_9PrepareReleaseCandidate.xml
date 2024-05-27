@@ -5,7 +5,9 @@
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_9PrepareReleaseCandidate_2">
     <parameters />
     <build-runners />
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_ReleaseCandidateTags" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <dependencies>
