@@ -126,13 +126,6 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
           <param name="teamcity.perfmon.feature.enabled" value="true" />
         </parameters>
       </extension>
-      <extension id="BUILD_EXT_12" type="pullRequests">
-        <parameters>
-          <param name="authenticationType" value="vcsRoot" />
-          <param name="filterTargetBranch" value="refs/heads/support/support-*" />
-          <param name="providerType" value="bitbucketCloud" />
-        </parameters>
-      </extension>
     </build-extensions>
     <cleanup />
   </settings>
