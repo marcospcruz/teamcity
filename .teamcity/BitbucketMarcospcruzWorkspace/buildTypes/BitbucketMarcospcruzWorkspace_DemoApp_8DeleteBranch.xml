@@ -74,15 +74,7 @@ fi]]></param>
     </build-runners>
     <vcs-settings />
     <requirements />
-    <build-triggers>
-      <build-trigger id="TRIGGER_18" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="+:*" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-        </parameters>
-      </build-trigger>
-    </build-triggers>
+    <build-triggers />
     <build-extensions>
       <extension id="BUILD_EXT_2" type="commit-status-publisher">
         <parameters>
