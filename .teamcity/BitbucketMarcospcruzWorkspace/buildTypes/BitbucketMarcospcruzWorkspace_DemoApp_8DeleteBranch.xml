@@ -79,7 +79,8 @@ fi]]></param>
         <parameters>
           <param name="branchFilter"><![CDATA[+:refs/heads/develop
 +:refs/heads/support/suport-*
-+:refs/tags/%system.teamcity.projectName%-*]]></param>
++:refs/tags/%system.teamcity.projectName%-*
++:refs/heads/support/release-candidate-*]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules"><![CDATA[+:user=root*:**
