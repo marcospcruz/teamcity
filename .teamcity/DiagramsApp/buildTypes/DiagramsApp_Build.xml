@@ -6,6 +6,9 @@
     <parameters />
     <build-runners>
       <runner id="RUNNER_17" name="Test" type="nodejs-runner">
+        <conditions>
+          <equals name="teamcity.build.branch.is_default" value="false" />
+        </conditions>
         <parameters>
           <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
