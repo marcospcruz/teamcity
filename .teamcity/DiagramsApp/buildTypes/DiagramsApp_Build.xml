@@ -21,6 +21,7 @@ npm run build]]></param>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
+      <vcs-entry-ref root-id="GitGithubComMarcospcruzTeamcityGit" />
     </vcs-settings>
     <requirements />
     <build-triggers>
