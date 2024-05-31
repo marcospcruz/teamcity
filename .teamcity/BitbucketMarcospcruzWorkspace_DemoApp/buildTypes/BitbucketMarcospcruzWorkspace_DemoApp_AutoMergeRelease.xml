@@ -3,9 +3,7 @@
   <name>auto merge release</name>
   <description />
   <settings>
-    <parameters>
-      <param name="project.name" value="" />
-    </parameters>
+    <parameters />
     <build-runners>
       <runner id="RUNNER_26" name="" type="simpleRunner">
         <parameters>
