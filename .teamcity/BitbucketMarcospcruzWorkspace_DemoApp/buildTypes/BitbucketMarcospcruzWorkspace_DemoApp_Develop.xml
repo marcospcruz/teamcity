@@ -72,7 +72,7 @@ git push origin support/uat]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoAppDevelop" />
     </vcs-settings>
     <requirements />
     <build-triggers>
