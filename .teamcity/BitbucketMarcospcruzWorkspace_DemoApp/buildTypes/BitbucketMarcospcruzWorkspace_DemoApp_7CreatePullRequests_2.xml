@@ -51,22 +51,18 @@ case $BRANCH_TYPE in
         	;;
             
         "HEAD")
-    		TARGET_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release%" 
-            PROJECT_VERSION="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.maven.project.version%" 
-            echo "triggered from demo-app tag. Defining source using HEAD commit hash $COMMIT_HASH"
-            RELEASE_CANDIDATE_TAG=$(git log ${COMMIT_HASH} --oneline|head -1|sed -r 's/(.+release\s)(%system.teamcity.projectName%-.+)/\2/g')
-            echo "Release Candidate Tag: $(git tag --list|grep $RELEASE_CANDIDATE_TAG)"
-            SOURCE_BRANCH="support/release-candidate-${PROJECT_VERSION}"
+    		#TARGET_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release%" 
+            #PROJECT_VERSION="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.maven.project.version%" 
+            #echo "triggered from demo-app tag. Defining source using HEAD commit hash $COMMIT_HASH"
+            #RELEASE_CANDIDATE_TAG=$(git log ${COMMIT_HASH} --oneline|head -1|sed -r 's/(.+release\s)(%system.teamcity.projectName%-.+)/\2/g')
+            #echo "Release Candidate Tag: $(git tag --list|grep $RELEASE_CANDIDATE_TAG)"
+            #SOURCE_BRANCH="support/release-candidate-${PROJECT_VERSION}"
+            TARGET_BRANCH="${RELEASE_SUPPORT_VERSION}" 
         	;;	        
 		"golden-source")
         	echo "Skip creating pull-request"
             exit 0
         	;;
-		"feature")
-        	TARGET_BRANCH="support" 
-            #echo "Skip creating pull-request"
-            #exit 0
-        	;;            
         *)	
         	echo "Branch type has no routes. Skipping pull request."
         	exit 0
