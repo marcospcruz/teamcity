@@ -21,23 +21,11 @@
         <param name="customPodTemplate"><![CDATA[apiVersion: v1
 kind: Pod
 metadata:
-  creationTimestamp: "2024-05-27T09:24:23Z"
-  generateName: teamcity-build-agent-
   labels:
     app: teamcity-build-agent
-    apps.kubernetes.io/pod-index: "0"
-    controller-revision-hash: teamcity-build-agent-b6fc765c7
   name: teamcity-build-agent
   namespace: ci-cd
   ownerReferences:
-  - apiVersion: apps/v1
-    blockOwnerDeletion: true
-    controller: true
-    kind: StatefulSet
-    name: teamcity-build-agent
-    uid: 64d3391f-4b69-49e4-956f-1d3116df3ff9
-  resourceVersion: "5287991"
-  uid: ed966079-141b-4649-a112-d646d60f4338
 spec:
   containers:
   - env:
@@ -209,7 +197,7 @@ spec:
         <param name="name" value="Bare Metal" />
         <param name="namespace" value="ci-cd" />
         <param name="profileId" value="kube-5" />
-        <param name="profileInstanceLimit" value="10" />
+        <param name="profileInstanceLimit" value="6" />
         <param name="secure:caCertData" value="credentialsJSON:1405ce8b-3a20-4a1c-b0e3-da3c692d8abf" />
         <param name="secure:clientCertData" value="credentialsJSON:c41e7173-f746-4c6d-8584-88e91233618f" />
         <param name="secure:clientKeyData" value="credentialsJSON:680deaaf-3297-463f-8865-2c82fa9e002a" />
