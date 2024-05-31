@@ -103,6 +103,7 @@ git push origin support/uat]]></param>
     <dependencies>
       <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild">
         <options>
+          <option name="sync-revisions" value="false" />
           <option name="take-started-build-with-same-revisions" value="true" />
           <option name="take-successful-builds-only" value="true" />
         </options>
