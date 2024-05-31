@@ -33,8 +33,7 @@
           <param name="teamcity.automerge.dstBranch" value="%git.branch.develop%" />
           <param name="teamcity.automerge.message" value="Auto Merge branch '%teamcity.build.branch%'" />
           <param name="teamcity.automerge.run.policy" value="runAfterBuildFinish" />
-          <param name="teamcity.automerge.srcBranchFilter"><![CDATA[+:release-*
--:refs/tags/*]]></param>
+          <param name="teamcity.automerge.srcBranchFilter" value="+:refs/release-*" />
           <param name="teamcity.merge.policy" value="alwaysCreateMergeCommit" />
         </parameters>
       </extension>
