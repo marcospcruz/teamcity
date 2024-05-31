@@ -27,8 +27,7 @@ metadata:
     app: teamcity-build-agent
     apps.kubernetes.io/pod-index: "0"
     controller-revision-hash: teamcity-build-agent-b6fc765c7
-    statefulset.kubernetes.io/pod-name: teamcity-build-agent-0
-  name: teamcity-build-agent-0
+  name: teamcity-build-agent
   namespace: ci-cd
   ownerReferences:
   - apiVersion: apps/v1
@@ -193,10 +192,11 @@ spec:
               fieldPath: metadata.namespace
             path: namespace]]></param>
         <param name="imageDescription" value="Custom pod template: teamcity-agent" />
-        <param name="imageInstanceLimit" value="2" />
+        <param name="imageInstanceLimit" value="5" />
         <param name="podTemplateMode" value="custom-pod-template" />
         <param name="profileId" value="kube-5" />
         <param name="source-id" value="teamcity-agent" />
+        <param name="sourceDeployment" value="" />
       </parameters>
     </extension>
     <extension id="kube-5" type="CloudProfile">
@@ -213,6 +213,7 @@ spec:
         <param name="secure:caCertData" value="credentialsJSON:1405ce8b-3a20-4a1c-b0e3-da3c692d8abf" />
         <param name="secure:clientCertData" value="credentialsJSON:c41e7173-f746-4c6d-8584-88e91233618f" />
         <param name="secure:clientKeyData" value="credentialsJSON:680deaaf-3297-463f-8865-2c82fa9e002a" />
+        <param name="system.cloud.profile_id" value="kube-5" />
         <param name="terminate-after-build" value="true" />
         <param name="terminate-idle-time" value="30" />
       </parameters>
