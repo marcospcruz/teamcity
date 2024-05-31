@@ -13,6 +13,13 @@
       <param name="git.tags" value="refs/tags/*" />
     </parameters>
     <build-runners>
+      <runner id="RUNNER_21" name="veracode scan" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="echo scanned" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_45" name="release candidate: check info" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[AUTHOR="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
@@ -56,13 +63,6 @@ git fetch --verbose
 echo 
 git checkout -b support/uat
 git push origin support/uat]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_21" name="veracode scan" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="echo scanned" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
