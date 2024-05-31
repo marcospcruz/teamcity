@@ -182,7 +182,16 @@ if 201 != response.status_code:
       <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_19" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+          <param name="watchChangesInDependencies" value="true" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <dependencies>
       <depend-on sourceBuildTypeId="BitbucketMarcospcruzWorkspace_DemoApp_21UnitTest">
         <options>
