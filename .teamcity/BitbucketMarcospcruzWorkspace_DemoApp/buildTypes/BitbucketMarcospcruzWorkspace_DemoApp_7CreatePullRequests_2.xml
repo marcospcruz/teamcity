@@ -188,8 +188,7 @@ if 201 != response.status_code:
     <build-triggers>
       <build-trigger id="TRIGGER_17" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter"><![CDATA[+:%git.branch.feature%
-+:%git.branch.develop%]]></param>
+          <param name="branchFilter" value="+:*" />
           <param name="groupCheckinsByCommitter" value="true" />
           <param name="perCheckinTriggering" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
