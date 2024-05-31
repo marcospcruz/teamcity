@@ -12,8 +12,8 @@
         </conditions>
         <parameters>
           <param name="script.content"><![CDATA[#!/bin/bash
-echo %env.TEAMCITY_PROJECT_NAME%
-exit 1
+#echo %env.TEAMCITY_PROJECT_NAME%
+
 function create_branch(){
 	echo "checking branch $1"
 	git ls-remote --exit-code --heads origin $1
