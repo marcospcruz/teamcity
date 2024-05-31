@@ -209,7 +209,7 @@ spec:
         <param name="name" value="Bare Metal" />
         <param name="namespace" value="ci-cd" />
         <param name="profileId" value="kube-5" />
-        <param name="profileInstanceLimit" value="2" />
+        <param name="profileInstanceLimit" value="10" />
         <param name="secure:caCertData" value="credentialsJSON:1405ce8b-3a20-4a1c-b0e3-da3c692d8abf" />
         <param name="secure:clientCertData" value="credentialsJSON:c41e7173-f746-4c6d-8584-88e91233618f" />
         <param name="secure:clientKeyData" value="credentialsJSON:680deaaf-3297-463f-8865-2c82fa9e002a" />
