@@ -38,6 +38,7 @@
     <param name="git.branch.support" value="refs/heads/support/*" />
     <param name="git.branch.support.release-candidate" value="refs/heads/support/(release-candidate-*)" />
     <param name="git.tags" value="refs/tags" />
+    <param name="git.tags.release-candidate" value="%git.tags%/%project.name%-*" />
     <param name="maven.project.version" value="-script-generated-" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
     <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:d19bbaf4-e5bb-4795-bdd7-9805868934c3" spec="password display='hidden' readOnly='true' label='SPI'" />
