@@ -4,7 +4,59 @@
   <description />
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild_2">
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_48" name="create release branch if not exists" type="simpleRunner">
+        <conditions>
+          <does-not-contain name="teamcity.build.branch" value="master" />
+          <does-not-contain name="teamcity.build.branch" value="golden-source" />
+        </conditions>
+        <parameters>
+          <param name="script.content"><![CDATA[#!/bin/bash
+echo %env.TEAMCITY_PROJECT_NAME%
+exit 1
+function create_branch(){
+	echo "checking branch $1"
+	git ls-remote --exit-code --heads origin $1
+    EXIT_CODE="$?"
+    echo 'exit code:' $EXIT_CODE
+    if [ 0 -ne $EXIT_CODE ]; then
+    	[ "%env.git.branch.source.type%" != "feature" ] && echo "source branch is not a feature" && return
+		git branch $1 origin/develop
+    	git push origin $1
+    else
+        echo 'Release branch' $RELEASE_BRANCH 'already exists'
+    fi
+}
+git remote set-url origin https://marcospcruz:%bitbucket-token%@bitbucket.org/marcospcruz/demo-app.git
+git remote -v
+git fetch --verbose
+echo 
+PROJECT_INFO=$(cat projectId.log|grep -v "Maven Watcher")
+echo 'project details:' $PROJECT_INFO
+REGEX='s/(.*)\:(.*)\:(.*)/\3/g'
+VERSION=$(echo $PROJECT_INFO|sed -r $REGEX)
+echo 'pom.xml version:' $VERSION
+REGEX_='s/([0-9]+\.[0-9]+\.[0-9]+)(\.[a-zA-Z0-9\.\-]+)/\1/g'
+RELEASE_VERSION=$(echo $VERSION|sed -r $REGEX_)
+echo 'release version:' $RELEASE_VERSION
+[ -z $VERSION ] || [ -z $RELEASE_VERSION ] && echo project version not found && exit 1
+
+SUPPORT_BRANCH="support/support-${VERSION}"
+RELEASE_BRANCH="release/release-${RELEASE_VERSION}"
+
+create_branch $SUPPORT_BRANCH
+create_branch $RELEASE_BRANCH
+echo 'release branch: '$RELEASE_BRANCH
+echo 'support branch: '$SUPPORT_BRANCH
+echo "##teamcity[setParameter name='bitbucket.branch.release' value='${RELEASE_BRANCH}']"
+echo "##teamcity[setParameter name='bitbucket.branch.release.support' value='${SUPPORT_BRANCH}']"
+echo "##teamcity[setParameter name='maven.project.info' value='${PROJECT_INFO}']"
+echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoAppFeatureBugfixReleaseSupport" />
     </vcs-settings>
