@@ -9,7 +9,6 @@
         <conditions>
           <does-not-contain name="teamcity.build.branch" value="master" />
           <does-not-contain name="teamcity.build.branch" value="golden-source" />
-          <equals name="teamcity.build.branch" value="release" />
         </conditions>
         <parameters>
           <param name="script.content"><![CDATA[#!/bin/bash
