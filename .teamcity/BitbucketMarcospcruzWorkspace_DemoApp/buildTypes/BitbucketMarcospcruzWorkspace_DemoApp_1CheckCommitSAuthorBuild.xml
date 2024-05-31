@@ -44,7 +44,7 @@ echo 'release version:' $RELEASE_VERSION
 [ -z $VERSION ] || [ -z $RELEASE_VERSION ] && echo project version not found && exit 1
 
 if [ "%env.git.branch.source.type%" == "feature" ]; then
-	SUPPORT_BRANCH="support/support-${VERSION}"
+	SUPPORT_BRANCH="support/release-${VERSION}"
 fi
 RELEASE_BRANCH="release/release-${RELEASE_VERSION}"
 
