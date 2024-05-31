@@ -71,7 +71,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
+    </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_10" type="vcsTrigger">
