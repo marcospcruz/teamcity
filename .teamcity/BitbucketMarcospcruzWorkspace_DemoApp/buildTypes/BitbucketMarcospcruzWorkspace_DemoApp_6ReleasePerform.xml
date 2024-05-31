@@ -77,7 +77,7 @@ git push origin support/uat]]></param>
       <build-trigger id="TRIGGER_16" type="vcsTrigger">
         <parameters>
           <param name="branchFilter"><![CDATA[+:*
-+:%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%]]></param>
++:%add-develop%]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules" value="-:user=root*:**" />
