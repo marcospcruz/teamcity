@@ -93,6 +93,7 @@ echo "##teamcity[setParameter name='env.git.pullrequest.close_source' value='${C
           <does-not-contain name="teamcity.build.branch" value="master" />
           <does-not-equal name="env.git.branch.target.skip" value="0" />
           <does-not-contain name="env.git.branch.source" value="script-generated" />
+          <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release" value="SNAPSHOT" />
         </conditions>
         <parameters>
           <param name="command" value="script" />
