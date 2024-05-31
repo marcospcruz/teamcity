@@ -9,7 +9,15 @@
       <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoApp" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_18" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:%git.tags%" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <build-extensions>
       <extension id="BUILD_EXT_3" type="AutoMergeFeature">
         <parameters>
