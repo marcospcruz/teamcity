@@ -3,6 +3,9 @@
   <name>7.Create Pull Requests</name>
   <description />
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_7CreatePullRequests">
+    <disabled-settings>
+      <setting-ref ref="BUILD_EXT_6" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_42" name="create pull request" type="python-runner">
