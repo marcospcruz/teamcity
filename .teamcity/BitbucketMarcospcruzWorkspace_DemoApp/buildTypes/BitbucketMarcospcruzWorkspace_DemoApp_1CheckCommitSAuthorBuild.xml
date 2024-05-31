@@ -21,7 +21,7 @@ function create_branch(){
     echo 'exit code:' $EXIT_CODE
     if [ 0 -ne $EXIT_CODE ]; then
     	[ "%env.git.branch.source.type%" != "feature" ] && echo "source branch is not a feature" && return
-		git branch $1 origin/develop
+		git branch $1 origin/golden-source
     	git push origin $1
     else
         echo 'Release branch' $RELEASE_BRANCH 'already exists'
