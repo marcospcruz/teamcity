@@ -80,7 +80,8 @@ git push origin support/uat]]></param>
         <parameters>
           <param name="branchFilter"><![CDATA[+:%git.branch.develop%
 -:%git.branch.support%
--:%git.tags%]]></param>
+-:%git.tags%
+-:%git.branch.feature%]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules" value="-:user=root*:**" />
