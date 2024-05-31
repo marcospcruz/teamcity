@@ -7,5 +7,6 @@
     <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests" value="&quot;%bitbucket.restapi.url.repositories.workspace.slug%/pullrequests&quot;" />
   </parameters>
   <cleanup />
+  <buildTypesOrder order="BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild,BitbucketMarcospcruzWorkspace_DemoApp_21UnitTest,BitbucketMarcospcruzWorkspace_DemoApp_7CreatePullRequests_2,BitbucketMarcospcruzWorkspace_DemoApp_9PrepareReleaseCandidate,BitbucketMarcospcruzWorkspace_DemoApp_AutoMergeRelease,BitbucketMarcospcruzWorkspace_DemoApp_Develop" />
 </project>
 
