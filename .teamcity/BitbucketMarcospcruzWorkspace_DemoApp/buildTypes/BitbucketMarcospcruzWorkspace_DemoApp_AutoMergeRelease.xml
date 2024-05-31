@@ -4,7 +4,7 @@
   <description />
   <settings>
     <parameters>
-      <param name="project.name" value="%system.teamcity.projectName%" />
+      <param name="project.name" value="" />
     </parameters>
     <build-runners>
       <runner id="RUNNER_26" name="" type="simpleRunner">
