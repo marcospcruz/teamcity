@@ -154,7 +154,7 @@ payload = json.dumps({
   }
 })
 print('Sending request:')
-print(json.dumps(payload,ident=2))
+print(json.dumps(payload))
 
 response = requests.request(
    "POST",
@@ -163,7 +163,7 @@ response = requests.request(
    headers=headers
 )
 
-print("response: "+json.loads(response.text,ident=2))
+print("response: "+json.loads(response.text))
 response_text=json.loads(response.text)
 
 
