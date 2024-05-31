@@ -9,9 +9,6 @@
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
     </options>
-    <disabled-settings>
-      <setting-ref ref="TRIGGER_14" />
-    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_45" name="release candidate: check info" type="simpleRunner">
@@ -81,15 +78,6 @@ git push origin support/uat]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules" value="-:user=root*:**" />
-        </parameters>
-      </build-trigger>
-      <build-trigger id="TRIGGER_14" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter"><![CDATA[+:refs/heads/support/support-*
-+:refs/heads/develop
-+:refs/heads/uat]]></param>
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="watchChangesInDependencies" value="true" />
         </parameters>
       </build-trigger>
     </build-triggers>
