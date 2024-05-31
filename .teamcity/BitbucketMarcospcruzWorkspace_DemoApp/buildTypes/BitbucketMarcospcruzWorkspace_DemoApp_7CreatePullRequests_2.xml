@@ -182,7 +182,9 @@ if 201 != response.status_code:
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
+    </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_17" type="vcsTrigger">
