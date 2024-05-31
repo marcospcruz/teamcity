@@ -73,8 +73,7 @@ git push origin support/uat]]></param>
     <build-triggers>
       <build-trigger id="TRIGGER_16" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter"><![CDATA[+:*
-+:%git.branch.develop%]]></param>
+          <param name="branchFilter" value="+:%git.branch.develop%" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
           <param name="triggerRules" value="-:user=root*:**" />
