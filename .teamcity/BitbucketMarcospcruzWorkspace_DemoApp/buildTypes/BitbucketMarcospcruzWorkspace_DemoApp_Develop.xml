@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="branchFilter" value="+:*&#xD;&#xA;-:%git.branch.support.release-candidate%" />
+      <option name="branchFilter" value="+:*&#xD;&#xA;-:%git.branch.feature%" />
       <option name="cleanBuild" value="true" />
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
