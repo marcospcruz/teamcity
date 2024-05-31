@@ -9,6 +9,7 @@
         <conditions>
           <does-not-contain name="teamcity.build.branch" value="master" />
           <does-not-contain name="teamcity.build.branch" value="golden-source" />
+          <equals name="teamcity.build.branch" value="release" />
         </conditions>
         <parameters>
           <param name="script.content"><![CDATA[#!/bin/bash
@@ -41,7 +42,9 @@ RELEASE_VERSION=$(echo $VERSION|sed -r $REGEX_)
 echo 'release version:' $RELEASE_VERSION
 [ -z $VERSION ] || [ -z $RELEASE_VERSION ] && echo project version not found && exit 1
 
-SUPPORT_BRANCH="support/support-${VERSION}"
+if [ "%env.git.branch.source.type%" == "feature" ]; then
+	SUPPORT_BRANCH="support/support-${VERSION}"
+fi
 RELEASE_BRANCH="release/release-${RELEASE_VERSION}"
 
 create_branch $SUPPORT_BRANCH
