@@ -23,7 +23,7 @@
     <build-triggers>
       <build-trigger id="TRIGGER_12" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:*" />
+          <param name="branchFilter" value="+:%git.branch.develop%" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
