@@ -46,7 +46,10 @@ echo 'release version:' $RELEASE_VERSION
 if [ "%env.git.branch.source.type%" == "feature" ]; then
 	SUPPORT_BRANCH="support/release-${VERSION}"
 fi
-RELEASE_BRANCH="release/release-${RELEASE_VERSION}"
+if [ "%env.git.branch.source.type%" == "HEAD" ]; then
+	RELEASE_BRANCH="release/release-${VERSION}"
+    #RELEASE_VERSION
+fi
 
 create_branch $SUPPORT_BRANCH
 create_branch $RELEASE_BRANCH
