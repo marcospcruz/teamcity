@@ -47,6 +47,16 @@
           <param name="teamcity.merge.policy" value="alwaysCreateMergeCommit" />
         </parameters>
       </extension>
+      <extension id="BUILD_EXT_5" type="AutoMergeFeature">
+        <parameters>
+          <param name="teamcity.automerge.buildStatusCondition" value="successful" />
+          <param name="teamcity.automerge.dstBranch" value="refs/heads/develop" />
+          <param name="teamcity.automerge.message" value="Auto Merge branch '%teamcity.build.branch%'" />
+          <param name="teamcity.automerge.run.policy" value="runAfterBuildFinish" />
+          <param name="teamcity.automerge.srcBranchFilter" value="%git.branch.support%" />
+          <param name="teamcity.merge.policy" value="alwaysCreateMergeCommit" />
+        </parameters>
+      </extension>
     </build-extensions>
     <cleanup />
   </settings>
