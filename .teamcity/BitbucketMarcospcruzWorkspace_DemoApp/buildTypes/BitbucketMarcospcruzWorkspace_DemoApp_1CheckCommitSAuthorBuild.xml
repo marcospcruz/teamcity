@@ -36,7 +36,9 @@ echo 'project details:' $PROJECT_INFO
 REGEX='s/(.*)\:(.*)\:(.*)/\3/g'
 VERSION=$(echo $PROJECT_INFO|sed -r $REGEX)
 echo 'pom.xml version:' $VERSION
-REGEX_='s/([0-9]+\.[0-9]+\.[0-9]+)(\.[a-zA-Z0-9\.\-]+)/\1/g'
+#REGEX_='s/([0-9]+\.[0-9]+\.[0-9]+)(\.[a-zA-Z0-9\.\-]+)/\1/g'
+REGEX_='s/(^[\.0-9]+)(\-[A-Z]+)/\1/g'
+
 RELEASE_VERSION=$(echo $VERSION|sed -r $REGEX_)
 echo 'release version:' $RELEASE_VERSION
 [ -z $VERSION ] || [ -z $RELEASE_VERSION ] && echo project version not found && exit 1
