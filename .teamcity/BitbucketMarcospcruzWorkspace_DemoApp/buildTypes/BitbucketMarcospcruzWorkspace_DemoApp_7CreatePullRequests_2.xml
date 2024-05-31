@@ -109,21 +109,22 @@ CLOSE_SOURCE=false
 COMMIT_HASH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.hash%"
 SOURCE_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source%"
 COMMIT_USER="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author%"
+RELEASE_SUPPORT_VERSION="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support"
 echo Build branch: %teamcity.build.branch%
 BRANCH_TYPE="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.git.branch.source.type%"
 echo "Processing branch type $BRANCH_TYPE"
 case $BRANCH_TYPE in
     	"feature" ) 
-    		TARGET_BRANCH="develop" 
+    		TARGET_BRANCH="${RELEASE_SUPPORT_VERSION}" 
             CLOSE_SOURCE=false
         	;;
 		"develop" ) 
-    		TARGET_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%" 
+    		#TARGET_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%" 
             CLOSE_SOURCE=false
         	;;
     	"support" ) 
 			if [ ! -z "$(echo %teamcity.build.branch%|grep  -E -i -w '(release|candidate)')" ]; then
-				TARGET_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%" 
+				#TARGET_BRANCH="%dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.bitbucket.branch.release.support%" 
             	CLOSE_SOURCE=false
             fi
         	;;            
