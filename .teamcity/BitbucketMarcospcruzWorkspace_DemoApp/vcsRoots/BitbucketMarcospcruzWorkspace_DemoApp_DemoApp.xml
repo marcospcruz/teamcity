@@ -10,7 +10,9 @@
   <param name="submoduleCheckout" value="IGNORE" />
   <param name="teamcity:branchSpec"><![CDATA[+:%git.branch.develop%
 +:%git.branch.release%
-+:%git.tags.release-candidate%]]></param>
++:%git.tags.release-candidate%
++:%git.branch.feature%
++:%git.branch.support%]]></param>
   <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:8c96d212-09a3-4b47-a1b7-02f1611aaa16" />
   <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/demo-app.git" />
   <param name="useAlternates" value="AUTO" />
