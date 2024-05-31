@@ -163,7 +163,8 @@ response = requests.request(
    headers=headers
 )
 
-print("response: "+json.loads(response.text))
+print("response: ")
+print(json.loads(response.text))
 response_text=json.loads(response.text)
 
 
