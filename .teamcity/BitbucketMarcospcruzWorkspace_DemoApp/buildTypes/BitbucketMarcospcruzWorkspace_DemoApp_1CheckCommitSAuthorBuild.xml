@@ -61,7 +61,18 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
       <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DemoApp_DemoAppFeatureBugfixReleaseSupport" />
     </vcs-settings>
     <requirements />
-    <build-triggers />
+    <build-triggers>
+      <build-trigger id="TRIGGER_15" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter"><![CDATA[+:refs/heads/feature/*
++:%git.branch.develop%
++:refs/tags/%system.teamcity.projectName%-*
++:refs/heads/uat
++:refs/heads/devlop]]></param>
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
     <cleanup />
   </settings>
 </build-type>
