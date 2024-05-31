@@ -5,7 +5,7 @@
   <settings ref="BitbucketMarcospcruzWorkspace_DemoApp_21UnitTest_2">
     <parameters />
     <build-runners>
-      <runner id="RUNNER_19" name="mvn verify" type="Maven2">
+      <runner id="RUNNER_19" name="Integration Tests" type="Maven2">
         <conditions>
           <contains name="teamcity.build.branch" value="feature" />
         </conditions>
