@@ -66,9 +66,7 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
         <parameters>
           <param name="branchFilter"><![CDATA[+:refs/heads/feature/*
 +:%git.branch.develop%
-+:refs/tags/%system.teamcity.projectName%-*
-+:refs/heads/uat
-+:refs/heads/devlop]]></param>
++:refs/tags/%system.teamcity.projectName%-*]]></param>
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
       </build-trigger>
