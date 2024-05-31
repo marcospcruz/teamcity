@@ -14,6 +14,209 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_7" type="CloudImage">
+      <parameters>
+        <param name="agentNamePrefix" value="teamcity-agent" />
+        <param name="agent_pool_id" value="-2" />
+        <param name="customPodTemplate"><![CDATA[apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: "2024-05-27T09:24:23Z"
+  generateName: teamcity-build-agent-
+  labels:
+    app: teamcity-build-agent
+    apps.kubernetes.io/pod-index: "0"
+    controller-revision-hash: teamcity-build-agent-b6fc765c7
+    statefulset.kubernetes.io/pod-name: teamcity-build-agent-0
+  name: teamcity-build-agent-0
+  namespace: ci-cd
+  ownerReferences:
+  - apiVersion: apps/v1
+    blockOwnerDeletion: true
+    controller: true
+    kind: StatefulSet
+    name: teamcity-build-agent
+    uid: 64d3391f-4b69-49e4-956f-1d3116df3ff9
+  resourceVersion: "5287991"
+  uid: ed966079-141b-4649-a112-d646d60f4338
+spec:
+  containers:
+  - env:
+    - name: DOCKER_TLS_CERTDIR
+      value: /certs
+    - name: DOCKER_CERT_PATH
+      value: /certs/client
+    - name: DOCKER_TLS_VERIFY
+      value: "1"
+    - name: DOCKER_HOST
+      value: tcp://localhost:2376
+    image: docker:20.10.12-dind
+    imagePullPolicy: IfNotPresent
+    name: teamcity-docker
+    resources: {}
+    securityContext:
+      privileged: true
+      runAsUser: 0
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /opt/buildagent/temp
+      name: agent-opt-temp
+    - mountPath: /certs/ca
+      name: ca-cert
+    - mountPath: /certs/client
+      name: ca-cert-client
+    - mountPath: /var/lib/docker
+      name: dind-storage
+    - mountPath: /var/run
+      name: docker-agent-2-sock
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-fvvbf
+      readOnly: true
+  - env:
+    - name: DOCKER_TLS_VERIFY
+      value: "1"
+    - name: DOCKER_IN_DOCKER
+      value: start
+    - name: DOCKER_TLS_CERTDIR
+      value: /certs
+    - name: DOCKER_CERT_PATH
+      value: /certs/client
+    - name: DOCKER_VERSION
+      value: 20.10.12
+    - name: SERVER_URL
+      value: http://teamcity:8111
+    - name: DOCKER_HOST
+      value: tcp://localhost:2376
+    image: jetbrains/teamcity-agent:2023.05.2
+    imagePullPolicy: Always
+    name: teamcity-build-agent
+    ports:
+    - containerPort: 2376
+      protocol: TCP
+    resources: {}
+    securityContext:
+      privileged: true
+      runAsUser: 0
+    terminationMessagePath: /dev/termination-log
+    terminationMessagePolicy: File
+    volumeMounts:
+    - mountPath: /opt/buildagent/temp
+      name: agent-opt-temp
+    - mountPath: /var/run
+      name: docker-agent-2-sock
+    - mountPath: /certs/client
+      name: ca-cert-client
+    - mountPath: /var/lib/docker
+      name: dind-storage
+    - mountPath: /etc/docker
+      name: config-json
+      readOnly: true
+    - mountPath: /etc/docker/certs.d/registry.docker-registry:5000
+      name: ca-certs
+      readOnly: true
+    - mountPath: /var/run/secrets/kubernetes.io/serviceaccount
+      name: kube-api-access-fvvbf
+      readOnly: true
+  dnsPolicy: ClusterFirst
+  enableServiceLinks: true
+  nodeName: raspberry-4-2.local
+  preemptionPolicy: PreemptLowerPriority
+  priority: 0
+  restartPolicy: Always
+  schedulerName: default-scheduler
+  securityContext:
+    fsGroup: 1000
+    runAsGroup: 1000
+    runAsUser: 1000
+  serviceAccount: default
+  serviceAccountName: default
+  subdomain: teamcity-agent-lb
+  terminationGracePeriodSeconds: 30
+  tolerations:
+  - effect: NoExecute
+    key: node.kubernetes.io/not-ready
+    operator: Exists
+    tolerationSeconds: 300
+  - effect: NoExecute
+    key: node.kubernetes.io/unreachable
+    operator: Exists
+    tolerationSeconds: 300
+  volumes:
+  - emptyDir: {}
+    name: agent-opt-temp
+  - emptyDir: {}
+    name: dind-storage
+  - hostPath:
+      path: /var/lib/docker
+      type: ""
+    name: docker-directory
+  - name: ca-certs
+    secret:
+      defaultMode: 420
+      secretName: registry-cert
+  - configMap:
+      defaultMode: 420
+      name: config-json
+    name: config-json
+  - configMap:
+      defaultMode: 420
+      items:
+      - key: config.json
+        path: config.json
+      name: config-json
+    name: docker-config-json
+  - name: ca-cert
+    persistentVolumeClaim:
+      claimName: ca-cert-teamcity-agent-pvc-2
+  - name: ca-cert-client
+    persistentVolumeClaim:
+      claimName: ca-cert-client-teamcity-agent-pvc-2
+  - emptyDir: {}
+    name: docker-agent-2-sock
+  - name: kube-api-access-fvvbf
+    projected:
+      defaultMode: 420
+      sources:
+      - serviceAccountToken:
+          expirationSeconds: 3607
+          path: token
+      - configMap:
+          items:
+          - key: ca.crt
+            path: ca.crt
+          name: kube-root-ca.crt
+      - downwardAPI:
+          items:
+          - fieldRef:
+              apiVersion: v1
+              fieldPath: metadata.namespace
+            path: namespace]]></param>
+        <param name="imageDescription" value="Custom pod template: teamcity-agent" />
+        <param name="imageInstanceLimit" value="2" />
+        <param name="podTemplateMode" value="custom-pod-template" />
+        <param name="profileId" value="kube-5" />
+        <param name="source-id" value="teamcity-agent" />
+      </parameters>
+    </extension>
+    <extension id="kube-5" type="CloudProfile">
+      <parameters>
+        <param name="apiServerUrl" value="https://192.168.15.7:6443" />
+        <param name="authStrategy" value="client-cert" />
+        <param name="cloud-code" value="kube" />
+        <param name="description" value="" />
+        <param name="enabled" value="true" />
+        <param name="name" value="Bare Metal" />
+        <param name="namespace" value="ci-cd" />
+        <param name="profileId" value="kube-5" />
+        <param name="profileInstanceLimit" value="2" />
+        <param name="secure:caCertData" value="credentialsJSON:1405ce8b-3a20-4a1c-b0e3-da3c692d8abf" />
+        <param name="secure:clientCertData" value="credentialsJSON:c41e7173-f746-4c6d-8584-88e91233618f" />
+        <param name="secure:clientKeyData" value="credentialsJSON:680deaaf-3297-463f-8865-2c82fa9e002a" />
+        <param name="terminate-after-build" value="true" />
+        <param name="terminate-idle-time" value="30" />
+      </parameters>
+    </extension>
   </project-extensions>
   <cleanup />
 </project>
