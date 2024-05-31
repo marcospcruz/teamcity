@@ -8,7 +8,7 @@
     </disabled-settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_27" name="release perform" type="Maven2">
+      <runner id="RUNNER_27" name="release candidate: perform" type="Maven2">
         <conditions>
           <does-not-contain name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.env.COMMIT.author" value="root" />
           <equals name="dep.BitbucketMarcospcruzWorkspace_DemoApp_1CheckCommitSAuthorBuild.teamcity.build.skip" value="false" />
