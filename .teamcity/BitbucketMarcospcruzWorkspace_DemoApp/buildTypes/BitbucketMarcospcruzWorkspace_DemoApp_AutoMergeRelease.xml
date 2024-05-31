@@ -3,7 +3,9 @@
   <name>auto merge release</name>
   <description />
   <settings>
-    <parameters />
+    <parameters>
+      <param name="project.name" value="%system.teamcity.projectName%" />
+    </parameters>
     <build-runners>
       <runner id="RUNNER_26" name="" type="simpleRunner">
         <parameters>
