@@ -20,7 +20,7 @@
         <param name="authStrategy" value="client-cert" />
         <param name="cloud-code" value="kube" />
         <param name="description" value="" />
-        <param name="enabled" value="true" />
+        <param name="enabled" value="false" />
         <param name="name" value="Bare Metal" />
         <param name="namespace" value="ci-cd" />
         <param name="profileId" value="kube-5" />
