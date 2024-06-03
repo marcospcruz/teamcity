@@ -8,7 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="refs/heads/*" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:95a2ef76-178a-4102-8284-44fdf2597e7c" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:45c15915-35bf-4902-bcdf-fc598725622d" />
   <param name="url" value="https://github.com/marcospcruz/teamcity" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
