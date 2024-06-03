@@ -8,7 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:refs/heads/develop" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:d64484d2-ea5f-4cb7-bd94-4858608e14a8" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:df6febf4-6a00-4539-b9ec-93bf218ee6be" />
   <param name="url" value="https://github.com/marcospcruz/git-graph-simulator" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />
