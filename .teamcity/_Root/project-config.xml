@@ -86,8 +86,8 @@
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:ea252ac2-10ba-44c7-ab26-5cabee75adcd" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:a9e99809-308e-4f4a-bd70-853926678bd3" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:2fcc7396-fb1f-4a24-879b-2f824417392f" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:52dec074-b074-4da9-acae-221537e725e5" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_9" type="CloudImage">
