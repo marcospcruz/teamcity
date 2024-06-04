@@ -54,6 +54,16 @@ npm install]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_34" name="tagging node JS image" type="DockerCommand">
+        <parameters>
+          <param name="command.args" value="node:%NODE_VERSION% %docker.private.registry%/node:%NODE_VERSION%" />
+          <param name="docker.command.type" value="other" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="docker.sub.command" value="tag" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
