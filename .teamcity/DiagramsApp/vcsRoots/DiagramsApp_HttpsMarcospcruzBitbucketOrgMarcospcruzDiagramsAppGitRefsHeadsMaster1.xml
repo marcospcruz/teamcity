@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="5516e138-c56f-4661-96fe-c17babd744cc" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>https://marcospcruz@bitbucket.org/marcospcruz/diagrams-app.git#refs/heads/master (1)</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="ACCESS_TOKEN" />
+  <param name="branch" value="refs/heads/master" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="teamcity:branchSpec" value="refs/heads/develop" />
+  <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:305dcbf4-7a44-4242-be7e-485b98321e94" />
+  <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/diagrams-app.git" />
+  <param name="useAlternates" value="AUTO" />
+  <param name="username" value="marcospcruz" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+
