@@ -40,7 +40,7 @@ npm install]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2">
+      <vcs-entry-ref root-id="DiagramsApp_Any">
         <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
       </vcs-entry-ref>
     </vcs-settings>
@@ -65,7 +65,7 @@ npm install]]></param>
           <param name="authType" value="storedToken" />
           <param name="publisherId" value="bitbucketCloudPublisher" />
           <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:305dcbf4-7a44-4242-be7e-485b98321e94" />
-          <param name="vcsRootId" value="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2" />
+          <param name="vcsRootId" value="DiagramsApp_Any" />
         </parameters>
       </extension>
     </build-extensions>
