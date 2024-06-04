@@ -5,6 +5,14 @@
   <settings>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_37" name="Install" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript" value="npm ci" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_15" name="Node.js install global" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
@@ -51,14 +59,6 @@ npm install]]></param>
           <param name="docker.push.remove.image" value="true" />
           <param name="docker.sub.command" value="tag" />
           <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_37" name="Install" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm ci" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
