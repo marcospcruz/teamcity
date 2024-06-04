@@ -43,7 +43,8 @@ npm install]]></param>
     <build-triggers>
       <build-trigger id="TRIGGER_21" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:*" />
+          <param name="branchFilter"><![CDATA[+:refs/heads/develop
++:refs/heads/support/release-candidate-*]]></param>
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
