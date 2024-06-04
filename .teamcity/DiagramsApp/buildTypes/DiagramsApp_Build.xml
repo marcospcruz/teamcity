@@ -9,7 +9,9 @@
         <parameters>
           <param name="plugin.docker.imageId" value="node:lts" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install" />
+          <param name="shellScript"><![CDATA[ls -l
+cat package.json
+npm install]]></param>
           <param name="teamcity.build.workingDir" value="." />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
