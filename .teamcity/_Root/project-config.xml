@@ -3,7 +3,7 @@
   <name>&lt;Root project&gt;</name>
   <description>Contains all other projects</description>
   <parameters>
-    <param name="ANGULAR_VERSION" value="13.3.0" />
+    <param name="ANGULAR_VERSION" value="17.3.6" />
     <param name="NODE_VERSION" value="22.2.0" />
     <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
 %add-release-hotfix%
