@@ -16,6 +16,14 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_12" name="" type="nodejs-runner">
+        <parameters>
+          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imagePlatform" value="linux" />
+          <param name="shellScript" value="npm run build" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_AllBranches" />
