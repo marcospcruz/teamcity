@@ -12,9 +12,9 @@
           <param name="shellScript"><![CDATA[#[ ! -f package.json ] && echo No package.json \
 #	&& echo "##teamcity[setParameter name='teamcity.build.skip' value='exit']"  \
 #	&& exit 0
-grep '"name": "diagrams-app"'|grep "package.json"
+grep '"diagrams-app"'|grep "package.json"
 
-npm install -g npm@10.8.1]]></param>
+#npm install -g npm@10.8.1]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
