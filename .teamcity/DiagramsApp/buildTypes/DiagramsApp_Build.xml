@@ -40,14 +40,15 @@ npm install]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2" />
+      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2">
+        <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
+      </vcs-entry-ref>
     </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_21" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter"><![CDATA[+:refs/heads/develop
-+:refs/heads/support/release-candidate-*]]></param>
+          <param name="branchFilter" value="+:refs/heads/support/*" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
@@ -57,6 +58,14 @@ npm install]]></param>
       <extension id="perfmon" type="perfmon">
         <parameters>
           <param name="teamcity.perfmon.feature.enabled" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_14" type="commit-status-publisher">
+        <parameters>
+          <param name="authType" value="storedToken" />
+          <param name="publisherId" value="bitbucketCloudPublisher" />
+          <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:305dcbf4-7a44-4242-be7e-485b98321e94" />
+          <param name="vcsRootId" value="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2" />
         </parameters>
       </extension>
     </build-extensions>
