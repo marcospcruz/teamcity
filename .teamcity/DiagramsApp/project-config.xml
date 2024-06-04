@@ -3,5 +3,6 @@
   <name>diagrams-app</name>
   <parameters />
   <cleanup />
+  <buildTypesOrder order="DiagramsApp_Build_2,DiagramsApp_Build" />
 </project>
 
