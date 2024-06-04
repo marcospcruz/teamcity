@@ -21,7 +21,6 @@
           <param name="shellScript"><![CDATA[ls -la
 find . -name 'package.json'
 npm install]]></param>
-          <param name="teamcity.build.workingDir" value="src" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
