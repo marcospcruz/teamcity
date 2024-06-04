@@ -50,7 +50,7 @@ npm install -g express npm@10.8.1]]></param>
     <build-triggers>
       <build-trigger id="TRIGGER_20" type="vcsTrigger">
         <parameters>
-          <param name="branchFilter" value="+:*" />
+          <param name="branchFilter" value="+:refs/heads/feature/*" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
         </parameters>
