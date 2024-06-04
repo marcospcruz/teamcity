@@ -16,7 +16,7 @@
 #	&& echo "##teamcity[setParameter name='teamcity.build.skip' value='exit']"  \
 #	&& exit 0
 
-npm install -g express npm@10.8.1]]></param>
+npm install -g npm@10.8.1]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
