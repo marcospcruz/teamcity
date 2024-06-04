@@ -38,7 +38,9 @@ npm install -g express npm@10.8.1]]></param>
         <parameters>
           <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript"><![CDATA[find /opt/buildagent -name 'package.json' -exec dirname {} \;
+          <param name="shellScript"><![CDATA[PACKAGE_JSON_DIR=$(find /opt/buildagent -name 'package.json' -exec dirname {} \;)
+[ -d $PACKAGE_JSON_DIR ] && cd $PACKAGE_JSON_DIR
+echo We are in $(pwd)
 npm install]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
