@@ -63,7 +63,7 @@
     </extension>
     <extension id="PROJECT_EXT_2" type="OAuthProvider">
       <parameters>
-        <param name="displayName" value="Docker Registry" />
+        <param name="displayName" value="Docker Hub" />
         <param name="providerType" value="Docker" />
         <param name="repositoryUrl" value="https://docker.io" />
         <param name="secure:userPass" value="credentialsJSON:4248760e-ed2a-4c2c-a80c-8d90eb644154" />
