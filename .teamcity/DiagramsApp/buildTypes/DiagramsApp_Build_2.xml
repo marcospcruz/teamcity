@@ -3,9 +3,6 @@
   <name>Node.js Install libraries</name>
   <description />
   <settings>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_28" />
-    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_15" name="Node.js install global" type="nodejs-runner">
@@ -18,21 +15,6 @@
 grep '"name": "diagrams-app"'|grep "package.json"
 
 npm install -g npm@10.8.1]]></param>
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_28" name="build image" type="DockerCommand">
-        <conditions>
-          <does-not-equal name="teamcity.build.skip" value="exit" />
-        </conditions>
-        <parameters>
-          <param name="command.args" value="--pull" />
-          <param name="docker.command.type" value="build" />
-          <param name="docker.image.namesAndTags" value="%env.TEAMCITY_PROJECT_NAME%:latest" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerImage.platform" value="linux" />
-          <param name="dockerfile.path" value="./Dockerfile" />
-          <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
