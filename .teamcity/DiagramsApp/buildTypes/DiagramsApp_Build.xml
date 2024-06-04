@@ -9,7 +9,7 @@
         <parameters>
           <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install -g" />
+          <param name="shellScript" value="npm install -g npm@10.8.1" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
