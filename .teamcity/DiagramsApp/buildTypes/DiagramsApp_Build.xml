@@ -36,7 +36,9 @@ npm install]]></param>
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2" />
+    </vcs-settings>
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_21" type="vcsTrigger">
