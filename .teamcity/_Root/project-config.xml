@@ -78,6 +78,15 @@
         <param name="showChanges" value="true" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_4" type="OAuthProvider">
+      <parameters>
+        <param name="displayName" value="Docker private Registry" />
+        <param name="providerType" value="Docker" />
+        <param name="repositoryUrl" value="https://registry.docker-registry:5000" />
+        <param name="secure:userPass" value="credentialsJSON:3368aff8-e9f2-43e9-b7be-43c9ff1dfe59" />
+        <param name="userName" value="theuser" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_8" type="OAuthProvider">
       <parameters>
         <param name="connectionSubtype" value="gitHubApp" />
