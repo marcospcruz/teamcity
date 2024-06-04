@@ -53,6 +53,14 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_10" type="OAuthProvider">
+      <parameters>
+        <param name="displayName" value="NPM Registry" />
+        <param name="npmRegistryHost" value="https://registry.npmjs.org/" />
+        <param name="providerType" value="NpmRegistry" />
+        <param name="secure:npmRegistryToken" value="credentialsJSON:f4b9f5ab-adab-4055-978d-9421d977237e" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_14" type="OAuthProvider">
       <parameters>
         <param name="clientId" value="kfrupSkrb9UDnwLZFe" />
