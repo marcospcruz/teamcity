@@ -7,7 +7,8 @@
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcity:branchSpec" value="refs/heads/develop" />
+  <param name="teamcity:branchSpec"><![CDATA[+:refs/heads/develop
++:refs/heads/support/release-candidate-*]]></param>
   <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:305dcbf4-7a44-4242-be7e-485b98321e94" />
   <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/diagrams-app.git" />
   <param name="useAlternates" value="AUTO" />
