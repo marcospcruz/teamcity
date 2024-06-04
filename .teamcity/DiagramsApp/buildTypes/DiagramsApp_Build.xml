@@ -5,11 +5,11 @@
   <settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_31" name="" type="nodejs-runner">
+      <runner id="RUNNER_31" name="npm install" type="nodejs-runner">
         <parameters>
-          <param name="plugin.docker.imageId" value="node:lts" />
+          <param name="plugin.docker.imageId" value="node:%NODE_VERSION" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install" />
+          <param name="shellScript" value="npm install -g" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
