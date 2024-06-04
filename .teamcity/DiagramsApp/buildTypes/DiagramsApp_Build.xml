@@ -3,6 +3,11 @@
   <name>NPM Install and Build</name>
   <description />
   <settings>
+    <options>
+      <option name="cleanBuild" value="true" />
+      <option name="excludeDefaultBranchChanges" value="true" />
+      <option name="showDependenciesChanges" value="true" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_29" name="" type="nodejs-runner">
