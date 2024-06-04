@@ -17,6 +17,9 @@ npm install]]></param>
         </parameters>
       </runner>
       <runner id="RUNNER_28" name="build image" type="DockerCommand">
+        <conditions>
+          <does-not-equal name="teamcity.build.skip" value="exit" />
+        </conditions>
         <parameters>
           <param name="command.args" value="--pull" />
           <param name="docker.command.type" value="build" />
