@@ -6,6 +6,8 @@
     <options>
       <option name="allowExternalStatus" value="true" />
       <option name="artifactRules" value="+:.* =&gt; ." />
+      <option name="checkoutDirectory" value="angular-build" />
+      <option name="checkoutMode" value="ON_AGENT" />
       <option name="cleanBuild" value="true" />
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
