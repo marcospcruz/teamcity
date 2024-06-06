@@ -42,7 +42,7 @@
     <param name="maven.project.version" value="-script-generated-" />
     <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
     <param name="system.NPM_AUTH_TOKEN" value="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" />
-    <param name="teamcity.build.angular.Dockerfile"><![CDATA[FROM registry.docker-%docker.private.registry%/arm64v8/node:latest
+    <param name="teamcity.build.angular.Dockerfile"><![CDATA[FROM %docker.private.registry%/arm64v8/node:latest
 WORKDIR /app
 COPY package*.json /app/
 RUN npm install
