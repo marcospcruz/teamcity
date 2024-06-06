@@ -48,7 +48,7 @@ COPY package*.json /app/
 RUN npm install
 COPY ./ /app/
 ARG configuration
-RUN npm install
+RUN npm install --verbose
 RUN npm run build -- --output-path=./dist/out --configuration $configuration]]></param>
     <param name="teamcity.build.skip" value="false" />
   </parameters>
