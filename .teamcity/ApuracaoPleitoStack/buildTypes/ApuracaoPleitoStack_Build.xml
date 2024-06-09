@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="c72c9d55-c8c8-4d77-b53d-95edfb202060" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>docker build</name>
+  <description />
+  <settings>
+    <options>
+      <option name="publishArtifactCondition" value="SUCCESSFUL" />
+    </options>
+    <parameters>
+      <param name="env.ELEICOES_DATABASE" value="eleicoes2022" />
+      <param name="env.WEB_DOCKERFILE" value="apuracao-pleito-web" />
+    </parameters>
+    <build-runners>
+      <runner id="RUNNER_19" name="x" type="DockerCommand">
+        <parameters>
+          <param name="command.args" value="--build-arg ELEICOES_DATABASE=eleicoes2022" />
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="registry.docker-registry.svc.cluster.local:30500/apuracao-pleito-web:latest" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="Dockerfile.web" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_1" name="build image" type="simpleRunner">
+        <parameters>
+          <param name="log.stderr.as.errors" value="true" />
+          <param name="script.content"><![CDATA[#!/bin/bash
+function checkVar() {
+	echo "checking $2 => $1"
+	[ -z $1 ] && echo empty var && exit 1
+}
+
+export WEB_IMAGE=registry.docker-registry.svc.cluster.local:30500/${WEB_DOCKERFILE}
+export WEB_JAR="${WEB_DOCKERFILE}/target/*.jar"
+
+checkVar $WEB_DOCKERFILE WEB_DOCKERFILE
+
+echo $WEB_IMAGE and $WEB_JAR and $WEB_DOCKERFILE
+
+chmod 755 docker_build_image.sh
+./docker_build_image.sh Dockerfile.web]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="ApuracaoPleitoStack_HttpsGithubComMarcospcruzApuracaoPleitoStackRefsHeadsMaster" />
+    </vcs-settings>
+    <requirements>
+      <equals id="RQ_1" name="teamcity.agent.hostname" value="teamcity-build-agent-2" />
+    </requirements>
+    <build-triggers>
+      <build-trigger id="TRIGGER_3" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="perfmon" type="perfmon">
+        <parameters>
+          <param name="teamcity.perfmon.feature.enabled" value="true" />
+        </parameters>
+      </extension>
+      <extension id="DockerSupport" type="DockerSupport">
+        <parameters>
+          <param name="login2registry" value="PROJECT_EXT_2" />
+          <param name="loginCheckbox" value="on" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_1" sourceBuildTypeId="ApuracaoPleitoStack_MvnPackageBuild" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="+:code=&gt;." />
+      </dependency>
+    </artifact-dependencies>
+    <dependencies>
+      <depend-on sourceBuildTypeId="ApuracaoPleitoStack_MvnPackageBuild">
+        <options>
+          <option name="take-started-build-with-same-revisions" value="true" />
+          <option name="take-successful-builds-only" value="true" />
+        </options>
+      </depend-on>
+    </dependencies>
+    <cleanup />
+  </settings>
+</build-type>
+
