@@ -3,54 +3,9 @@
   <name>&lt;Root project&gt;</name>
   <description>Contains all other projects</description>
   <parameters>
-    <param name="ANGULAR_VERSION" value="17.3.6" />
-    <param name="NODE_VERSION" value="22.2.0" />
-    <param name="add-all-branches"><![CDATA[%add-feature-and-bugfix%
-%add-release-hotfix%
-%add-develop%]]></param>
-    <param name="add-develop"><![CDATA[%exclude-master%
-+:refs/heads/develop]]></param>
-    <param name="add-feature-and-bugfix"><![CDATA[%exclude-master%
-+:refs/heads/feature/*
-+:refs/heads/bugfix/*]]></param>
-    <param name="add-release-hotfix"><![CDATA[%exclude-master%
-+:refs/heads/release/*
-+:refs/heads/hotfix/*]]></param>
-    <param name="bitbucket-token" value="ATBBzjFvtwthjfCajsLh78gu5xmTDB13ADC9" />
-    <param name="bitbucket.branch.release" value="-script-generated-" />
-    <param name="bitbucket.branch.release.support" value="-script-generated-" />
-    <param name="bitbucket.restapi.url" value="https://api.bitbucket.org/2.0" />
-    <param name="bitbucket.restapi.url.repositories.workspace.slug.pullrequests.error.accepted_message" value="'There are no changes to be pulled'" />
-    <param name="docker.private.registry" value="registry.docker-registry:5000" />
-    <param name="env.COMMIT.author" value="-script-generated-" />
-    <param name="env.COMMIT.hash" value="" />
-    <param name="env.git.branch.source" value="script-generated" />
-    <param name="env.git.branch.source.type" value="-script-generated-" />
-    <param name="env.git.branch.target" value="script-generated" />
-    <param name="env.git.pullrequest.close_source" value="false" />
-    <param name="exclude-master" value="-:refs/heads/master" />
-    <param name="git.branch.bugfix" value="refs/heads/bugfix/(*)" />
-    <param name="git.branch.develop" value="refs/heads/develop" />
-    <param name="git.branch.feature" value="refs/heads/feature/*" />
-    <param name="git.branch.golden-source" value="refs/heads/golden-source" />
-    <param name="git.branch.hotfix" value="refs/heads/hotfix/(*)" />
-    <param name="git.branch.release" value="refs/heads/release/(*)" />
-    <param name="git.branch.support" value="refs/heads/support/*" />
-    <param name="git.branch.support.release-candidate" value="refs/heads/support/(release-candidate-*)" />
-    <param name="git.tags" value="refs/tags" />
-    <param name="git.tags.release-candidate" value="%git.tags%/%system.teamcity.projectName%-*" />
-    <param name="maven.project.version" value="-script-generated-" />
-    <param name="repo-param" value="-DM2=file:///certs/client/.m2" />
-    <param name="system.NPM_AUTH_TOKEN" value="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" />
-    <param name="teamcity.build.angular.Dockerfile"><![CDATA[FROM %docker.private.registry%/arm64v8/node:latest
-WORKDIR /app
-COPY package*.json /app/
-RUN npm install
-COPY ./ /app/
-ARG configuration
-RUN npm install --legacy-peer-deps --verbose
-#RUN npm run build -- --output-path=./dist/out --configuration $configuration]]></param>
-    <param name="teamcity.build.skip" value="false" />
+    <param name="ANGULAR_VERSION" value="13.3.0" />
+    <param name="NODE_VERSION" value="14.20" />
+    <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:41771b75-9069-4399-a12c-5ce9abb7dd65" spec="password display='hidden' readOnly='true' label='SPI'" />
   </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_1" type="ReportTab">
@@ -60,25 +15,9 @@ RUN npm install --legacy-peer-deps --verbose
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_10" type="OAuthProvider">
-      <parameters>
-        <param name="displayName" value="NPM Registry" />
-        <param name="npmRegistryHost" value="https://registry.npmjs.org/" />
-        <param name="providerType" value="NpmRegistry" />
-        <param name="secure:npmRegistryToken" value="credentialsJSON:f4b9f5ab-adab-4055-978d-9421d977237e" />
-      </parameters>
-    </extension>
-    <extension id="PROJECT_EXT_14" type="OAuthProvider">
-      <parameters>
-        <param name="clientId" value="kfrupSkrb9UDnwLZFe" />
-        <param name="displayName" value="Bitbucket Cloud" />
-        <param name="providerType" value="BitBucketCloud" />
-        <param name="secure:clientSecret" value="credentialsJSON:1adcb62a-9e0a-4ed6-99c0-5bcb1a6dd942" />
-      </parameters>
-    </extension>
     <extension id="PROJECT_EXT_2" type="OAuthProvider">
       <parameters>
-        <param name="displayName" value="Docker Hub" />
+        <param name="displayName" value="Docker Registry" />
         <param name="providerType" value="Docker" />
         <param name="repositoryUrl" value="https://docker.io" />
         <param name="secure:userPass" value="credentialsJSON:4248760e-ed2a-4c2c-a80c-8d90eb644154" />
@@ -94,16 +33,7 @@ RUN npm install --legacy-peer-deps --verbose
         <param name="showChanges" value="true" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_4" type="OAuthProvider">
-      <parameters>
-        <param name="displayName" value="Docker private Registry" />
-        <param name="providerType" value="Docker" />
-        <param name="repositoryUrl" value="https://registry.docker-registry:5000" />
-        <param name="secure:userPass" value="credentialsJSON:3368aff8-e9f2-43e9-b7be-43c9ff1dfe59" />
-        <param name="userName" value="theuser" />
-      </parameters>
-    </extension>
-    <extension id="PROJECT_EXT_8" type="OAuthProvider">
+    <extension id="PROJECT_EXT_7" type="OAuthProvider">
       <parameters>
         <param name="connectionSubtype" value="gitHubApp" />
         <param name="displayName" value="GitHub App" />
@@ -111,8 +41,8 @@ RUN npm install --legacy-peer-deps --verbose
         <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:2fcc7396-fb1f-4a24-879b-2f824417392f" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:52dec074-b074-4da9-acae-221537e725e5" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:efe97fff-7beb-428f-ab75-083c40008311" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:d8f4fa41-63e5-4539-b5de-d3f21a10de38" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_9" type="CloudImage">
