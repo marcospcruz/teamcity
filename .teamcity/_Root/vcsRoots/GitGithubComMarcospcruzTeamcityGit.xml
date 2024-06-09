@@ -3,13 +3,14 @@
   <name>git@github.com:marcospcruz/teamcity.git</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
-  <param name="authMethod" value="TEAMCITY_SSH_KEY" />
+  <param name="authMethod" value="ACCESS_TOKEN" />
   <param name="branch" value="master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
-  <param name="teamcitySshKey" value="id_rsa" />
-  <param name="url" value="git@github.com:marcospcruz/teamcity.git" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:ed1313ef-9ded-481b-b123-47ea2dbaae35" />
+  <param name="url" value="https://github.com/marcospcruz/teamcity" />
   <param name="useAlternates" value="AUTO" />
+  <param name="username" value="oauth2" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 
