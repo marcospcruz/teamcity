@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="7e5fee14-b140-4631-9438-02e96acf339e" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>Build maven</name>
+  <description />
+  <settings>
+    <options>
+      <option name="artifactRules" value="+:**/* =&gt; ." />
+    </options>
+    <parameters />
+    <build-runners>
+      <runner id="RUNNER_7" name="mvn install" type="Maven2">
+        <parameters>
+          <param name="goals" value="clean install" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="runnerArgs" value="-Dmaven.test.failure.ignore=true -DskipTests -T100" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_23" name="mvn test" type="Maven2">
+        <parameters>
+          <param name="goals" value="test" />
+          <param name="localRepoScope" value="agent" />
+          <param name="maven.path" value="%teamcity.tool.maven.DEFAULT%" />
+          <param name="pomLocation" value="pom.xml" />
+          <param name="teamcity.coverage.emma.include.source" value="true" />
+          <param name="teamcity.coverage.emma.instr.parameters" value="-ix -*Test*" />
+          <param name="teamcity.coverage.idea.includePatterns" value="*" />
+          <param name="teamcity.coverage.jacoco.patterns" value="+:*" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.tool.jacoco" value="%teamcity.tool.jacoco.DEFAULT%" />
+          <param name="userSettingsSelection" value="userSettingsSelection:default" />
+        </parameters>
+      </runner>
+    </build-runners>
+    <vcs-settings>
+      <vcs-entry-ref root-id="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsMaster1" />
+    </vcs-settings>
+    <requirements />
+    <build-triggers>
+      <build-trigger id="TRIGGER_1" type="vcsTrigger">
+        <parameters>
+          <param name="branchFilter" value="+:*" />
+          <param name="enableQueueOptimization" value="true" />
+          <param name="quietPeriodMode" value="DO_NOT_USE" />
+        </parameters>
+      </build-trigger>
+    </build-triggers>
+    <build-extensions>
+      <extension id="perfmon" type="perfmon">
+        <parameters>
+          <param name="teamcity.perfmon.feature.enabled" value="true" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_2" type="pullRequests">
+        <parameters>
+          <param name="authenticationType" value="vcsRoot" />
+          <param name="filterAuthorRole" value="EVERYBODY" />
+          <param name="providerType" value="github" />
+          <param name="vcsRootId" value="Ishop4u_HttpsGithubComMarcospcruzIshop4uRefsHeadsMaster" />
+        </parameters>
+      </extension>
+    </build-extensions>
+    <cleanup />
+  </settings>
+</build-type>
+
