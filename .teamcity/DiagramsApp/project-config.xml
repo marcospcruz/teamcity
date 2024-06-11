@@ -2,6 +2,16 @@
 <project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" parent-id="BitbucketMarcospcruzWorkspace" uuid="2db24482-79db-43be-877b-8e566bdea774" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>diagrams-app</name>
   <parameters />
+  <project-extensions>
+    <extension id="PROJECT_EXT_10" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="kfrupSkrb9UDnwLZFe" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:df3a53a9-c1cf-4853-b977-47fb31fd169f" />
+      </parameters>
+    </extension>
+  </project-extensions>
   <cleanup />
   <buildTypesOrder order="DiagramsApp_Build_2,DiagramsApp_Build" />
 </project>
