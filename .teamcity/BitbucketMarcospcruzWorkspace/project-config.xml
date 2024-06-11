@@ -14,6 +14,14 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_4" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="kfrupSkrb9UDnwLZFe" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:df3a53a9-c1cf-4853-b977-47fb31fd169f" />
+      </parameters>
+    </extension>
     <extension id="kube-5" type="CloudProfile">
       <parameters>
         <param name="apiServerUrl" value="https://192.168.15.7:6443" />
@@ -26,8 +34,8 @@
         <param name="profileId" value="kube-5" />
         <param name="profileInstanceLimit" value="1" />
         <param name="secure:caCertData" value="credentialsJSON:1405ce8b-3a20-4a1c-b0e3-da3c692d8abf" />
-        <param name="secure:clientCertData" value="credentialsJSON:c41e7173-f746-4c6d-8584-88e91233618f" />
-        <param name="secure:clientKeyData" value="credentialsJSON:680deaaf-3297-463f-8865-2c82fa9e002a" />
+        <param name="secure:clientCertData" value="credentialsJSON:1405ce8b-3a20-4a1c-b0e3-da3c692d8abf" />
+        <param name="secure:clientKeyData" value="credentialsJSON:1405ce8b-3a20-4a1c-b0e3-da3c692d8abf" />
         <param name="system.cloud.profile_id" value="kube-5" />
         <param name="terminate-after-build" value="true" />
         <param name="terminate-idle-time" value="30" />
