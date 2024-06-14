@@ -32,32 +32,6 @@ grep -rin diagrams-app|grep package.json
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_30" name="npm install" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript"><![CDATA[echo config: %teamcity.build.checkoutDir%
-echo workdir $(pwd):
-ls -la
-echo
-echo
-if [ ! -f "package.json" ]; then
-	git branch
-    git fetch 
-    git checkout %teamcity.build.branch%
-    git pull origin %teamcity.build.branch%
-    
-fi
-#if [ ! -f "package.json" ]; then
-#  PACKAGE_JSON_DIR=$(find /opt/buildagent -name 'package.json' -exec dirname {} \;)
-#  echo '============>' $PACKAGE_JSON_DIR
-#  [ -d $PACKAGE_JSON_DIR ] && cd $PACKAGE_JSON_DIR
-#  echo We are in $(pwd)
-#fi
-npm install]]></param>
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_Feature">
