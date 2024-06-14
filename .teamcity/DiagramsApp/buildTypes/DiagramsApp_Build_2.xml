@@ -17,9 +17,9 @@
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
           <param name="shellScript"><![CDATA[ls -la
-
+find / -name angular.json
 #cd %system.teamcity.projectName%
-DIRE=$(find ./ -name angular.json)
+DIRE=$(find / -name angular.json)
 echo $DIRE
 pwd
 ls -la %system.teamcity.projectName%
