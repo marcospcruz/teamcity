@@ -13,7 +13,7 @@
     <build-runners>
       <runner id="RUNNER_12" name="testing" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[chmod 755 *.*
+          <param name="script.content"><![CDATA[chmod 775 *.*
 ls -la
 echo
 echo
