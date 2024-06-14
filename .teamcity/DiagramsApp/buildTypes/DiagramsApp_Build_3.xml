@@ -9,7 +9,6 @@
       <option name="showDependenciesChanges" value="true" />
     </options>
     <parameters>
-      <param name="bitbucket.restapi.url" value="test" />
       <param name="docker.private.registry" value="registry.docker-registry:5000" />
     </parameters>
     <build-runners>
