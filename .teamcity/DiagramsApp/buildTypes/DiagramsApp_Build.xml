@@ -14,7 +14,7 @@
     <build-runners>
       <runner id="RUNNER_31" name="npm install global" type="nodejs-runner">
         <parameters>
-          <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
+          <param name="plugin.docker.imageId" value="node:lts" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="shellScript"><![CDATA[npm install @angular/cli@17.3.6
 npm install]]></param>
