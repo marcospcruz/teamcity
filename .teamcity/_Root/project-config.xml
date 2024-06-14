@@ -5,7 +5,7 @@
   <parameters>
     <param name="ANGULAR_VERSION" value="13.3.0" />
     <param name="NODE_VERSION" value="14.20" />
-    <param name="docker.private.registry.registry" value="registry.docker-registry:5000" />
+    <param name="docker.private.registry" value="registry.docker-registry:5000" />
     <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:41771b75-9069-4399-a12c-5ce9abb7dd65" spec="password display='hidden' readOnly='true' label='SPI'" />
   </parameters>
   <project-extensions>
