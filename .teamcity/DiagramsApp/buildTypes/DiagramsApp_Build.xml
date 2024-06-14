@@ -21,7 +21,7 @@
       </runner>
       <runner id="RUNNER_32" name="npm install" type="nodejs-runner">
         <parameters>
-          <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
+          <param name="plugin.docker.imageId" value="%docker.private.registry.registry%/arm64v8/node:latest" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="shellScript"><![CDATA[ls -la
 echo
