@@ -31,7 +31,7 @@ npm install]]></param>
       </runner>
       <runner id="RUNNER_33" name="npm run build" type="nodejs-runner">
         <parameters>
-          <param name="plugin.docker.imageId" value="node:%NODE_VERSION%" />
+          <param name="plugin.docker.imageId" value="%docker.private.registry.registry%/arm64v8/node:latest" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.run.parameters" value="-- --output-path=./dist/out --configuration production" />
           <param name="shellScript" value="npm run build" />
