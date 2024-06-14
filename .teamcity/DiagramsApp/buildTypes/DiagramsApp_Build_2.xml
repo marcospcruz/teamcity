@@ -15,7 +15,7 @@
         <parameters>
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install -g @angular/cli@%ANGULAR_VERSION%" />
+          <param name="shellScript" value="npm install -g @angular/cli@^17.3.0" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
