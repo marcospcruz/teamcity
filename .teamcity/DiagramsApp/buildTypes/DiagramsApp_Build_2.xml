@@ -16,6 +16,9 @@
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="shellScript"><![CDATA[ls -la
+cd ..
+pwd
+cp -rfv * %system.teamcity.projectName%
 echo
 echo
 npm install -g @angular/cli@^17.3.0
