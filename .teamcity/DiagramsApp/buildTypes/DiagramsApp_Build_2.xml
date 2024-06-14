@@ -21,9 +21,9 @@
 #cd %system.teamcity.projectName%
 DIRE=$(find ./ -name angular.json)
 echo $DIRE
-cd $(dirname $DIRE)
 pwd
-ls -la
+ls -la %system.teamcity.projectName%
+cp %system.teamcity.projectName%/* . -rfv
 echo
 echo
 npm install -g @angular/cli@^17.3.0
