@@ -11,18 +11,6 @@
       <param name="bitbucket.restapi.url" value="test" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_12" name="testing" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[chmod 775 *.*
-ls -la
-echo
-echo
-sleep 5
-#git pull origin %teamcity.build.branch%|sed 's/\refs\/heads\///g']]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_37" name="Install" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
