@@ -8,9 +8,7 @@
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
     </options>
-    <parameters>
-      <param name="docker.private.registry" value="registry.docker-registry:5000" />
-    </parameters>
+    <parameters />
     <build-runners>
       <runner id="RUNNER_35" name="build image" type="DockerCommand">
         <parameters>
