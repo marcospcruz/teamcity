@@ -19,9 +19,9 @@
       <parameters>
         <param name="displayName" value="Docker Registry" />
         <param name="providerType" value="Docker" />
-        <param name="repositoryUrl" value="https://docker.io" />
-        <param name="secure:userPass" value="credentialsJSON:4248760e-ed2a-4c2c-a80c-8d90eb644154" />
-        <param name="userName" value="marcospcruz" />
+        <param name="repositoryUrl" value="https://registry.docker-registry:5000" />
+        <param name="secure:userPass" value="credentialsJSON:c54cd1a0-444e-4c03-aba3-292579a035a7" />
+        <param name="userName" value="theuser" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_3" type="versionedSettings">
