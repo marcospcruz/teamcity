@@ -39,7 +39,7 @@ npm install]]></param>
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.run.parameters" value="-- --output-path=./dist/out --configuration production" />
-          <param name="shellScript" value="npm run build" />
+          <param name="shellScript" value="ng build %system.teamcity.projectName% --configuration production --stats-json" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
