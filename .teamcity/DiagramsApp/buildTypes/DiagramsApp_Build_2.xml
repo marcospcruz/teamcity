@@ -17,11 +17,10 @@
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
           <param name="shellScript"><![CDATA[ls -la
-CHECKOUT=$(pwd)
-cd ..
 
-cp -rfv $CHECKOUT %system.teamcity.projectName%
-mv -fv %system.teamcity.projectName% $CHECKOUT 
+cd %system.teamcity.projectName%
+pwd
+ls -la
 echo
 echo
 npm install -g @angular/cli@^17.3.0
