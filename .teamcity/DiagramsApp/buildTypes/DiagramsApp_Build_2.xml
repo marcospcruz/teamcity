@@ -19,7 +19,9 @@
           <param name="shellScript"><![CDATA[ls -la
 
 #cd %system.teamcity.projectName%
-cd $(dirname $(find ./ -name angular.json))
+DIRE=$(find ./ -name angular.json)
+echo $DIRE
+cd $(dirname $DIRE)
 pwd
 ls -la
 echo
