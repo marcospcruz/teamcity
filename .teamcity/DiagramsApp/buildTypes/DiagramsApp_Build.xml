@@ -40,9 +40,7 @@ npm install]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_Any">
-        <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
-      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DiagramsApp_Any" />
     </vcs-settings>
     <requirements />
     <build-triggers>
