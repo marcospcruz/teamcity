@@ -20,6 +20,7 @@ echo
 echo
 npm install -g @angular/cli@^17.3.0
 npm install]]></param>
+          <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
