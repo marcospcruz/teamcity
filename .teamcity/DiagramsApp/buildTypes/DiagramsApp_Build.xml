@@ -33,7 +33,7 @@ npm install]]></param>
         <parameters>
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm run" />
+          <param name="shellScript" value="npm build" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
