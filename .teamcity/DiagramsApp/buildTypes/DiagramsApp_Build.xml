@@ -16,7 +16,9 @@
         <parameters>
           <param name="plugin.docker.imageId" value="node:lts" />
           <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript"><![CDATA[npm install @angular/cli@17.3.6
+          <param name="shellScript"><![CDATA[https://x-token-auth:ATCTT3xFfGN0EGOnjB5ap_JNt5dUkx8NbWj2krJBd87-QUmrWYQgS2J2Fsa_g6245v4WHs6U1MILniPUPO8Ad1Uf-l--NXGm3tv0HBGqKhMidRyIB_mrNNznbZ-p6HLFNjgdkhArGOJstyFLeZThqjfw4_Jq4dVYfm2h6yvoOOUnZ8GrscRQ4aM=CDB3956E@bitbucket.org/marcospcruz/diagrams-app.git
+
+npm install @angular/cli@17.3.6
 npm install]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
