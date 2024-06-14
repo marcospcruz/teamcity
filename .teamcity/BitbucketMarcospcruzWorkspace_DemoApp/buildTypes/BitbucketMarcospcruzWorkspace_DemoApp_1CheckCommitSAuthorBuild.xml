@@ -63,6 +63,33 @@ echo "##teamcity[setParameter name='maven.project.version' value='${VERSION}']"]
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_44" name="get commit details" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[#cd %teamcity.build.branch%
+echo directory content:
+ls -la
+AUTHOR=$(git log --oneline --pretty="%ae"|head -1)
+COMMIT_HASH=$(git rev-parse HEAD)
+echo commit author: $AUTHOR
+echo commit hash: $COMMIT_HASH
+CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
+CURRENT_BRANCH_TYPE=$(echo $CURRENT_BRANCH|cut -d/ -f1)
+
+[ -z $AUTHOR ] && echo commit author is empty. && exit 1
+echo "source branch type: $CURRENT_BRANCH_TYPE"
+echo "source branch: $CURRENT_BRANCH"
+echo "target branch: $TARGET_BRANCH"
+exit 1
+echo "##teamcity[setParameter name='env.git.branch.source' value='${CURRENT_BRANCH}']"
+echo "##teamcity[setParameter name='env.COMMIT.author' value='${AUTHOR}']"
+echo "##teamcity[setParameter name='env.COMMIT.hash' value='${COMMIT_HASH}']"
+echo "##teamcity[setParameter name='env.git.branch.source.type' value='${CURRENT_BRANCH_TYPE}']"
+
+#[ ! -f "pom.xml" ] && echo "##teamcity[setParameter name='teamcity.build.skip' value='true']"]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster3" />
