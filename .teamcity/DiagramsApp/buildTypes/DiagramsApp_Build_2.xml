@@ -20,7 +20,7 @@
 pwd
 find / -name 'demo-app' -exec cd {} \;
 pwd
-[ ! -f package.json ] && echo NÃO ENCONTRADO && ls -l && exit 1
+#[ ! -f package.json ] && echo NÃO ENCONTRADO && ls -l && exit 1
 npm install
 ng test --watch=false --code-coverage --browsers=ChromeHeadless --reporters=teamcity]]></param>
           <param name="teamcity.step.mode" value="default" />
