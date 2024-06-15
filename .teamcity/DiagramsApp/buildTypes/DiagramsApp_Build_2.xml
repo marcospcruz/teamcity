@@ -17,7 +17,10 @@
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
           <param name="shellScript"><![CDATA[npm install -g @angular/cli@^17.3.0
-#npm install
+find ./ -name 'demo-app' -exec cd {} \;
+pwd
+[ ! -f package.json ] && echo NÃO ENCONTRADO && ls -l && exit 1
+npm install
 ng test --watch=false --code-coverage --browsers=ChromeHeadless --reporters=teamcity]]></param>
           <param name="teamcity.step.mode" value="default" />
         </parameters>
