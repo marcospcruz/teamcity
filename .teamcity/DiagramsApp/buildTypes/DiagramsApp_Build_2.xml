@@ -7,9 +7,6 @@
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
     </options>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_37" />
-    </disabled-settings>
     <parameters>
       <param name="bitbucket.restapi.url" value="test" />
     </parameters>
