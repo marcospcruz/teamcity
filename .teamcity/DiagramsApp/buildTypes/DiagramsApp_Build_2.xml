@@ -16,7 +16,7 @@
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="plugin.docker.pull.enabled" value="true" />
-          <param name="shellScript"><![CDATA[npm install -g @angular/cli@^17.3.0
+          <param name="shellScript"><![CDATA[npm install -g @angular/cli@^17.3.0 @npmcli/package-json
 find ./ -name 'demo-app' -exec cd {} \;
 pwd
 [ ! -f package.json ] && echo NÃO ENCONTRADO && ls -l && exit 1
