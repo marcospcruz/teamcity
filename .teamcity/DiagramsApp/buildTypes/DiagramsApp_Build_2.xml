@@ -14,17 +14,6 @@
       <param name="bitbucket.restapi.url" value="test" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_28" name="" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[whoami
-apt update
-apt install -y nodejs npm
-npm install @angular/cli
-npm install]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_37" name="Install" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
