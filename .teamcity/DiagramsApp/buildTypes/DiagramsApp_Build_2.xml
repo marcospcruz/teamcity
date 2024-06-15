@@ -24,7 +24,9 @@ ng test --watch=false --code-coverage --browsers=ChromeHeadless --reporters=team
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_Feature" />
+      <vcs-entry-ref root-id="DiagramsApp_Feature">
+        <checkout-rule rule="+:. =&gt; demo-app" />
+      </vcs-entry-ref>
     </vcs-settings>
     <requirements />
     <build-triggers>
