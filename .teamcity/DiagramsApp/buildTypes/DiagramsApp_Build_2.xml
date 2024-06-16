@@ -9,23 +9,12 @@
       <option name="showDependenciesChanges" value="true" />
     </options>
     <disabled-settings>
-      <setting-ref ref="RUNNER_29" />
       <setting-ref ref="RUNNER_39" />
     </disabled-settings>
     <parameters>
       <param name="bitbucket.restapi.url" value="test" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_29" name="" type="DockerCommand">
-        <parameters>
-          <param name="docker.command.type" value="build" />
-          <param name="docker.image.namesAndTags" value="%docker.private.registry%/%system.teamcity.projectName%:latest" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerfile.path" value="demo-app/Dockerfile" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_39" name="push" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="push" />
