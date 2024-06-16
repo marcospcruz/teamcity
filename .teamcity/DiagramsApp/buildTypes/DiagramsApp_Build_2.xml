@@ -47,7 +47,7 @@ npm install --silent]]></param>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_Feature">
-        <checkout-rule rule="+:. =&gt; demo-app" />
+        <checkout-rule rule="+:. =&gt; diagrams-app" />
       </vcs-entry-ref>
     </vcs-settings>
     <requirements />
