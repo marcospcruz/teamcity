@@ -10,20 +10,7 @@
     <parameters>
       <param name="bitbucket.restapi.url" value="test" />
     </parameters>
-    <build-runners>
-      <runner id="RUNNER_37" name="Install" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="plugin.docker.pull.enabled" value="true" />
-          <param name="shellScript"><![CDATA[pwd
-ls -la
-npm install -g @angular/cli@^17.3.0 @npmcli/package-json]]></param>
-          <param name="teamcity.build.workingDir" value="demo-app" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-    </build-runners>
+    <build-runners />
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_Feature">
         <checkout-rule rule="+:. =&gt; demo-app" />
