@@ -21,15 +21,6 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
-      <runner id="RUNNER_38" name="" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:lts" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript" value="npm install" />
-          <param name="teamcity.build.workingDir" value="demo-app" />
-          <param name="teamcity.step.mode" value="execute_always" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_39" name="push" type="DockerCommand">
         <parameters>
           <param name="docker.command.type" value="push" />
