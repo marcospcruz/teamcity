@@ -14,7 +14,9 @@
     <build-runners>
       <runner id="RUNNER_47" name="Untar archive" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[tar -xzvf node_modules.tgz
+          <param name="script.content"><![CDATA[[ ! -d node_modules ] && mkdir node_modules -p
+tar -xzf node_modules.tgz node_modules
+
 ls -l]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
