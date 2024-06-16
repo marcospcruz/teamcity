@@ -26,7 +26,7 @@
           <param name="plugin.docker.imagePlatform" value="linux" />
           <param name="shellScript" value="npm install" />
           <param name="teamcity.build.workingDir" value="demo-app" />
-          <param name="teamcity.step.mode" value="default" />
+          <param name="teamcity.step.mode" value="execute_always" />
         </parameters>
       </runner>
     </build-runners>
