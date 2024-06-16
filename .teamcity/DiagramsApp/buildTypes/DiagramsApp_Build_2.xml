@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="artifactRules" value="+:dist =&gt; ." />
+      <option name="artifactRules" value="diagrams-app =&gt; diagrams-app" />
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
     </options>
