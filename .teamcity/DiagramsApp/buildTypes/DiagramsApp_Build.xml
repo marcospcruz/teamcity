@@ -12,17 +12,6 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_31" name="npm install global" type="nodejs-runner">
-        <parameters>
-          <param name="plugin.docker.imageId" value="node:lts" />
-          <param name="plugin.docker.imagePlatform" value="linux" />
-          <param name="shellScript"><![CDATA[git clone https://x-token-auth:ATCTT3xFfGN0EGOnjB5ap_JNt5dUkx8NbWj2krJBd87-QUmrWYQgS2J2Fsa_g6245v4WHs6U1MILniPUPO8Ad1Uf-l--NXGm3tv0HBGqKhMidRyIB_mrNNznbZ-p6HLFNjgdkhArGOJstyFLeZThqjfw4_Jq4dVYfm2h6yvoOOUnZ8GrscRQ4aM=CDB3956E@bitbucket.org/marcospcruz/diagrams-app.git
-cd diagrams-app
-npm install @angular/cli@17.3.6
-npm install]]></param>
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_32" name="npm install" type="nodejs-runner">
         <parameters>
           <param name="plugin.docker.imageId" value="%docker.private.registry.images.nodejs%" />
