@@ -24,7 +24,7 @@
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_Any">
-        <checkout-rule rule="+:* =&gt; diagrams-app" />
+        <checkout-rule rule="+:. =&gt; diagrams-app" />
       </vcs-entry-ref>
     </vcs-settings>
     <requirements />
