@@ -3,6 +3,9 @@
   <name>Build Install Angular</name>
   <description />
   <settings>
+    <options>
+      <option name="artifactRules" value="diagrams-app/node_modules =&gt; diagrams-app/node_modules" />
+    </options>
     <parameters />
     <build-runners>
       <runner id="RUNNER_46" name="npm install angular" type="simpleRunner">
