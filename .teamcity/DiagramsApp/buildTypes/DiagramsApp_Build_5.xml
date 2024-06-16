@@ -4,7 +4,16 @@
   <description />
   <settings>
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_46" name="npm install angular" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="npm install --global @angular/cli" />
+          <param name="teamcity.build.workingDir" value="diagrams-app" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster1" />
     </vcs-settings>
