@@ -12,17 +12,17 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_34" name="npm run build" type="simpleRunner">
+      <runner id="RUNNER_47" name="Untar archive" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="npm run build" />
+          <param name="script.content" value="tar -xzvf node_modules.tgz" />
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
-      <runner id="RUNNER_47" name="Untar archive" type="simpleRunner">
+      <runner id="RUNNER_34" name="npm run build" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="tar -xzvf node_modules.tgz" />
+          <param name="script.content" value="npm run build" />
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
