@@ -17,7 +17,7 @@
           <param name="docker.image.namesAndTags" value="%docker.private.registry%/%system.teamcity.projectName%:latest" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerImage.platform" value="linux" />
-          <param name="dockerfile.path" value="%teamcity.build.checkoutDir%/Dockerimage" />
+          <param name="dockerfile.path" value="diagrams-app/Dockerimage" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
