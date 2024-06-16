@@ -12,14 +12,6 @@
     </options>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_40" name="npm install angular" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="npm install @angular/cli" />
-          <param name="teamcity.build.workingDir" value="diagrams-app" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_34" name="npm run build" type="simpleRunner">
         <parameters>
           <param name="script.content" value="npm run build" />
