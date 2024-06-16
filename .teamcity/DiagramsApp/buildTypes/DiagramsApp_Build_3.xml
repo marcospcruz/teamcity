@@ -32,6 +32,16 @@
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
+      <runner id="RUNNER_15" name="New build step" type="DockerCommand">
+        <parameters>
+          <param name="docker.command.type" value="build" />
+          <param name="docker.image.namesAndTags" value="%docker.private.registry%/%system.teamcity.projectName%:latest" />
+          <param name="docker.push.remove.image" value="true" />
+          <param name="dockerfile.path" value="demo-app/Dockerfile" />
+          <param name="dockerfile.source" value="PATH" />
+          <param name="teamcity.step.mode" value="default" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_Any">
