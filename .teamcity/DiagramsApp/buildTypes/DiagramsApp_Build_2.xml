@@ -23,6 +23,7 @@ pwd
 #[ ! -f package.json ] && echo NÃO ENCONTRADO && ls -l && exit 1
 npm install
 ng test --watch=false --code-coverage --browsers=ChromeHeadless --reporters=teamcity]]></param>
+          <param name="teamcity.build.workingDir" value="demo-app" />
           <param name="teamcity.step.mode" value="default" />
         </parameters>
       </runner>
