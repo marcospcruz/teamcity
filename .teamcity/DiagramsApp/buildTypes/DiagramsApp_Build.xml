@@ -24,7 +24,8 @@ ls -l]]></param>
       </runner>
       <runner id="RUNNER_34" name="npm run build" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=512
+          <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=1024
+echo ${NODE_OPTIONS}mb
 npm run build]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
