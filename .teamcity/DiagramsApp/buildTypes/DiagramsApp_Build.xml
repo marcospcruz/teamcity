@@ -26,7 +26,7 @@ ls -l]]></param>
         <parameters>
           <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=1024
 echo "Memory args: ${NODE_OPTIONS}"
-ng version
+#ng version
 echo
 npm run build]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
