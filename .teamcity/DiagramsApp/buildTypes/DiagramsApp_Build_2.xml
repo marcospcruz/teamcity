@@ -17,7 +17,7 @@
           <param name="script.content"><![CDATA[node -v
 ls -la
 git status
-npm ci --silent
+npm ci
 #npm install --silent]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
