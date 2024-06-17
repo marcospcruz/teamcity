@@ -15,8 +15,8 @@
       <runner id="RUNNER_17" name="check node js" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[if [ -z "$(which node)" ]; then
-	apt update
-	apt install nodejs npm -y
+	sudo apt update
+	sudo apt install nodejs npm -y
 fi
 node -v
 npm -v]]></param>
