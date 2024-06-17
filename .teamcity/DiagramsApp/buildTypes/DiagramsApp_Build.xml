@@ -46,6 +46,14 @@ npm run build]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_46" name="clean cache" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="npm cache clean —force" />
+          <param name="teamcity.build.workingDir" value="diagrams-app" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_Any">
