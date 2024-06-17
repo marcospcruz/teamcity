@@ -24,7 +24,7 @@ ls -l]]></param>
       </runner>
       <runner id="RUNNER_34" name="npm run build" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=1024
+          <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=768
 echo "Memory args: ${NODE_OPTIONS}"
 #ng version
 echo
