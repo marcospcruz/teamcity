@@ -73,12 +73,6 @@
         </parameters>
       </extension>
     </build-extensions>
-    <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="DiagramsApp_Build" cleanDestination="true">
-        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="dist =&gt; %system.teamcity.projectName%" />
-      </dependency>
-    </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="DiagramsApp_Build">
         <options>
