@@ -65,7 +65,7 @@ ls -l]]></param>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_4" sourceBuildTypeId="DiagramsApp_Build_2" cleanDestination="true">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:node_modules.tgz =&gt; diagrams-app/" />
+        <artifact sourcePath="+:diagrams-app.tgz =&gt; ." />
       </dependency>
     </artifact-dependencies>
     <dependencies>
