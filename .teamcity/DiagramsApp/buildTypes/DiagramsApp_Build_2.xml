@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="artifactRules" value="diagrams-app/node_modules =&gt; node_modules.tgz" />
+      <option name="artifactRules" value="diagrams-app =&gt; diagrams-app.tgz" />
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
     </options>
