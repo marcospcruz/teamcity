@@ -34,6 +34,18 @@ npm run build]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_17" name="check node js" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[if [ -z "$(which node)" ]; then
+	apt update
+	apt install nodejs npm -y
+fi
+node -v
+npm -v]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
     </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_Any">
