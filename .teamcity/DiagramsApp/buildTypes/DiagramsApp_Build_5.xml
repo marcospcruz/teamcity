@@ -7,7 +7,7 @@
     <build-runners>
       <runner id="RUNNER_46" name="npm install angular" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="npm install --global @angular/cli@^17.3.6" />
+          <param name="script.content" value="npm install --global @angular/cli@17.3.6" />
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
