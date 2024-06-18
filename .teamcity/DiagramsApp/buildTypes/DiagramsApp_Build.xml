@@ -44,11 +44,11 @@ ls -l]]></param>
       </runner>
       <runner id="RUNNER_34" name="npm run build" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=768
+          <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=256
 echo "Memory args: ${NODE_OPTIONS}"
 #ng version
 echo
-free -mh -s 5 &
+#free -mh -s 5 &
 npm run build]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
