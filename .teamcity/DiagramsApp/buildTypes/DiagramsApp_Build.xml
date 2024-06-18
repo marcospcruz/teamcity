@@ -34,6 +34,14 @@ ls -l]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
+      <runner id="RUNNER_46" name="clean cache" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="npm cache clean —force" />
+          <param name="teamcity.build.workingDir" value="diagrams-app" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_34" name="npm run build" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[export NODE_OPTIONS=--max_old_space_size=768
@@ -42,14 +50,6 @@ echo "Memory args: ${NODE_OPTIONS}"
 echo
 free -mh -s 5 &
 npm run build]]></param>
-          <param name="teamcity.build.workingDir" value="diagrams-app" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_46" name="clean cache" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="npm cache clean —force" />
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
