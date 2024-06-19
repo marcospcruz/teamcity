@@ -30,7 +30,9 @@ npm install]]></param>
         <checkout-rule rule="+:. =&gt; diagrams-app" />
       </vcs-entry-ref>
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <starts-with id="RQ_8" name="teamcity.agent.hostname" value="teamcity-build-agent" />
+    </requirements>
     <build-triggers>
       <build-trigger id="TRIGGER_20" type="vcsTrigger">
         <parameters>
