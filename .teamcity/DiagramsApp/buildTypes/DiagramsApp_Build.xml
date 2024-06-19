@@ -20,7 +20,8 @@
 fi
 node -v
 npm -v
-[ ! -d "node_modules" ] && npm install]]></param>
+#[ ! -d "node_modules" ] && 
+npm install]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
