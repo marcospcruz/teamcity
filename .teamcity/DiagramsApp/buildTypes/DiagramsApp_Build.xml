@@ -5,7 +5,7 @@
   <settings>
     <options>
       <option name="allowExternalStatus" value="true" />
-      <option name="artifactRules" value="diagrams-app/dist.tgz =&gt; dist" />
+      <option name="artifactRules" value="+:diagrams-app/dist.tgz =&gt; ." />
       <option name="cleanBuild" value="true" />
       <option name="excludeDefaultBranchChanges" value="true" />
       <option name="showDependenciesChanges" value="true" />
