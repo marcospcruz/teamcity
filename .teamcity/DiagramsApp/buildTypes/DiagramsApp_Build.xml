@@ -12,6 +12,16 @@
     </options>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_47" name="Untar archive" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[mv diagrams-app.tgz ../ -v
+tar -xzf ../diagrams-app.tgz 
+ls -l]]></param>
+          <param name="teamcity.build.workingDir" value="diagrams-app" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_17" name="check node js" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[if [ -z "$(which node)" ]; then
@@ -22,16 +32,6 @@ node -v
 npm -v
 #[ ! -d "node_modules" ] && 
 npm install]]></param>
-          <param name="teamcity.build.workingDir" value="diagrams-app" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_47" name="Untar archive" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[mv diagrams-app.tgz ../ -v
-tar -xzf ../diagrams-app.tgz 
-ls -l]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
