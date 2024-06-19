@@ -36,7 +36,7 @@ ls -l]]></param>
       </runner>
       <runner id="RUNNER_46" name="clean cache" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="npm cache clean —force" />
+          <param name="script.content" value="npm cache clean --force" />
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
