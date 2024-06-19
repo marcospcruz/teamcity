@@ -13,6 +13,6 @@
     </extension>
   </project-extensions>
   <cleanup />
-  <buildTypesOrder order="DiagramsApp_Build_2,DiagramsApp_Build_5,DiagramsApp_Build,DiagramsApp_Build_3,DiagramsApp_Build_4" />
+  <buildTypesOrder order="DiagramsApp_Build_2,DiagramsApp_Build,DiagramsApp_Build_3,DiagramsApp_Build_4" />
 </project>
 
