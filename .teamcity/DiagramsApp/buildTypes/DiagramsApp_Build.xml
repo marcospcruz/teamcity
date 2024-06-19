@@ -52,7 +52,8 @@ echo "Memory args: ${NODE_OPTIONS}"
 ng version
 echo
 #free -mh -s 5 &
-npm run build]]></param>
+npm run build
+tar -czf dist.tgz dist]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
