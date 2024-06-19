@@ -24,7 +24,9 @@
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2" />
+      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2">
+        <checkout-rule rule="+:. =&gt; /mnt/nas-common/%system.teamcity.projectName%" />
+      </vcs-entry-ref>
     </vcs-settings>
     <requirements />
     <build-triggers>
