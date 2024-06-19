@@ -22,6 +22,7 @@ node -v
 npm -v
 #[ ! -d "node_modules" ] && 
 npm install]]></param>
+          <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
