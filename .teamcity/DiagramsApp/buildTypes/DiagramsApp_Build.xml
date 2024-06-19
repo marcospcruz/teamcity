@@ -39,6 +39,14 @@
           <param name="teamcity.perfmon.feature.enabled" value="true" />
         </parameters>
       </extension>
+      <extension id="BUILD_EXT_11" type="commit-status-publisher">
+        <parameters>
+          <param name="authType" value="storedToken" />
+          <param name="publisherId" value="bitbucketCloudPublisher" />
+          <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:dc70f852-a99e-4347-9003-5e46ae31a01a" />
+          <param name="vcsRootId" value="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster2" />
+        </parameters>
+      </extension>
     </build-extensions>
     <dependencies>
       <depend-on sourceBuildTypeId="DiagramsApp_Build_2">
