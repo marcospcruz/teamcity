@@ -75,12 +75,6 @@
         </parameters>
       </extension>
     </build-extensions>
-    <artifact-dependencies>
-      <dependency id="ARTIFACT_DEPENDENCY_5" sourceBuildTypeId="DiagramsApp_Build" cleanDestination="true">
-        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:diagrams/dist.tgz =&gt; /mnt/nas-common/%system.teamcity.projectName%" />
-      </dependency>
-    </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="DiagramsApp_Build">
         <options>
