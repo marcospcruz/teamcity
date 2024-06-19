@@ -15,6 +15,7 @@
       <runner id="RUNNER_12" name="" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[echo Node version:$(node -v)
+echo NPM version:$(npm -v)
 ls -la
 git status
 #npm ci
