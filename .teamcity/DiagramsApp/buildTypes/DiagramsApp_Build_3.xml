@@ -75,6 +75,12 @@
         </parameters>
       </extension>
     </build-extensions>
+    <artifact-dependencies>
+      <dependency id="ARTIFACT_DEPENDENCY_6" sourceBuildTypeId="DiagramsApp_Build" cleanDestination="false">
+        <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
+        <artifact sourcePath="+:%env.NAS_COMMON%/dist =&gt; ." />
+      </dependency>
+    </artifact-dependencies>
     <dependencies>
       <depend-on sourceBuildTypeId="DiagramsApp_Build">
         <options>
