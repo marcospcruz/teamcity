@@ -10,7 +10,7 @@
     <build-runners>
       <runner id="RUNNER_55" name="tar" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="tar -xzf diagrams-app.tgz" />
+          <param name="script.content" value="tar -xzf node_modules.tgz" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
