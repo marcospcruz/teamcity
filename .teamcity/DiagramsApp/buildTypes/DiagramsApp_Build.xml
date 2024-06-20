@@ -5,6 +5,13 @@
   <settings>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_55" name="tar" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="tar -xzf diagrams-app.tgz" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_50" name="" type="simpleRunner">
         <parameters>
           <param name="script.content" value="npm run build" />
@@ -15,13 +22,6 @@
       <runner id="RUNNER_52" name="" type="simpleRunner">
         <parameters>
           <param name="script.content" value="rsync -avz dist /mnt/nas-common --progress" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_55" name="tar" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="tar -xzf diagrams-app.tgz" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
