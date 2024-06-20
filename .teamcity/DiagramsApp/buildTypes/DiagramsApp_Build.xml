@@ -10,7 +10,7 @@
     <build-runners>
       <runner id="RUNNER_55" name="tar" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[mkdir -pf node_modules
+          <param name="script.content"><![CDATA[mkdir -p node_modules
 cd node_modules
 tar -xzf node_modules.tgz]]></param>
           <param name="teamcity.step.mode" value="default" />
