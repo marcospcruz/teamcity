@@ -13,13 +13,6 @@
       <param name="bitbucket.restapi.url" value="test" />
     </parameters>
     <build-runners>
-      <runner id="RUNNER_58" name="tar" type="simpleRunner">
-        <parameters>
-          <param name="script.content" value="tar -vczf diagrams-app.tgz node_modules" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_12" name="" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[echo Node version:$(node -v)
@@ -29,6 +22,13 @@ git status
 #npm ci
 npm install]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+      <runner id="RUNNER_58" name="tar" type="simpleRunner">
+        <parameters>
+          <param name="script.content" value="tar -vczf diagrams-app.tgz node_modules" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
