@@ -27,9 +27,7 @@ npm install]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_Feature">
-        <checkout-rule rule="+:. =&gt; diagrams-app" />
-      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DiagramsApp_Feature" />
     </vcs-settings>
     <requirements>
       <starts-with id="RQ_8" name="teamcity.agent.hostname" value="teamcity-build-agent" />
