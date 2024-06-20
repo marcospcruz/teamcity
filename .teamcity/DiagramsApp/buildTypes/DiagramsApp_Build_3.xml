@@ -43,7 +43,9 @@
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
+    </vcs-settings>
     <requirements>
       <starts-with id="RQ_9" name="teamcity.agent.hostname" value="teamcity-build-agent" />
     </requirements>
