@@ -3,6 +3,9 @@
   <name>npm run Build</name>
   <description />
   <settings>
+    <disabled-settings>
+      <setting-ref ref="RUNNER_52" />
+    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_55" name="tar" type="simpleRunner">
