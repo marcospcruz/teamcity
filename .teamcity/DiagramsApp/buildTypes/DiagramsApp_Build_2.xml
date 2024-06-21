@@ -28,7 +28,7 @@ npm install]]></param>
       </runner>
       <runner id="RUNNER_58" name="tar" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="tar -vczf diagrams-app.tgz node_modules" />
+          <param name="script.content" value="tar -vczf diagrams-app.tgz ." />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
