@@ -10,7 +10,8 @@
     <build-runners>
       <runner id="RUNNER_55" name="tar" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[mkdir -p node_modules
+          <param name="script.content"><![CDATA[git pull
+mkdir -p node_modules
 mv node_modules.tgz node_modules
 cd node_modules
 tar -xzf node_modules.tgz]]></param>
