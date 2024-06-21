@@ -75,7 +75,7 @@ cp -rfv  dist %env.NAS_COMMON%/]]></param>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_3" sourceBuildTypeId="DiagramsApp_Build_2" cleanDestination="true">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:node_modules.tgz =&gt; ." />
+        <artifact sourcePath="+:diagrams-app.tgz =&gt; ." />
       </dependency>
     </artifact-dependencies>
     <dependencies>
