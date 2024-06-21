@@ -45,7 +45,6 @@ cp -rfv  dist %env.NAS_COMMON%/]]></param>
       <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements>
-      <equals id="RQ_7" name="teamcity.agent.hostname" value="rockpi-4b.local" />
       <equals id="RQ_10" name="teamcity.agent.hostname" value="teamcity-build-agent-0" />
     </requirements>
     <build-triggers>
