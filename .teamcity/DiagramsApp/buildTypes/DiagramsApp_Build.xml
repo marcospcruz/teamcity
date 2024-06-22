@@ -22,7 +22,7 @@ tar -xzvf node_modeules.tgz]]></param>
       </runner>
       <runner id="RUNNER_52" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="rsync -avz dist /mnt/nas-common --progress" />
+          <param name="script.content" value="npm run build" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
