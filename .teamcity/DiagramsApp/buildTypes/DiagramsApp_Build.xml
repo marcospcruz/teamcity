@@ -4,6 +4,7 @@
   <description />
   <settings>
     <disabled-settings>
+      <setting-ref ref="ARTIFACT_DEPENDENCY_3" />
       <setting-ref ref="RUNNER_52" />
     </disabled-settings>
     <parameters />
