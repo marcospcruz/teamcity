@@ -12,8 +12,9 @@
         <parameters>
           <param name="script.content"><![CDATA[#tar -xzf %system.teamcity.projectName%.tgz
 [ -d %system.teamcity.projectName% ] && cd %system.teamcity.projectName% && echo the build step is in $(pwd)
-
-npm run build]]></param>
+mv ../node_modules . -rfv
+cd node_modules
+tar -xzvf node_modeules.tgz]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
