@@ -8,17 +8,6 @@
     </disabled-settings>
     <parameters />
     <build-runners>
-      <runner id="RUNNER_55" name="tar" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[#git pull
-#mkdir -p node_modules
-#mv node_modules.tgz node_modules
-#cd node_modules
-tar -xvzf node_modules.tgz]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_50" name="" type="simpleRunner">
         <parameters>
           <param name="script.content" value="npm run build" />
