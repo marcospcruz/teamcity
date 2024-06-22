@@ -35,7 +35,9 @@ cp -rfv  dist %env.NAS_COMMON%/]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
+      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster">
+        <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
+      </vcs-entry-ref>
     </vcs-settings>
     <requirements>
       <starts-with id="RQ_10" name="teamcity.agent.name" value="ip_" />
