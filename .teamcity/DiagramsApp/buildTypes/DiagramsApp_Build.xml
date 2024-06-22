@@ -3,9 +3,6 @@
   <name>npm run Build</name>
   <description />
   <settings>
-    <disabled-settings>
-      <setting-ref ref="RUNNER_52" />
-    </disabled-settings>
     <parameters />
     <build-runners>
       <runner id="RUNNER_50" name="" type="simpleRunner">
