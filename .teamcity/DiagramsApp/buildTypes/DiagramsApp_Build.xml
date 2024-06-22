@@ -24,14 +24,6 @@ tar -xzvf node_modeules.tgz]]></param>
           <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
-      <runner id="RUNNER_56" name="rsync" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[#rsync -avz dist %env.NAS_COMMON%/
-cp -rfv  dist %env.NAS_COMMON%/]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
       <runner id="RUNNER_17" name="" type="simpleRunner">
         <parameters>
           <param name="script.content" value="ls -la" />
