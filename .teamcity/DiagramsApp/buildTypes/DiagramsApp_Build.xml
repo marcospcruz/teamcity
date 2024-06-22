@@ -11,6 +11,8 @@
       <runner id="RUNNER_50" name="" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[tar -xzf %system.teamcity.projectName%
+[ -d %system.teamcity.projectName% ] && cd %system.teamcity.projectName% && echo the build step is in $(pwd)
+
 npm run build]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
