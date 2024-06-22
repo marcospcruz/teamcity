@@ -10,7 +10,8 @@
     <build-runners>
       <runner id="RUNNER_50" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="npm run build" />
+          <param name="script.content"><![CDATA[tar -xzf %system.teamcity.projectName%
+npm run build]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
