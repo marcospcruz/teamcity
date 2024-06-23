@@ -32,7 +32,7 @@
       </runner>
       <runner id="RUNNER_36" name="Tag Image" type="DockerCommand">
         <parameters>
-          <param name="command.args" value="%system.teamcity.projectName%:latest %docker.private.registry%/%system.teamcity.projectName%v1.0" />
+          <param name="command.args" value="%docker.private.registry%/%system.teamcity.projectName%:latest %docker.private.registry%/%system.teamcity.projectName%:v%dep.DiagramsApp_Build.build.counter%" />
           <param name="docker.command.type" value="other" />
           <param name="docker.push.remove.image" value="true" />
           <param name="docker.sub.command" value="tag" />
