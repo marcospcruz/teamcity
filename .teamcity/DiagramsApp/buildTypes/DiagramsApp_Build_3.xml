@@ -86,7 +86,7 @@ rm -rfv dist/dist.tgz]]></param>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_6" sourceBuildTypeId="DiagramsApp_Build" cleanDestination="true">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:dist.tgz =&gt; ." />
+        <artifact sourcePath="+:dist.tgz =&gt; dist/dist.tgz" />
       </dependency>
     </artifact-dependencies>
     <dependencies>
