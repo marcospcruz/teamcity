@@ -23,6 +23,7 @@ tar -xzvf node_modules.tgz]]></param>
       <runner id="RUNNER_52" name="" type="simpleRunner">
         <parameters>
           <param name="script.content" value="npm run build" />
+          <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
