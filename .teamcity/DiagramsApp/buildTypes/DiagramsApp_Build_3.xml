@@ -10,6 +10,14 @@
     </options>
     <parameters />
     <build-runners>
+      <runner id="RUNNER_28" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[tar -xzf dist/dist.tgz
+rm -rfv dist/dist.tgz]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
       <runner id="RUNNER_35" name="build image" type="DockerCommand">
         <parameters>
           <param name="command.args" value="--pull" />
@@ -40,14 +48,6 @@
           <param name="dockerfile.path" value="demo-app/Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
           <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_28" name="" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[tar -xzf dist/dist.tgz
-rm -rfv dist/dist.tgz]]></param>
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
         </parameters>
       </runner>
     </build-runners>
