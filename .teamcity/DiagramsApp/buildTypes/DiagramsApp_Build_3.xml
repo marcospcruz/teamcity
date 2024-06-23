@@ -42,8 +42,8 @@
       </runner>
       <runner id="RUNNER_15" name="New build step" type="DockerCommand">
         <parameters>
-          <param name="docker.command.type" value="build" />
-          <param name="docker.image.namesAndTags" value="%docker.private.registry%/%system.teamcity.projectName%:latest" />
+          <param name="docker.command.type" value="push" />
+          <param name="docker.image.namesAndTags" value="%docker.private.registry%/%system.teamcity.projectName%:v%dep.DiagramsApp_Build.build.counter%" />
           <param name="docker.push.remove.image" value="true" />
           <param name="dockerfile.path" value="demo-app/Dockerfile" />
           <param name="dockerfile.source" value="PATH" />
