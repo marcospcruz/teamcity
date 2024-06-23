@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="artifactRules" value="+:diagrams-app/dist =&gt; dist" />
+      <option name="artifactRules" value="+:diagrams-app/dist =&gt; dist.tgz" />
     </options>
     <parameters />
     <build-runners>
