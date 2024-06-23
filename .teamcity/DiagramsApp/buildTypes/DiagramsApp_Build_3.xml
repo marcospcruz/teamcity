@@ -12,7 +12,8 @@
     <build-runners>
       <runner id="RUNNER_28" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="cp -rfv %env.NAS_COMMON%/dist ." />
+          <param name="script.content"><![CDATA[docker login %docker.private.registry% -u theuser -p secret
+cp -rfv %env.NAS_COMMON%/dist .]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
