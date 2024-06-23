@@ -78,7 +78,7 @@
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_6" sourceBuildTypeId="DiagramsApp_Build" cleanDestination="false">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:%env.NAS_COMMON%/dist =&gt; ." />
+        <artifact sourcePath="+:dist =&gt; ." />
       </dependency>
     </artifact-dependencies>
     <dependencies>
