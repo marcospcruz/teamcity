@@ -4,7 +4,7 @@
   <description />
   <settings>
     <options>
-      <option name="artifactRules" value="+:dist =&gt; dist" />
+      <option name="artifactRules" value="+:diagrams-app/dist =&gt; dist" />
     </options>
     <parameters />
     <build-runners>
