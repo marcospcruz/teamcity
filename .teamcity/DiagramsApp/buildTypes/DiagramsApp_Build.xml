@@ -70,7 +70,7 @@ rsync -avz dist %env.NAS_COMMON% --progress]]></param>
     <artifact-dependencies>
       <dependency id="ARTIFACT_DEPENDENCY_2" sourceBuildTypeId="DiagramsApp_Build_2" cleanDestination="true">
         <revisionRule name="sameChainOrLastFinished" revision="latest.sameChainOrLastFinished" />
-        <artifact sourcePath="+:node_modules.tgz =&gt; diagrams-app/node_modules" />
+        <artifact sourcePath="+:node_modules.tgz =&gt; node_modules" />
       </dependency>
     </artifact-dependencies>
     <dependencies>
