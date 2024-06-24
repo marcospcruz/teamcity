@@ -12,7 +12,6 @@
 mv ../node_modules . -f
 cd node_modules
 tar -xzvf node_modules.tgz]]></param>
-          <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
