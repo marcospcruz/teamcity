@@ -12,7 +12,8 @@
     <build-runners>
       <runner id="RUNNER_29" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content" value="curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3|sh -c -" />
+          <param name="script.content"><![CDATA[#curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3|sh -c -
+curl -fsSL  https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3|sh -c]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
