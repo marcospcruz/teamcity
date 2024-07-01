@@ -33,7 +33,9 @@ chmod 755 get_helm.sh
     <vcs-settings>
       <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <starts-with id="RQ_7" name="teamcity.agent.hostname" value="teamcity" />
+    </requirements>
     <build-triggers>
       <build-trigger id="TRIGGER_9" type="vcsTrigger">
         <parameters>
