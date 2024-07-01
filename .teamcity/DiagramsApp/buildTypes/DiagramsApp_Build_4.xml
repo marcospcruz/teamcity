@@ -12,7 +12,8 @@
     <build-runners>
       <runner id="RUNNER_29" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[source /usr/local/bin/access-api-server.sh
+          <param name="script.content"><![CDATA[source $(which access-api-server.sh )
+
 curl -fsSL -o get_helm.sh https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3
 #curl -fsSL  https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3|sh -c
 chmod 755 get_helm.sh
