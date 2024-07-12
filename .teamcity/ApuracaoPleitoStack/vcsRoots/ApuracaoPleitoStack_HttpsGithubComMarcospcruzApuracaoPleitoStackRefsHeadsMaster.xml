@@ -6,6 +6,7 @@
   <param name="authMethod" value="PASSWORD" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="credentialsJSON:dedd574a-fe38-4c2e-83bc-c4a64ca85918" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="refs/heads/*" />
   <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:e27d8b48-e5f4-4658-92b7-ef5c3abf15dd" />
