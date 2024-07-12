@@ -25,7 +25,9 @@
     <vcs-settings>
       <vcs-entry-ref root-id="DemoApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDemoAppGitRefsHeadsMaster" />
     </vcs-settings>
-    <requirements />
+    <requirements>
+      <contains id="RQ_12" name="teamcity.agent.hostname" value="rockpi-4b.local" />
+    </requirements>
     <build-triggers>
       <build-trigger id="TRIGGER_24" type="vcsTrigger">
         <parameters>
