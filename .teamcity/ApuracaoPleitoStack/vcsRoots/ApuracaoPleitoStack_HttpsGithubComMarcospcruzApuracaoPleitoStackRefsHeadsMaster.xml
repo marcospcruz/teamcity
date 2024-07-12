@@ -3,15 +3,14 @@
   <name>https://github.com/marcospcruz/apuracao-pleito-stack#refs/heads/master</name>
   <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
   <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
-  <param name="authMethod" value="ACCESS_TOKEN" />
+  <param name="authMethod" value="PASSWORD" />
   <param name="branch" value="refs/heads/master" />
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="refs/heads/*" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:738c512a-1f49-4cc2-9c12-3b78519b86b5" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:e27d8b48-e5f4-4658-92b7-ef5c3abf15dd" />
   <param name="url" value="https://github.com/marcospcruz/apuracao-pleito-stack" />
   <param name="useAlternates" value="AUTO" />
-  <param name="username" value="oauth2" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 

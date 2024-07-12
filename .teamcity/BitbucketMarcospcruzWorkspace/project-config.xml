@@ -15,6 +15,14 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_4" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="kfrupSkrb9UDnwLZFe" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:fff24f00-8578-4b43-a1c4-813935252ae6" />
+      </parameters>
+    </extension>
     <extension id="kube-5" type="CloudProfile">
       <parameters>
         <param name="apiServerUrl" value="https://192.168.15.7:6443" />

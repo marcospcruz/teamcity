@@ -3,12 +3,12 @@
   <name>diagrams-app</name>
   <parameters />
   <project-extensions>
-    <extension id="PROJECT_EXT_10" type="OAuthProvider">
+    <extension id="PROJECT_EXT_12" type="OAuthProvider">
       <parameters>
         <param name="clientId" value="kfrupSkrb9UDnwLZFe" />
         <param name="displayName" value="Bitbucket Cloud" />
         <param name="providerType" value="BitBucketCloud" />
-        <param name="secure:clientSecret" value="credentialsJSON:df3a53a9-c1cf-4853-b977-47fb31fd169f" />
+        <param name="secure:clientSecret" value="credentialsJSON:fff24f00-8578-4b43-a1c4-813935252ae6" />
       </parameters>
     </extension>
   </project-extensions>

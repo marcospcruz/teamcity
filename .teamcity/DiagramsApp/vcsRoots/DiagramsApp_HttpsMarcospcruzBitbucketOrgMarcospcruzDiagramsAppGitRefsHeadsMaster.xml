@@ -8,10 +8,9 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="+:*" />
-  <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:dc70f852-a99e-4347-9003-5e46ae31a01a" />
+  <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:c232dc38-ab42-4693-becb-b49874bc0d07" />
   <param name="url" value="https://marcospcruz@bitbucket.org/marcospcruz/diagrams-app.git" />
   <param name="useAlternates" value="AUTO" />
-  <param name="username" value="marcospcruz" />
   <param name="usernameStyle" value="USERID" />
 </vcs-root>
 

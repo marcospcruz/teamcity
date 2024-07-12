@@ -8,7 +8,7 @@
   <param name="ignoreKnownHosts" value="true" />
   <param name="submoduleCheckout" value="CHECKOUT" />
   <param name="teamcity:branchSpec" value="refs/heads/*" />
-  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:738c512a-1f49-4cc2-9c12-3b78519b86b5" />
+  <param name="tokenId" value="tc_token_id:CID_8f995bd1cca7545c8b5768b7c1a4b9d3:-1:3eccae6c-1cb7-4518-b8a0-21bac62b60e8" />
   <param name="url" value="https://github.com/marcospcruz/apuracao-pleito-stack" />
   <param name="useAlternates" value="AUTO" />
   <param name="username" value="oauth2" />

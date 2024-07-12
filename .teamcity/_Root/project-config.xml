@@ -8,7 +8,7 @@
     <param name="docker.private.registry" value="registry.docker-registry:5000" />
     <param name="docker.private.registry.images.nodejs" value="%docker.private.registry%/arm64v8/node:latest" />
     <param name="env.NAS_COMMON" value="/mnt/nas-common/%system.teamcity.projectName%" />
-    <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:41771b75-9069-4399-a12c-5ce9abb7dd65" spec="password display='hidden' readOnly='true' label='SPI'" />
+    <param name="system.NPM_AUTH_TOKEN" value="credentialsJSON:c54cd1a0-444e-4c03-aba3-292579a035a7" spec="password display='hidden' readOnly='true' label='SPI'" />
   </parameters>
   <project-extensions>
     <extension id="PROJECT_EXT_1" type="ReportTab">
@@ -18,12 +18,24 @@
         <param name="type" value="BuildReportTab" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_14" type="OAuthProvider">
+      <parameters>
+        <param name="connectionSubtype" value="gitHubApp" />
+        <param name="displayName" value="GitHub App" />
+        <param name="gitHubApp.appId" value="384599" />
+        <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
+        <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
+        <param name="providerType" value="GitHubApp" />
+        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:269a97d9-116e-4f53-9839-c5eb39af96df" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:6ee534ad-7b82-459c-a162-3f8552cca102" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_2" type="OAuthProvider">
       <parameters>
         <param name="displayName" value="Docker Registry" />
         <param name="providerType" value="Docker" />
         <param name="repositoryUrl" value="https://registry.docker-registry:5000" />
-        <param name="secure:userPass" value="credentialsJSON:c54cd1a0-444e-4c03-aba3-292579a035a7" />
+        <param name="secure:userPass" value="credentialsJSON:c6d29669-6d7c-40c3-9e36-08f16cba75f4" />
         <param name="userName" value="theuser" />
       </parameters>
     </extension>
@@ -36,16 +48,12 @@
         <param name="showChanges" value="true" />
       </parameters>
     </extension>
-    <extension id="PROJECT_EXT_8" type="OAuthProvider">
+    <extension id="PROJECT_EXT_7" type="OAuthProvider">
       <parameters>
-        <param name="connectionSubtype" value="gitHubApp" />
-        <param name="displayName" value="GitHub App" />
-        <param name="gitHubApp.appId" value="384599" />
-        <param name="gitHubApp.clientId" value="Iv1.0fd762b602e5578c" />
-        <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
-        <param name="providerType" value="GitHubApp" />
-        <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:b5503633-8363-44af-be9b-142a535cd86f" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:3d189b94-37cb-450b-808d-d91ff8f41672" />
+        <param name="clientId" value="kfrupSkrb9UDnwLZFe" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:fff24f00-8578-4b43-a1c4-813935252ae6" />
       </parameters>
     </extension>
     <extension id="PROJECT_EXT_9" type="CloudImage">

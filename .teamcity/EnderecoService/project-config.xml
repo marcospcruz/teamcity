@@ -12,7 +12,7 @@
         <param name="gitHubApp.ownerUrl" value="https://github.com/marcospcruz" />
         <param name="providerType" value="GitHubApp" />
         <param name="secure:gitHubApp.clientSecret" value="credentialsJSON:b76c32d4-7b17-467a-a967-632c1a56af67" />
-        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:583dc350-ea16-45a7-8290-0afed2474694" />
+        <param name="secure:gitHubApp.privateKey" value="credentialsJSON:b76c32d4-7b17-467a-a967-632c1a56af67" />
       </parameters>
     </extension>
   </project-extensions>

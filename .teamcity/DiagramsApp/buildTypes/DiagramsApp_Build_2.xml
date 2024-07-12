@@ -28,9 +28,7 @@ npm install]]></param>
       </runner>
     </build-runners>
     <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster">
-        <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
-      </vcs-entry-ref>
+      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
     </vcs-settings>
     <requirements>
       <starts-with id="RQ_8" name="teamcity.agent.hostname" value="teamcity-build-agent" />
@@ -50,19 +48,19 @@ npm install]]></param>
           <param name="teamcity.perfmon.feature.enabled" value="true" />
         </parameters>
       </extension>
-      <extension id="BUILD_EXT_12" type="commit-status-publisher">
-        <parameters>
-          <param name="authType" value="storedToken" />
-          <param name="publisherId" value="bitbucketCloudPublisher" />
-          <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:dc70f852-a99e-4347-9003-5e46ae31a01a" />
-          <param name="vcsRootId" value="DiagramsApp_Feature" />
-        </parameters>
-      </extension>
       <extension id="DockerSupport" type="DockerSupport">
         <parameters>
           <param name="cleanupPushed" value="true" />
           <param name="login2registry" value="PROJECT_EXT_2" />
           <param name="loginCheckbox" value="on" />
+        </parameters>
+      </extension>
+      <extension id="BUILD_EXT_14" type="commit-status-publisher">
+        <parameters>
+          <param name="authType" value="storedToken" />
+          <param name="publisherId" value="bitbucketCloudPublisher" />
+          <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:c232dc38-ab42-4693-becb-b49874bc0d07" />
+          <param name="vcsRootId" value="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
         </parameters>
       </extension>
     </build-extensions>
