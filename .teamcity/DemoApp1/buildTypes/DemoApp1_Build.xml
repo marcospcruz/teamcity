@@ -32,7 +32,8 @@
           <param name="branchFilter" value="+:*" />
           <param name="enableQueueOptimization" value="true" />
           <param name="quietPeriodMode" value="DO_NOT_USE" />
-          <param name="triggerRules" value="-:demo-app-application**" />
+          <param name="triggerRules"><![CDATA[-:demo-app-application**
++:.*]]></param>
         </parameters>
       </build-trigger>
     </build-triggers>
