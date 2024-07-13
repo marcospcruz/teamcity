@@ -51,7 +51,7 @@
     <extension id="PROJECT_EXT_5" type="OAuthProvider">
       <parameters>
         <param name="clientId" value="zzPStNB44wbgeYeKq3" />
-        <param name="displayName" value="Bitbucket Cloud (1)" />
+        <param name="displayName" value="Bitbucket Cloud" />
         <param name="providerType" value="BitBucketCloud" />
         <param name="secure:clientSecret" value="credentialsJSON:d215cad1-fa7f-4861-97ee-6c26fc83f601" />
       </parameters>
