@@ -7,8 +7,8 @@
     <build-runners>
       <runner id="RUNNER_37" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[git config --global user.email "marcpcruz@gmail.com"
- git config --global user.name "Marcos Cruz"]]></param>
+          <param name="script.content"><![CDATA[git config --global user.email xmcgyo9tgxrlfpjen6nvl5pzojf19w@bots.bitbucket.org
+git config --global user.name "Marcos Cruz"]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
