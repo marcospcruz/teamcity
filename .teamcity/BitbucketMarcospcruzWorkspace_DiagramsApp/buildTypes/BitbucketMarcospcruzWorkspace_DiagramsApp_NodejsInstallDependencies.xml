@@ -4,7 +4,21 @@
   <description />
   <settings ref="DiagramsApp_NodejsInstallDependencies">
     <parameters />
-    <build-runners />
+    <build-runners>
+      <runner id="RUNNER_12" name="" type="simpleRunner">
+        <parameters>
+          <param name="script.content"><![CDATA[echo Node version:$(node -v)
+echo NPM version:$(npm -v)
+ls -la
+git status
+#npm ci
+#npm install
+npm ci --production]]></param>
+          <param name="teamcity.step.mode" value="default" />
+          <param name="use.custom.script" value="true" />
+        </parameters>
+      </runner>
+    </build-runners>
     <vcs-settings>
       <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
     </vcs-settings>
