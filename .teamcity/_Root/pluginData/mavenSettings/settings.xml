@@ -164,7 +164,7 @@ under the License.
    | repository, to be used as an alternate download site. The mirror site will be the preferred
    | server for that repository.
    |-->
-	<mirrors>
+	
 		<!-- mirror
      | Specifies a repository mirror site to use instead of a given repository. The repository that
      | this mirror serves has an ID that matches the mirrorOf element of this mirror. IDs are used
