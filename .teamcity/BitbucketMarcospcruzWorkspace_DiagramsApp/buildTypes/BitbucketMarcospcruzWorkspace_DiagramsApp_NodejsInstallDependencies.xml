@@ -5,6 +5,7 @@
   <settings ref="DiagramsApp_NodejsInstallDependencies">
     <options>
       <option name="artifactRules" value="node_modules =&gt; node_modules.tgz" />
+      <option name="cleanBuild" value="false" />
     </options>
     <parameters />
     <build-runners />
