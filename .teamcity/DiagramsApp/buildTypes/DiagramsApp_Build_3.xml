@@ -2,99 +2,17 @@
 <build-type xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="2504915c-0467-44c8-bbd9-2eb060b15af1" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
   <name>Build Image</name>
   <description />
-  <settings>
-    <options>
-      <option name="cleanBuild" value="true" />
-      <option name="excludeDefaultBranchChanges" value="true" />
-      <option name="showDependenciesChanges" value="true" />
-    </options>
+  <settings ref="DiagramsApp_BuildImage">
     <disabled-settings>
       <setting-ref ref="RQ_9" />
     </disabled-settings>
     <parameters />
-    <build-runners>
-      <runner id="RUNNER_28" name="" type="simpleRunner">
-        <parameters>
-          <param name="script.content"><![CDATA[docker login %docker.private.registry% -u theuser -p secret
-cp -rfv %env.NAS_COMMON%/dist .]]></param>
-          <param name="teamcity.build.workingDir" value="diagrams-app" />
-          <param name="teamcity.step.mode" value="default" />
-          <param name="use.custom.script" value="true" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_35" name="build image" type="DockerCommand">
-        <parameters>
-          <param name="command.args" value="--pull" />
-          <param name="docker.command.type" value="build" />
-          <param name="docker.image.namesAndTags" value="%docker.private.registry%/%system.teamcity.projectName%:latest" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerImage.platform" value="linux" />
-          <param name="dockerfile.path" value="diagrams-app/Dockerfile" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_36" name="Tag Image" type="DockerCommand">
-        <parameters>
-          <param name="command.args" value="%docker.private.registry%/%system.teamcity.projectName%:latest  %docker.private.registry%/%system.teamcity.projectName%:v%dep.DiagramsApp_Build.build.counter%" />
-          <param name="docker.command.type" value="other" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="docker.sub.command" value="tag" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-      <runner id="RUNNER_15" name="New build step" type="DockerCommand">
-        <parameters>
-          <param name="docker.command.type" value="push" />
-          <param name="docker.image.namesAndTags" value="%docker.private.registry%/%system.teamcity.projectName%:v%dep.DiagramsApp_Build.build.counter%" />
-          <param name="docker.push.remove.image" value="true" />
-          <param name="dockerfile.path" value="demo-app/Dockerfile" />
-          <param name="dockerfile.source" value="PATH" />
-          <param name="teamcity.step.mode" value="default" />
-        </parameters>
-      </runner>
-    </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster">
-        <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
-      </vcs-entry-ref>
-    </vcs-settings>
+    <build-runners />
+    <vcs-settings />
     <requirements>
       <starts-with id="RQ_9" name="teamcity.agent.hostname" value="teamcity-build-agent" />
     </requirements>
-    <build-triggers>
-      <build-trigger id="TRIGGER_22" type="vcsTrigger">
-        <parameters>
-          <param name="branchFilter" value="+:*" />
-          <param name="enableQueueOptimization" value="true" />
-          <param name="quietPeriodMode" value="DO_NOT_USE" />
-        </parameters>
-      </build-trigger>
-    </build-triggers>
-    <build-extensions>
-      <extension id="perfmon" type="perfmon">
-        <parameters>
-          <param name="teamcity.perfmon.feature.enabled" value="true" />
-        </parameters>
-      </extension>
-      <extension id="BUILD_EXT_13" type="commit-status-publisher">
-        <parameters>
-          <param name="authType" value="storedToken" />
-          <param name="publisherId" value="bitbucketCloudPublisher" />
-          <param name="tokenId" value="tc_token_id:CID_6ce5524be59288dac8dd0f7240a1e470:1:dc70f852-a99e-4347-9003-5e46ae31a01a" />
-          <param name="vcsRootId" value="DiagramsApp_Any" />
-        </parameters>
-      </extension>
-    </build-extensions>
-    <dependencies>
-      <depend-on sourceBuildTypeId="DiagramsApp_Build">
-        <options>
-          <option name="take-started-build-with-same-revisions" value="true" />
-          <option name="take-successful-builds-only" value="true" />
-        </options>
-      </depend-on>
-    </dependencies>
+    <build-triggers />
     <cleanup />
   </settings>
 </build-type>
