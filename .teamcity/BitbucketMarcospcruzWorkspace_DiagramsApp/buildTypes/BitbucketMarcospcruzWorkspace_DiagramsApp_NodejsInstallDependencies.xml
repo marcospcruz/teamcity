@@ -13,7 +13,7 @@ ls -la
 git status
 #npm ci
 #npm install
-npm ci --production]]></param>
+npm ci --omit=dev]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
