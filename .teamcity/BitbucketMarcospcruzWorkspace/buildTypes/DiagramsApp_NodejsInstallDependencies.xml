@@ -20,7 +20,7 @@ echo NPM version:$(npm -v)
 #ls -la
 git status
 #npm ci
-if [ ! -f package-lock.json ]; then
+if [ ! -f "*package-lock.json" ]; then
 	npm install
 else
 	npm ci --omit=dev
