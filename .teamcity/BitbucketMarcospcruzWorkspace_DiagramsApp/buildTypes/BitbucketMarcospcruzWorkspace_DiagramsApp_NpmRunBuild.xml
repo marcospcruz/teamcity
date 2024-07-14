@@ -5,7 +5,9 @@
   <settings ref="DiagramsApp_NpmRunBuild">
     <parameters />
     <build-runners />
-    <vcs-settings />
+    <vcs-settings>
+      <vcs-entry-ref root-id="BitbucketMarcospcruzWorkspace_DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
+    </vcs-settings>
     <requirements />
     <build-triggers />
     <cleanup />
