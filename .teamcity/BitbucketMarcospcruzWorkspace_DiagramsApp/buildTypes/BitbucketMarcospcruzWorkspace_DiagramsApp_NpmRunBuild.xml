@@ -3,6 +3,9 @@
   <name>npm run build</name>
   <description />
   <settings ref="DiagramsApp_NpmRunBuild">
+    <disabled-settings>
+      <setting-ref ref="RQ_10" />
+    </disabled-settings>
     <parameters />
     <build-runners />
     <vcs-settings>
