@@ -51,11 +51,7 @@ cp -rfv %env.NAS_COMMON%/dist .]]></param>
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster">
-        <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
-      </vcs-entry-ref>
-    </vcs-settings>
+    <vcs-settings />
     <requirements />
     <build-triggers>
       <build-trigger id="TRIGGER_22" type="vcsTrigger">
