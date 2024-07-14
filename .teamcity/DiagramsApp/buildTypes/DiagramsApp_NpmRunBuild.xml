@@ -33,11 +33,7 @@ rsync -avz dist %env.NAS_COMMON% --progress]]></param>
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster">
-        <checkout-rule rule="+:. =&gt; %system.teamcity.projectName%" />
-      </vcs-entry-ref>
-    </vcs-settings>
+    <vcs-settings />
     <requirements>
       <starts-with id="RQ_10" name="teamcity.agent.name" value="ip_" />
     </requirements>
