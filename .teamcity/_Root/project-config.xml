@@ -48,6 +48,14 @@
         <param name="showChanges" value="true" />
       </parameters>
     </extension>
+    <extension id="PROJECT_EXT_8" type="OAuthProvider">
+      <parameters>
+        <param name="clientId" value="zzPStNB44wbgeYeKq3" />
+        <param name="displayName" value="Bitbucket Cloud" />
+        <param name="providerType" value="BitBucketCloud" />
+        <param name="secure:clientSecret" value="credentialsJSON:d215cad1-fa7f-4861-97ee-6c26fc83f601" />
+      </parameters>
+    </extension>
     <extension id="PROJECT_EXT_9" type="CloudImage">
       <parameters>
         <param name="agentNamePrefix" value="teamcity-build-agent-on-master" />
