@@ -3,6 +3,9 @@
   <name>nodejs install dependencies</name>
   <description />
   <settings ref="DiagramsApp_NodejsInstallDependencies">
+    <options>
+      <option name="artifactRules" value="node_modules =&gt; node_modules.tgz" />
+    </options>
     <parameters />
     <build-runners />
     <vcs-settings>
