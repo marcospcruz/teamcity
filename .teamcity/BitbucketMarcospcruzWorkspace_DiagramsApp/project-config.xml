@@ -3,5 +3,6 @@
   <name>Diagrams App</name>
   <parameters />
   <cleanup />
+  <buildTypesOrder order="BitbucketMarcospcruzWorkspace_DiagramsApp_NodejsInstallDependencies,BitbucketMarcospcruzWorkspace_DiagramsApp_NpmRunBuild" />
 </project>
 
