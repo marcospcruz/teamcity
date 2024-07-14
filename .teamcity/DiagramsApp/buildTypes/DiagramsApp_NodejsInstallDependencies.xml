@@ -25,9 +25,7 @@ npm install]]></param>
         </parameters>
       </runner>
     </build-runners>
-    <vcs-settings>
-      <vcs-entry-ref root-id="DiagramsApp_HttpsMarcospcruzBitbucketOrgMarcospcruzDiagramsAppGitRefsHeadsMaster" />
-    </vcs-settings>
+    <vcs-settings />
     <requirements>
       <starts-with id="RQ_8" name="teamcity.agent.hostname" value="teamcity-build-agent" />
     </requirements>
