@@ -12,7 +12,8 @@
         <parameters>
           <param name="script.content"><![CDATA[#tar -xzf %system.teamcity.projectName%.tgz
 [ -d %system.teamcity.projectName% ] && cd %system.teamcity.projectName% && echo the build step is in $(pwd)
-mv ../node_modules . -f
+[ -d node_modules ] && mkdir node_modules -fv
+mv node_modules.tgz node_modules/ -fv
 cd node_modules
 tar -xzvf node_modules.tgz
 cd ..]]></param>
