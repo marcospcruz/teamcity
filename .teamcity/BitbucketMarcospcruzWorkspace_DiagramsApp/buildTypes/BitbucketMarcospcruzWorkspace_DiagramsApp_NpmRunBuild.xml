@@ -23,7 +23,8 @@ cd ..]]></param>
       </runner>
       <runner id="RUNNER_52" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[npm ci --omit=dev
+          <param name="script.content"><![CDATA[npm install @anbular/cli
+npm ci --omit=dev
 npm run build]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
