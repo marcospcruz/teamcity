@@ -24,7 +24,8 @@ cd ..]]></param>
       <runner id="RUNNER_52" name="" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[npm install --global @angular/cli
-npm ci --omit=dev
+#npm ci --omit=dev
+npm install
 npm run build]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
           <param name="teamcity.step.mode" value="default" />
