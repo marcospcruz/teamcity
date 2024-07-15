@@ -23,7 +23,7 @@ cd ..]]></param>
       </runner>
       <runner id="RUNNER_52" name="" type="simpleRunner">
         <parameters>
-          <param name="script.content"><![CDATA[npm install @anbular/cli
+          <param name="script.content"><![CDATA[npm install @angular/cli
 npm ci --omit=dev
 npm run build]]></param>
           <param name="teamcity.build.workingDir" value="diagrams-app" />
