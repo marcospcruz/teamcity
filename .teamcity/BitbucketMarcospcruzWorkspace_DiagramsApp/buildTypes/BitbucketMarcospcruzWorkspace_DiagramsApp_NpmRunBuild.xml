@@ -4,7 +4,7 @@
   <description />
   <settings ref="DiagramsApp_NpmRunBuild">
     <options>
-      <option name="artifactRules" value="+:dist =&gt; dist" />
+      <option name="artifactRules" value="+:dist =&gt; dist.tar.gz" />
     </options>
     <disabled-settings>
       <setting-ref ref="RQ_10" />
