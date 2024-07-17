@@ -6,9 +6,7 @@
     <disabled-settings>
       <setting-ref ref="RQ_10" />
     </disabled-settings>
-    <parameters>
-      <param name="env.NAS_COMMONS" value="/mnt/nas-common/diagrams-app" />
-    </parameters>
+    <parameters />
     <build-runners>
       <runner id="RUNNER_50" name="" type="simpleRunner">
         <parameters>
