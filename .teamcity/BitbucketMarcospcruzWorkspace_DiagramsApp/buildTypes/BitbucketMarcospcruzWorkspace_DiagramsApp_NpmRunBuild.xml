@@ -35,7 +35,7 @@ npm run build]]></param>
       <runner id="RUNNER_17" name="" type="simpleRunner">
         <parameters>
           <param name="script.content"><![CDATA[ls -la
-rsync -avz dist ${NAS_COMMON} --progress]]></param>
+rsync -avz dist ${NAS_COMMON} --progress --perms --no-owner --no-group]]></param>
           <param name="teamcity.step.mode" value="default" />
           <param name="use.custom.script" value="true" />
         </parameters>
