@@ -3,6 +3,9 @@
   <name>npm run build</name>
   <description />
   <settings ref="DiagramsApp_NpmRunBuild">
+    <options>
+      <option name="artifactRules" value="+:dist =&gt; dist.tgz" />
+    </options>
     <disabled-settings>
       <setting-ref ref="RQ_10" />
     </disabled-settings>
