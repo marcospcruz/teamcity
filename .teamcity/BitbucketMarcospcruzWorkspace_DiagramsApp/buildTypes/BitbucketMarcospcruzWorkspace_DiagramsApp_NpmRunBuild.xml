@@ -7,7 +7,6 @@
       <option name="artifactRules" value="+:dist =&gt; dist.tgz" />
     </options>
     <disabled-settings>
-      <setting-ref ref="RQ_10" />
       <setting-ref ref="RUNNER_17" />
     </disabled-settings>
     <parameters />
